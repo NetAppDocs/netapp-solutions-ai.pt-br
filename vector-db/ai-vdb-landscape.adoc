@@ -1,0 +1,123 @@
+---
+sidebar: sidebar 
+permalink: vector-db/ai-vdb-landscape.html 
+keywords: vector database 
+summary: banco de dados vetorial - solução de banco de dados vetorial para netapp 
+---
+= Banco de Dados Vetorial
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Esta seção aborda a definição e o uso de um banco de dados vetorial em soluções de IA da NetApp .
+
+
+
+== Banco de Dados Vetorial
+
+Um banco de dados vetorial é um tipo especializado de banco de dados projetado para manipular, indexar e pesquisar dados não estruturados usando incorporações de modelos de aprendizado de máquina.  Em vez de organizar dados em um formato tabular tradicional, ele organiza os dados como vetores de alta dimensão, também conhecidos como incorporações de vetores.  Essa estrutura exclusiva permite que o banco de dados manipule dados complexos e multidimensionais de forma mais eficiente e precisa.
+
+Um dos principais recursos de um banco de dados vetorial é o uso de IA generativa para realizar análises.  Isso inclui pesquisas de similaridade, onde o banco de dados identifica pontos de dados que são semelhantes a uma determinada entrada, e detecção de anomalias, onde ele pode identificar pontos de dados que se desviam significativamente da norma.
+
+Além disso, bancos de dados vetoriais são adequados para lidar com dados temporais ou dados com registro de data e hora.  Esse tipo de dado fornece informações sobre "o que" aconteceu e quando aconteceu, em sequência e em relação a todos os outros eventos dentro de um determinado sistema de TI.  Essa capacidade de manipular e analisar dados temporais torna os bancos de dados vetoriais particularmente úteis para aplicações que exigem uma compreensão de eventos ao longo do tempo.
+
+
+
+=== Vantagens do banco de dados vetorial para ML e IA:
+
+* Pesquisa de alta dimensão: bancos de dados vetoriais são excelentes no gerenciamento e na recuperação de dados de alta dimensão, que geralmente são gerados em aplicativos de IA e ML.
+* Escalabilidade: eles podem ser dimensionados com eficiência para lidar com grandes volumes de dados, dando suporte ao crescimento e à expansão de projetos de IA e ML.
+* Flexibilidade: Bancos de dados vetoriais oferecem um alto grau de flexibilidade, permitindo a acomodação de diversos tipos e estruturas de dados.
+* Desempenho: eles fornecem gerenciamento e recuperação de dados de alto desempenho, essenciais para a velocidade e eficiência das operações de IA e ML.
+* Indexação personalizável: os bancos de dados vetoriais oferecem opções de indexação personalizáveis, permitindo organização e recuperação otimizadas de dados com base em necessidades específicas.
+
+
+
+
+=== Bancos de dados vetoriais e casos de uso.
+
+Esta seção fornece vários bancos de dados de vetores e detalhes de seus casos de uso.
+
+
+
+==== Faiss e ScaNN
+
+São bibliotecas que servem como ferramentas cruciais no âmbito da pesquisa vetorial.  Essas bibliotecas fornecem funcionalidades essenciais para gerenciar e pesquisar dados vetoriais, o que as torna recursos inestimáveis nessa área especializada de gerenciamento de dados.
+
+
+
+==== Elasticsearch
+
+É um mecanismo de busca e análise amplamente utilizado e recentemente incorporou recursos de busca vetorial.  Este novo recurso aprimora sua funcionalidade, permitindo que ele manipule e pesquise dados vetoriais de forma mais eficaz.
+
+
+
+==== Pinha
+
+É um banco de dados vetorial robusto com um conjunto exclusivo de recursos.  Ele suporta vetores densos e esparsos em sua funcionalidade de indexação, o que aumenta sua flexibilidade e adaptabilidade.  Um dos seus principais pontos fortes está na capacidade de combinar métodos de pesquisa tradicionais com pesquisa vetorial densa baseada em IA, criando uma abordagem de pesquisa híbrida que aproveita o melhor dos dois mundos.
+
+Basicamente baseado em nuvem, o Pinecone foi projetado para aplicativos de aprendizado de máquina e se integra bem a uma variedade de plataformas, incluindo GCP, AWS, Open AI, GPT-3, GPT-3.5, GPT-4, Catgut Plus, Elasticsearch, Haystack e muito mais.  É importante observar que o Pinecone é uma plataforma de código fechado e está disponível como uma oferta de Software como Serviço (SaaS).
+
+Dadas suas capacidades avançadas, o Pinecone é particularmente adequado para o setor de segurança cibernética, onde seus recursos de pesquisa de alta dimensão e pesquisa híbrida podem ser aproveitados efetivamente para detectar e responder a ameaças.
+
+
+
+==== Croma
+
+É um banco de dados vetorial que tem uma Core-API com quatro funções principais, uma das quais inclui um armazenamento de vetores de documentos na memória.  Ele também utiliza a biblioteca Face Transformers para vetorizar documentos, aumentando sua funcionalidade e versatilidade.  O Chroma foi projetado para operar na nuvem e no local, oferecendo flexibilidade com base nas necessidades do usuário.  Particularmente, ele se destaca em aplicações relacionadas a áudio, o que o torna uma excelente escolha para mecanismos de busca baseados em áudio, sistemas de recomendação de música e outros casos de uso relacionados a áudio.
+
+
+
+==== Weaviate
+
+É um banco de dados vetorial versátil que permite aos usuários vetorizar seu conteúdo usando seus módulos integrados ou módulos personalizados, proporcionando flexibilidade com base em necessidades específicas.  Ela oferece soluções totalmente gerenciadas e auto-hospedadas, atendendo a uma variedade de preferências de implantação.
+
+Um dos principais recursos do Weaviate é sua capacidade de armazenar vetores e objetos, aprimorando suas capacidades de manipulação de dados.  É amplamente utilizado para uma variedade de aplicações, incluindo pesquisa semântica e classificação de dados em sistemas ERP.  No setor de comércio eletrônico, ele potencializa mecanismos de busca e recomendação.  O Weaviate também é usado para pesquisa de imagens, detecção de anomalias, harmonização automatizada de dados e análise de ameaças à segurança cibernética, demonstrando sua versatilidade em vários domínios.
+
+
+
+==== Redis
+
+O Redis é um banco de dados vetorial de alto desempenho conhecido por seu rápido armazenamento na memória, oferecendo baixa latência para operações de leitura e gravação.  Isso o torna uma excelente escolha para sistemas de recomendação, mecanismos de busca e aplicativos de análise de dados que exigem acesso rápido aos dados.
+
+O Redis suporta várias estruturas de dados para vetores, incluindo listas, conjuntos e conjuntos classificados.  Ele também fornece operações vetoriais, como calcular distâncias entre vetores ou encontrar interseções e uniões.  Esses recursos são particularmente úteis para sistemas de pesquisa por similaridade, agrupamento e recomendação baseados em conteúdo.
+
+Em termos de escalabilidade e disponibilidade, o Redis se destaca no tratamento de cargas de trabalho de alto rendimento e oferece replicação de dados.  Ele também se integra bem com outros tipos de dados, incluindo bancos de dados relacionais tradicionais (RDBMS).  O Redis inclui um recurso Publicar/Assinar (Pub/Sub) para atualizações em tempo real, o que é benéfico para gerenciar vetores em tempo real.  Além disso, o Redis é leve e simples de usar, o que o torna uma solução fácil de usar para gerenciar dados vetoriais.
+
+
+
+==== Milvus
+
+É um banco de dados vetorial versátil que oferece uma API como um armazenamento de documentos, muito parecido com o MongoDB.  Ele se destaca pelo suporte a uma ampla variedade de tipos de dados, o que o torna uma escolha popular nas áreas de ciência de dados e aprendizado de máquina.
+
+Um dos recursos exclusivos do Milvus é sua capacidade de multivetorização, que permite aos usuários especificar em tempo de execução o tipo de vetor a ser usado para a pesquisa.  Além disso, ele utiliza o Knowwhere, uma biblioteca que fica em cima de outras bibliotecas como a Faiss, para gerenciar a comunicação entre consultas e algoritmos de busca vetorial.
+
+O Milvus também oferece integração perfeita com fluxos de trabalho de aprendizado de máquina, graças à sua compatibilidade com PyTorch e TensorFlow.  Isso o torna uma excelente ferramenta para uma variedade de aplicações, incluindo comércio eletrônico, análise de imagens e vídeos, reconhecimento de objetos, pesquisa de similaridade de imagens e recuperação de imagens baseada em conteúdo.  No campo do processamento de linguagem natural, o Milvus é usado para agrupamento de documentos, pesquisa semântica e sistemas de perguntas e respostas.
+
+Para esta solução, escolhemos o milvus para a validação da solução.  Para desempenho, usamos milvus e postgres(pgvecto.rs).
+
+
+
+==== Por que escolhemos o milvus para esta solução?
+
+* Código aberto: Milvus é um banco de dados vetorial de código aberto, que incentiva o desenvolvimento e as melhorias conduzidas pela comunidade.
+* Integração de IA: aproveita a incorporação de pesquisa de similaridade e aplicativos de IA para aprimorar a funcionalidade do banco de dados vetorial.
+* Manuseio de grande volume: o Milvus tem capacidade para armazenar, indexar e gerenciar mais de um bilhão de vetores de incorporação gerados por redes neurais profundas (DNN) e modelos de aprendizado de máquina (ML).
+* Fácil de usar: é fácil de usar e a configuração leva menos de um minuto.  A Milvus também oferece SDKs para diferentes linguagens de programação.
+* Velocidade: Oferece velocidades de recuperação extremamente rápidas, até 10 vezes mais rápidas que algumas alternativas.
+* Escalabilidade e disponibilidade: o Milvus é altamente escalável, com opções de expansão vertical e horizontal conforme necessário.
+* Rico em recursos: suporta diferentes tipos de dados, filtragem de atributos, suporte a funções definidas pelo usuário (UDF), níveis de consistência configuráveis e tempo de viagem, o que o torna uma ferramenta versátil para várias aplicações.
+
+
+
+
+==== Visão geral da arquitetura Milvus
+
+image:milvus-architecture-with-netapp.png["Figura mostrando diálogo de entrada/saída ou representando conteúdo escrito"]
+
+Esta seção fornece componentes e serviços de alto nível usados na arquitetura Milvus.  * Camada de acesso – É composta por um grupo de proxies sem estado e serve como camada frontal do sistema e ponto final para os usuários.  * Serviço de coordenação – ele atribui tarefas aos nós de trabalho e atua como o cérebro do sistema.  Ele tem três tipos de coordenadores: coordenada raiz, coordenada de dados e coordenada de consulta.  * Nós de trabalho: seguem as instruções do serviço do coordenador e executam comandos DML/DDL acionados pelo usuário. Possui três tipos de nós de trabalho: nó de consulta, nó de dados e nó de índice.  * Armazenamento: é responsável pela persistência dos dados.  Ele abrange meta armazenamento, log broker e armazenamento de objetos.  O armazenamento da NetApp , como ONTAP e StorageGRID, fornece armazenamento de objetos e armazenamento baseado em arquivos para a Milvus para dados de clientes e dados de banco de dados vetorial.

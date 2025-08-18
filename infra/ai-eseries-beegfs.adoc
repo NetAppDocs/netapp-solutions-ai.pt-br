@@ -1,0 +1,19 @@
+---
+sidebar: sidebar 
+permalink: infra/ai-eseries-beegfs.html 
+keywords:  
+summary:  
+---
+= BeeGFS no NetApp com armazenamento da série E
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+O BeeGFS no NetApp com armazenamento da Série E é uma solução comprovada e integrada com uma infraestrutura de HPC simples, confiável, escalável e econômica que acompanha suas cargas de trabalho mais extremas.
+
+link:https://docs.netapp.com/us-en/beegfs/index.html["BeeGFS no NetApp com armazenamento da série E"^]

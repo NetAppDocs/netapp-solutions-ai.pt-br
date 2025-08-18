@@ -1,0 +1,21 @@
+---
+sidebar: sidebar 
+permalink: data-analytics/tr-4623.html 
+keywords:  
+summary:  
+---
+= TR-4623: NetApp E-Series E5700 e Splunk Enterprise
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+Mitch Blackburn, NetApp
+
+[role="lead"]
+TR-4623 descreve a arquitetura integrada do NetApp E-Series e do design do Splunk.  Otimizado para equilíbrio de armazenamento de nós, confiabilidade, desempenho, capacidade de armazenamento e densidade, este design emprega o modelo de nó de índice clusterizado do Splunk, com maior escalabilidade e menor TCO.  Desacoplar o armazenamento da computação oferece a capacidade de dimensionar cada um separadamente, economizando o custo de provisionamento excessivo de um ou outro.  Além disso, este documento resume os resultados dos testes de desempenho obtidos de uma ferramenta de simulação de eventos de log de máquina Splunk.
+
+link:https://www.netapp.com/pdf.html?item=/media/16851-tr-4623pdf.pdf["TR-4623: NetApp E-Series E5700 e Splunk Enterprise"^]

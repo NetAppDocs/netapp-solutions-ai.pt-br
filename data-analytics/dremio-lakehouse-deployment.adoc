@@ -1,0 +1,298 @@
+---
+sidebar: sidebar 
+permalink: data-analytics/dremio-lakehouse-deployment.html 
+keywords: certification, setup, configuration, benchmark 
+summary: Realizamos a certificação com a plataforma Dremio com validação lakehouse no armazenamento de objetos NetApp . 
+---
+= Procedimento de Implantação
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nesta validação da arquitetura de referência, utilizamos uma configuração Dremio composta por um coordenador e quatro executoresimage:dremio-lakehouse-architecture.png["Figura mostrando a arquitetura do Dremio com o controlador de armazenamento NetApp"]
+
+
+
+=== Configuração do NetApp
+
+* Inicialização do sistema de armazenamento
+* Criação de máquina virtual de armazenamento (SVM)
+* Atribuição de interfaces de rede lógicas
+* NFS, configuração e licenciamento S3
+
+
+Siga os passos abaixo para NFS (Network File System): 1.  Crie um volume Flex Group para NFSv4 ou NFSv3.  Em nossa configuração para esta validação, usamos 48 SSDs, 1 SSD dedicado ao volume raiz do controlador e 47 SSDs distribuídos para NFSv4.  Verifique se a política de exportação NFS para o volume do Flex Group tem permissões de leitura/gravação para a rede de servidores Dremio.
+
+. Em todos os servidores Dremio, crie uma pasta e monte o volume do Flex Group nessa pasta por meio de uma Interface Lógica (LIF) em cada servidor Dremio.
+
+
+Siga as etapas abaixo para o S3 (Serviço de Armazenamento Simples):
+
+. Configure um servidor de armazenamento de objetos com HTTP habilitado e o status do administrador definido como 'ativo' usando o comando "vserver object-store-server create".  Você tem a opção de habilitar HTTPS e definir uma porta de escuta personalizada.
+. Crie um usuário object-store-server usando o comando "vserver object-store-server user create -user <nome de usuário>".
+. Para obter a chave de acesso e a chave secreta, você pode executar o seguinte comando: "set diag; vserver object-store-server user show -user <nome de usuário>".  No entanto, a partir de agora, essas chaves serão fornecidas durante o processo de criação do usuário ou poderão ser recuperadas usando chamadas de API REST.
+. Estabeleça um grupo de objetos-armazenamento-servidor usando o usuário criado na etapa 2 e conceda acesso.  Neste exemplo, fornecemos "FullAccess".
+. Crie dois buckets S3 definindo seu tipo como "S3".  Um para configuração do Dremio e um para dados do cliente.
+
+
+
+
+=== Configuração do tratador de zoológico
+
+Você pode usar a configuração do zookeeper fornecida pelo Dremio.  Nesta validação, usamos um zookeeper separado. Seguimos os passos mencionados neste link da web https://medium.com/@ahmetfurkandemir/distributed-hadoop-cluster-1-spark-with-all-dependincies-03c8ec616166[]
+
+
+
+=== Configuração do Dremio
+
+Seguimos este link para instalar o Dremio via tar ball.
+
+. Crie um grupo Dremio.
++
+....
+sudo groupadd -r dremio
+....
+. Crie um usuário dremio.
++
+....
+sudo useradd -r -g dremio -d /var/lib/dremio -s /sbin/nologin dremio
+....
+. Crie diretórios Dremio.
++
+....
+sudo mkdir /opt/dremio
+sudo mkdir /var/run/dremio && sudo chown dremio:dremio /var/run/dremio
+sudo mkdir /var/log/dremio && sudo chown dremio:dremio /var/log/dremio
+sudo mkdir /var/lib/dremio && sudo chown dremio:dremio /var/lib/dremio
+....
+. Baixe o arquivo tar de https://download.dremio.com/community-server/[]
+. Descompacte o Dremio no diretório /opt/dremio.
++
+....
+sudo tar xvf dremio-enterprise-25.0.3-202405170357270647-d2042e1b.tar.gz -C /opt/dremio --strip-components=1
+....
+. Crie um link simbólico para a pasta de configuração.
++
+....
+sudo ln -s /opt/dremio/conf /etc/dremio
+....
+. Configure sua configuração de serviço (configuração do SystemD).
++
+.. Copie o arquivo de unidade do daemon dremio de /opt/dremio/share/dremio.service para /etc/systemd/system/dremio.service.
+.. Reiniciar o sistema
++
+....
+sudo systemctl daemon-reload
+....
+.. Habilitar o dremio para iniciar na inicialização.
++
+....
+sudo systemctl enable dremio
+....
+
+
+. Configurar o Dremio no coordenador.  Veja a configuração do Dremio para mais informações
++
+.. Dremio.conf
++
+....
+root@hadoopmaster:/usr/src/tpcds# cat /opt/dremio/conf/dremio.conf
+
+paths: {
+  # the local path for dremio to store data.
+  local: ${DREMIO_HOME}"/dremiocache"
+
+  # the distributed path Dremio data including job results, downloads, uploads, etc
+  #dist: "hdfs://hadoopmaster:9000/dremiocache"
+  dist: "dremioS3:///dremioconf"
+}
+
+services: {
+  coordinator.enabled: true,
+  coordinator.master.enabled: true,
+  executor.enabled: false,
+  flight.use_session_service: false
+}
+
+zookeeper: "10.63.150.130:2181,10.63.150.153:2181,10.63.150.151:2181"
+services.coordinator.master.embedded-zookeeper.enabled: false
+root@hadoopmaster:/usr/src/tpcds#
+....
+.. Core-site.xml
++
+....
+root@hadoopmaster:/usr/src/tpcds# cat /opt/dremio/conf/core-site.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+	<property>
+		<name>fs.dremioS3.impl</name>
+		<value>com.dremio.plugins.s3.store.S3FileSystem</value>
+	</property>
+	<property>
+                <name>fs.s3a.access.key</name>
+                <value>24G4C1316APP2BIPDE5S</value>
+	</property>
+	<property>
+                <name>fs.s3a.endpoint</name>
+                <value>10.63.150.69:80</value>
+        </property>
+	<property>
+       		<name>fs.s3a.secret.key</name>
+       		<value>Zd28p43rgZaU44PX_ftT279z9nt4jBSro97j87Bx</value>
+   	</property>
+   	<property>
+       		<name>fs.s3a.aws.credentials.provider</name>
+       		<description>The credential provider type.</description>
+       		<value>org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider</value>
+   	</property>
+	<property>
+                <name>fs.s3a.path.style.access</name>
+                <value>false</value>
+        </property>
+	<property>
+    		<name>hadoop.proxyuser.dremio.hosts</name>
+    		<value>*</value>
+  	</property>
+  	<property>
+    		<name>hadoop.proxyuser.dremio.groups</name>
+    		<value>*</value>
+  	</property>
+  	<property>
+    		<name>hadoop.proxyuser.dremio.users</name>
+    		<value>*</value>
+	</property>
+	<property>
+		<name>dremio.s3.compat</name>
+		<description>Value has to be set to true.</description>
+		<value>true</value>
+	</property>
+	<property>
+		<name>fs.s3a.connection.ssl.enabled</name>
+		<description>Value can either be true or false, set to true to use SSL with a secure Minio server.</description>
+		<value>false</value>
+	</property>
+</configuration>
+root@hadoopmaster:/usr/src/tpcds#
+....
+
+
+. A configuração do Dremio é armazenada no armazenamento de objetos do NetApp .  Em nossa validação, o bucket "dremioconf" reside em um bucket ontap S3.  A imagem abaixo mostra alguns detalhes das pastas "scratch" e "uploads" do bucket S3 "dremioconf".
+
+
+image:dremio-lakehouse-objectstorage.png["Figura mostrando o dremio com armazenamento de objetos NetApp"]
+
+. Configurar o Dremio nos executores.  Em nossa configuração, temos 3 executores.
++
+.. dremio.conf
++
+....
+paths: {
+  # the local path for dremio to store data.
+  local: ${DREMIO_HOME}"/dremiocache"
+
+  # the distributed path Dremio data including job results, downloads, uploads, etc
+  #dist: "hdfs://hadoopmaster:9000/dremiocache"
+  dist: "dremioS3:///dremioconf"
+}
+
+services: {
+  coordinator.enabled: false,
+  coordinator.master.enabled: false,
+  executor.enabled: true,
+  flight.use_session_service: true
+}
+
+zookeeper: "10.63.150.130:2181,10.63.150.153:2181,10.63.150.151:2181"
+services.coordinator.master.embedded-zookeeper.enabled: false
+....
+.. Core-site.xml – o mesmo que a configuração do coordenador.
+
+
+
+
+
+NOTE: A NetApp recomenda o StorageGRID como sua principal solução de armazenamento de objetos para ambientes Datalake e Lakehouse.  Além disso, o NetApp ONTAP é empregado para dualidade arquivo/objeto.  No contexto deste documento, conduzimos testes no ONTAP S3 em resposta a uma solicitação do cliente, e ele funciona com sucesso como uma fonte de dados.
+
+
+
+=== Configuração de múltiplas fontes
+
+. Configure o ONTAP S3 e o storageGRID como uma fonte s3 no Dremio.
++
+.. Painel do Dremio -> conjuntos de dados -> fontes -> adicionar fonte.
+.. Na seção geral, atualize o acesso e a chave secreta da AWS
+.. Na opção avançada, ative o modo de compatibilidade e atualize as propriedades de conexão com os detalhes abaixo.  O IP/nome do ponto de extremidade do controlador de armazenamento NetApp do ontap S3 ou do storageGRID.
++
+....
+fs.s3a.endoint = 10.63.150.69
+fs.s3a.path.style.access = true
+fs.s3a.connection.maximum=1000
+....
+.. Habilitar o cache local quando possível, Percentual máximo do cache total disponível para uso quando possível = 100
+.. Em seguida, visualize a lista de buckets do armazenamento de objetos do NetApp .image:dremio-lakehouse-objectstorage-list.png["Figura mostrando a lista de arquivos do armazenamento de objetos do NetApp"]
+.. Exibição de exemplo dos detalhes do bucket storageGRIDimage:dremio-lakehouse-storagegrid-list.png["Figura mostrando a lista de arquivos do armazenamento de objetos do NetApp"]
+
+
+. Configure o NAS (especificamente o NFS) como uma fonte no Dremio.
++
+.. Painel do Dremio -> conjuntos de dados -> fontes -> adicionar fonte.
+.. Na seção geral, insira o nome e o caminho de montagem do NFS.  Certifique-se de que o caminho de montagem do NFS esteja montado na mesma pasta em todos os nós do cluster Dremio.
+
+
+
+
+image:dremio-lakehouse-nas-list.png["Figura mostrando a lista de arquivos do armazenamento de objetos do NetApp"]
+
++
+
+....
+root@hadoopmaster:~# for i in hadoopmaster hadoopnode1 hadoopnode2 hadoopnode3 hadoopnode4; do ssh $i "date;hostname;du -hs /opt/dremio/data/spill/ ; df -h //dremionfsdata "; done
+Fri Sep 13 04:13:19 PM UTC 2024
+hadoopmaster
+du: cannot access '/opt/dremio/data/spill/': No such file or directory
+Filesystem                   Size  Used Avail Use% Mounted on
+10.63.150.69:/dremionfsdata  2.1T  921M  2.0T   1% /dremionfsdata
+Fri Sep 13 04:13:19 PM UTC 2024
+hadoopnode1
+12K	/opt/dremio/data/spill/
+Filesystem                   Size  Used Avail Use% Mounted on
+10.63.150.69:/dremionfsdata  2.1T  921M  2.0T   1% /dremionfsdata
+Fri Sep 13 04:13:19 PM UTC 2024
+hadoopnode2
+12K	/opt/dremio/data/spill/
+Filesystem                   Size  Used Avail Use% Mounted on
+10.63.150.69:/dremionfsdata  2.1T  921M  2.0T   1% /dremionfsdata
+Fri Sep 13 16:13:20 UTC 2024
+hadoopnode3
+16K	/opt/dremio/data/spill/
+Filesystem                   Size  Used Avail Use% Mounted on
+10.63.150.69:/dremionfsdata  2.1T  921M  2.0T   1% /dremionfsdata
+Fri Sep 13 04:13:21 PM UTC 2024
+node4
+12K	/opt/dremio/data/spill/
+Filesystem                   Size  Used Avail Use% Mounted on
+10.63.150.69:/dremionfsdata  2.1T  921M  2.0T   1% /dremionfsdata
+root@hadoopmaster:~#
+....

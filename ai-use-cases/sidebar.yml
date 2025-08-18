@@ -1,0 +1,52 @@
+---
+section: ai-use-cases
+title: Casos de uso de IA
+url: "/ai-use-cases/index.html"
+entries:
+- title: NetApp AIPod Mini para RAG empresarial
+  pdf-filename: NetApp AIPod Mini para inferência RAG
+  url: "/infra/ai-minipod.html"
+- title: IA responsável com transformação de imagem Protopia
+  pdf-filename: IA responsável e inferência confidencial - NetApp AI com transformação
+    de imagem Protopia
+  entries:
+  - title: Visão geral
+    url: "/software/ai-conf-protopia-overview.html"
+  - title: Áreas de solução
+    url: "/software/ai-conf-protopia-usecases.html"
+  - title: Visão geral da tecnologia
+    url: "/software/ai-conf-protopia-tech.html"
+  - title: Plano de teste e validação
+    url: "/software/ai-conf-protopia-plan.html"
+  - title: Configuração de teste
+    url: "/software/ai-conf-protopia-config.html"
+  - title: Procedimento de teste
+    url: "/software/ai-conf-protopia-procedure.html"
+  - title: Comparação de precisão de inferência
+    url: "/software/ai-conf-protopia-accuracy.html"
+  - title: Velocidade de ofuscação
+    url: "/software/ai-conf-protopia-speed.html"
+  - title: Conclusão
+    url: "/software/ai-conf-protopia-conclusion.html"
+  - title: Informações adicionais
+    url: "/software/ai-conf-protopia-addtl.html"
+- title: Migração de análise de big data para IA
+  pdf-filename: Movendo dados de um ambiente de Big Data para um ambiente de IA
+  url: "/data-analytics/bda-ai-introduction.html"
+- title: Inferência de IA de ponta com NetApp e Lenovo
+  pdf-filename: Inferência de IA na Borda - NetApp com Lenovo ThinkSystem - Design
+    de Solução
+  entries:
+  - title: Introdução
+    url: "/infra/ai-lenovo-edge-intro.html"
+  - title: Conclusão
+    url: "/infra/ai-lenovo-edge-conclusion.html"
+- title: IA generativa e valor da NetApp
+  pdf-filename: IA generativa e valor NetApp
+  url: "/gen-ai/ai-wp-genai.html"
+- title: Projete o Quantum StorNext com sistemas da série E
+  pdf-filename: Guia de design de sistemas Quantum StorNext com NetApp E-Series
+  url: "/infra/ai-eseries-nva1150-design.html"
+- title: Implemente o Quantum StorNext com sistemas da série E
+  pdf-filename: Guia de implantação do Quantum StorNext com sistemas NetApp E-Series
+  url: "/infra/ai-eseries-nva1150-deploy.html"

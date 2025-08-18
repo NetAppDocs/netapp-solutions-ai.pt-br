@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: software/ai-conf-protopia-usecases.html 
+keywords: environmental intelligence, edge device wearables, noncombatant evacuation operations, cloud migration of analytics 
+summary: O processamento digital de imagens traz muitas vantagens, permitindo que muitas organizações aproveitem ao máximo os dados associados às representações visuais.  Esta solução da NetApp e Protopia fornece um design exclusivo de inferência de IA para proteger e privatizar dados de IA/ML em todo o ciclo de vida de ML/DL.  Ele permite que os clientes mantenham a propriedade de dados confidenciais, usem modelos de implantação de nuvem pública ou híbrida para escala e eficiência, aliviando preocupações relacionadas à privacidade, e implantem inferência de IA na borda. 
+---
+= Áreas de solução
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+O processamento digital de imagens traz muitas vantagens, permitindo que muitas organizações aproveitem ao máximo os dados associados às representações visuais.  Esta solução da NetApp e Protopia fornece um design exclusivo de inferência de IA para proteger e privatizar dados de IA/ML em todo o ciclo de vida de ML/DL.  Ele permite que os clientes mantenham a propriedade de dados confidenciais, usem modelos de implantação de nuvem pública ou híbrida para escala e eficiência, aliviando preocupações relacionadas à privacidade, e implantem inferência de IA na borda.
+
+
+
+== Inteligência ambiental
+
+Há muitas maneiras pelas quais as indústrias podem aproveitar a análise geoespacial nas áreas de riscos ambientais.  Os governos e o departamento de obras públicas podem obter insights práticos sobre saúde pública e condições climáticas para melhor orientar o público durante uma pandemia ou um desastre natural, como incêndios florestais.  Por exemplo, você pode identificar um paciente com COVID-19 positivo em espaços públicos, como aeroportos ou hospitais, sem comprometer a privacidade do indivíduo afetado e alertar as autoridades competentes e o público nas proximidades sobre as medidas de segurança necessárias.
+
+
+
+== Dispositivos vestíveis de ponta
+
+Nas forças armadas e nos campos de batalha, você pode usar a inferência de IA na ponta como dispositivos vestíveis para rastrear a saúde dos soldados, monitorar o comportamento dos motoristas e alertar as autoridades sobre a segurança e os riscos associados à aproximação de veículos militares, preservando e protegendo a privacidade dos soldados.  O futuro das forças armadas está se voltando para a alta tecnologia com a Internet das Coisas do Campo de Batalha (IoBT) e a Internet das Coisas Militares (IoMT) para equipamentos de combate vestíveis que ajudam os soldados a identificar inimigos e ter melhor desempenho em batalha usando computação de ponta rápida.  Proteger e preservar dados visuais coletados de dispositivos de ponta, como drones e equipamentos vestíveis, é crucial para manter hackers e inimigos afastados.
+
+
+
+== Operações de evacuação de não combatentes
+
+As operações de evacuação não combatentes (NEOs) são conduzidas pelo DoD para auxiliar na evacuação de cidadãos e cidadãos dos EUA, pessoal civil do DoD e pessoas designadas (nação anfitriã (HN) e cidadãos de terceiros países (TCNs)) cujas vidas estão em perigo para um refúgio seguro apropriado.  Os controles administrativos em vigor usam, em grande parte, processos manuais de triagem de evacuados.  No entanto, a precisão, a segurança e a velocidade da identificação de evacuados, do rastreamento de evacuados e da triagem de ameaças poderiam ser potencialmente melhoradas pelo uso de ferramentas de IA/ML altamente automatizadas combinadas com tecnologias de ofuscação de vídeo de IA/ML.
+
+
+
+== Pesquisa em saúde e biomédica
+
+O processamento de imagens é utilizado para diagnosticar patologias para planejamento cirúrgico a partir de imagens 3D obtidas por tomografia computadorizada (TC) ou ressonância magnética (RM).  As regras de privacidade da HIPAA determinam como os dados devem ser coletados, processados e apagados pelas organizações para todas as informações pessoais e imagens digitais, como fotografias.  Para que os dados sejam qualificados como compartilháveis de acordo com os regulamentos HIPAA Safe Harbor, imagens fotográficas de rosto inteiro e quaisquer imagens comparáveis devem ser removidas.  Técnicas automatizadas, como algoritmos de desidentificação ou remoção de crânio, usadas para ocultar as características faciais de um indivíduo em imagens estruturais de TC/RM, tornaram-se parte essencial do processo de compartilhamento de dados para instituições de pesquisa biomédica.
+
+
+
+== Migração para a nuvem de análises de IA/ML
+
+Os clientes corporativos tradicionalmente treinam e implantam modelos de IA/ML no local.  Por razões de economia de escala e eficiência, esses clientes estão se expandindo para mover funções de IA/ML para implantações de nuvem pública, híbrida ou multi-nuvem.  No entanto, eles estão limitados pelos dados que podem ser expostos a outras infraestruturas.  As soluções NetApp abordam uma gama completa de ameaças à segurança cibernética necessárias para https://www.netapp.com/data-protection/?internal_promo=mdw_aiml_ww_all_awareness-coas_blog["proteção de dados"^] e avaliação de segurança e, quando combinados com a transformação de dados do Protopia, minimizam os riscos associados à migração de cargas de trabalho de IA/ML de processamento de imagens para a nuvem.
+
+Para casos de uso adicionais para computação de ponta e inferência de IA em outros setores, consultelink:../infra/ai-lenovo-edge-intro.html["TR-4886 Inferência de IA na Borda"^] e o blog NetApp AI, https://www.netapp.com/blog/federated-learning-intelligence-vs-privacy/["Inteligência versus privacidade"^] .

@@ -1,0 +1,225 @@
+---
+sidebar: sidebar 
+permalink: software/ai-osmlops-concepts.html 
+keywords: MLOps, Trident, ONTAP, containers, AI, Kubernetes, Kubeflow, Jupyter, Airflow, MLflow, JupyterHub 
+summary: MLOps de código aberto com NetApp - Visão geral da tecnologia 
+---
+= Visão geral da tecnologia
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Esta seção se concentra na visão geral da tecnologia para OpenSource MLOps com NetApp.
+
+
+
+== Inteligência artificial
+
+IA é uma disciplina da ciência da computação na qual os computadores são treinados para imitar as funções cognitivas da mente humana.  Os desenvolvedores de IA treinam computadores para aprender e resolver problemas de uma maneira semelhante, ou até mesmo superior, aos humanos.  Aprendizado profundo e aprendizado de máquina são subcampos da IA.  As organizações estão adotando cada vez mais IA, ML e DL para dar suporte às suas necessidades comerciais críticas.  Alguns exemplos são os seguintes:
+
+* Analisar grandes quantidades de dados para descobrir insights de negócios até então desconhecidos
+* Interagindo diretamente com os clientes usando processamento de linguagem natural
+* Automatizar vários processos e funções de negócios
+
+
+As cargas de trabalho modernas de treinamento e inferência de IA exigem recursos de computação massivamente paralelos.  Portanto, as GPUs estão sendo cada vez mais usadas para executar operações de IA porque as capacidades de processamento paralelo das GPUs são muito superiores às das CPUs de uso geral.
+
+
+
+== Recipientes
+
+Os contêineres são instâncias isoladas do espaço do usuário que são executadas sobre um kernel de sistema operacional de host compartilhado.  A adoção de contêineres está aumentando rapidamente.  Os contêineres oferecem muitos dos mesmos benefícios de sandbox de aplicativos que as máquinas virtuais (VMs) oferecem.  No entanto, como as camadas do hipervisor e do sistema operacional convidado das quais as VMs dependem foram eliminadas, os contêineres são muito mais leves.  A figura a seguir descreve uma visualização de máquinas virtuais versus contêineres.
+
+Os contêineres também permitem o empacotamento eficiente de dependências de aplicativos, tempos de execução e assim por diante, diretamente com um aplicativo.  O formato de embalagem de contêiner mais comumente usado é o contêiner Docker.  Um aplicativo que foi conteinerizado no formato de contêiner Docker pode ser executado em qualquer máquina que possa executar contêineres Docker.  Isso é verdadeiro mesmo que as dependências do aplicativo não estejam presentes na máquina, porque todas as dependências são empacotadas no próprio contêiner.  Para mais informações, visite o https://www.docker.com["Site do Docker"^] .
+
+image:aicp-002.png["Figura mostrando diálogo de entrada/saída ou representando conteúdo escrito"]
+
+
+
+== Kubernetes
+
+O Kubernetes é uma plataforma de orquestração de contêineres distribuída e de código aberto que foi originalmente projetada pelo Google e agora é mantida pela Cloud Native Computing Foundation (CNCF).  O Kubernetes permite a automação de funções de implantação, gerenciamento e dimensionamento para aplicativos em contêineres.  Nos últimos anos, o Kubernetes emergiu como a plataforma dominante de orquestração de contêineres.  Para mais informações, visite o https://kubernetes.io["Site do Kubernetes"^] .
+
+
+
+== NetApp Trident
+
+link:https://docs.netapp.com/us-en/trident/index.html["Trident"^]permite o consumo e o gerenciamento de recursos de armazenamento em todas as plataformas de armazenamento populares da NetApp , na nuvem pública ou local, incluindo ONTAP (AFF, FAS, Select, Cloud, Amazon FSx ONTAP), serviço Azure NetApp Files e Google Cloud NetApp Volumes.  O Trident é um orquestrador de armazenamento dinâmico compatível com Container Storage Interface (CSI) que se integra nativamente ao Kubernetes.
+
+
+
+== Kit de ferramentas NetApp DataOps
+
+Olink:https://github.com/NetApp/netapp-dataops-toolkit["Kit de ferramentas NetApp DataOps"^] é uma ferramenta baseada em Python que simplifica o gerenciamento de espaços de trabalho de desenvolvimento/treinamento e servidores de inferência apoiados por armazenamento NetApp de alto desempenho e escalável.  Os principais recursos incluem:
+
+* Provisione rapidamente novos espaços de trabalho de alta capacidade apoiados por armazenamento NetApp de alto desempenho e escalonável.
+* Clone quase instantaneamente espaços de trabalho de alta capacidade para permitir experimentação ou iteração rápida.
+* Salve instantâneos de espaços de trabalho de alta capacidade para backup e/ou rastreabilidade/linha de base.
+* Provisione, clone e crie snapshots de volumes de dados de alta capacidade e alto desempenho quase instantaneamente.
+
+
+
+
+== Apache Airflow
+
+O Apache Airflow é uma plataforma de gerenciamento de fluxo de trabalho de código aberto que permite a criação programática, o agendamento e o monitoramento de fluxos de trabalho empresariais complexos.  Ele é frequentemente usado para automatizar fluxos de trabalho de ETL e pipeline de dados, mas não se limita a esses tipos de fluxos de trabalho.  O projeto Airflow foi iniciado pelo Airbnb, mas desde então se tornou muito popular no setor e agora está sob os auspícios da Apache Software Foundation.  O Airflow é escrito em Python, os fluxos de trabalho do Airflow são criados por meio de scripts Python e o Airflow é projetado sob o princípio de "configuração como código".  Muitos usuários corporativos do Airflow agora executam o Airflow no Kubernetes.
+
+
+
+=== Grafos Acíclicos Dirigidos (GADs)
+
+No Airflow, os fluxos de trabalho são chamados de Gráficos Acíclicos Direcionados (DAGs).  Os DAGs são compostos de tarefas executadas em sequência, em paralelo ou uma combinação dos dois, dependendo da definição do DAG.  O agendador do Airflow executa tarefas individuais em uma matriz de trabalhadores, aderindo às dependências de nível de tarefa especificadas na definição do DAG.  Os DAGs são definidos e criados por meio de scripts Python.
+
+
+
+== Caderno Jupyter
+
+Os Jupyter Notebooks são documentos semelhantes a wiki que contêm código ativo e texto descritivo.  Os Jupyter Notebooks são amplamente utilizados na comunidade de IA e ML como um meio de documentar, armazenar e compartilhar projetos de IA e ML.  Para mais informações sobre Jupyter Notebooks, visite o http://www.jupyter.org/["Site do Jupyter"^] .
+
+
+
+=== Servidor de notebook Jupyter
+
+Um Jupyter Notebook Server é um aplicativo web de código aberto que permite aos usuários criar Jupyter Notebooks.
+
+
+
+== JupyterHub
+
+O JupyterHub é um aplicativo multiusuário que permite que um usuário individual provisione e acesse seu próprio servidor Jupyter Notebook.  Para mais informações sobre o JupyterHub, visite o https://jupyter.org/hub["Site JupyterHub"^] .
+
+
+
+== Fluxo de ML
+
+MLflow é uma plataforma popular de gerenciamento de ciclo de vida de IA de código aberto.  Os principais recursos do MLflow incluem rastreamento de experimentos de IA/ML e um repositório de modelos de IA/ML.  Para mais informações sobre o MLflow, visite o https://www.mlflow.org/["Site MLflow"^] .
+
+
+
+== Fluxo de cubo
+
+Kubeflow é um kit de ferramentas de IA e ML de código aberto para Kubernetes que foi originalmente desenvolvido pelo Google.  O projeto Kubeflow torna as implantações de fluxos de trabalho de IA e ML no Kubernetes simples, portáteis e escaláveis.  O Kubeflow abstrai as complexidades do Kubernetes, permitindo que cientistas de dados se concentrem no que sabem fazer melhor: ciência de dados.  Veja a figura a seguir para uma visualização.  O Kubeflow é uma boa opção de código aberto para organizações que preferem uma plataforma MLOps completa.  Para mais informações, visite o http://www.kubeflow.org/["Site do Kubeflow"^] .
+
+
+
+=== Pipelines Kubeflow
+
+Os pipelines do Kubeflow são um componente essencial do Kubeflow.  Os Kubeflow Pipelines são uma plataforma e um padrão para definir e implantar fluxos de trabalho de IA e ML portáteis e escaláveis. Para mais informações, consulte o https://www.kubeflow.org/docs/components/pipelines/["documentação oficial do Kubeflow"^] .
+
+
+
+=== Cadernos Kubeflow
+
+O Kubeflow simplifica o provisionamento e a implantação de Jupyter Notebook Servers no Kubernetes.  Para obter mais informações sobre Jupyter Notebooks no contexto do Kubeflow, consulte o https://www.kubeflow.org/docs/components/notebooks/overview/["documentação oficial do Kubeflow"^] .
+
+
+
+=== Katib
+
+Katib é um projeto nativo do Kubernetes para aprendizado de máquina automatizado (AutoML).  O Katib oferece suporte ao ajuste de hiperparâmetros, parada antecipada e pesquisa de arquitetura neural (NAS).  Katib é um projeto agnóstico em relação a frameworks de aprendizado de máquina (ML).  Ele pode ajustar hiperparâmetros de aplicativos escritos em qualquer linguagem escolhida pelos usuários e oferece suporte nativo a muitas estruturas de ML, como TensorFlow, MXNet, PyTorch, XGBoost e outras.  O Katib oferece suporte a vários algoritmos AutoML, como otimização bayesiana, estimadores de árvore de Parzen, busca aleatória, estratégia de evolução de adaptação de matriz de covariância, hiperbanda, busca de arquitetura neural eficiente, busca de arquitetura diferenciável e muito mais.  Para obter mais informações sobre Jupyter Notebooks no contexto do Kubeflow, consulte o https://www.kubeflow.org/docs/components/katib/overview/["documentação oficial do Kubeflow"^] .
+
+
+
+== NetApp ONTAP
+
+ONTAP 9, a última geração de software de gerenciamento de armazenamento da NetApp, permite que as empresas modernizem a infraestrutura e façam a transição para um data center pronto para a nuvem.  Aproveitando os recursos de gerenciamento de dados líderes do setor, o ONTAP permite o gerenciamento e a proteção de dados com um único conjunto de ferramentas, independentemente de onde os dados residam.  Você também pode mover dados livremente para onde for necessário: na borda, no núcleo ou na nuvem.  O ONTAP 9 inclui vários recursos que simplificam o gerenciamento de dados, aceleram e protegem dados críticos e permitem recursos de infraestrutura de última geração em arquiteturas de nuvem híbrida.
+
+
+
+=== Simplifique o gerenciamento de dados
+
+O gerenciamento de dados é crucial para as operações de TI corporativas e cientistas de dados, para que recursos apropriados sejam usados para aplicativos de IA e treinamento de conjuntos de dados de IA/ML.  As seguintes informações adicionais sobre as tecnologias NetApp estão fora do escopo desta validação, mas podem ser relevantes dependendo da sua implantação.
+
+O software de gerenciamento de dados ONTAP inclui os seguintes recursos para otimizar e simplificar as operações e reduzir seu custo total de operação:
+
+* Compactação de dados em linha e desduplicação expandida.  A compactação de dados reduz o desperdício de espaço dentro dos blocos de armazenamento e a desduplicação aumenta significativamente a capacidade efetiva.  Isso se aplica a dados armazenados localmente e dados em camadas na nuvem.
+* Qualidade de serviço mínima, máxima e adaptável (AQoS).  Controles granulares de qualidade de serviço (QoS) ajudam a manter os níveis de desempenho para aplicativos críticos em ambientes altamente compartilhados.
+* NetApp FabricPool.  Fornece hierarquização automática de dados frios para opções de armazenamento em nuvem pública e privada, incluindo Amazon Web Services (AWS), Azure e solução de armazenamento NetApp StorageGRID .  Para obter mais informações sobre FabricPool, consulte https://www.netapp.com/pdf.html?item=/media/17239-tr4598pdf.pdf["TR-4598: Melhores práticas do FabricPool"^] .
+
+
+
+
+=== Acelere e proteja os dados
+
+O ONTAP oferece níveis superiores de desempenho e proteção de dados e estende esses recursos das seguintes maneiras:
+
+* Desempenho e menor latência.  ONTAP oferece o maior rendimento possível com a menor latência possível.
+* Proteção de dados.  O ONTAP fornece recursos integrados de proteção de dados com gerenciamento comum em todas as plataformas.
+* Criptografia de volume NetApp (NVE).  O ONTAP oferece criptografia nativa em nível de volume com suporte para gerenciamento de chaves externo e integrado.
+* Multilocação e autenticação multifator.  O ONTAP permite o compartilhamento de recursos de infraestrutura com os mais altos níveis de segurança.
+
+
+
+
+=== Infraestrutura à prova do futuro
+
+O ONTAP ajuda a atender às necessidades empresariais exigentes e em constante mudança com os seguintes recursos:
+
+* Escalabilidade perfeita e operações não disruptivas.  O ONTAP oferece suporte à adição não disruptiva de capacidade aos controladores existentes e aos clusters escaláveis.  Os clientes podem atualizar para as tecnologias mais recentes sem migrações de dados dispendiosas ou interrupções.
+* Conexão em nuvem.  ONTAP é o software de gerenciamento de armazenamento mais conectado à nuvem, com opções para armazenamento definido por software e instâncias nativas da nuvem em todas as nuvens públicas.
+* Integração com aplicações emergentes.  A ONTAP oferece serviços de dados de nível empresarial para plataformas e aplicativos de última geração, como veículos autônomos, cidades inteligentes e Indústria 4.0, usando a mesma infraestrutura que dá suporte aos aplicativos empresariais existentes.
+
+
+
+
+== Cópias de instantâneos da NetApp
+
+Uma cópia do NetApp Snapshot é uma imagem somente leitura e pontual de um volume.  A imagem consome espaço de armazenamento mínimo e gera sobrecarga de desempenho insignificante porque ela registra apenas alterações em arquivos criados desde a última cópia do Snapshot, conforme ilustrado na figura a seguir.
+
+As cópias de instantâneos devem sua eficiência à tecnologia de virtualização de armazenamento ONTAP , o Write Anywhere File Layout (WAFL).  Assim como um banco de dados, o WAFL usa metadados para apontar para blocos de dados reais no disco.  Mas, diferentemente de um banco de dados, o WAFL não substitui blocos existentes.  Ele grava dados atualizados em um novo bloco e altera os metadados.  É porque o ONTAP faz referência a metadados quando cria uma cópia do Snapshot, em vez de copiar blocos de dados, que as cópias do Snapshot são tão eficientes.  Isso elimina o tempo de busca que outros sistemas levam para localizar os blocos a serem copiados, bem como o custo de fazer a cópia em si.
+
+Você pode usar uma cópia de Snapshot para recuperar arquivos individuais ou LUNs ou para restaurar todo o conteúdo de um volume.  O ONTAP compara as informações do ponteiro na cópia do Snapshot com os dados no disco para reconstruir o objeto ausente ou danificado, sem tempo de inatividade ou custo significativo de desempenho.
+
+image:aicp-004.png["Figura mostrando diálogo de entrada/saída ou representando conteúdo escrito"]
+
+
+
+== Tecnologia NetApp FlexClone
+
+A tecnologia NetApp FlexClone faz referência a metadados de instantâneo para criar cópias graváveis e pontuais de um volume.  As cópias compartilham blocos de dados com seus pais, não consumindo nenhum armazenamento, exceto o necessário para metadados até que as alterações sejam gravadas na cópia, conforme ilustrado na figura a seguir.  Enquanto cópias tradicionais podem levar minutos ou até horas para serem criadas, o software FlexClone permite que você copie até os maiores conjuntos de dados quase instantaneamente.  Isso o torna ideal para situações em que você precisa de várias cópias de conjuntos de dados idênticos (um espaço de trabalho de desenvolvimento, por exemplo) ou cópias temporárias de um conjunto de dados (testar um aplicativo em um conjunto de dados de produção).
+
+image:aicp-005.png["Figura mostrando diálogo de entrada/saída ou representando conteúdo escrito"]
+
+
+
+== Tecnologia de replicação de dados NetApp SnapMirror
+
+O software NetApp SnapMirror é uma solução de replicação unificada, econômica e fácil de usar em toda a malha de dados.  Ele replica dados em alta velocidade via LAN ou WAN.  Ele oferece alta disponibilidade de dados e replicação rápida de dados para aplicativos de todos os tipos, incluindo aplicativos críticos de negócios em ambientes virtuais e tradicionais.  Quando você replica dados para um ou mais sistemas de armazenamento NetApp e atualiza continuamente os dados secundários, seus dados são mantidos atualizados e estão disponíveis sempre que você precisar deles.  Não são necessários servidores de replicação externos.  Veja a figura a seguir para ver um exemplo de uma arquitetura que aproveita a tecnologia SnapMirror .
+
+O software SnapMirror aproveita a eficiência do armazenamento NetApp ONTAP enviando apenas blocos alterados pela rede.  O software SnapMirror também usa compactação de rede integrada para acelerar as transferências de dados e reduzir a utilização da largura de banda da rede em até 70%.  Com a tecnologia SnapMirror , você pode aproveitar um fluxo fino de dados de replicação para criar um único repositório que mantém tanto o espelho ativo quanto as cópias anteriores de um ponto no tempo, reduzindo o tráfego de rede em até 50%.
+
+
+
+== Cópia e sincronização do NetApp BlueXP
+
+link:https://bluexp.netapp.com/cloud-sync-service["BlueXP Copiar e Sincronizar"^]é um serviço da NetApp para sincronização de dados rápida e segura.  Se você precisa transferir arquivos entre compartilhamentos de arquivos NFS ou SMB locais, NetApp StorageGRID, NetApp ONTAP S3, Google Cloud NetApp Volumes, Azure NetApp Files, AWS S3, AWS EFS, Azure Blob, Google Cloud Storage ou IBM Cloud Object Storage, o BlueXP Copy and Sync move os arquivos para onde você precisa de forma rápida e segura.
+
+Após seus dados serem transferidos, eles estarão totalmente disponíveis para uso tanto na origem quanto no destino.  O BlueXP Copy and Sync pode sincronizar dados sob demanda quando uma atualização é acionada ou sincronizar dados continuamente com base em uma programação predefinida.  De qualquer forma, o BlueXP Copy and Sync move apenas os deltas, minimizando o tempo e o dinheiro gastos na replicação de dados.
+
+O BlueXP Copy and Sync é uma ferramenta de software como serviço (SaaS) extremamente simples de configurar e usar.  As transferências de dados acionadas pelo BlueXP Copy and Sync são realizadas por corretores de dados.  Os corretores de dados BlueXP Copy and Sync podem ser implantados na AWS, Azure, Google Cloud Platform ou no local.
+
+
+
+== NetApp XCP
+
+link:https://xcp.netapp.com/["NetApp XCP"^]é um software baseado em cliente para migrações de dados de qualquer para NetApp e de NetApp para NetApp e insights do sistema de arquivos.  O XCP foi projetado para escalar e atingir o desempenho máximo utilizando todos os recursos do sistema disponíveis para lidar com conjuntos de dados de alto volume e migrações de alto desempenho.  O XCP ajuda você a obter visibilidade completa do sistema de arquivos com a opção de gerar relatórios.
+
+
+
+== Volumes do NetApp ONTAP FlexGroup
+
+Um conjunto de dados de treinamento pode ser uma coleção de potencialmente bilhões de arquivos.  Os arquivos podem incluir texto, áudio, vídeo e outras formas de dados não estruturados que devem ser armazenados e processados para serem lidos em paralelo.  O sistema de armazenamento deve armazenar um grande número de arquivos pequenos e deve ler esses arquivos em paralelo para E/S sequencial e aleatória.
+
+Um volume FlexGroup é um único namespace que compreende vários volumes de membros constituintes, conforme mostrado na figura a seguir.  Do ponto de vista de um administrador de armazenamento, um volume FlexGroup é gerenciado e age como um FlexVol volume NetApp FlexVol.  Os arquivos em um volume FlexGroup são alocados para volumes de membros individuais e não são distribuídos entre volumes ou nós.  Eles permitem os seguintes recursos:
+
+* Os volumes FlexGroup fornecem vários petabytes de capacidade e baixa latência previsível para cargas de trabalho com muitos metadados.
+* Eles suportam até 400 bilhões de arquivos no mesmo namespace.
+* Eles oferecem suporte a operações paralelizadas em cargas de trabalho NAS em CPUs, nós, agregados e volumes FlexVol constituintes.
+
+
+image:aicp-007.png["Figura mostrando diálogo de entrada/saída ou representando conteúdo escrito"]

@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: software/ai-conf-protopia-accuracy.html 
+keywords: faceboxes, alpha value, accuracy, comparison 
+summary: Para esta validação, realizamos inferência para um caso de uso de detecção de imagem usando um conjunto de imagens brutas.  Em seguida, realizamos a mesma tarefa de inferência no mesmo conjunto de imagens com ofuscação Protopia adicionada antes da inferência.  Repetimos a tarefa usando diferentes valores de ALPHA para o componente de ofuscação Protopia. 
+---
+= Comparação de precisão de inferência
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para esta validação, realizamos inferência para um caso de uso de detecção de imagem usando um conjunto de imagens brutas.  Em seguida, realizamos a mesma tarefa de inferência no mesmo conjunto de imagens com ofuscação Protopia adicionada antes da inferência.  Repetimos a tarefa usando diferentes valores de ALPHA para o componente de ofuscação Protopia.  No contexto da ofuscação Protopia, o valor ALFA representa a quantidade de ofuscação aplicada, com um valor ALFA mais alto representando um nível mais alto de ofuscação.  Em seguida, comparamos a precisão da inferência entre essas diferentes execuções.
+
+As duas tabelas a seguir fornecem detalhes sobre nosso caso de uso e descrevem os resultados.
+
+A Protopia trabalha diretamente com os clientes para determinar o valor ALPHA apropriado para um caso de uso específico.
+
+|===
+| Componente | Detalhes 
+
+
+| Modelo | FaceBoxes (PyTorch) - 
+
+
+| Conjunto de dados | Conjunto de dados FDDB 
+|===
+|===
+| Ofuscação de Protopia | ALFA | Precisão 
+
+
+| Não | N / D | 0,9337148153739079 
+
+
+| Sim | 0,05 | 0,9028766627325002 
+
+
+| Sim | 0,1 | 0,9024301009661478 
+
+
+| Sim | 0,2 | 0,9081836283186224 
+
+
+| Sim | 0,4 | 0,9073066107482036 
+
+
+| Sim | 0,6 | 0,8847816568680239 
+
+
+| Sim | 0,8 | 0,8841195749171925 
+
+
+| Sim | 0,9 | 0,8455427675252052 
+
+
+| Sim | 0,95 | 0,8455427675252052 
+|===

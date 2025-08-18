@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: data-analytics/kafka-sc-conclusion.html 
+keywords: conclusion, where to find additional information 
+summary: Este teste de verificação atingiu 31,74 GBps de taxa de transferência em camadas no Confluent com um controlador de armazenamento NetApp ONTAP . 
+---
+= Conclusão
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Este teste de verificação atingiu 31,74 GBps de taxa de transferência em camadas no Confluent com o NetApp ONTAP Storage Controller.
+
+
+
+== Onde encontrar informações adicionais
+
+Para saber mais sobre as informações descritas neste documento, revise os seguintes documentos e/ou sites:
+
+* O que é Confluent?
++
+https://www.confluent.io/apache-kafka-vs-confluent/["https://www.confluent.io/apache-kafka-vs-confluent/"^]
+
+* Detalhes do parâmetro S3-sink
++
+https://docs.confluent.io/kafka-connect-s3-sink/current/configuration_options.html["https://docs.confluent.io/kafka-connect-s3-sink/current/configuration_options.html#s3-configuration-options"^]
+
+* Apache Kafka
++
+https://en.wikipedia.org/wiki/Apache_Kafka["https://en.wikipedia.org/wiki/Apache_Kafka"^]
+
+* S3 nas melhores práticas do ONTAP
++
+https://www.netapp.com/pdf.html?item=/media/17219-tr4814.pdf["https://www.netapp.com/pdf.html?item=/media/17219-tr4814.pdf"^]
+
+* Gerenciamento de armazenamento de objetos S3
++
+https://docs.netapp.com/us-en/ontap/s3-config/s3-support-concept.html["https://docs.netapp.com/us-en/ontap/s3-config/s3-support-concept.html"^]
+
+* Documentação do produto NetApp
++
+https://www.netapp.com/support-and-training/documentation/["https://www.netapp.com/support-and-training/documentation/"^]
+
+

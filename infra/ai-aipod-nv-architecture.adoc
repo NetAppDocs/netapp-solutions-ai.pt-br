@@ -1,0 +1,67 @@
+---
+sidebar: sidebar 
+permalink: infra/ai-aipod-nv-architecture.html 
+keywords: NetApp AI, AI, Artificial Intelligence, ML, Machine Learning, NVIDIA, NVIDIA AI Enterprise, NVIDIA BasePOD, NVIDIA DGX 
+summary: NetApp AIPod com sistemas NVIDIA DGX - Arquitetura 
+---
+= NVA-1173 NetApp AIPod com sistemas NVIDIA DGX H100 - Arquitetura da solução
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Esta seção se concentra na arquitetura do NetApp AIPod com sistemas NVIDIA DGX.
+
+
+
+== NetApp AIPod com sistemas DGX
+
+Esta arquitetura de referência utiliza malhas separadas para interconexão de cluster de computação e acesso ao armazenamento, com conectividade InfiniBand (IB) de 400 Gb/s entre nós de computação.  O desenho abaixo mostra a topologia geral da solução do NetApp AIPod com sistemas DGX H100.
+
+_Topologia da solução NetApp AIpod_
+
+image:aipod-nv-a90-topo.png["Figura mostrando diálogo de entrada/saída ou representando conteúdo escrito"]
+
+
+
+== Projeto de rede
+
+Nessa configuração, a estrutura do cluster de computação usa um par de switches IB QM9700 de 400 Gb/s, que são conectados entre si para alta disponibilidade.  Cada sistema DGX H100 é conectado aos switches usando oito conexões, com portas pares conectadas a um switch e portas ímpares conectadas ao outro switch.
+
+Para acesso ao sistema de armazenamento, gerenciamento em banda e acesso do cliente, um par de switches Ethernet SN4600 é usado.  Os switches são conectados com links entre switches e configurados com várias VLANs para isolar os vários tipos de tráfego.  O roteamento L3 básico é habilitado entre VLANs específicas para permitir múltiplos caminhos entre interfaces de cliente e armazenamento no mesmo switch, bem como entre switches para alta disponibilidade.  Para implantações maiores, a rede Ethernet pode ser expandida para uma configuração folha-espinha adicionando pares de switches adicionais para switches espinha e folhas adicionais, conforme necessário.
+
+Além da interconexão de computadores e das redes Ethernet de alta velocidade, todos os dispositivos físicos também são conectados a um ou mais switches Ethernet SN2201 para gerenciamento fora de banda.  Por favor, veja olink:ai-aipod-nv-deploy.html["detalhes de implantação"] página para obter mais informações sobre configuração de rede.
+
+
+
+== Visão geral do acesso ao armazenamento para sistemas DGX H100
+
+Cada sistema DGX H100 é provisionado com dois adaptadores ConnectX-7 de porta dupla para gerenciamento e tráfego de armazenamento e, para esta solução, ambas as portas em cada placa são conectadas ao mesmo switch.  Uma porta de cada placa é então configurada em um vínculo LACP MLAG com uma porta conectada a cada switch, e VLANs para gerenciamento em banda, acesso de cliente e acesso de armazenamento em nível de usuário são hospedadas nesse vínculo.
+
+A outra porta em cada placa é usada para conectividade com os sistemas de armazenamento AFF A90 e pode ser usada em diversas configurações, dependendo dos requisitos de carga de trabalho.  Para configurações que usam NFS sobre RDMA para oferecer suporte ao NVIDIA Magnum IO GPUDirect Storage, as portas são usadas individualmente com endereços IP em VLANs separadas.  Para implantações que não exigem RDMA, as interfaces de armazenamento também podem ser configuradas com vinculação LACP para fornecer alta disponibilidade e largura de banda adicional.  Com ou sem RDMA, os clientes podem montar o sistema de armazenamento usando NFS v4.1 pNFS e entroncamento de sessão para permitir acesso paralelo a todos os nós de armazenamento no cluster.  Por favor, veja olink:ai-aipod-nv-deploy.html["detalhes de implantação"] página para obter mais informações sobre a configuração do cliente.
+
+Para mais detalhes sobre a conectividade do sistema DGX H100, consulte olink:https://nvdam.widen.net/s/nfnjflmzlj/nvidia-dgx-basepod-reference-architecture["Documentação do NVIDIA BasePOD"] .
+
+
+
+== Projeto do sistema de armazenamento
+
+Cada sistema de armazenamento AFF A90 é conectado usando seis portas 200 GbE de cada controlador.  Quatro portas de cada controlador são usadas para acesso a dados de carga de trabalho dos sistemas DGX, e duas portas de cada controlador são configuradas como um grupo de interface LACP para dar suporte ao acesso dos servidores do plano de gerenciamento para artefatos de gerenciamento de cluster e diretórios pessoais do usuário.  Todo o acesso aos dados do sistema de armazenamento é fornecido por meio do NFS, com uma máquina virtual de armazenamento (SVM) dedicada ao acesso à carga de trabalho de IA e uma SVM separada dedicada aos usos de gerenciamento de cluster.
+
+O SVM de gerenciamento requer apenas um único LIF, que é hospedado nos grupos de interface de 2 portas configurados em cada controlador.  Outros volumes FlexGroup são provisionados no SVM de gerenciamento para abrigar artefatos de gerenciamento de cluster, como imagens de nós de cluster, dados históricos de monitoramento do sistema e diretórios pessoais do usuário final.  O desenho abaixo mostra a configuração lógica do sistema de armazenamento.
+
+_Configuração lógica do cluster de armazenamento NetApp A90_
+
+image:aipod-nv-a90-logical.png["Figura mostrando diálogo de entrada/saída ou representando conteúdo escrito"]
+
+
+
+== Servidores de plano de gerenciamento
+
+Esta arquitetura de referência também inclui cinco servidores baseados em CPU para uso no plano de gerenciamento.  Dois desses sistemas são usados como nós principais do NVIDIA Base Command Manager para implantação e gerenciamento de cluster.  Os outros três sistemas são usados para fornecer serviços de cluster adicionais, como nós mestres do Kubernetes ou nós de login para implantações que utilizam o Slurm para agendamento de tarefas.  Implantações que utilizam o Kubernetes podem aproveitar o driver NetApp Trident CSI para fornecer provisionamento automatizado e serviços de dados com armazenamento persistente para cargas de trabalho de gerenciamento e IA no sistema de armazenamento AFF A900 .
+
+Cada servidor é fisicamente conectado aos switches IB e Ethernet para permitir a implantação e o gerenciamento do cluster, e configurado com montagens NFS no sistema de armazenamento por meio do SVM de gerenciamento para armazenamento de artefatos de gerenciamento do cluster, conforme descrito anteriormente.

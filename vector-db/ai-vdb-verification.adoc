@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: vector-db/ai-vdb-verification.html 
+keywords: Solution Overview vector database 
+summary: Visão geral da verificação da solução - solução de banco de dados vetorial para netapp 
+---
+= Visão geral da solução
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Realizamos uma validação abrangente da solução focada em cinco áreas principais, cujos detalhes estão descritos abaixo.  Cada seção aborda os desafios enfrentados pelos clientes, as soluções fornecidas pela NetApp e os benefícios subsequentes para o cliente.
+
+. link:ai-vdb-milvus-setup.html["Configuração do cluster Milvus com Kubernetes no local"]Os desafios do cliente são escalar de forma independente em armazenamento e computação, gerenciamento eficaz de infraestrutura e gerenciamento de dados.  Nesta seção, detalhamos o processo de instalação de um cluster Milvus no Kubernetes, utilizando um controlador de armazenamento NetApp para dados do cluster e dados do cliente.
+. link:vector-database-milvus-with-Amazon-FSx ONTAP-for- NetApp- ONTAP.html[Milvus com Amazon FSx ONTAP para NetApp ONTAP – dualidade de arquivo e objeto] Nesta seção, por que precisamos implantar o banco de dados vetorial na nuvem, bem como as etapas para implantar o banco de dados vetorial (milvus autônomo) no Amazon FSx ONTAP para NetApp ONTAP em contêineres docker.
+. link:ai-vdb-dp-snapcenter.html["Proteção de banco de dados vetorial usando NetApp SnapCenter."]Nesta seção, nos aprofundamos em como o SnapCenter protege os dados do banco de dados vetorial e os dados Milvus que residem no ONTAP.  Neste exemplo, utilizamos um bucket NAS (milvusdbvol1) derivado de um volume NFS ONTAP (vol1) para dados do cliente e um volume NFS separado (vectordbpv) para dados de configuração do cluster Milvus.
+. link:ai-vdb-dr-snapmirror.html["Recuperação de desastres usando NetApp SnapMirror"]Nesta seção, discutiremos a importância da recuperação de desastres (DR) para bancos de dados vetoriais e como o produto de recuperação de desastres Snapmirror da NetApp fornece uma solução de DR para bancos de dados vetoriais.
+. link:ai-vdb-perf-validation.html["Validação de desempenho"]Nesta seção, pretendemos nos aprofundar na validação de desempenho de bancos de dados vetoriais, como Milvus e pgvecto.rs, com foco em suas características de desempenho de armazenamento, como perfil de E/S e comportamento do controlador de armazenamento netapp em suporte a cargas de trabalho de RAG e inferência dentro do ciclo de vida do LLM.  Avaliaremos e identificaremos quaisquer diferenciais de desempenho quando esses bancos de dados forem combinados com a solução de armazenamento ONTAP .  Nossa análise será baseada em indicadores-chave de desempenho, como o número de consultas processadas por segundo (QPS).
+

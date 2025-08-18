@@ -1,0 +1,71 @@
+---
+sidebar: sidebar 
+permalink: infra/ai-lenovo-train-config.html 
+keywords: solution architecture, storage controller 
+summary: Esta seção descreve as configurações testadas, a infraestrutura de rede, o servidor SR670 V2 e os detalhes de provisionamento de armazenamento. 
+---
+= Configuração de teste
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Esta seção descreve as configurações testadas, a infraestrutura de rede, o servidor SR670 V2 e os detalhes de provisionamento de armazenamento da NetApp .
+
+
+
+== Arquitetura da solução
+
+Usamos os componentes da solução listados na tabela a seguir para esta validação.
+
+|===
+| Componentes da solução | Detalhes 
+
+
+| Servidores Lenovo ThinkSystem  a| 
+* Dois servidores SR670 V2, cada um com oito placas GPU NVIDIA A100 de 80 GB
+* Cada servidor contém 2 CPUs Intel Xeon Platinum 8360Y (28 núcleos físicos) e 1 TB de RAM
+
+
+
+
+| Linux (Ubuntu – 20.04 com CUDA 11.8) |  
+
+
+| Sistema de armazenamento NetApp AFF (par HA)  a| 
+* Software NetApp ONTAP 9.10.1
+* 24 SSDs de 960 GB
+* Protocolo NFS
+* 1 grupo de interface (ifgrp) por controlador, com quatro endereços IP lógicos para pontos de montagem
+
+
+|===
+Nesta validação, usamos o ResNet v2.0 com o conjunto de base ImageNet conforme especificado pelo MLPerf v2.0.  O conjunto de dados é armazenado em um sistema de armazenamento NetApp AFF com o protocolo NFS.  Os SR670s foram conectados ao sistema de armazenamento NetApp AFF A400 por meio de um switch de 100 GbE.
+
+ImageNet é um conjunto de dados de imagens frequentemente usado.  Ele contém quase 1,3 milhão de imagens, totalizando 144 GB.  O tamanho médio da imagem é 108 KB.
+
+A figura a seguir descreve a topologia de rede da configuração testada.
+
+image:a400-thinksystem-007.png["Este gráfico descreve a camada de computação, um Lenovo ThinkSystem SR670 V2, a camada de rede, um switch Lenovo Ethernet, e a camada de armazenamento, um controlador de armazenamento NetApp AFF A400 .  Todas as conexões de rede estão incluídas."]
+
+
+
+== Controlador de armazenamento
+
+A tabela a seguir lista a configuração de armazenamento.
+
+|===
+| Controlador | Agregar | Volume FlexGroup | Tamanho agregado | Tamanho do volume | Ponto de montagem do sistema operacional 
+
+
+| Controller1 | Aggr1 | /a400-100g | 9,9 TB | 19 TB | /a400-100g 
+
+
+| Controller2 | Aggr2 | /a400-100g | 9,9 TB |  | /a400-100g 
+|===
+
+NOTE: A pasta /a400-100g contém o conjunto de dados usado para validação do ResNet.

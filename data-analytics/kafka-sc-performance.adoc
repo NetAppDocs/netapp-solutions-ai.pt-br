@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: data-analytics/kafka-sc-performance.html 
+keywords: data graphs, kafka throughput, s3 tiering traffic, aff a900, resource utilization 
+summary: Realizamos testes de armazenamento em camadas com cinco ou oito nós de broker durante uma carga de trabalho de produção e consumo com o controlador de armazenamento NetApp de um par AFF A900 HA.  De acordo com nossos testes, o tempo de conclusão e os resultados de desempenho foram dimensionados com o número de nós do broker até que a utilização de recursos do AFF A900 atingiu cem por cento.  A configuração do controlador de armazenamento ONTAP exigiu no mínimo um par de HA. 
+---
+= Testes de desempenho com gerador de carga de trabalho de produção e consumo
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Realizamos testes de armazenamento em camadas com cinco ou oito nós de broker durante uma carga de trabalho de produção e consumo com o controlador de armazenamento NetApp de um par AFF A900 HA.  De acordo com nossos testes, o tempo de conclusão e os resultados de desempenho foram dimensionados com o número de nós do broker até que a utilização de recursos do AFF A900 atingiu cem por cento.  A configuração do controlador de armazenamento ONTAP exigiu no mínimo um par de HA.
+
+O desempenho da operação de recuperação do S3 aumentou linearmente com base no número de nós do broker Confluent.  O controlador de armazenamento ONTAP suporta até 12 pares de HA em uma única implantação.
+
+O gráfico a seguir mostra o tráfego combinado de camadas S3 com cinco ou oito nós de corretor.  Maximizamos o desempenho do par HA único AFF A900 .
+
+image:kafka-sc-009.png["Este gráfico de dados mostra o tráfego combinado de camadas S3 com cinco ou oito nós de corretores."]
+
+O gráfico a seguir mostra a taxa de transferência do Kafka em aproximadamente 31,74 GBps.
+
+image:kafka-sc-010.png["Este gráfico de dados mostra a taxa de transferência do Kafka em aproximadamente 31,74 GBps."]
+
+Também observamos uma taxa de transferência semelhante no controlador de armazenamento ONTAP `perfstat` relatório.
+
+....
+object_store_server:wle-mendocino-07-08:get_data:34080805907b/ s
+object_store_server:wle-mendocino-07-08:put_data:484236974b/ s
+....

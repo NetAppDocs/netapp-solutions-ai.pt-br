@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: vector-db/ai-vdb-intro.html 
+keywords: vector database 
+summary: Introdução à solução de banco de dados vetorial para netapp 
+---
+= Introdução
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Esta seção fornece uma introdução à solução de banco de dados vetorial para NetApp.
+
+
+
+== Introdução
+
+Os bancos de dados vetoriais abordam efetivamente os desafios projetados para lidar com as complexidades da pesquisa semântica em Grandes Modelos de Linguagem (LLMs) e Inteligência Artificial generativa (IA).  Diferentemente dos sistemas tradicionais de gerenciamento de dados, os bancos de dados vetoriais são capazes de processar e pesquisar vários tipos de dados, incluindo imagens, vídeos, texto, áudio e outras formas de dados não estruturados, usando o conteúdo dos dados em si, em vez de rótulos ou tags.
+
+As limitações dos Sistemas de Gerenciamento de Banco de Dados Relacionais (RDBMS) são bem documentadas, particularmente suas dificuldades com representações de dados de alta dimensão e dados não estruturados comuns em aplicativos de IA.  Os RDBMS geralmente exigem um processo demorado e sujeito a erros de nivelamento de dados em estruturas mais gerenciáveis, o que leva a atrasos e ineficiências nas pesquisas.  No entanto, os bancos de dados vetoriais são projetados para contornar esses problemas, oferecendo uma solução mais eficiente e precisa para gerenciar e pesquisar dados complexos e de alta dimensão, facilitando assim o avanço de aplicações de IA.
+
+Este documento serve como um guia abrangente para clientes que estão usando ou planejam usar bancos de dados vetoriais, detalhando as práticas recomendadas para utilizar bancos de dados vetoriais em plataformas como NetApp ONTAP, NetApp StorageGRID, Amazon FSx ONTAP para NetApp ONTAP e SnapCenter.  O conteúdo fornecido aqui abrange uma variedade de tópicos:
+
+* Diretrizes de infraestrutura para bancos de dados vetoriais, como Milvus, fornecidas pelo armazenamento NetApp por meio do NetApp ONTAP e do armazenamento de objetos StorageGRID .
+* Validação do banco de dados Milvus no AWS FSx ONTAP por meio de armazenamento de arquivos e objetos.
+* Investiga a dualidade arquivo-objeto do NetApp, demonstrando sua utilidade para dados em bancos de dados vetoriais, bem como outros aplicativos.
+* Como o produto de gerenciamento de proteção de dados da NetApp, SnapCenter, oferece funcionalidades de backup e restauração para dados de bancos de dados vetoriais.
+* Como a Nuvem Híbrida da NetApp oferece replicação e proteção de dados em ambientes locais e na nuvem.
+* Fornece insights sobre a validação de desempenho de bancos de dados vetoriais como Milvus e pgvector no NetApp ONTAP.
+* Dois casos de uso específicos: Retrieval Augmented Generation (RAG) com Large Language Models (LLM) e o ChatAI da equipe de TI da NetApp , oferecendo assim exemplos práticos dos conceitos e práticas descritos.
+

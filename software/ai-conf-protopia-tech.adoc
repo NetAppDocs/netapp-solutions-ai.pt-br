@@ -1,0 +1,129 @@
+---
+sidebar: sidebar 
+permalink: software/ai-conf-protopia-tech.html 
+keywords: protopia, netapp ontap, overview, dataops toolkit, nvidia triton inference server, pytorch 
+summary: Esta seção fornece uma visão geral dos vários componentes técnicos necessários para concluir esta solução. 
+---
+= Visão geral da tecnologia
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Esta seção fornece uma visão geral dos vários componentes técnicos necessários para concluir esta solução.
+
+
+
+== Protopia
+
+A Protopia AI oferece uma solução discreta, somente de software, para inferência confidencial no mercado atual.  A solução Protopia oferece proteção incomparável para serviços de inferência, minimizando a exposição de informações confidenciais.  A IA só recebe as informações no registro de dados que são realmente essenciais para executar a tarefa em questão e nada mais.  A maioria das tarefas de inferência não usa todas as informações existentes em cada registro de dados.  Não importa se sua IA está consumindo imagens, voz, vídeo ou até mesmo dados tabulares estruturados, o Protopia fornece apenas o que o serviço de inferência precisa.  A tecnologia central patenteada usa ruído matematicamente selecionado para transformar estocasticamente os dados e distorcer as informações que não são necessárias para um determinado serviço de ML.  Esta solução não mascara os dados; em vez disso, ela altera a representação dos dados usando ruído aleatório selecionado.
+
+A solução Protopia formula o problema de alterar a representação como um método de maximização de perturbação baseado em gradiente que ainda retém as informações pertinentes no espaço de recursos de entrada com relação à funcionalidade do modelo.  Esse processo de descoberta é executado como uma passagem de ajuste fino no final do treinamento do modelo de ML.  Depois que a passagem gera automaticamente um conjunto de distribuições de probabilidade, uma transformação de dados de baixa sobrecarga aplica amostras de ruído dessas distribuições aos dados, ofuscando-os antes de passá-los ao modelo para inferência.
+
+
+
+== NetApp ONTAP AI
+
+A arquitetura de referência NetApp ONTAP AI, alimentada por sistemas DGX A100 e sistemas de armazenamento conectado em nuvem NetApp , foi desenvolvida e verificada pela NetApp e pela NVIDIA.  Ele fornece às organizações de TI uma arquitetura que proporciona os seguintes benefícios:
+
+* Elimina complexidades de design
+* Permite dimensionamento independente de computação e armazenamento
+* Permite que os clientes comecem pequenos e escalem sem problemas
+* Oferece uma variedade de opções de armazenamento para vários pontos de desempenho e custo
+
+
+O ONTAP AI integra perfeitamente os sistemas DGX A100 e os sistemas de armazenamento NetApp AFF A800 com redes de última geração.  ONTAP AI simplifica as implantações de IA eliminando a complexidade do design e as suposições.  Os clientes podem começar pequeno e crescer sem interrupções, ao mesmo tempo em que gerenciam dados de forma inteligente, da borda ao núcleo, à nuvem e vice-versa.
+
+A figura a seguir mostra diversas variações na família de soluções ONTAP AI com sistemas DGX A100.  O desempenho do sistema AFF A800 é verificado com até oito sistemas DGX A100.  Ao adicionar pares de controladores de armazenamento ao cluster ONTAP , a arquitetura pode ser dimensionada para vários racks para dar suporte a muitos sistemas DGX A100 e petabytes de capacidade de armazenamento com desempenho linear.  Essa abordagem oferece a flexibilidade de alterar as proporções de computação para armazenamento de forma independente com base no tamanho dos modelos de DL usados e nas métricas de desempenho necessárias.
+
+image:ai-protopia-002.png["Figura mostrando diálogo de entrada/saída ou representando conteúdo escrito"]
+
+Para obter informações adicionais sobre o ONTAP AI, consulte https://www.netapp.com/pdf.html?item=/media/21793-nva-1153-design.pdf["NVA-1153: NetApp ONTAP AI com sistemas NVIDIA DGX A100 e switches Ethernet Mellanox Spectrum."^]
+
+
+
+== NetApp ONTAP
+
+ONTAP 9.11, a última geração de software de gerenciamento de armazenamento da NetApp, permite que as empresas modernizem a infraestrutura e façam a transição para um data center pronto para a nuvem.  Aproveitando os recursos de gerenciamento de dados líderes do setor, o ONTAP permite o gerenciamento e a proteção de dados com um único conjunto de ferramentas, independentemente de onde os dados residam.  Você também pode mover dados livremente para onde for necessário: na borda, no núcleo ou na nuvem.  O ONTAP 9.11 inclui vários recursos que simplificam o gerenciamento de dados, aceleram e protegem dados críticos e permitem recursos de infraestrutura de última geração em arquiteturas de nuvem híbrida.
+
+
+
+== Kit de ferramentas NetApp DataOps
+
+O NetApp DataOps Toolkit é uma biblioteca Python que simplifica para desenvolvedores, cientistas de dados, engenheiros de DevOps e engenheiros de dados a execução de diversas tarefas de gerenciamento de dados, como provisionamento quase instantâneo de um novo volume de dados ou espaço de trabalho do JupyterLab, clonagem quase instantânea de um volume de dados ou espaço de trabalho do JupyterLab e captura quase instantânea de snapshots de um volume de dados ou espaço de trabalho do JupyterLab para rastreabilidade ou definição de linha de base.  Esta biblioteca Python pode funcionar como um utilitário de linha de comando ou uma biblioteca de funções que você pode importar para qualquer programa Python ou notebook Jupyter.
+
+
+
+== Servidor de inferência NVIDIA Triton
+
+O NVIDIA Triton Inference Server é um software de servidor de inferência de código aberto que ajuda a padronizar a implantação e a execução de modelos para fornecer IA rápida e escalável em produção.  O Triton Inference Server simplifica a inferência de IA permitindo que equipes implantem, executem e dimensionem modelos de IA treinados de qualquer estrutura em qualquer infraestrutura baseada em GPU ou CPU.  O Triton Inference Server suporta todas as principais estruturas, como TensorFlow, NVIDIA TensorRT, PyTorch, MXNet, OpenVINO e assim por diante.  O Triton se integra ao Kubernetes para orquestração e dimensionamento que você pode usar em todas as principais plataformas de IA e Kubernetes de nuvem pública.  Ele também é integrado a muitas soluções de software MLOps.
+
+
+
+== PyTorch
+
+https://pytorch.org/["PyTorch"^]é uma estrutura de ML de código aberto.  É uma biblioteca de tensores otimizada para aprendizado profundo que usa GPUs e CPUs.  O pacote PyTorch contém estruturas de dados para tensores multidimensionais que fornecem muitos utilitários para serialização eficiente de tensores, entre outros utilitários úteis.  Ele também tem uma contraparte CUDA que permite que você execute seus cálculos de tensor em uma GPU NVIDIA com capacidade de computação.  Nesta validação, usamos a biblioteca OpenCV-Python (cv2) para validar nosso modelo, aproveitando os conceitos de visão computacional mais intuitivos do Python.
+
+
+
+=== Simplifique o gerenciamento de dados
+
+O gerenciamento de dados é crucial para as operações de TI corporativas e cientistas de dados, para que recursos apropriados sejam usados para aplicativos de IA e treinamento de conjuntos de dados de IA/ML.  As seguintes informações adicionais sobre as tecnologias NetApp estão fora do escopo desta validação, mas podem ser relevantes dependendo da sua implantação.
+
+O software de gerenciamento de dados ONTAP inclui os seguintes recursos para otimizar e simplificar as operações e reduzir seu custo total de operação:
+
+* Compactação de dados em linha e desduplicação expandida.  A compactação de dados reduz o desperdício de espaço dentro dos blocos de armazenamento e a desduplicação aumenta significativamente a capacidade efetiva.  Isso se aplica a dados armazenados localmente e dados em camadas na nuvem.
+* Qualidade de serviço mínima, máxima e adaptável (AQoS).  Controles granulares de qualidade de serviço (QoS) ajudam a manter os níveis de desempenho para aplicativos críticos em ambientes altamente compartilhados.
+* NetApp FabricPool.  Fornece hierarquização automática de dados frios para opções de armazenamento em nuvem pública e privada, incluindo Amazon Web Services (AWS), Azure e solução de armazenamento NetApp StorageGRID .  Para obter mais informações sobre FabricPool, consulte https://www.netapp.com/pdf.html?item=/media/17239-tr4598pdf.pdf["TR-4598: Melhores práticas do FabricPool"^] .
+
+
+
+
+=== Acelere e proteja os dados
+
+O ONTAP oferece níveis superiores de desempenho e proteção de dados e estende esses recursos das seguintes maneiras:
+
+* Desempenho e menor latência.  ONTAP oferece o maior rendimento possível com a menor latência possível.
+* Proteção de dados.  O ONTAP fornece recursos integrados de proteção de dados com gerenciamento comum em todas as plataformas.
+* Criptografia de volume NetApp (NVE).  O ONTAP oferece criptografia nativa em nível de volume com suporte para gerenciamento de chaves externo e integrado.
+* Multilocação e autenticação multifator.  O ONTAP permite o compartilhamento de recursos de infraestrutura com os mais altos níveis de segurança.
+
+
+
+
+=== Infraestrutura à prova do futuro
+
+O ONTAP ajuda a atender às necessidades empresariais exigentes e em constante mudança com os seguintes recursos:
+
+* Escalabilidade perfeita e operações não disruptivas.  O ONTAP oferece suporte à adição não disruptiva de capacidade aos controladores existentes e aos clusters escaláveis.  Os clientes podem atualizar para as tecnologias mais recentes, como NVMe e 32Gb FC, sem migrações de dados dispendiosas ou interrupções.
+* Conexão em nuvem.  ONTAP é o software de gerenciamento de armazenamento mais conectado à nuvem, com opções para armazenamento definido por software (ONTAP Select) e instâncias nativas da nuvem (Google Cloud NetApp Volumes) em todas as nuvens públicas.
+* Integração com aplicações emergentes.  A ONTAP oferece serviços de dados de nível empresarial para plataformas e aplicativos de última geração, como veículos autônomos, cidades inteligentes e Indústria 4.0, usando a mesma infraestrutura que dá suporte aos aplicativos empresariais existentes.
+
+
+
+
+== Controle NetApp Astra
+
+A família de produtos NetApp Astra oferece serviços de armazenamento e gerenciamento de dados com reconhecimento de aplicativos para aplicativos Kubernetes no local e na nuvem pública, com tecnologia de armazenamento e gerenciamento de dados da NetApp .  Ele permite que você faça backup de aplicativos Kubernetes facilmente, migre dados para um cluster diferente e crie instantaneamente clones de aplicativos funcionais.  Se você precisar gerenciar aplicativos Kubernetes em execução em uma nuvem pública, consulte a documentação para https://docs.netapp.com/us-en/astra-control-service/index.html["Serviço de Controle Astra"^] .  O Astra Control Service é um serviço gerenciado pela NetApp que fornece gerenciamento de dados com reconhecimento de aplicativo de clusters Kubernetes no Google Kubernetes Engine (GKE) e no Azure Kubernetes Service (AKS).
+
+
+
+== NetApp Trident
+
+Astra https://netapp.io/persistent-storage-provisioner-for-kubernetes/["Trident"^] da NetApp é um orquestrador de armazenamento dinâmico de código aberto para Docker e Kubernetes que simplifica a criação, o gerenciamento e o consumo de armazenamento persistente.  O Trident, um aplicativo nativo do Kubernetes, é executado diretamente em um cluster do Kubernetes.  O Trident permite que os clientes implantem facilmente imagens de contêiner DL no armazenamento NetApp e fornece uma experiência de nível empresarial para implantações de contêineres de IA.  Os usuários do Kubernetes (desenvolvedores de ML, cientistas de dados e assim por diante) podem criar, gerenciar e automatizar a orquestração e a clonagem para aproveitar os recursos avançados de gerenciamento de dados fornecidos pela tecnologia NetApp .
+
+
+
+== Cópia e sincronização do NetApp BlueXP
+
+https://docs.netapp.com/us-en/occm/concept_cloud_sync.html["BlueXP Copiar e Sincronizar"^]é um serviço da NetApp para sincronização de dados rápida e segura.  Se você precisa transferir arquivos entre compartilhamentos de arquivos NFS ou SMB locais, NetApp StorageGRID, NetApp ONTAP S3, Google Cloud NetApp Volumes, Azure NetApp Files, Amazon Simple Storage Service (Amazon S3), Amazon Elastic File System (Amazon EFS), Azure Blob, Google Cloud Storage ou IBM Cloud Object Storage, o BlueXP Copy and Sync move os arquivos para onde você precisa de forma rápida e segura.  Após seus dados serem transferidos, eles estarão totalmente disponíveis para uso tanto na origem quanto no destino.  O BlueXP Copy and Sync sincroniza continuamente os dados com base na sua programação predefinida, movendo apenas os deltas, para que o tempo e o dinheiro gastos na replicação de dados sejam minimizados.  O BlueXP Copy and Sync é uma ferramenta de software como serviço (SaaS) extremamente simples de configurar e usar.  As transferências de dados acionadas pelo BlueXP Copy and Sync são realizadas por corretores de dados.  Você pode implantar os corretores de dados BlueXP Copy and Sync na AWS, Azure, Google Cloud Platform ou no local.
+
+
+
+== Classificação NetApp BlueXP
+
+Impulsionado por poderosos algoritmos de IA, https://bluexp.netapp.com/netapp-cloud-data-sense["Classificação NetApp BlueXP"^] fornece controles automatizados e governança de dados em todo o seu acervo de dados.  Você pode facilmente identificar economias de custos, identificar preocupações com conformidade e privacidade e encontrar oportunidades de otimização.  O painel de classificação BlueXP fornece insights para identificar dados duplicados para eliminar redundâncias, mapear dados pessoais, não pessoais e confidenciais e ativar alertas para dados confidenciais e anomalias.

@@ -1,0 +1,142 @@
+---
+sidebar: sidebar 
+permalink: software/ai-osmlops-airflow-deploy.html 
+keywords: AI, control plane, apache, airflow 
+summary: MLOps de código aberto com NetApp - Implantação do Apache Airflow 
+---
+= Implantação do Apache Airflow
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Esta seção descreve as tarefas que você deve concluir para implantar o Airflow no seu cluster Kubernetes.
+
+
+NOTE: É possível implantar o Airflow em outras plataformas além do Kubernetes.  A implantação do Airflow em plataformas diferentes do Kubernetes está fora do escopo desta solução.
+
+
+
+== Pré-requisitos
+
+Antes de executar o exercício de implantação descrito nesta seção, presumimos que você já tenha executado as seguintes tarefas:
+
+. Você já tem um cluster Kubernetes funcional.
+. Você já instalou e configurou o NetApp Trident no seu cluster Kubernetes.  Para mais detalhes sobre o Trident, consulte olink:https://docs.netapp.com/us-en/trident/index.html["Documentação do Trident"] .
+
+
+
+
+== Instalar o Helm
+
+O Airflow é implantado usando o Helm, um gerenciador de pacotes popular para Kubernetes.  Antes de implantar o Airflow, você deve instalar o Helm no host de salto de implantação.  Para instalar o Helm no host de salto de implantação, siga as instruções https://helm.sh/docs/intro/install/["instruções de instalação"^] na documentação oficial do Helm.
+
+
+
+== Definir classe de armazenamento padrão do Kubernetes
+
+Antes de implantar o Airflow, você deve designar um StorageClass padrão dentro do seu cluster Kubernetes.  O processo de implantação do Airflow tenta provisionar novos volumes persistentes usando o StorageClass padrão.  Se nenhuma StorageClass for designada como StorageClass padrão, a implantação falhará.  Para designar uma StorageClass padrão em seu cluster, siga as instruções descritas nolink:ai-osmlops-kubeflow-deploy.html["Implantação do Kubeflow"] seção.  Se você já designou uma StorageClass padrão dentro do seu cluster, pode pular esta etapa.
+
+
+
+== Use o Helm para implantar o Airflow
+
+Para implantar o Airflow no seu cluster Kubernetes usando o Helm, execute as seguintes tarefas no host de salto de implantação:
+
+. Implante o Airflow usando o Helm seguindo o https://artifacthub.io/packages/helm/airflow-helm/airflow["instruções de implantação"^] para o gráfico oficial do Airflow no Artifact Hub.  Os comandos de exemplo a seguir mostram a implantação do Airflow usando o Helm.  Modifique, adicione e/ou remova valores no `custom- values.yaml` arquivo conforme necessário, dependendo do seu ambiente e da configuração desejada.
++
+....
+$ cat << EOF > custom-values.yaml
+###################################
+# Airflow - Common Configs
+###################################
+airflow:
+  ## the airflow executor type to use
+  ##
+  executor: "CeleryExecutor"
+  ## environment variables for the web/scheduler/worker Pods (for airflow configs)
+  ##
+  #
+###################################
+# Airflow - WebUI Configs
+###################################
+web:
+  ## configs for the Service of the web Pods
+  ##
+  service:
+    type: NodePort
+###################################
+# Airflow - Logs Configs
+###################################
+logs:
+  persistence:
+    enabled: true
+###################################
+# Airflow - DAGs Configs
+###################################
+dags:
+  ## configs for the DAG git repository & sync container
+  ##
+  gitSync:
+    enabled: true
+    ## url of the git repository
+    ##
+    repo: "git@github.com:mboglesby/airflow-dev.git"
+    ## the branch/tag/sha1 which we clone
+    ##
+    branch: master
+    revision: HEAD
+    ## the name of a pre-created secret containing files for ~/.ssh/
+    ##
+    ## NOTE:
+    ## - this is ONLY RELEVANT for SSH git repos
+    ## - the secret commonly includes files: id_rsa, id_rsa.pub, known_hosts
+    ## - known_hosts is NOT NEEDED if `git.sshKeyscan` is true
+    ##
+    sshSecret: "airflow-ssh-git-secret"
+    ## the name of the private key file in your `git.secret`
+    ##
+    ## NOTE:
+    ## - this is ONLY RELEVANT for PRIVATE SSH git repos
+    ##
+    sshSecretKey: id_rsa
+    ## the git sync interval in seconds
+    ##
+    syncWait: 60
+EOF
+$ helm install airflow airflow-stable/airflow -n airflow --version 8.0.8 --values ./custom-values.yaml
+...
+Congratulations. You have just deployed Apache Airflow!
+1. Get the Airflow Service URL by running these commands:
+   export NODE_PORT=$(kubectl get --namespace airflow -o jsonpath="{.spec.ports[0].nodePort}" services airflow-web)
+   export NODE_IP=$(kubectl get nodes --namespace airflow -o jsonpath="{.items[0].status.addresses[0].address}")
+   echo http://$NODE_IP:$NODE_PORT/
+2. Open Airflow in your web browser
+....
+. Confirme se todos os pods Airflow estão funcionando.  Pode levar alguns minutos para que todos os pods sejam iniciados.
++
+....
+$ kubectl -n airflow get pod
+NAME                                READY   STATUS    RESTARTS   AGE
+airflow-flower-b5656d44f-h8qjk      1/1     Running   0          2h
+airflow-postgresql-0                1/1     Running   0          2h
+airflow-redis-master-0              1/1     Running   0          2h
+airflow-scheduler-9d95fcdf9-clf4b   2/2     Running   2          2h
+airflow-web-59c94db9c5-z7rg4        1/1     Running   0          2h
+airflow-worker-0                    2/2     Running   2          2h
+....
+. Obtenha a URL do serviço web do Airflow seguindo as instruções impressas no console quando você implantou o Airflow usando o Helm na etapa 1.
++
+....
+$ export NODE_PORT=$(kubectl get --namespace airflow -o jsonpath="{.spec.ports[0].nodePort}" services airflow-web)
+$ export NODE_IP=$(kubectl get nodes --namespace airflow -o jsonpath="{.items[0].status.addresses[0].address}")
+$ echo http://$NODE_IP:$NODE_PORT/
+....
+. Confirme se você consegue acessar o serviço web Airflow.
+
+
+image:aicp-010.png["Figura mostrando diálogo de entrada/saída ou representando conteúdo escrito"]

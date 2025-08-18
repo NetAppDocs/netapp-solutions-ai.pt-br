@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: vector-db/ai-vdb-tech.html 
+keywords: vector database 
+summary: Requisito de tecnologia - solução de banco de dados vetorial para netapp 
+---
+= Requisito de Tecnologia
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Esta seção fornece uma visão geral dos requisitos para a solução de banco de dados vetorial NetApp .
+
+
+
+== Requisito de Tecnologia
+
+As configurações de hardware e software descritas abaixo foram utilizadas para a maioria das validações realizadas neste documento, com exceção do desempenho.  Essas configurações servem como um guia para ajudar você a configurar seu ambiente.  No entanto, observe que os componentes específicos podem variar dependendo dos requisitos individuais do cliente.
+
+
+
+== Requisitos de hardware
+
+|===
+| Hardware | Detalhes 
+
+
+| Par de matriz de armazenamento AFF da NetApp HA | * A800 * ONTAP 9.14.1 * 48 x 3,49 TB SSD-NVM * Dois volumes de grupo flexíveis: metadados e dados.  * O volume NFS de metadados tem 12 volumes persistentes com 250 GB.  * Os dados são um volume ONTAP NAS S3 
+
+
+| 6 x FUJITSU PRIMERGY RX2540 M4 | * 64 CPUs * CPU Intel(R) Xeon(R) Gold 6142 a 2,60 GHz * 256 GM de memória física * 1 porta de rede 100GbE 
+
+
+| Rede | 100 GbE 
+
+
+| StorageGRID | * 1 x SG100, 3xSGF6024 * 3 x 24 x 7,68 TB 
+|===
+
+
+== Requisitos de software
+
+|===
+| Software | Detalhes 
+
+
+| Aglomerado de Milvus | * GRÁFICO - milvus-4.1.11.  * Versão do APP – 2.3.4 * Pacotes dependentes como bookkeeper, zookeeper, pulsar, etcd, proxy, querynode, worker 
+
+
+| Kubernetes | * Cluster K8s de 5 nós * 1 nó mestre e 4 nós de trabalho * Versão – 1.7.2 
+
+
+| Pitão | *3.10.12. 
+|===

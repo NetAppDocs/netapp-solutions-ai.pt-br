@@ -1,0 +1,74 @@
+---
+indexpage:
+  title: Soluções de inteligência artificial da NetApp
+  summary: A NetApp fornece soluções abrangentes de IA que combinam gerenciamento
+    de dados de nível empresarial, arquiteturas de referência validadas e parcerias
+    estratégicas para acelerar suas iniciativas de IA e dar suporte a resultados comerciais
+    críticos.  Da implantação de infraestrutura à automação de MLOps, nossas soluções
+    escalam perfeitamente em ambientes de borda, data center e nuvem híbrida.
+  lead: A NetApp fornece soluções abrangentes de IA que combinam gerenciamento de
+    dados de nível empresarial, arquiteturas de referência validadas e parcerias estratégicas
+    para acelerar suas iniciativas de IA e dar suporte a resultados comerciais críticos.  Da
+    implantação de infraestrutura à automação de MLOps, nossas soluções escalam perfeitamente
+    em ambientes de borda, data center e nuvem híbrida.
+  tiles:
+  - title: Começar
+    links:
+    - title: O que há de novo
+      url: "/whats-new.html"
+    - title: Blogs
+      url: "/blogs.html"
+    - title: Vídeos e demonstrações
+      url: "/videos/ai-ml-videos.html"
+  - title: Infraestrutura de IA e sistemas convergentes
+    links:
+    - title: NetApp AIPod com sistemas NVIDIA DGX
+      url: "/infra/ai-aipod-nv-intro.html"
+    - title: NVIDIA DGX SuperPOD com série EF
+      url: "/infra/ai-eseries-superpod.html"
+    - title: NetApp AIPod com Lenovo para NVIDIA OVX
+      url: "/infra/ai-aipod-lenovo-nva1172.html"
+    - title: Sistema de arquivos paralelos BeeGFS com E-Series
+      url: "/infra/ai-eseries-beegfs.html"
+  - title: Casos de uso e aplicações de IA
+    links:
+    - title: AIPod Mini para inferência RAG
+      url: "/infra/ai-minipod.html"
+    - title: Inferência de IA na borda
+      url: "/infra/ai-lenovo-edge-intro.html"
+    - title: Soluções de banco de dados vetoriais
+      url: "/vector-db/ai-vdb-solution-with-netapp.html"
+    - title: Cargas de trabalho de direção autônoma
+      url: "/infra/ai-storagegrid-datalake-adas.html"
+    - title: Quantum StorNext com Série E
+      url: "/infra/ai-eseries-nva1150-design.html"
+  - title: MLOps e gerenciamento de dados
+    links:
+    - title: MLOps de código aberto com NetApp
+      url: "/software/ai-osmlops-intro.html"
+    - title: MLOps multicloud híbridos com Domino Data Lab
+      url: "/software/ai-hybrid-ddlnexus-intro.html"
+    - title: FSx ONTAP para MLOps
+      url: "/cloud/ai-mlops-fsxn-intro.html"
+    - title: Kit de ferramentas NetApp DataOps
+      url: "/software/dataops-toolkit.html"
+  - title: Soluções de IA para big data e nuvem híbrida
+    links:
+    - title: Soluções de dados em nuvem híbrida
+      url: "/data-analytics/hdcs-sh-solution-overview.html"
+    - title: Soluções Apache Spark
+      url: "/data-analytics/apache-spark-solution-overview.html"
+    - title: Confluent Kafka com armazenamento NetApp ONTAP
+      url: "/data-analytics/kafka-ontap-overview.html"
+    - title: NetApp StorageGRID com Splunk SmartStore
+      url: "/data-analytics/stgr-splunkss-introduction.html"
+    - title: Lakehouse Dremio com armazenamento NetApp
+      url: "/data-analytics/dremio-lakehouse-introduction.html"
+  - title: Solicitações de soluções e feedback
+    links:
+    - title: Solicitação de automação
+      url: https://github.com/NetAppDocs/netapp-solutions/issues/new?body=[Request%20Automation]%0d%0a%0d%0aSolution%20Name:%20%0d%0aRequest%20Title:%20%0d%0aDescription:%0d%0aSuggestions:&title=Request%20Automation%20-%20%3Crequest_title%3E
+    - title: Proponha uma nova solução
+      url: https://github.com/NetAppDocs/netapp-solutions/issues/new?body=[Request%20Solution]%0d%0a%0d%0aSolution%20Use%20Case:%20%0d%0aSolution%20Description:%20%0d%0aAdditional%20Comments:&title=Request%20Solution%20-%20%3Csolution%3E
+    - title: Fornecer feedback da solução
+      url: https://github.com/NetAppDocs/netapp-solutions/issues/new?body=[Solution%20Feedback]%0d%0a%0d%0aSolution%20Name:%20%0d%0aSolution%20Feedback:%20%0d%0aAdditional%20Comments:&title=Solution%20Feedback%20-%20%3Csolution%3E

@@ -1,0 +1,92 @@
+---
+sidebar: sidebar 
+permalink: software/ai-nvaie-vmw-tech.html 
+keywords: NetApp AI, AI, Artificial Intelligence, ML, Machine Learning, NVIDIA, NVIDIA AI Enterprise, NVAIE, VMware 
+summary: NVIDIA AI Enterprise com NetApp e VMware - Visão geral da tecnologia 
+---
+= Visão geral da tecnologia
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Esta seção fornece uma visão geral da tecnologia para NVIDIA AI Enterprise com NetApp e VMware.
+
+
+
+== NVIDIA AI Enterprise
+
+O NVIDIA AI Enterprise é um conjunto completo e nativo em nuvem de software de IA e análise de dados que é otimizado, certificado e suportado pela NVIDIA para ser executado no VMware vSphere com sistemas certificados pela NVIDIA.  Este software facilita a implantação, o gerenciamento e o dimensionamento simples e rápidos de cargas de trabalho de IA no ambiente de nuvem híbrida moderno.
+
+
+
+== Nuvem de GPU NVIDIA (NGC)
+
+O NVIDIA NGC hospeda um catálogo de software otimizado para GPU para que profissionais de IA desenvolvam suas soluções de IA.  Ele também fornece acesso a vários serviços de IA, incluindo o NVIDIA Base Command para treinamento de modelos, o NVIDIA Fleet Command para implantar e monitorar modelos e o NGC Private Registry para acessar e gerenciar com segurança software proprietário de IA.  Além disso, os clientes do NVIDIA AI Enterprise podem solicitar suporte pelo portal NGC.
+
+
+
+== VMware vSphere
+
+O VMware vSphere é a plataforma de virtualização da VMware, que transforma data centers em infraestruturas de computação agregadas que incluem recursos de CPU, armazenamento e rede. O vSphere gerencia essas infraestruturas como um ambiente operacional unificado e fornece aos administradores as ferramentas para gerenciar os data centers que participam desse ambiente.
+
+Os dois principais componentes do vSphere são o ESXi e o vCenter Server.  O ESXi é a plataforma de virtualização onde os administradores criam e executam máquinas virtuais e dispositivos virtuais. O vCenter Server é o serviço por meio do qual os administradores gerenciam vários hosts conectados em uma rede e agrupam recursos de host.
+
+
+
+== NetApp ONTAP
+
+ONTAP 9, a última geração de software de gerenciamento de armazenamento da NetApp, permite que as empresas modernizem a infraestrutura e façam a transição para um data center pronto para a nuvem.  Aproveitando os recursos de gerenciamento de dados líderes do setor, o ONTAP permite o gerenciamento e a proteção de dados com um único conjunto de ferramentas, independentemente de onde os dados residam.  Você também pode mover dados livremente para onde for necessário: na borda, no núcleo ou na nuvem.  O ONTAP 9 inclui vários recursos que simplificam o gerenciamento de dados, aceleram e protegem dados críticos e permitem recursos de infraestrutura de última geração em arquiteturas de nuvem híbrida.
+
+
+
+=== Simplifique o gerenciamento de dados
+
+O gerenciamento de dados é crucial para as operações de TI corporativas e cientistas de dados, para que recursos apropriados sejam usados para aplicativos de IA e treinamento de conjuntos de dados de IA/ML.  As seguintes informações adicionais sobre as tecnologias NetApp estão fora do escopo desta validação, mas podem ser relevantes dependendo da sua implantação.
+
+O software de gerenciamento de dados ONTAP inclui os seguintes recursos para otimizar e simplificar as operações e reduzir seu custo total de operação:
+
+* Compactação de dados em linha e desduplicação expandida.  A compactação de dados reduz o desperdício de espaço dentro dos blocos de armazenamento e a desduplicação aumenta significativamente a capacidade efetiva.  Isso se aplica a dados armazenados localmente e dados em camadas na nuvem.
+* Qualidade de serviço mínima, máxima e adaptável (AQoS).  Controles granulares de qualidade de serviço (QoS) ajudam a manter os níveis de desempenho para aplicativos críticos em ambientes altamente compartilhados.
+* NetApp FabricPool.  Fornece hierarquização automática de dados frios para opções de armazenamento em nuvem pública e privada, incluindo Amazon Web Services (AWS), Azure e solução de armazenamento NetApp StorageGRID .  Para obter mais informações sobre FabricPool, consulte https://www.netapp.com/pdf.html?item=/media/17239-tr4598pdf.pdf["TR-4598: Melhores práticas do FabricPool"^] .
+
+
+
+
+=== Acelere e proteja os dados
+
+O ONTAP oferece níveis superiores de desempenho e proteção de dados e estende esses recursos das seguintes maneiras:
+
+* Desempenho e menor latência.  ONTAP oferece o maior rendimento possível com a menor latência possível.
+* Proteção de dados.  O ONTAP fornece recursos integrados de proteção de dados com gerenciamento comum em todas as plataformas.
+* Criptografia de volume NetApp (NVE).  O ONTAP oferece criptografia nativa em nível de volume com suporte para gerenciamento de chaves externo e integrado.
+* Multilocação e autenticação multifator.  O ONTAP permite o compartilhamento de recursos de infraestrutura com os mais altos níveis de segurança.
+
+
+
+
+=== Infraestrutura à prova do futuro
+
+O ONTAP ajuda a atender às necessidades empresariais exigentes e em constante mudança com os seguintes recursos:
+
+* Escalabilidade perfeita e operações não disruptivas.  O ONTAP oferece suporte à adição não disruptiva de capacidade aos controladores existentes e aos clusters escaláveis.  Os clientes podem atualizar para as tecnologias mais recentes, como NVMe e 32Gb FC, sem migrações de dados dispendiosas ou interrupções.
+* Conexão em nuvem.  ONTAP é o software de gerenciamento de armazenamento mais conectado à nuvem, com opções para armazenamento definido por software (ONTAP Select) e instâncias nativas da nuvem (Google Cloud NetApp Volumes) em todas as nuvens públicas.
+* Integração com aplicações emergentes.  A ONTAP oferece serviços de dados de nível empresarial para plataformas e aplicativos de última geração, como veículos autônomos, cidades inteligentes e Indústria 4.0, usando a mesma infraestrutura que dá suporte aos aplicativos empresariais existentes.
+
+
+
+
+== Kit de ferramentas NetApp DataOps
+
+O NetApp DataOps Toolkit é uma ferramenta baseada em Python que simplifica o gerenciamento de espaços de trabalho de desenvolvimento/treinamento e servidores de inferência apoiados por armazenamento NetApp de alto desempenho e escalonável.  Os principais recursos incluem:
+
+* Provisione rapidamente novos espaços de trabalho JupyterLab de alta capacidade, apoiados por armazenamento NetApp escalável e de alto desempenho.
+* Provisione rapidamente novas instâncias do NVIDIA Triton Inference Server com suporte de armazenamento NetApp de nível empresarial.
+* Clone quase instantaneamente espaços de trabalho de alta capacidade do JupyterLab para permitir experimentação ou iteração rápida.
+* Salve quase instantaneamente snapshots de espaços de trabalho de alta capacidade do JupyterLab para backup e/ou rastreabilidade/linha de base.
+* Provisione, clone e crie snapshots de volumes de dados de alta capacidade e alto desempenho quase instantaneamente.
+

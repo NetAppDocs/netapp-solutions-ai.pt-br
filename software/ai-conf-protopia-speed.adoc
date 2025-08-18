@@ -1,0 +1,19 @@
+---
+sidebar: sidebar 
+permalink: software/ai-conf-protopia-speed.html 
+keywords: speed, obfuscation, pytorch 
+summary: Para essa validação, aplicamos a ofuscação Protopia a uma imagem de 1920 x 1080 pixels cinco vezes e medimos o tempo que a etapa de ofuscação levou para ser concluída a cada vez. 
+---
+= Velocidade de ofuscação
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Para essa validação, aplicamos a ofuscação Protopia a uma imagem de 1920 x 1080 pixels cinco vezes e medimos o tempo que a etapa de ofuscação levou para ser concluída a cada vez.
+
+Usamos o PyTorch em execução em uma única GPU NVIDIA V100 para aplicar a ofuscação e limpamos o cache da GPU entre as execuções.  A etapa de ofuscação levou 5,47 ms, 5,27 ms, 4,54 ms, 5,24 ms e 4,84 ms, respectivamente, para ser concluída nas cinco execuções.  A velocidade média foi de 5,072 ms.

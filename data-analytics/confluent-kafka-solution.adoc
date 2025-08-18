@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: data-analytics/confluent-kafka-solution.html 
+keywords: solution, architecture, details, hardware, software 
+summary: Esta seção aborda o hardware e o software usados para a certificação Confluent.  Estas informações são aplicáveis à implantação do Kafka com armazenamento NetApp . 
+---
+= Detalhes da arquitetura da solução
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Esta seção aborda o hardware e o software usados para verificação do Confluent.  Estas informações são aplicáveis à implantação da Confluent Platform com armazenamento NetApp .  A tabela a seguir abrange a arquitetura da solução testada e os componentes básicos.
+
+|===
+| Componentes da solução | Detalhes 
+
+
+| Confluent Kafka versão 6.2  a| 
+* Três tratadores de zoológico
+* Cinco servidores de corretores
+* Cinco ferramentas de servidores
+* Uma Grafana
+* Um centro de controle
+
+
+
+
+| Linux (ubuntu 18.04) | Todos os servidores 
+
+
+| NetApp StorageGRID para armazenamento em camadas  a| 
+* Software StorageGRID
+* 1 x SG1000 (balanceador de carga)
+* 4 x SGF6024
+* 4 x 24 x 800 SSDs
+* Protocolo S3
+* 4 x 100GbE (conectividade de rede entre o broker e as instâncias do StorageGRID )
+
+
+
+
+| 15 servidores Fujitsu PRIMERGY RX2540 | Cada um equipado com: * 2 CPUs, 16 núcleos físicos no total * Intel Xeon * 256 GB de memória física * Porta dupla de 100 GbE 
+|===

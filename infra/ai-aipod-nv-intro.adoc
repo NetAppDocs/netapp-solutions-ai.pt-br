@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: infra/ai-aipod-nv-intro.html 
+keywords: NetApp AI, AI, Artificial Intelligence, ML, Machine Learning, NVIDIA, NVIDIA AI Enterprise, NVIDIA BasePOD, NVIDIA DGX 
+summary: O NetApp AIPod com sistemas NVIDIA DGX é uma arquitetura de referência pronta para empresas baseada no NVIDIA BasePOD para aprendizado profundo e inteligência artificial usando sistemas de armazenamento NetApp ONTAP AFF e sistemas de rede e DGX NVIDIA . 
+---
+= NVA-1173 NetApp AIPod com sistemas NVIDIA DGX - Introdução
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+image:poweredbynvidia.png["200,200,Erro: Imagem gráfica ausente"]
+
+[role="lead"]
+Engenharia de Soluções NetApp
+
+
+
+== Sumário executivo
+
+O NetApp&#8482; AIPod com sistemas NVIDIA DGX&#8482; e sistemas de armazenamento conectados à nuvem NetApp simplificam as implantações de infraestrutura para cargas de trabalho de aprendizado de máquina (ML) e inteligência artificial (IA) eliminando a complexidade do design e as suposições.  Com base no design do NVIDIA DGX BasePOD para oferecer desempenho de computação excepcional para cargas de trabalho de última geração, o AIPod com sistemas NVIDIA DGX adiciona sistemas de armazenamento NetApp AFF que permitem aos clientes começar pequenos e crescer sem interrupções, ao mesmo tempo em que gerenciam dados de forma inteligente da borda ao núcleo, à nuvem e vice-versa.  O NetApp AIPod faz parte do portfólio maior de soluções de IA da NetApp , mostrado na figura abaixo.
+
+_Portfólio de soluções de IA da NetApp_
+
+image:aipod-nv-portfolio.png["Figura mostrando diálogo de entrada/saída ou representando conteúdo escrito"]
+
+Este documento descreve os principais componentes da arquitetura de referência do AIPod , informações de conectividade e configuração do sistema, resultados de testes de validação e orientação de dimensionamento da solução.  Este documento é destinado a engenheiros de soluções da NetApp e parceiros e tomadores de decisões estratégicas de clientes interessados em implantar uma infraestrutura de alto desempenho para cargas de trabalho de ML/DL e análise.

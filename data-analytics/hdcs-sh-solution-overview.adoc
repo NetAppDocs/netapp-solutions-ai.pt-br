@@ -1,0 +1,53 @@
+---
+sidebar: sidebar 
+permalink: data-analytics/hdcs-sh-solution-overview.html 
+keywords: tr-4657, tr4657, 4657, hybrid cloud, spark, hadoop, aff, fas 
+summary: Este documento descreve soluções de dados em nuvem híbrida usando sistemas de armazenamento NetApp AFF e FAS , NetApp Cloud Volumes ONTAP, armazenamento conectado NetApp e tecnologia NetApp FlexClone para Spark e Hadoop.  Essas arquiteturas de solução permitem que os clientes escolham uma solução de proteção de dados apropriada para seu ambiente.  A NetApp projetou essas soluções com base na interação com os clientes e seus casos de uso comercial. 
+---
+= TR-4657: Soluções de dados em nuvem híbrida da NetApp - Spark e Hadoop com base em casos de uso do cliente
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+Karthikeyan Nagalingam e Sathish Thyagarajan, NetApp
+
+[role="lead"]
+Este documento descreve soluções de dados em nuvem híbrida usando sistemas de armazenamento NetApp AFF e FAS , NetApp Cloud Volumes ONTAP, armazenamento conectado NetApp e tecnologia NetApp FlexClone para Spark e Hadoop.  Essas arquiteturas de solução permitem que os clientes escolham uma solução de proteção de dados apropriada para seu ambiente.  A NetApp projetou essas soluções com base na interação com os clientes e seus casos de uso comercial.  Este documento fornece as seguintes informações detalhadas:
+
+* Por que precisamos de proteção de dados para ambientes Spark e Hadoop e os desafios dos clientes.
+* A estrutura de dados alimentada pela visão da NetApp e seus blocos de construção e serviços.
+* Como esses blocos de construção podem ser usados para arquitetar fluxos de trabalho flexíveis de proteção de dados.
+* Os prós e contras de diversas arquiteturas baseadas em casos de uso de clientes do mundo real.  Cada caso de uso fornece os seguintes componentes:
++
+** Cenários de clientes
+** Requisitos e desafios
+** Soluções
+** Resumo das soluções
+
+
+
+
+
+
+== Por que a proteção de dados do Hadoop?
+
+Em um ambiente Hadoop e Spark, as seguintes preocupações devem ser abordadas:
+
+* *Falhas de software ou humanas.*  Erros humanos em atualizações de software durante a execução de operações de dados do Hadoop podem levar a comportamentos defeituosos que podem causar resultados inesperados no trabalho.  Nesse caso, precisamos proteger os dados para evitar falhas ou resultados irracionais.  Por exemplo, como resultado de uma atualização de software mal executada em um aplicativo de análise de sinais de trânsito, um novo recurso que não analisa corretamente os dados de sinais de trânsito no formato de texto simples.  O software ainda analisa JSON e outros formatos de arquivo não textuais, resultando no sistema de análise de controle de tráfego em tempo real produzindo resultados de previsão sem pontos de dados.  Essa situação pode causar saídas defeituosas que podem levar a acidentes nos semáforos.  A proteção de dados pode resolver esse problema fornecendo a capacidade de retornar rapidamente à versão anterior do aplicativo funcional.
+* *Tamanho e escala.*  O tamanho dos dados analíticos cresce dia a dia devido ao número cada vez maior de fontes e volumes de dados.  Mídias sociais, aplicativos móveis, análise de dados e plataformas de computação em nuvem são as principais fontes de dados no atual mercado de big data, que está crescendo muito rapidamente e, portanto, os dados precisam ser protegidos para garantir operações de dados precisas.
+* *Proteção de dados nativa do Hadoop.*  O Hadoop tem um comando nativo para proteger os dados, mas esse comando não fornece consistência de dados durante o backup.  Ele suporta apenas backup em nível de diretório.  Os snapshots criados pelo Hadoop são somente leitura e não podem ser usados para reutilizar os dados de backup diretamente.
+
+
+
+
+== Desafios de proteção de dados para clientes do Hadoop e Spark
+
+Um desafio comum para clientes do Hadoop e do Spark é reduzir o tempo de backup e aumentar a confiabilidade do backup sem afetar negativamente o desempenho no cluster de produção durante a proteção de dados.
+
+Os clientes também precisam minimizar o tempo de inatividade do objetivo de ponto de recuperação (RPO) e do objetivo de tempo de recuperação (RTO) e controlar seus sites de recuperação de desastres locais e baseados na nuvem para uma continuidade ideal dos negócios.  Esse controle normalmente vem de ferramentas de gerenciamento de nível empresarial.
+
+Os ambientes Hadoop e Spark são complicados não só porque o volume de dados é enorme e crescente, mas também porque a taxa em que esses dados chegam está aumentando.  Esse cenário dificulta a criação rápida de ambientes de DevTest e QA eficientes e atualizados a partir dos dados de origem.  A NetApp reconhece esses desafios e oferece as soluções apresentadas neste artigo.

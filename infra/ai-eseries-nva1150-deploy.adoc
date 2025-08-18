@@ -1,0 +1,21 @@
+---
+sidebar: sidebar 
+permalink: infra/ai-eseries-nva1150-deploy.html 
+keywords:  
+summary:  
+---
+= NVA-1150-DEPLOY: Guia de implantação de sistemas Quantum StorNext com NetApp E-Series
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+Ryan Rodine, NetApp
+
+[role="lead"]
+Este documento fornece detalhes sobre como implantar uma solução de sistema de arquivos paralelo StorNext com sistemas de armazenamento NetApp E-Series.  Esta solução abrange o array all-flash NetApp EF280, o array NVMe all-flash NetApp EF300, o array NVMe all-flash NetApp EF600 e o sistema híbrido NetApp E5760.  Ele oferece caracterização de desempenho com base no benchmarking Frametest, uma ferramenta amplamente utilizada para testes na indústria de mídia e entretenimento.
+
+link:https://www.netapp.com/pdf.html?item=/media/19429-nva-1150-deploy.pdf["NVA-1150-DEPLOY: Guia de implantação de sistemas Quantum StorNext com NetApp E-Series"^]

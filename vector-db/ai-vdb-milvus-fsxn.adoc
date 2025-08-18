@@ -1,0 +1,199 @@
+---
+sidebar: sidebar 
+permalink: vector-db/ai-vdb-milvus-fsxn.html 
+keywords: vector database 
+summary: milvus com Amazon FSx ONTAP para NetApp ONTAP - solução de banco de dados vetorial para netapp 
+---
+= Milvus com Amazon FSx ONTAP para NetApp ONTAP - dualidade de arquivo e objeto
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Esta seção discute a configuração do cluster milvus com o Amazon FSx ONTAP para a solução de banco de dados vetorial para NetApp.
+
+
+
+== Milvus com Amazon FSx ONTAP para NetApp ONTAP – dualidade de arquivo e objeto
+
+Nesta seção, veremos por que precisamos implantar um banco de dados vetorial na nuvem, bem como as etapas para implantar um banco de dados vetorial (milvus autônomo) no Amazon FSx ONTAP para NetApp ONTAP em contêineres do Docker.
+
+A implantação de um banco de dados vetorial na nuvem oferece vários benefícios significativos, especialmente para aplicativos que exigem manipulação de dados de alta dimensão e execução de pesquisas de similaridade.  Primeiro, a implantação baseada em nuvem oferece escalabilidade, permitindo o fácil ajuste de recursos para corresponder aos crescentes volumes de dados e cargas de consulta.  Isso garante que o banco de dados possa lidar eficientemente com o aumento da demanda, mantendo alto desempenho.  Em segundo lugar, a implantação na nuvem oferece alta disponibilidade e recuperação de desastres, pois os dados podem ser replicados em diferentes localizações geográficas, minimizando o risco de perda de dados e garantindo serviço contínuo mesmo durante eventos inesperados.  Terceiro, ele oferece boa relação custo-benefício, pois você só paga pelos recursos que usa e pode aumentar ou diminuir conforme a demanda, evitando a necessidade de investimentos iniciais substanciais em hardware.  Por fim, a implantação de um banco de dados vetorial na nuvem pode melhorar a colaboração, pois os dados podem ser acessados e compartilhados de qualquer lugar, facilitando o trabalho em equipe e a tomada de decisões baseada em dados.  Verifique a arquitetura do milvus standalone com Amazon FSx ONTAP para NetApp ONTAP usado nesta validação.
+
+image:amazon-fsxn-milvus.png["Figura mostrando diálogo de entrada/saída ou representando conteúdo escrito"]
+
+. Crie uma instância do Amazon FSx ONTAP para NetApp ONTAP e anote os detalhes da VPC, dos grupos de segurança da VPC e da sub-rede.  Essas informações serão necessárias ao criar uma instância do EC2.  Você pode encontrar mais detalhes aqui - https://us-east-1.console.aws.amazon.com/fsx/home?region=us-east-1#file-system-create[]
+. Crie uma instância do EC2, garantindo que a VPC, os grupos de segurança e a sub-rede correspondam aos da instância do Amazon FSx ONTAP para NetApp ONTAP .
+. Instale o nfs-common usando o comando 'apt-get install nfs-common' e atualize as informações do pacote usando 'sudo apt-get update'.
+. Crie uma pasta de montagem e monte o Amazon FSx ONTAP para NetApp ONTAP nela.
++
+....
+ubuntu@ip-172-31-29-98:~$ mkdir /home/ubuntu/milvusvectordb
+ubuntu@ip-172-31-29-98:~$ sudo mount 172.31.255.228:/vol1 /home/ubuntu/milvusvectordb
+ubuntu@ip-172-31-29-98:~$ df -h /home/ubuntu/milvusvectordb
+Filesystem            Size  Used Avail Use% Mounted on
+172.31.255.228:/vol1  973G  126G  848G  13% /home/ubuntu/milvusvectordb
+ubuntu@ip-172-31-29-98:~$
+....
+. Instale o Docker e o Docker Compose usando 'apt-get install'.
+. Configure um cluster Milvus com base no arquivo docker-compose.yaml, que pode ser baixado do site Milvus.
++
+....
+root@ip-172-31-22-245:~# wget https://github.com/milvus-io/milvus/releases/download/v2.0.2/milvus-standalone-docker-compose.yml -O docker-compose.yml
+--2024-04-01 14:52:23--  https://github.com/milvus-io/milvus/releases/download/v2.0.2/milvus-standalone-docker-compose.yml
+<removed some output to save page space>
+....
+. Na seção 'volumes' do arquivo docker-compose.yml, mapeie o ponto de montagem do NetApp NFS para o caminho do contêiner Milvus correspondente, especificamente em etcd, minio e standalone. Verifiquelink:ai-vdb-docker-compose.html["Apêndice D: docker-compose.yml"] para detalhes sobre mudanças no yml
+. Verifique as pastas e arquivos montados.
++
+[source, bash]
+----
+ubuntu@ip-172-31-29-98:~/milvusvectordb$ ls -ltrh /home/ubuntu/milvusvectordb
+total 8.0K
+-rw-r--r-- 1 root root 1.8K Apr  2 16:35 s3_access.py
+drwxrwxrwx 2 root root 4.0K Apr  4 20:19 volumes
+ubuntu@ip-172-31-29-98:~/milvusvectordb$ ls -ltrh /home/ubuntu/milvusvectordb/volumes/
+total 0
+ubuntu@ip-172-31-29-98:~/milvusvectordb$ cd
+ubuntu@ip-172-31-29-98:~$ ls
+docker-compose.yml  docker-compose.yml~  milvus.yaml  milvusvectordb  vectordbvol1
+ubuntu@ip-172-31-29-98:~$
+----
+. Execute 'docker-compose up -d' no diretório que contém o arquivo docker-compose.yml.
+. Verifique o status do contêiner Milvus.
++
+[source, bash]
+----
+ubuntu@ip-172-31-29-98:~$ sudo docker-compose ps
+      Name                     Command                  State                                               Ports
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+milvus-etcd         etcd -advertise-client-url ...   Up (healthy)   2379/tcp, 2380/tcp
+milvus-minio        /usr/bin/docker-entrypoint ...   Up (healthy)   0.0.0.0:9000->9000/tcp,:::9000->9000/tcp, 0.0.0.0:9001->9001/tcp,:::9001->9001/tcp
+milvus-standalone   /tini -- milvus run standalone   Up (healthy)   0.0.0.0:19530->19530/tcp,:::19530->19530/tcp, 0.0.0.0:9091->9091/tcp,:::9091->9091/tcp
+ubuntu@ip-172-31-29-98:~$
+ubuntu@ip-172-31-29-98:~$ ls -ltrh /home/ubuntu/milvusvectordb/volumes/
+total 12K
+drwxr-xr-x 3 root root 4.0K Apr  4 20:21 etcd
+drwxr-xr-x 4 root root 4.0K Apr  4 20:21 minio
+drwxr-xr-x 5 root root 4.0K Apr  4 20:21 milvus
+ubuntu@ip-172-31-29-98:~$
+----
+. Para validar a funcionalidade de leitura e gravação do banco de dados vetorial e seus dados no Amazon FSx ONTAP para NetApp ONTAP, usamos o Python Milvus SDK e um programa de exemplo do PyMilvus.  Instale os pacotes necessários usando 'apt-get install python3-numpy python3-pip' e instale o PyMilvus usando 'pip3 install pymilvus'.
+. Valide as operações de leitura e gravação de dados do Amazon FSx ONTAP para NetApp ONTAP no banco de dados vetorial.
++
+[source, python]
+----
+root@ip-172-31-29-98:~/pymilvus/examples# python3 prepare_data_netapp_new.py
+=== start connecting to Milvus     ===
+=== Milvus host: localhost         ===
+Does collection hello_milvus_ntapnew_sc exist in Milvus: True
+=== Drop collection - hello_milvus_ntapnew_sc ===
+=== Drop collection - hello_milvus_ntapnew_sc2 ===
+=== Create collection `hello_milvus_ntapnew_sc` ===
+=== Start inserting entities       ===
+Number of entities in hello_milvus_ntapnew_sc: 9000
+root@ip-172-31-29-98:~/pymilvus/examples# find /home/ubuntu/milvusvectordb/
+…
+<removed content to save page space >
+…
+/home/ubuntu/milvusvectordb/volumes/minio/a-bucket/files/insert_log/448789845791611912/448789845791611913/448789845791611939/103/448789845791411923/b3def25f-c117-4fba-8256-96cb7557cd6c
+/home/ubuntu/milvusvectordb/volumes/minio/a-bucket/files/insert_log/448789845791611912/448789845791611913/448789845791611939/103/448789845791411923/b3def25f-c117-4fba-8256-96cb7557cd6c/part.1
+/home/ubuntu/milvusvectordb/volumes/minio/a-bucket/files/insert_log/448789845791611912/448789845791611913/448789845791611939/103/448789845791411923/xl.meta
+/home/ubuntu/milvusvectordb/volumes/minio/a-bucket/files/insert_log/448789845791611912/448789845791611913/448789845791611939/0
+/home/ubuntu/milvusvectordb/volumes/minio/a-bucket/files/insert_log/448789845791611912/448789845791611913/448789845791611939/0/448789845791411924
+/home/ubuntu/milvusvectordb/volumes/minio/a-bucket/files/insert_log/448789845791611912/448789845791611913/448789845791611939/0/448789845791411924/xl.meta
+/home/ubuntu/milvusvectordb/volumes/minio/a-bucket/files/insert_log/448789845791611912/448789845791611913/448789845791611939/1
+/home/ubuntu/milvusvectordb/volumes/minio/a-bucket/files/insert_log/448789845791611912/448789845791611913/448789845791611939/1/448789845791411925
+/home/ubuntu/milvusvectordb/volumes/minio/a-bucket/files/insert_log/448789845791611912/448789845791611913/448789845791611939/1/448789845791411925/xl.meta
+/home/ubuntu/milvusvectordb/volumes/minio/a-bucket/files/insert_log/448789845791611912/448789845791611913/448789845791611939/100
+/home/ubuntu/milvusvectordb/volumes/minio/a-bucket/files/insert_log/448789845791611912/448789845791611913/448789845791611939/100/448789845791411920
+/home/ubuntu/milvusvectordb/volumes/minio/a-bucket/files/insert_log/448789845791611912/448789845791611913/448789845791611939/100/448789845791411920/xl.meta
+----
+. Verifique a operação de leitura usando o script verify_data_netapp.py.
++
+[source, python]
+----
+root@ip-172-31-29-98:~/pymilvus/examples# python3 verify_data_netapp.py
+=== start connecting to Milvus     ===
+
+=== Milvus host: localhost         ===
+
+Does collection hello_milvus_ntapnew_sc exist in Milvus: True
+{'auto_id': False, 'description': 'hello_milvus_ntapnew_sc', 'fields': [{'name': 'pk', 'description': '', 'type': <DataType.INT64: 5>, 'is_primary': True, 'auto_id': False}, {'name': 'random', 'description': '', 'type': <DataType.DOUBLE: 11>}, {'name': 'var', 'description': '', 'type': <DataType.VARCHAR: 21>, 'params': {'max_length': 65535}}, {'name': 'embeddings', 'description': '', 'type': <DataType.FLOAT_VECTOR: 101>, 'params': {'dim': 8}}], 'enable_dynamic_field': False}
+Number of entities in Milvus: hello_milvus_ntapnew_sc : 9000
+
+=== Start Creating index IVF_FLAT  ===
+
+
+=== Start loading                  ===
+
+
+=== Start searching based on vector similarity ===
+
+hit: id: 2248, distance: 0.0, entity: {'random': 0.2777646777746381}, random field: 0.2777646777746381
+hit: id: 4837, distance: 0.07805602252483368, entity: {'random': 0.6451650959930306}, random field: 0.6451650959930306
+hit: id: 7172, distance: 0.07954417169094086, entity: {'random': 0.6141351712303128}, random field: 0.6141351712303128
+hit: id: 2249, distance: 0.0, entity: {'random': 0.7434908973629817}, random field: 0.7434908973629817
+hit: id: 830, distance: 0.05628090724349022, entity: {'random': 0.8544487225667627}, random field: 0.8544487225667627
+hit: id: 8562, distance: 0.07971227169036865, entity: {'random': 0.4464554280115878}, random field: 0.4464554280115878
+search latency = 0.1266s
+
+=== Start querying with `random > 0.5` ===
+
+query result:
+-{'random': 0.6378742006852851, 'embeddings': [0.3017092, 0.74452263, 0.8009826, 0.4927033, 0.12762444, 0.29869467, 0.52859956, 0.23734547], 'pk': 0}
+search latency = 0.3294s
+
+=== Start hybrid searching with `random > 0.5` ===
+
+hit: id: 4837, distance: 0.07805602252483368, entity: {'random': 0.6451650959930306}, random field: 0.6451650959930306
+hit: id: 7172, distance: 0.07954417169094086, entity: {'random': 0.6141351712303128}, random field: 0.6141351712303128
+hit: id: 515, distance: 0.09590047597885132, entity: {'random': 0.8013175797590888}, random field: 0.8013175797590888
+hit: id: 2249, distance: 0.0, entity: {'random': 0.7434908973629817}, random field: 0.7434908973629817
+hit: id: 830, distance: 0.05628090724349022, entity: {'random': 0.8544487225667627}, random field: 0.8544487225667627
+hit: id: 1627, distance: 0.08096684515476227, entity: {'random': 0.9302397069516164}, random field: 0.9302397069516164
+search latency = 0.2674s
+Does collection hello_milvus_ntapnew_sc2 exist in Milvus: True
+{'auto_id': True, 'description': 'hello_milvus_ntapnew_sc2', 'fields': [{'name': 'pk', 'description': '', 'type': <DataType.INT64: 5>, 'is_primary': True, 'auto_id': True}, {'name': 'random', 'description': '', 'type': <DataType.DOUBLE: 11>}, {'name': 'var', 'description': '', 'type': <DataType.VARCHAR: 21>, 'params': {'max_length': 65535}}, {'name': 'embeddings', 'description': '', 'type': <DataType.FLOAT_VECTOR: 101>, 'params': {'dim': 8}}], 'enable_dynamic_field': False}
+----
+. Se o cliente quiser acessar (ler) dados NFS testados no banco de dados vetorial por meio do protocolo S3 para cargas de trabalho de IA, isso pode ser validado usando um programa Python simples.  Um exemplo disso poderia ser uma busca por similaridade de imagens de outro aplicativo, como mencionado na imagem que está no início desta seção.
++
+[source, python]
+----
+root@ip-172-31-29-98:~/pymilvus/examples# sudo python3 /home/ubuntu/milvusvectordb/s3_access.py -i 172.31.255.228 --bucket milvusnasvol --access-key PY6UF318996I86NBYNDD --secret-key hoPctr9aD88c1j0SkIYZ2uPa03vlbqKA0c5feK6F
+OBJECTS in the bucket milvusnasvol are :
+***************************************
+…
+<output content removed to save page space>
+…
+bucket/files/insert_log/448789845791611912/448789845791611913/448789845791611920/0/448789845791411917/xl.meta
+volumes/minio/a-bucket/files/insert_log/448789845791611912/448789845791611913/448789845791611920/1/448789845791411918/xl.meta
+volumes/minio/a-bucket/files/insert_log/448789845791611912/448789845791611913/448789845791611920/100/448789845791411913/xl.meta
+volumes/minio/a-bucket/files/insert_log/448789845791611912/448789845791611913/448789845791611920/101/448789845791411914/xl.meta
+volumes/minio/a-bucket/files/insert_log/448789845791611912/448789845791611913/448789845791611920/102/448789845791411915/xl.meta
+volumes/minio/a-bucket/files/insert_log/448789845791611912/448789845791611913/448789845791611920/103/448789845791411916/1c48ab6e-1546-4503-9084-28c629216c33/part.1
+volumes/minio/a-bucket/files/insert_log/448789845791611912/448789845791611913/448789845791611920/103/448789845791411916/xl.meta
+volumes/minio/a-bucket/files/insert_log/448789845791611912/448789845791611913/448789845791611939/0/448789845791411924/xl.meta
+volumes/minio/a-bucket/files/insert_log/448789845791611912/448789845791611913/448789845791611939/1/448789845791411925/xl.meta
+volumes/minio/a-bucket/files/insert_log/448789845791611912/448789845791611913/448789845791611939/100/448789845791411920/xl.meta
+volumes/minio/a-bucket/files/insert_log/448789845791611912/448789845791611913/448789845791611939/101/448789845791411921/xl.meta
+volumes/minio/a-bucket/files/insert_log/448789845791611912/448789845791611913/448789845791611939/102/448789845791411922/xl.meta
+volumes/minio/a-bucket/files/insert_log/448789845791611912/448789845791611913/448789845791611939/103/448789845791411923/b3def25f-c117-4fba-8256-96cb7557cd6c/part.1
+volumes/minio/a-bucket/files/insert_log/448789845791611912/448789845791611913/448789845791611939/103/448789845791411923/xl.meta
+volumes/minio/a-bucket/files/stats_log/448789845791211880/448789845791211881/448789845791411889/100/1/xl.meta
+volumes/minio/a-bucket/files/stats_log/448789845791211880/448789845791211881/448789845791411889/100/448789845791411912/xl.meta
+volumes/minio/a-bucket/files/stats_log/448789845791611912/448789845791611913/448789845791611920/100/1/xl.meta
+volumes/minio/a-bucket/files/stats_log/448789845791611912/448789845791611913/448789845791611920/100/448789845791411919/xl.meta
+volumes/minio/a-bucket/files/stats_log/448789845791611912/448789845791611913/448789845791611939/100/1/xl.meta
+volumes/minio/a-bucket/files/stats_log/448789845791611912/448789845791611913/448789845791611939/100/448789845791411926/xl.meta
+***************************************
+root@ip-172-31-29-98:~/pymilvus/examples#
+----
++
+Esta seção demonstra efetivamente como os clientes podem implantar e operar uma configuração Milvus autônoma em contêineres Docker, utilizando o NetApp FSx ONTAP da Amazon para armazenamento de dados NetApp ONTAP .  Essa configuração permite que os clientes aproveitem o poder dos bancos de dados vetoriais para manipular dados de alta dimensão e executar consultas complexas, tudo dentro do ambiente escalável e eficiente dos contêineres do Docker.  Ao criar uma instância do Amazon FSx ONTAP para NetApp ONTAP e uma instância EC2 correspondente, os clientes podem garantir a utilização ideal de recursos e o gerenciamento de dados.  A validação bem-sucedida das operações de leitura e gravação de dados do FSx ONTAP no banco de dados vetorial fornece aos clientes a garantia de operações de dados confiáveis e consistentes.  Além disso, a capacidade de listar (ler) dados de cargas de trabalho de IA por meio do protocolo S3 oferece maior acessibilidade aos dados.  Portanto, esse processo abrangente fornece aos clientes uma solução robusta e eficiente para gerenciar suas operações de dados em larga escala, aproveitando os recursos do FSx ONTAP da Amazon para NetApp ONTAP.
+
+

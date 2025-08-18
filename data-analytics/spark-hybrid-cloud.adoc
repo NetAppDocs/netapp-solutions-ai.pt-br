@@ -1,0 +1,37 @@
+---
+sidebar: sidebar 
+permalink: data-analytics/spark-hybrid-cloud.html 
+keywords: hybrid cloud, operating model, netapp private storage, 
+summary: Um data center empresarial moderno é uma nuvem híbrida que conecta vários ambientes de infraestrutura distribuída por meio de um plano de gerenciamento de dados contínuo com um modelo operacional consistente, no local e/ou em várias nuvens públicas.  Para aproveitar ao máximo uma nuvem híbrida, você precisa ser capaz de mover dados facilmente entre seus ambientes locais e de várias nuvens, sem a necessidade de conversões de dados ou refatoração de aplicativos. 
+---
+= Solução de nuvem híbrida
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um data center empresarial moderno é uma nuvem híbrida que conecta vários ambientes de infraestrutura distribuída por meio de um plano de gerenciamento de dados contínuo com um modelo operacional consistente, no local e/ou em várias nuvens públicas.  Para aproveitar ao máximo uma nuvem híbrida, você precisa ser capaz de mover dados facilmente entre seus ambientes locais e de várias nuvens, sem a necessidade de conversões de dados ou refatoração de aplicativos.
+
+Os clientes indicaram que iniciam sua jornada para a nuvem híbrida movendo o armazenamento secundário para a nuvem para casos de uso como proteção de dados ou movendo cargas de trabalho menos críticas aos negócios, como desenvolvimento de aplicativos e DevOps para a nuvem.  Eles então passam para cargas de trabalho mais críticas.  Hospedagem de conteúdo e web, DevOps e desenvolvimento de aplicativos, bancos de dados, análises e aplicativos em contêineres estão entre as cargas de trabalho de nuvem híbrida mais populares.  A complexidade, o custo e os riscos dos projetos de IA empresarial historicamente dificultaram a adoção da IA do estágio experimental até a produção.
+
+Com uma solução de nuvem híbrida da NetApp , os clientes se beneficiam de ferramentas integradas de segurança, governança de dados e conformidade com um único painel de controle para gerenciamento de dados e fluxo de trabalho em ambientes distribuídos, ao mesmo tempo em que otimizam o custo total de propriedade com base em seu consumo.  A figura a seguir é um exemplo de solução de um parceiro de serviço de nuvem encarregado de fornecer conectividade multinuvem para dados de análise de big data dos clientes.
+
+image:apache-spark-014.png["Exemplo de solução de um parceiro de serviço em nuvem."]
+
+Neste cenário, os dados de IoT recebidos na AWS de diferentes fontes são armazenados em um local central no NetApp Private Storage (NPS).  O armazenamento NPS é conectado a clusters Spark ou Hadoop localizados na AWS e no Azure, permitindo que aplicativos de análise de big data sejam executados em várias nuvens acessando os mesmos dados.  Os principais requisitos e desafios para este caso de uso incluem o seguinte:
+
+* Os clientes desejam executar tarefas analíticas nos mesmos dados usando várias nuvens.
+* Os dados devem ser recebidos de diferentes fontes, como ambientes locais e de nuvem, por meio de diferentes sensores e hubs.
+* A solução deve ser eficiente e econômica.
+* O principal desafio é criar uma solução econômica e eficiente que ofereça serviços de análise híbridos entre diferentes ambientes locais e na nuvem.
+
+
+Nossa solução de proteção de dados e conectividade multinuvem resolve o problema de ter aplicativos de análise de nuvem em vários hiperescaladores.  Conforme mostrado na figura acima, os dados dos sensores são transmitidos e ingeridos no cluster do AWS Spark por meio do Kafka.  Os dados são armazenados em um compartilhamento NFS que reside no NPS, que está localizado fora do provedor de nuvem, dentro de um data center da Equinix.
+
+Como o NetApp NPS está conectado ao Amazon AWS e ao Microsoft Azure por meio de conexões Direct Connect e Express Route, respectivamente, os clientes podem aproveitar o In-Place Analytics Module para acessar os dados dos clusters de análise da Amazon e da AWS.  Consequentemente, como tanto o armazenamento local quanto o NPS executam software ONTAP , https://docs.netapp.com/us-en/ontap/data-protection/snapmirror-replication-concept.html["SnapMirror"^] pode espelhar os dados do NPS no cluster local, fornecendo análises de nuvem híbrida no local e em várias nuvens.
+
+Para obter o melhor desempenho, a NetApp normalmente recomenda o uso de várias interfaces de rede e conexão direta ou rotas expressas para acessar os dados de instâncias de nuvem.  Temos outras soluções de movimentação de dados, incluindo https://mysupport.netapp.com/documentation/docweb/index.html?productID=63942&language=en-US["XCP"^] e https://cloud.netapp.com/cloud-sync-service["BlueXP Copiar e Sincronizar"^] para ajudar os clientes a criar clusters Spark de nuvem híbrida, seguros, econômicos e com reconhecimento de aplicativos.

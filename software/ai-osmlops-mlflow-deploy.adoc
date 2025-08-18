@@ -1,0 +1,102 @@
+---
+sidebar: sidebar 
+permalink: software/ai-osmlops-mlflow-deploy.html 
+keywords: AI, control plane, MLOps, MLflow 
+summary: MLOps de código aberto com NetApp - Implantação do MLflow 
+---
+= Implantação do MLflow
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Esta seção descreve as tarefas que você deve concluir para implantar o MLflow no seu cluster Kubernetes.
+
+
+NOTE: É possível implantar o MLflow em outras plataformas além do Kubernetes.  A implantação do MLflow em plataformas diferentes do Kubernetes está fora do escopo desta solução.
+
+
+
+== Pré-requisitos
+
+Antes de executar o exercício de implantação descrito nesta seção, presumimos que você já tenha executado as seguintes tarefas:
+
+. Você já tem um cluster Kubernetes funcional.
+. Você já instalou e configurou o NetApp Trident no seu cluster Kubernetes.  Para mais detalhes sobre o Trident, consulte olink:https://docs.netapp.com/us-en/trident/index.html["Documentação do Trident"^] .
+
+
+
+
+== Instalar o Helm
+
+O MLflow é implantado usando o Helm, um gerenciador de pacotes popular para Kubernetes.  Antes de implantar o MLflow, você deve instalar o Helm no seu nó de controle do Kubernetes.  Para instalar o Helm, siga as instruções https://helm.sh/docs/intro/install/["instruções de instalação"^] na documentação oficial do Helm.
+
+
+
+== Definir classe de armazenamento padrão do Kubernetes
+
+Antes de implantar o MLflow, você deve designar uma StorageClass padrão dentro do seu cluster Kubernetes.  Para designar uma StorageClass padrão em seu cluster, siga as instruções descritas nolink:ai-osmlops-kubeflow-deploy.html["Implantação do Kubeflow"] seção.  Se você já designou uma StorageClass padrão dentro do seu cluster, pode pular esta etapa.
+
+
+
+== Implantar MLflow
+
+Depois que os pré-requisitos forem atendidos, você poderá começar a implantação do MLflow usando o gráfico do Helm.
+
+
+
+=== Configurar a implantação do gráfico do MLflow Helm.
+
+Antes de implantar o MLflow usando o gráfico Helm, podemos configurar a implantação para usar a classe de armazenamento NetApp Trident e alterar outros parâmetros para atender às nossas necessidades usando um arquivo *config.yaml*.  Um exemplo do arquivo *config.yaml* pode ser encontrado em: https://github.com/bitnami/charts/blob/main/bitnami/mlflow/values.yaml[]
+
+
+NOTE: Você pode definir o Trident storageClass no parâmetro *global.defaultStorageClass* no arquivo config.yaml (por exemplo, storageClass: "ontap-flexvol").
+
+
+
+=== Instalando o Helm Chart
+
+O gráfico Helm pode ser instalado com o arquivo *config.yaml* personalizado para MLflow usando o seguinte comando:
+
+[source, shell]
+----
+helm install oci://registry-1.docker.io/bitnamicharts/mlflow -f config.yaml --generate-name --namespace jupyterhub
+----
+
+NOTE: O comando implanta o MLflow no cluster Kubernetes na configuração personalizada por meio do arquivo *config.yaml* fornecido.  O MLflow é implantado no namespace fornecido e um nome de versão aleatório é fornecido via kubernetes para a versão.
+
+
+
+=== Verificar implantação
+
+Após a implantação do gráfico Helm, você pode verificar se o serviço está acessível usando:
+
+[source, shell]
+----
+kubectl get service -n jupyterhub
+----
+
+NOTE: Substitua *jupyterhub* pelo namespace que você usou durante a implantação.
+
+Você deverá ver os seguintes serviços:
+
+[source, shell]
+----
+NAME                              TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)           AGE
+mlflow-1719843029-minio           ClusterIP   10.233.22.4     <none>        80/TCP,9001/TCP   25d
+mlflow-1719843029-postgresql      ClusterIP   10.233.5.141    <none>        5432/TCP          25d
+mlflow-1719843029-postgresql-hl   ClusterIP   None            <none>        5432/TCP          25d
+mlflow-1719843029-tracking        NodePort    10.233.2.158    <none>        30002:30002/TCP   25d
+----
+
+NOTE: Editamos o arquivo config.yaml para usar o serviço NodePort para acessar o MLflow na porta 30002.
+
+
+
+=== Acesse o MLflow
+
+Depois que todos os serviços relacionados ao MLflow estiverem ativos e em execução, você poderá acessá-lo usando o endereço IP NodePort ou LoadBalancer fornecido (por exemplo `http://10.61.181.109:30002` )

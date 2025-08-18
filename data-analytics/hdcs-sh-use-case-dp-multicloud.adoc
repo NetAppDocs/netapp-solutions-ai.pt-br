@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: data-analytics/hdcs-sh-use-case-dp-multicloud.html 
+keywords: iot, aws, nps, azure, analytics application 
+summary: Este caso de uso é relevante para um parceiro de serviço de nuvem encarregado de fornecer conectividade multinuvem para dados de análise de big data dos clientes. 
+---
+= Caso de uso 4: Proteção de dados e conectividade multicloud
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Este caso de uso é relevante para um parceiro de serviço de nuvem encarregado de fornecer conectividade multinuvem para dados de análise de big data dos clientes.
+
+
+
+== Cenário
+
+Neste cenário, os dados de IoT recebidos na AWS de diferentes fontes são armazenados em um local central no NPS.  O armazenamento NPS está conectado a clusters Spark/Hadoop localizados na AWS e no Azure, permitindo que aplicativos de análise de big data sejam executados em várias nuvens acessando os mesmos dados.
+
+
+
+== Requisitos e desafios
+
+Os principais requisitos e desafios para este caso de uso incluem:
+
+* Os clientes desejam executar tarefas analíticas nos mesmos dados usando várias nuvens.
+* Os dados devem ser recebidos de diferentes fontes, como no local e na nuvem, por meio de diferentes sensores e hubs.
+* A solução deve ser eficiente e econômica.
+* O principal desafio é criar uma solução econômica e eficiente que ofereça serviços de análise híbridos entre ambientes locais e entre diferentes nuvens.
+
+
+
+
+== Solução
+
+Esta imagem ilustra a solução de proteção de dados e conectividade multicloud.
+
+image:hdcs-sh-012.png["Figura mostrando diálogo de entrada/saída ou representando conteúdo escrito"]
+
+Conforme mostrado na figura acima, os dados dos sensores são transmitidos e ingeridos no cluster do AWS Spark por meio do Kafka.  Os dados são armazenados em um compartilhamento NFS que reside no NPS, que está localizado fora do provedor de nuvem, dentro de um data center da Equinix.  Como o NetApp NPS está conectado ao Amazon AWS e ao Microsoft Azure por meio de conexões Direct Connect e Express Route, respectivamente, os clientes podem acessar os dados do NFS de clusters de análise da Amazon e da AWS.  Essa abordagem resolve ter análises de nuvem em vários hiperescaladores.
+
+Consequentemente, como tanto o armazenamento local quanto o NPS executam o software ONTAP , o SnapMirror pode espelhar os dados do NPS no cluster local, fornecendo análises de nuvem híbrida no local e em várias nuvens.
+
+Para obter o melhor desempenho, a NetApp normalmente recomenda o uso de várias interfaces de rede e conexões diretas/rotas expressas para acessar os dados de instâncias de nuvem.

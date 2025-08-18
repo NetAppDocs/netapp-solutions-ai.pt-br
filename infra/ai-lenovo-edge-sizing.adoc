@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: infra/ai-lenovo-edge-sizing.html 
+keywords: architecture, sizing, computer server, shared storage 
+summary: Você pode ajustar a configuração usada para a validação para se adequar a outros casos de uso. 
+---
+= Opções de dimensionamento de arquitetura
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Você pode ajustar a configuração usada para a validação para se adequar a outros casos de uso.
+
+
+
+== Servidor de computação
+
+Usamos uma CPU Intel Xeon D-2123IT, que é o nível mais baixo de CPU suportado no SE350, com quatro núcleos físicos e TDP de 60 W.  Embora o servidor não suporte a substituição de CPUs, ele pode ser encomendado com uma CPU mais potente.  A CPU mais suportada é o Intel Xeon D-2183IT com 16 núcleos, 100 W e rodando a 2,20 GHz.  Isso aumenta consideravelmente a capacidade computacional da CPU.  Embora a CPU não tenha sido um gargalo para executar as cargas de trabalho de inferência em si, ela ajuda no processamento de dados e outras tarefas relacionadas à inferência.  Atualmente, a NVIDIA T4 é a única GPU disponível para casos de uso de ponta; portanto, atualmente, não há possibilidade de atualizar ou fazer downgrade da GPU.
+
+
+
+== Armazenamento compartilhado
+
+Para testes e validação, o sistema NetApp AFF C190 , que tem capacidade máxima de armazenamento de 50,5 TB, uma taxa de transferência de 4,4 GBps para leituras sequenciais e 230 mil IOPS para pequenas leituras aleatórias, foi usado para os fins deste documento e comprovadamente é adequado para cargas de trabalho de inferência de ponta.
+
+No entanto, se você precisar de mais capacidade de armazenamento ou velocidades de rede mais rápidas, use os sistemas de armazenamento NetApp AFF A220 ou NetApp AFF A250 .  Além disso, o sistema NetApp EF280, que tem capacidade máxima de 1,5 PB e largura de banda de 10 GBps, também foi utilizado para fins de validação desta solução.  Se você preferir mais capacidade de armazenamento com maior largura de banda, https://www.netapp.com/pdf.html?item=/media/19339-DS-4082.pdf&v=2021691654["NetApp EF300"^] pode ser usado.

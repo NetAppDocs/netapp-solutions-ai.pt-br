@@ -1,0 +1,38 @@
+---
+indexpage:
+  title: Casos de uso e aplicativos de IA da NetApp
+  summary: Explore implementações de IA do mundo real com soluções NetApp , desde
+    sistemas RAG empresariais e inferência de ponta até práticas de IA responsáveis
+    e estratégias de migração de dados.  Esses casos de uso demonstram como a NetApp
+    habilita aplicativos de IA em diversos ambientes, mantendo a segurança, o desempenho
+    e a escalabilidade.
+  lead: Explore implementações de IA do mundo real com soluções NetApp , desde sistemas
+    RAG empresariais e inferência de ponta até práticas de IA responsáveis e estratégias
+    de migração de dados.  Esses casos de uso demonstram como a NetApp permite que
+    as organizações implantem aplicativos de IA em diversos ambientes, mantendo a
+    segurança, o desempenho e a escalabilidade.
+  tiles:
+  - title: Aplicações e casos de uso de IA empresarial
+    links:
+    - title: NetApp AIPod Mini para RAG empresarial
+      url: "../infra/ai-minipod.html"
+    - title: IA generativa e valor da NetApp
+      url: "../gen-ai/ai-wp-genai.html"
+    - title: Inferência de IA de ponta com NetApp e Lenovo
+      url: "../infra/ai-lenovo-edge-intro.html"
+    - title: Migração de análise de big data para IA
+      url: "../data-analytics/bda-ai-introduction.html"
+  - title: IA responsável
+    links:
+    - title: IA responsável com transformação de imagem Protopia
+      url: "../software/ai-conf-protopia-overview.html"
+    - title: Áreas de solução
+      url: "../software/ai-conf-protopia-usecases.html"
+    - title: Visão geral da tecnologia
+      url: "../software/ai-conf-protopia-tech.html"
+  - title: Soluções de infraestrutura e armazenamento de IA
+    links:
+    - title: Projete o Quantum StorNext com sistemas da série E
+      url: "../infra/ai-eseries-nva1150-design.html"
+    - title: Implemente o Quantum StorNext com sistemas da série E
+      url: "../infra/ai-eseries-nva1150-deploy.html"

@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: infra/ai-lenovo-train-intro.html 
+keywords: tr4810, 4810, introduction, cluster architecture, lenovo, ai 
+summary: 'Esta solução se concentra na arquitetura de cluster de nível básico e médio usando armazenamento NetApp e servidores Lenovo otimizados para cargas de trabalho de inteligência artificial.  Ele é destinado a equipes de pequeno e médio porte, para as quais a maioria dos trabalhos de computação são de nó único (GPU única ou múltipla) ou são distribuídos em alguns nós computacionais.  Esta não é uma limitação importante, porque a maioria dos trabalhos diários de treinamento de IA envolvem um único nó.' 
+---
+= TR-4810: NetApp AFF A400 com Lenovo ThinkSystem SR670 V2 para treinamento de modelos de IA e ML
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+Sathish Thyagarajan, David Arnette, NetApp Mircea Troaca, Lenovo
+
+[role="lead"]
+Esta solução apresenta uma arquitetura de cluster de médio porte usando armazenamento NetApp e servidores Lenovo otimizados para cargas de trabalho de inteligência artificial (IA).  Ele é destinado a pequenas e médias empresas para as quais a maioria dos trabalhos de computação são de nó único (GPU única ou múltipla) ou distribuídos em alguns nós computacionais.  Esta solução se alinha à maioria dos trabalhos diários de treinamento de IA de muitas empresas.
+
+Este documento abrange testes e validação de uma configuração de computação e armazenamento composta por servidores Lenovo SR670V2 de oito GPUs, um sistema de armazenamento NetApp AFF A400 de médio porte e um switch de interconexão de 100 GbE.  Para medir o desempenho, usamos o ResNet50 com o conjunto de dados ImageNet, um tamanho de lote de 408, meia precisão, CUDA e cuDNN.  Essa arquitetura fornece uma solução eficiente e econômica para organizações de pequeno e médio porte que estão começando com iniciativas de IA e que exigem recursos de nível empresarial do armazenamento de dados conectado à nuvem NetApp ONTAP .
+
+
+
+== Público-alvo
+
+Este documento é destinado aos seguintes públicos:
+
+* Cientistas de dados, engenheiros de dados, administradores de dados e desenvolvedores de sistemas de IA
+* Arquitetos corporativos que projetam soluções para o desenvolvimento de modelos de IA
+* Cientistas e engenheiros de dados que buscam maneiras eficientes de atingir metas de desenvolvimento de aprendizado profundo (DL) e aprendizado de máquina (ML)
+* Líderes empresariais e tomadores de decisão de TO/TI que desejam atingir o tempo de comercialização mais rápido possível para iniciativas de IA
+
+
+
+
+== Arquitetura da solução
+
+Esta solução com servidores Lenovo ThinkSystem e NetApp ONTAP com armazenamento AFF foi projetada para lidar com treinamento de IA em grandes conjuntos de dados usando o poder de processamento de GPUs junto com CPUs tradicionais.  Esta validação demonstra alto desempenho e gerenciamento de dados ideal com uma arquitetura de escalonamento que usa um, dois ou quatro servidores Lenovo SR670 V2 junto com um único sistema de armazenamento NetApp AFF A400 .  A figura a seguir fornece uma visão geral da arquitetura.
+
+image:a400-thinksystem-002.png["Esta imagem mostra um switch Ethernet cercado pelo servidor de gerenciamento, quatro SR670 V2s com oito GPUs cada e um sistema de armazenamento NetApp ONTAP ."]
+
+Esta solução da NetApp e da Lenovo oferece os seguintes benefícios principais:
+
+* Desempenho altamente eficiente e econômico ao executar vários trabalhos de treinamento em paralelo
+* Desempenho escalável com base em diferentes números de servidores Lenovo e diferentes modelos de controladores de armazenamento NetApp
+* Proteção de dados robusta para atender a objetivos de ponto de recuperação (RPOs) e tempo de recuperação (RTOs) baixos sem perda de dados
+* Gerenciamento de dados otimizado com snapshots e clones para agilizar os fluxos de trabalho de desenvolvimento
+
