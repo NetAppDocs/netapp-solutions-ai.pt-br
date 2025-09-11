@@ -20,6 +20,10 @@ entries:
     url: "/infra/ai-aipod-nv-validation.html"
   - title: Conclusão e informações adicionais
     url: "/infra/ai-aipod-nv-conclusion.html"
+- title: Sistemas de armazenamento NetApp AFF A90 com NVIDIA DGX SuperPOD - Design
+  url: "/infra/ai-dgx-superpod-nva1175-design.html"
+- title: Sistemas de armazenamento NetApp AFF A90 com NVIDIA DGX SuperPOD - Implantar
+  url: "/infra/ai-dgx-superpod-nva1175-deploy.html"
 - title: NetApp AIPod com Lenovo para NVIDIA OVX
   pdf-filename: 'NVA-1172-DESIGN: NetApp AIPod com Lenovo para NVIDIA OVX'
   url: "/infra/ai-aipod-lenovo-nva1172.html"
