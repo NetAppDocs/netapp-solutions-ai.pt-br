@@ -5576,4 +5576,15 @@
   <block id="d156278e3dbb2cd83d1a870d6704c9b8" category="sidebar">NetApp + Union.ai: Guia Técnico para Treinamento Híbrido em IA</block>
   <block id="ddf52cdc15133d3a9cb02a51bde98630" category="sidebar">Treinamento híbrido de IA com NetApp e Union.ai</block>
   <block id="9c1377c97790bfb53de65e24276a1216" category="sidebar">Treinamento híbrido de IA com Union.ai</block>
+  <block id="bc35ee37767e4af0acfededb3169dea7" category="list-text">Exemplos de clientes da Instaclustr e detalhes de seus casos de uso</block>
+  <block id="0212a7ff5eedcd67a7b84fa1ba480bc2" category="paragraph"><block ref="f670d08dd43af20b7e913fb27609f01d" category="inline-link-rx"></block>,<block ref="a9adf060aa8097003033bb7f27b5067d" category="inline-link-rx"></block></block>
+  <block id="32e89286d3b2abdbdfed4a3b70b56c4a" category="paragraph"><block ref="32e89286d3b2abdbdfed4a3b70b56c4a" category="inline-link-rx"></block></block>
+  <block id="04811d6350cbb9ca8a0ee30a91752819" category="paragraph"><block ref="04811d6350cbb9ca8a0ee30a91752819" category="inline-link-rx"></block></block>
+  <block id="51a14d08c34bcecf91444995375a1ff2" category="inline-link-macro">Instaclust usando armazenamento em camadas Kafka</block>
+  <block id="e4fda4b7fc0596e39060f4d05d9a3104" category="paragraph">O NetApp instaclustr também oferece suporte ao Kafka com armazenamento em camadas a partir da versão 3.8.1. Confira mais detalhes aqui. <block ref="b7922a93a5920c465bcf40e7e8f14b82" category="inline-link-macro-rx"></block></block>
+  <block id="1f2f31fd4bc8efc61a85e89732c2b1d8" category="paragraph">A Instaclustr também oferece recursos de rebalanceamento automático e já foi implementada para diversos clientes.</block>
+  <block id="856aa9558f6aac1cc157b1d21fa78574" category="section-title">Conectores Instaclustr Kafka Connect</block>
+  <block id="2b56b60f878922093facd42284848a0c" category="inline-link-macro">Mais detalhes</block>
+  <block id="66e7fcb114a635fe90c2f5b97045315d" category="inline-link-macro">seus detalhes</block>
+  <block id="621d9727aaaf7b26ac0502b35736098f" category="paragraph">A Instaclustr oferece suporte a conectores Kafka Connect e seus detalhes. <block ref="5792c576643eef1089e675cecfec7f12" category="inline-link-macro-rx"></block>. A Instaclustr fornece conectores adicionais. <block ref="46bc00f72c87fbc1de536d86c545b8a8" category="inline-link-macro-rx"></block></block>
 </blocks>

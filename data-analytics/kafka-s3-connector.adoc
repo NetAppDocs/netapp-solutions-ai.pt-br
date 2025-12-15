@@ -305,3 +305,9 @@ root@stlrx2540m1-108:~# java -jar /usr/src/avro-tools-1.11.0.1.jar tojson tes.av
 root@stlrx2540m1-108:~#
 ....
 
+
+
+
+== Conectores Instaclustr Kafka Connect
+
+A Instaclustr oferece suporte a conectores Kafka Connect e seus detalhes. link:https://github.com/instaclustr/kafka-connect-connectors["Mais detalhes"]. A Instaclustr fornece conectores adicionais. link:https://www.instaclustr.com/support/documentation/kafka-connect/bundled-kafka-connect-plugins/["seus detalhes"]

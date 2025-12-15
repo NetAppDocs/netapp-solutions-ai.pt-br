@@ -31,6 +31,8 @@ Este documento descreve as diretrizes de práticas recomendadas para usar o Conf
 
 O Confluent se tornou a plataforma de streaming em tempo real padrão para muitas aplicações, especialmente para big data, análise e cargas de trabalho de streaming.  O armazenamento em camadas permite que os usuários separem a computação do armazenamento na plataforma Confluent.  Ele torna o armazenamento de dados mais econômico, permite que você armazene quantidades virtualmente infinitas de dados e aumente (ou diminua) as cargas de trabalho sob demanda, além de facilitar tarefas administrativas como rebalanceamento de dados e locatários.  Os sistemas de armazenamento compatíveis com S3 podem aproveitar todos esses recursos para democratizar dados com todos os eventos em um só lugar, eliminando a necessidade de engenharia de dados complexa.  Para obter mais informações sobre por que você deve usar armazenamento em camadas para Kafka, verifiquelink:https://docs.confluent.io/platform/current/kafka/tiered-storage.html#netapp-object-storage["este artigo da Confluent"^] .
 
+O NetApp instaclustr também oferece suporte ao Kafka com armazenamento em camadas a partir da versão 3.8.1. Confira mais detalhes aqui. link:https://www.instaclustr.com/support/documentation/kafka-add-ons/using-kafka-tiered-storage/["Instaclust usando armazenamento em camadas Kafka"]
+
 
 
 == Por que usar o NetApp StorageGRID para armazenamento em camadas?
