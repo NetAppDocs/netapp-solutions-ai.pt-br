@@ -1,0 +1,83 @@
+---
+sidebar: sidebar 
+permalink: infra/ai-aipod-mini-infra-readiness.html 
+keywords: netapp, aipod, RAG, ai solution, design, infrastructure, FAQs 
+summary: Este documento descreve uma lista de verificação abrangente de prontidão da infraestrutura para NetApp AIPod Mini for Enterprise RAG, servindo como referência pré-implantação. 
+---
+= NetApp AIPod Mini para ERAG - Lista de verificação de prontidão da infraestrutura
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Este documento descreve uma lista de verificação abrangente de prontidão da infraestrutura para NetApp AIPod Mini for Enterprise RAG, servindo como referência pré-implantação.
+
+
+
+== Preparação de negócios e casos de uso
+
+* A solução está alinhada aos resultados das linhas de negócio (por exemplo, produtividade, atendimento ao cliente, jurídico, saúde, manufatura, setor público)?
+* Você já estimou o tempo até o primeiro token (TTFT) e as necessidades de latência para suas cargas de trabalho LLM?
+* Você sabe qual é a concorrência/carga de usuários esperada (por exemplo, 32 usuários simultâneos por nó de 2-worker para RAG)?
+* Você já identificou as principais cargas de trabalho de IA/GenAI (RAG, inferencing, fine-tuning, LLMs departamentais, integração de vector DB)?
+* Você está avaliando opções de IA baseadas em CPU (OPEA, Intel Xeon) versus alternativas em GPU para equilíbrio entre custo e desempenho?
+
+
+
+
+== Requisitos técnicos e de infraestrutura
+
+* Seu pipeline de dados está pronto (preparação de dados, ETL, ingestão segura no banco de dados vetorial)?
+* Você precisa de alta disponibilidade, redundância ou recursos de DR?
+* Você está aproveitando o suporte da pilha Ubuntu Linux / Kubernetes / Red Hat OpenShift AI?
+* Você já validou o desempenho da rede (25–100GbE dependendo da carga de trabalho)?
+* O armazenamento é provisionado com NetApp ONTAP + driver Trident CSI para persistência no Kubernetes?
+* Mínimo de 3 nós de computação (2 de trabalho, 1 de plano de controle) dimensionados corretamente?
+
+
+
+
+== Alinhamento de Software & Ecossistema
+
+* Seus aplicativos em contêineres são compatíveis com os Helm charts e Kubernetes fornecidos?
+* Quais bancos de dados vetoriais (por exemplo, Milvus, pgvector) estão planejados para implantação?
+* Você precisa de pré-integração OPEA (Open Platform for Enterprise AI) para geração aumentada por recuperação (RAG)?
+* Você está aproveitando opções de nuvem híbrida (Cloud Volumes ONTAP, FSxN, Anthos, Azure Arc)?
+* Você precisa de integrações com ISVs parceiros (ESRI, PACS de saúde, ISVs financeiros/jurídicos)?
+
+
+
+
+== Governança de Dados & Segurança
+
+* Você habilitou o controle de acesso baseado em funções (RBAC) no Kubernetes?
+* Existe um plano de proteção de dados e backup (SnapMirror, SnapCenter, proteção contra ransomware)?
+* Você já mapeou as necessidades de conformidade de dados (HIPAA, GDPR, FedRAMP, CJIS)?
+* Você precisa de uma implementação privada de IA (isolada da internet, local, em um enclave seguro)?
+
+
+
+
+== Considerações operacionais e de suporte
+
+* Os administradores são treinados/capacitados em Kubernetes, Trident CSI e implantação do stack OPEA?
+* Você precisa de suporte para alocação a vários clientes (departamentos, agências governamentais estaduais e locais, unidades de negócios)?
+* Existe um plano para monitoramento e observabilidade (ONTAP System Manager, Cloud Insights, Prometheus/Grafana)?
+* Quem será o responsável pelas operações do dia 2 (TI do cliente, parceiro, managed service provider)?
+
+
+
+
+== Alinhamento Comercial e de GTM
+
+* Existe um mapa por fases (departamental → expansão da IA em toda a empresa)?
+* Você possui uma projeção pro forma plurianual (TCO, ARR, aumento de margem)?
+* Os cenários de aumento de licenciamento estão claros (vector DB, software ISV, ferramentas de AI ops)?
+* Você já explorou incentivos para parceiros (margem do distribuidor, OEM/Intel cofinanciamento)?
+* A compra está alinhada aos ciclos orçamentários (CapEx vs OpEx, modelos de consumo)?
+* Você tem um parceiro de serviços (Arrow, WWT, Presidio, etc.) para dimensionamento e implantação?
+
