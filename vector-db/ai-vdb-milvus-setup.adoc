@@ -18,6 +18,7 @@ Esta seção discute a configuração do cluster milvus para a solução de banc
 
 
 
+[[milvus-cluster-setup-with-kubernetes-in-on-premises]]
 == Configuração do cluster Milvus com Kubernetes no local
 
 Os desafios do cliente para escalar de forma independente em armazenamento e computação, gerenciamento eficaz de infraestrutura e gerenciamento de dados, Kubernetes e bancos de dados vetoriais juntos formam uma solução poderosa e escalável para gerenciar grandes operações de dados.  O Kubernetes otimiza recursos e gerencia contêineres, enquanto bancos de dados vetoriais manipulam com eficiência dados de alta dimensão e pesquisas de similaridade.  Essa combinação permite o processamento rápido de consultas complexas em grandes conjuntos de dados e dimensiona perfeitamente com volumes crescentes de dados, tornando-a ideal para aplicativos de big data e cargas de trabalho de IA.

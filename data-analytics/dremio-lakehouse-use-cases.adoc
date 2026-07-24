@@ -15,6 +15,7 @@ summary: Esta seção aborda os detalhes do caso de uso do cliente do Dremio com
 
 
 
+[[netapp-activeiq-use-case]]
 == Caso de uso do NetApp ActiveIQ
 
 image:activeiqold.png["Arquitetura antiga do ActiveIQ"]
@@ -31,6 +32,7 @@ Como substituição para a infraestrutura Hadoop/Hive, o Dremio ofereceu funcion
 
 
 
+[[auto-parts-sales-customer-use-case]]
 == Caso de uso do cliente de vendas de peças automotivas.
 
 *Desafios*: Nesta empresa global de vendas de peças automotivas, os grupos executivos e corporativos de planejamento financeiro e análise não conseguiram obter uma visão consolidada dos relatórios de vendas e foram forçados a ler os relatórios de métricas de vendas de cada linha de negócios e tentar consolidá-los.  Isso fez com que os clientes tomassem decisões com dados que tinham pelo menos um dia.  O tempo de espera para obter novos insights analíticos normalmente levaria mais de quatro semanas.  A solução de problemas em pipelines de dados exigiria ainda mais tempo, acrescentando três dias ou mais ao cronograma já longo.  O lento processo de desenvolvimento de relatórios, bem como o desempenho dos relatórios, forçava a comunidade de analistas a esperar continuamente que os dados fossem processados ou carregados, em vez de permitir que eles encontrassem novos insights de negócios e impulsionassem novos comportamentos empresariais.  Esses ambientes problemáticos eram compostos por vários bancos de dados diferentes para diferentes linhas de negócios, resultando em vários silos de dados.  O ambiente lento e fragmentado complicou a governança de dados, pois havia muitas maneiras de os analistas chegarem à sua própria versão da verdade em vez de uma única fonte de verdade.  A abordagem custou mais de US$ 1,9 milhão em custos com plataforma de dados e pessoas.  Manter a plataforma legada e atender às solicitações de dados exigia sete engenheiros técnicos de campo (FTEs) por ano.  Com o aumento das solicitações de dados, a equipe de inteligência de dados não conseguiu dimensionar o ambiente legado para atender às necessidades futuras

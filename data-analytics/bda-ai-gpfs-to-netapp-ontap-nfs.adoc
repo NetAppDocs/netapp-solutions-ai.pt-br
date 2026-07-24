@@ -20,6 +20,7 @@ image:bda-ai-005.png["Figura mostrando diálogo de entrada/saída ou representan
 
 
 
+[[gpfs-essentials]]
 == Noções básicas do GPFS
 
 Os seguintes tipos de nós são usados no GPFS:
@@ -33,12 +34,14 @@ Os seguintes tipos de nós são usados no GPFS:
 
 
 
+[[list-of-operations-for-gpfs-nfs-and-xcp]]
 == Lista de operações para GPFS, NFS e XCP
 
 Esta seção fornece a lista de operações que criam GPFS, exportam GPFS como uma exportação NFS e transferem os dados usando o XCP.
 
 
 
+[[create-gpfs]]
 === Criar GPFS
 
 Para criar o GPFS, conclua as seguintes etapas:
@@ -62,6 +65,7 @@ Para criar o GPFS, conclua as seguintes etapas:
 
 
 
+[[export-gpfs-into-nfs]]
 === Exportar GPFS para NFS
 
 Para exportar o GPFS para o NFS, conclua as seguintes etapas:
@@ -74,6 +78,7 @@ Para exportar o GPFS para o NFS, conclua as seguintes etapas:
 
 
 
+[[configure-nfs-client]]
 === Configurar cliente NFS
 
 Para configurar o cliente NFS, conclua as seguintes etapas:

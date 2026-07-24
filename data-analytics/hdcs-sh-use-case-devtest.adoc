@@ -18,12 +18,14 @@ Neste caso de uso, o requisito do cliente é criar de forma rápida e eficiente 
 
 
 
+[[scenario]]
 == Cenário
 
 Neste cenário, vários clusters Spark/Hadoop são criados a partir de uma grande implementação de data lake Hadoop no local, bem como em locais de recuperação de desastres.
 
 
 
+[[requirements-and-challenges]]
 == Requisitos e desafios
 
 Os principais requisitos e desafios para este caso de uso incluem:
@@ -36,6 +38,7 @@ Os principais requisitos e desafios para este caso de uso incluem:
 
 
 
+[[solution]]
 == Solução
 
 A tecnologia FlexClone é usada para responder aos requisitos descritos.  A tecnologia FlexClone é a cópia de leitura/gravação de uma cópia do Snapshot.  Ele lê os dados da cópia do Snapshot pai e consome apenas espaço adicional para blocos novos/modificados.  É rápido e economiza espaço.

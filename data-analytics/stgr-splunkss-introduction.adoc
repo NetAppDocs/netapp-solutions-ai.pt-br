@@ -18,6 +18,7 @@ O Splunk Enterprise é a solução líder de mercado em Gerenciamento de Informa
 
 
 
+[[overview]]
 == Visão geral
 
 Os volumes de dados continuam a crescer em taxas exponenciais, criando enormes oportunidades para empresas que podem aproveitar esse vasto recurso.  O Splunk Enterprise continua a ganhar adoção em uma variedade maior de casos de uso.  À medida que os casos de uso aumentam, também aumenta a quantidade de dados que o Splunk Enterprise ingere e processa.  A arquitetura tradicional do Splunk Enterprise é um design de escalonamento distribuído que fornece excelente acesso e disponibilidade de dados.  No entanto, as empresas que usam essa arquitetura enfrentam custos crescentes associados ao dimensionamento para atender ao rápido crescimento do volume de dados.
@@ -33,6 +34,7 @@ NOTE: Splunk SmartStore se refere ao armazenamento de objetos como armazenamento
 
 
 
+[[about-netapp-storagegrid]]
 == Sobre o NetApp StorageGRID
 
 O NetApp StorageGRID é uma solução de armazenamento de objetos definida por software para grandes arquivos, repositórios de mídia e armazenamentos de dados da Web.  Com o StorageGRID, a NetApp aproveita duas décadas de experiência no fornecimento de soluções de gerenciamento de dados e inovação líderes do setor, ao mesmo tempo em que ajuda organizações a gerenciar e maximizar o valor de suas informações no local e em implantações de nuvem pública, privada ou híbrida.
@@ -58,12 +60,14 @@ Para obter mais informações sobre como o StorageGRID pode ajudá-lo a resolver
 
 
 
+[[about-splunk-enterprise]]
 == Sobre o Splunk Enterprise
 
 O Splunk Enterprise é uma plataforma para transformar dados em ações.  Dados gerados por várias fontes, como arquivos de log, sites, dispositivos, sensores e aplicativos, são enviados e analisados pelos indexadores do Splunk, permitindo que você obtenha insights valiosos dos dados.  Ele pode identificar violações de dados, apontar tendências de clientes e produtos, encontrar oportunidades para otimizar a infraestrutura ou criar insights acionáveis em uma ampla variedade de casos de uso.
 
 
 
+[[about-splunk-smartstore]]
 == Sobre a Splunk SmartStore
 
 O Splunk SmartStore expande os benefícios da arquitetura Splunk ao mesmo tempo em que simplifica sua capacidade de escalabilidade de forma econômica.  A dissociação dos recursos de computação e armazenamento resulta em nós indexadores otimizados para E/S com necessidades de armazenamento significativamente reduzidas porque eles armazenam apenas um subconjunto de dados como cache.  Você não precisa adicionar computação ou armazenamento extra quando apenas um desses recursos for necessário, o que permite uma economia de custos significativa.  Você pode usar o armazenamento de objetos baseado em S3, econômico e facilmente escalável, o que simplifica ainda mais o ambiente, reduz custos e permite que você mantenha um conjunto de dados maior.

@@ -18,12 +18,14 @@ Esta seção se concentra nos componentes de hardware do NetApp AIPod com sistem
 
 
 
+[[netapp-aff-storage-systems]]
 == Sistemas de armazenamento NetApp AFF
 
 Os sistemas de armazenamento de última geração da NetApp AFF permitem que os departamentos de TI atendam aos requisitos de armazenamento empresarial com desempenho líder do setor, flexibilidade superior, integração com a nuvem e o melhor gerenciamento de dados da categoria.  Projetados especificamente para flash, os sistemas AFF ajudam a acelerar, gerenciar e proteger dados essenciais aos negócios.
 
 
 
+[[aff-a90-storage-systems]]
 === Sistemas de armazenamento AFF A90
 
 O NetApp AFF A90, equipado com o software de gerenciamento de dados NetApp ONTAP, oferece proteção de dados integrada, recursos anti-ransomware opcionais e o alto desempenho e resiliência necessários para dar suporte às cargas de trabalho empresariais mais críticas.  Ele elimina interrupções em operações de missão crítica, minimiza o ajuste de desempenho e protege seus dados contra ataques de ransomware.  Oferece: • Desempenho líder do setor • Segurança de dados incomparável • Atualizações simplificadas e não disruptivas
@@ -54,6 +56,7 @@ Para as maiores implantações, os sistemas AFF A1K oferecem as mais altas opç�
 
 
 
+[[nvidia-dgx-basepod]]
 == NVIDIA DGX BasePOD
 
 O NVIDIA DGX BasePOD é uma solução integrada que consiste em componentes de hardware e software NVIDIA , soluções MLOps e armazenamento de terceiros.  Aproveitando as melhores práticas de design de sistemas escaláveis com produtos NVIDIA e soluções de parceiros validadas, os clientes podem implementar uma plataforma eficiente e gerenciável para desenvolvimento de IA.  A Figura 1 destaca os vários componentes do NVIDIA DGX BasePOD.
@@ -64,6 +67,7 @@ image:aipod-nv-basepod-layers.png["Figura mostrando diálogo de entrada/saída o
 
 
 
+[[nvidia-dgx-h100-systems]]
 === Sistemas NVIDIA DGX H100
 
 O sistema NVIDIA DGX H100™ é a potência da IA que é acelerada pelo desempenho inovador da GPU NVIDIA H100 Tensor Core.
@@ -80,6 +84,7 @@ image:aipod-nv-h100-rear.png["Figura mostrando diálogo de entrada/saída ou rep
 
 
 
+[[nvidia-networking]]
 === Rede NVIDIA
 
 

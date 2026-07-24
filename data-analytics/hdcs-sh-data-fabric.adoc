@@ -22,6 +22,7 @@ image:hdcs-sh-001.png["Figura mostrando diálogo de entrada/saída ou representa
 
 
 
+[[proven-data-fabric-customer-use-cases]]
 == Casos de uso comprovados de clientes de tecido de dados
 
 A estrutura de dados fornecida pela NetApp fornece os nove casos de uso comprovados a seguir para os clientes:
@@ -45,6 +46,7 @@ Este documento abrange dois dos nove casos de uso (junto com suas soluções):
 
 
 
+[[netapp-nfs-direct-access]]
 === Acesso direto ao NetApp NFS
 
 O NetApp NFS permite que os clientes executem trabalhos de análise de big data em seus dados NFSv3 ou NFSv4 existentes ou novos sem mover ou copiar os dados.  Ele evita múltiplas cópias de dados e elimina a necessidade de sincronizar os dados com uma fonte.  Por exemplo, no setor financeiro, a movimentação de dados de um lugar para outro deve atender a obrigações legais, o que não é uma tarefa fácil.  Neste cenário, o acesso direto do NetApp NFS analisa os dados financeiros de seu local original.  Outro benefício importante é que o uso do acesso direto do NetApp NFS simplifica a proteção de dados do Hadoop usando comandos nativos do Hadoop e permite fluxos de trabalho de proteção de dados aproveitando o rico portfólio de gerenciamento de dados da NetApp.
@@ -70,6 +72,7 @@ Os principais benefícios de usar o acesso direto do NetApp NFS incluem:
 
 
 
+[[building-blocks-for-big-data]]
 === Blocos de construção para big data
 
 A estrutura de dados alimentada pela NetApp integra serviços e aplicativos de gerenciamento de dados (blocos de construção) para acesso, controle, proteção e segurança de dados, conforme mostrado na figura abaixo.

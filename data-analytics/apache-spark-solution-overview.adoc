@@ -22,48 +22,56 @@ Este documento também fornece casos de uso do cliente para resolver problemas d
 
 
 
+[[customer-challenges]]
 == Desafios do cliente
 
 Esta seção se concentra nos desafios dos clientes com análise de big data e IA/ML/DL em setores de crescimento de dados, como varejo, marketing digital, bancos, manufatura discreta, manufatura por processos, governo e serviços profissionais.
 
 
 
+[[unpredictable-performance]]
 === Desempenho imprevisível
 
 Implantações tradicionais do Hadoop normalmente usam hardware comum.  Para melhorar o desempenho, você deve ajustar a rede, o sistema operacional, o cluster Hadoop, os componentes do ecossistema, como o Spark, e o hardware.  Mesmo se você ajustar cada camada, pode ser difícil atingir os níveis de desempenho desejados porque o Hadoop é executado em hardware comum que não foi projetado para alto desempenho em seu ambiente.
 
 
 
+[[media-and-node-failures]]
 === Falhas de mídia e nó
 
 Mesmo em condições normais, o hardware comum está sujeito a falhas.  Se um disco em um nó de dados falhar, o mestre do Hadoop, por padrão, considera esse nó como não íntegro.  Em seguida, ele copia dados específicos desse nó pela rede, de réplicas para um nó íntegro.  Esse processo torna os pacotes de rede mais lentos para qualquer tarefa do Hadoop.  O cluster deve então copiar os dados novamente e remover os dados replicados em excesso quando o nó com problemas retornar a um estado saudável.
 
 
 
+[[hadoop-vendor-lock-in]]
 === Bloqueio de fornecedor do Hadoop
 
 Os distribuidores do Hadoop têm sua própria distribuição do Hadoop com seu próprio controle de versão, o que prende o cliente a essas distribuições.  No entanto, muitos clientes exigem suporte para análises na memória que não vinculem o cliente a distribuições específicas do Hadoop.  Eles precisam da liberdade de mudar as distribuições e ainda levar suas análises com eles.
 
 
 
+[[lack-of-support-for-more-than-one-language]]
 === Falta de suporte para mais de um idioma
 
 Os clientes geralmente precisam de suporte para vários idiomas, além dos programas MapReduce Java, para executar seus trabalhos.  Opções como SQL e scripts oferecem mais flexibilidade para obter respostas, mais opções para organizar e recuperar dados e maneiras mais rápidas de mover dados para uma estrutura de análise.
 
 
 
+[[difficulty-of-use]]
 === Dificuldade de uso
 
 Já faz algum tempo que as pessoas reclamam que o Hadoop é difícil de usar.  Embora o Hadoop tenha se tornado mais simples e poderoso a cada nova versão, essa crítica persiste.  O Hadoop exige que você entenda os padrões de programação Java e MapReduce, um desafio para administradores de banco de dados e pessoas com conjuntos de habilidades tradicionais de script.
 
 
 
+[[complicated-frameworks-and-tools]]
 === Estruturas e ferramentas complicadas
 
 As equipes de IA corporativas enfrentam vários desafios.  Mesmo com conhecimento especializado em ciência de dados, ferramentas e estruturas para diferentes ecossistemas e aplicativos de implantação podem não ser facilmente transferidas de um para outro.  Uma plataforma de ciência de dados deve integrar-se perfeitamente com plataformas de big data correspondentes criadas no Spark, com facilidade de movimentação de dados, modelos reutilizáveis, código pronto para uso e ferramentas que oferecem suporte às melhores práticas para prototipagem, validação, controle de versão, compartilhamento, reutilização e implantação rápida de modelos na produção.
 
 
 
+[[why-choose-netapp]]
 == Por que escolher a NetApp?
 
 A NetApp pode melhorar sua experiência com o Spark das seguintes maneiras:
@@ -101,6 +109,7 @@ As seções a seguir descrevem recursos de armazenamento que são importantes pa
 
 
 
+[[storage-tiering]]
 === Camadas de armazenamento
 
 Com o armazenamento em camadas do Hadoop, você pode armazenar arquivos com diferentes tipos de armazenamento de acordo com uma política de armazenamento.  Os tipos de armazenamento incluem `hot` , `cold` , `warm` , `all_ssd` , `one_ssd` , e `lazy_persist` .
@@ -120,6 +129,7 @@ image:apache-spark-002.png["Hora de classificar 1 TB de dados."]
 
 
 
+[[performance-scaling-scale-out]]
 === Escalonamento de desempenho - Escala horizontal
 
 Quando você precisa de mais poder de computação de um cluster Hadoop em uma solução AFF , você pode adicionar nós de dados com um número apropriado de controladores de armazenamento.  A NetApp recomenda começar com quatro nós de dados por matriz de controlador de armazenamento e aumentar o número para oito nós de dados por controlador de armazenamento, dependendo das características da carga de trabalho.
@@ -128,18 +138,21 @@ AFF e FAS são perfeitos para análises no local.  Com base nos requisitos de co
 
 
 
+[[performance-scaling-scale-up]]
 === Escalonamento de desempenho - Escalonamento vertical
 
 Os recursos de expansão permitem que você adicione unidades de disco aos sistemas AFF, FAS e E-Series quando precisar de capacidade de armazenamento adicional.  Com o Cloud Volumes ONTAP, dimensionar o armazenamento para o nível PB é uma combinação de dois fatores: hierarquizar dados usados com pouca frequência para armazenamento de objetos a partir do armazenamento em bloco e empilhar licenças do Cloud Volumes ONTAP sem computação adicional.
 
 
 
+[[multiple-protocols]]
 === Vários protocolos
 
 Os sistemas NetApp oferecem suporte à maioria dos protocolos para implantações do Hadoop, incluindo SAS, iSCSI, FCP, InfiniBand e NFS.
 
 
 
+[[operational-and-supported-solutions]]
 === Soluções operacionais e suportadas
 
 As soluções Hadoop descritas neste documento são suportadas pela NetApp.  Essas soluções também são certificadas pelos principais distribuidores do Hadoop.  Para obter informações, consulte o http://hortonworks.com/partner/netapp/["Hortonworks"^] site e o Cloudera http://www.cloudera.com/partners/partners-listing.html?q=netapp["certificação"^] e http://www.cloudera.com/partners/solutions/netapp.html["parceiro"^] sites.

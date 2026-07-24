@@ -32,6 +32,7 @@ Os resultados são descritos nas seções a seguir.
 
 
 
+[[ai-inference-in-offline-scenario-for-aff]]
 == Inferência de IA em cenário offline para AFF
 
 Neste cenário, todos os dados estavam disponíveis no servidor e o tempo necessário para processar todas as amostras foi medido.  Relatamos larguras de banda em amostras por segundo como resultados dos testes.  Quando mais de um servidor de computação foi usado, relatamos a largura de banda total somada em todos os servidores.  Os resultados para todos os três casos de uso são mostrados na figura abaixo.  Para o caso de dois servidores, relatamos a largura de banda combinada de ambos os servidores.
@@ -42,6 +43,7 @@ Os resultados mostram que o armazenamento em rede não afeta negativamente o des
 
 
 
+[[ai-inference-in-a-single-stream-scenario-for-aff]]
 == Inferência de IA em um cenário de fluxo único para AFF
 
 Este benchmark mede a latência.  Para o caso de múltiplos servidores computacionais, relatamos a latência média.  Os resultados para o conjunto de tarefas são apresentados na figura abaixo.  Para o caso de dois servidores, relatamos a latência média de ambos os servidores.
@@ -52,6 +54,7 @@ Os resultados, mais uma vez, mostram que o armazenamento em rede é suficiente p
 
 
 
+[[ai-inference-in-multistream-scenario-for-aff]]
 == Inferência de IA em cenário multistream para AFF
 
 Nesse caso, o resultado é o número de fluxos que o sistema pode manipular, satisfazendo a restrição de QoS.  Portanto, o resultado é sempre um número inteiro.  Para mais de um servidor, relatamos o número total de fluxos somados em todos os servidores.  Nem todas as cargas de trabalho suportam esse cenário, mas executamos aquelas que o fazem. Os resultados dos nossos testes estão resumidos na figura abaixo.  Para o caso de dois servidores, relatamos o número combinado de fluxos de ambos os servidores.
@@ -62,12 +65,14 @@ Os resultados mostram o desempenho perfeito da configuração: o armazenamento l
 
 
 
+[[test-results-for-ef]]
 == Resultados dos testes para EF
 
 Uma infinidade de testes foram executados para avaliar o desempenho da arquitetura proposta.  Há seis cargas de trabalho diferentes (classificação de imagens, detecção de objetos [pequenos], detecção de objetos [grandes], imagens médicas, conversão de fala em texto e processamento de linguagem natural [PLN]), que foram executadas em dois cenários diferentes: offline e fluxo único.  Os resultados são descritos nas seções a seguir.
 
 
 
+[[ai-inference-in-offline-scenario-for-ef]]
 === Inferência de IA em cenário offline para EF
 
 Neste cenário, todos os dados estavam disponíveis no servidor e o tempo necessário para processar todas as amostras foi medido.  Relatamos larguras de banda em amostras por segundo como resultados dos testes.  Para execuções de nó único, relatamos a média de ambos os servidores, enquanto para execuções de dois servidores, relatamos a largura de banda total somada em todos os servidores.  Os resultados para os casos de uso são mostrados na figura abaixo.
@@ -78,6 +83,7 @@ Os resultados mostram que o armazenamento em rede não afeta negativamente o des
 
 
 
+[[ai-inference-in-a-single-stream-scenario-for-ef]]
 === Inferência de IA em um cenário de fluxo único para EF
 
 Este benchmark mede a latência.  Para todos os casos, relatamos a latência média em todos os servidores envolvidos nas execuções.  Os resultados para o conjunto de tarefas são fornecidos.

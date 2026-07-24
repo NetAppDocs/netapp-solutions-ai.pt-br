@@ -18,12 +18,14 @@ Os dados estão disponíveis no NFS e acessados do S3 pelo AWS SageMaker.
 
 
 
+[[technology-requirements]]
 == Requisitos de tecnologia
 
 Você precisa do NetApp BlueXP, NetApp Cloud Volumes ONTAP e AWS SageMaker Notebooks para o caso de uso de dualidade de dados.
 
 
 
+[[software-requirements]]
 === Requisitos de software
 
 A tabela a seguir lista os componentes de software necessários para implementar o caso de uso.
@@ -42,6 +44,7 @@ A tabela a seguir lista os componentes de software necessários para implementar
 |===
 
 
+[[deployment-procedures]]
 == Procedimentos de implantação
 
 A implantação da solução de dualidade de dados envolve as seguintes tarefas:
@@ -55,6 +58,7 @@ A implantação da solução de dualidade de dados envolve as seguintes tarefas:
 
 
 
+[[bluexp-connector]]
 === Conector BlueXP
 
 Nesta validação, usamos a AWS.  Também é aplicável ao Azure e ao Google Cloud.  Para criar um conector BlueXP na AWS, conclua as seguintes etapas:
@@ -71,6 +75,7 @@ Nesta validação, usamos a AWS.  Também é aplicável ao Azure e ao Google Clo
 
 
 
+[[netapp-cloud-volumes-ontap]]
 === NetApp Cloud Volumes ONTAP
 
 Para criar uma instância do Cloud Volumes ONTAP no BlueXP, conclua as seguintes etapas:
@@ -244,6 +249,7 @@ sagemaker_cvo_sn1::*>
 
 
 
+[[aws-sagemaker]]
 === AWS SageMaker
 
 Para criar um AWS Notebook a partir do AWS SageMaker, conclua as seguintes etapas:
@@ -318,6 +324,7 @@ sh-4.2$
 
 
 
+[[data-for-machine-learning]]
 === Dados para aprendizado de máquina
 
 Nesta validação, usamos um conjunto de dados da DBpedia, um esforço comunitário de crowdsourcing, para extrair conteúdo estruturado das informações criadas em vários projetos da Wikimedia.
@@ -443,6 +450,7 @@ sh-4.2$
 
 
 
+[[validate-machine-learning-from-jupyter-notebooks]]
 == Validar o aprendizado de máquina dos Jupyter Notebooks
 
 A validação a seguir fornece os modelos de construção, treinamento e implantação de aprendizado de máquina por meio da classificação de texto usando o exemplo SageMaker BlazingText abaixo:

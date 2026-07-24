@@ -18,10 +18,12 @@ Esta seção se concentra nos componentes de software do NetApp AIPod com sistem
 
 
 
+[[nvidia-software]]
 == Software NVIDIA
 
 
 
+[[nvidia-base-command]]
 === Comando básico da NVIDIA
 
 O NVIDIA Base Command&#8482; capacita cada DGX BasePOD, permitindo que as organizações aproveitem o melhor da inovação de software da NVIDIA .  As empresas podem liberar todo o potencial de seus investimentos com uma plataforma comprovada que inclui orquestração de nível empresarial e gerenciamento de cluster, bibliotecas que aceleram a computação, o armazenamento e a infraestrutura de rede, além de um sistema operacional (SO) otimizado para cargas de trabalho de IA.
@@ -32,6 +34,7 @@ image:aipod-nv-basecommand-new.png["Figura mostrando diálogo de entrada/saída 
 
 
 
+[[nvidia-gpu-cloud-ngc]]
 === Nuvem de GPU NVIDIA (NGC)
 
 O NVIDIA NGC fornece software para atender às necessidades de cientistas de dados, desenvolvedores e pesquisadores com vários níveis de experiência em IA.  O software hospedado no NGC passa por varreduras em relação a um conjunto agregado de vulnerabilidades e exposições comuns (CVEs), criptografia e chaves privadas.  Ele foi testado e projetado para ser escalonado para várias GPUs e, em muitos casos, para vários nós, garantindo que os usuários maximizem seus investimentos em sistemas DGX.
@@ -42,16 +45,19 @@ image:aipod-nv-ngc.png["Figura mostrando diálogo de entrada/saída ou represent
 
 
 
+[[nvidia-ai-enterprise]]
 === NVIDIA AI Enterprise
 
 NVIDIA AI Enterprise é a plataforma de software completa que coloca a IA generativa ao alcance de todas as empresas, fornecendo o tempo de execução mais rápido e eficiente para modelos básicos de IA generativa otimizados para execução na plataforma NVIDIA DGX.  Com segurança, estabilidade e capacidade de gerenciamento de nível de produção, ele simplifica o desenvolvimento de soluções de IA generativas.  O NVIDIA AI Enterprise está incluído no DGX BasePOD para que desenvolvedores corporativos acessem modelos pré-treinados, estruturas otimizadas, microsserviços, bibliotecas aceleradas e suporte empresarial.
 
 
 
+[[netapp-software]]
 == Software NetApp
 
 
 
+[[netapp-ontap]]
 === NetApp ONTAP
 
 ONTAP 9, a última geração de software de gerenciamento de armazenamento da NetApp, permite que as empresas modernizem a infraestrutura e façam a transição para um data center pronto para a nuvem.  Aproveitando os recursos de gerenciamento de dados líderes do setor, o ONTAP permite o gerenciamento e a proteção de dados com um único conjunto de ferramentas, independentemente de onde os dados residam.  Você também pode mover dados livremente para onde for necessário: na borda, no núcleo ou na nuvem.  O ONTAP 9 inclui vários recursos que simplificam o gerenciamento de dados, aceleram e protegem dados críticos e permitem recursos de infraestrutura de última geração em arquiteturas de nuvem híbrida.
@@ -98,6 +104,7 @@ O ONTAP ajuda a atender às necessidades empresariais exigentes e em constante m
 
 
 
+[[netapp-dataops-toolkit]]
 === Kit de ferramentas NetApp DataOps
 
 O NetApp DataOps Toolkit é uma ferramenta baseada em Python que simplifica o gerenciamento de espaços de trabalho de desenvolvimento/treinamento e servidores de inferência apoiados por armazenamento NetApp de alto desempenho e escalonável.  O DataOps Toolkit pode operar como um utilitário autônomo e é ainda mais eficaz em ambientes Kubernetes, aproveitando o NetApp Trident para automatizar operações de armazenamento.  Os principais recursos incluem:
@@ -111,6 +118,7 @@ O NetApp DataOps Toolkit é uma ferramenta baseada em Python que simplifica o ge
 
 
 
+[[netapp-trident]]
 === NetApp Trident
 
 O Trident é um orquestrador de armazenamento de código aberto totalmente suportado para contêineres e distribuições Kubernetes, incluindo o Anthos. O Trident funciona com todo o portfólio de armazenamento da NetApp , incluindo o NetApp ONTAP, e também oferece suporte a conexões NFS, NVMe/TCP e iSCSI. O Trident acelera o fluxo de trabalho do DevOps permitindo que os usuários finais provisionem e gerenciem o armazenamento de seus sistemas de armazenamento NetApp sem exigir a intervenção de um administrador de armazenamento.

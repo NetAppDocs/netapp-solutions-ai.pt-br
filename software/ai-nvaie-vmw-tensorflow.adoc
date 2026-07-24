@@ -18,12 +18,14 @@ Esta seção descreve as tarefas que precisam ser executadas para executar um tr
 
 
 
+[[prerequisites]]
 == Pré-requisitos
 
 Antes de executar as etapas descritas nesta seção, presumimos que você já criou um modelo de VM convidada seguindo as instruções descritas nalink:ai-nvaie-vmw-ngcsetup.html["Configurar"] página.
 
 
 
+[[create-guest-vm-from-template]]
 == Criar VM convidada a partir do modelo
 
 Primeiro, você deve criar uma nova VM convidada a partir do modelo criado na seção anterior.  Para criar uma nova VM convidada a partir do seu modelo, faça login no VMware vSphere, clique com o botão direito do mouse no nome do modelo, escolha "Nova VM deste modelo..." e siga o assistente.
@@ -32,6 +34,7 @@ image:nvaie-004.png["Figura mostrando diálogo de entrada/saída ou representand
 
 
 
+[[create-and-mount-data-volume]]
 == Criar e montar volume de dados
 
 Em seguida, você deve criar um novo volume de dados para armazenar seu conjunto de dados de treinamento.  Você pode criar rapidamente um novo volume de dados usando o NetApp DataOps Toolkit.  O comando de exemplo a seguir mostra a criação de um volume chamado 'imagenet' com capacidade de 2 TB.
@@ -46,12 +49,14 @@ $ sudo -E netapp_dataops_cli.py mount vol -n imagenet -m ~/imagenet
 ....
 
 
+[[populate-data-volume]]
 == Preencher volume de dados
 
 Depois que o novo volume for provisionado e montado, o conjunto de dados de treinamento poderá ser recuperado do local de origem e colocado no novo volume.  Isso normalmente envolverá extrair dados de um data lake S3 ou Hadoop e, às vezes, envolverá a ajuda de um engenheiro de dados.
 
 
 
+[[execute-tensorflow-training-job]]
 == Executar tarefa de treinamento do TensorFlow
 
 Agora, você está pronto para executar seu trabalho de treinamento do TensorFlow.  Para executar seu trabalho de treinamento do TensorFlow, execute as seguintes tarefas.

@@ -22,12 +22,14 @@ image:kafka-nfs-032.png["Figura mostrando diálogo de entrada/saída ou represen
 
 
 
+[[storage-configuration]]
 == Configuração de armazenamento
 
 Usamos instâncias do NetApp FlexGroups para fornecer um único namespace para diretórios de log, simplificando a recuperação e a configuração.  Usamos NFSv4.1 e pNFS para fornecer acesso direto ao caminho para dados de segmento de log.
 
 
 
+[[client-tuning]]
 == Ajuste de cliente
 
 Cada cliente montou a instância do FlexGroup com o seguinte comando.
@@ -39,6 +41,7 @@ Além disso, aumentamos a `max_session_slots`` do padrão `64` para `180` .  Iss
 
 
 
+[[kafka-broker-tuning]]
 == Ajuste do corretor Kafka
 
 Para maximizar o rendimento no sistema em teste, aumentamos significativamente os parâmetros padrão para determinados pools de threads principais.  Recomendamos seguir as práticas recomendadas do Confluent Kafka para a maioria das configurações.  Esse ajuste foi usado para maximizar a simultaneidade de E/S pendentes para armazenamento.  Esses parâmetros podem ser ajustados para corresponder aos recursos de computação e atributos de armazenamento do seu corretor.
@@ -53,6 +56,7 @@ queued.max.requests=2000
 ....
 
 
+[[workload-generator-testing-methodology]]
 == Metodologia de teste do gerador de carga de trabalho
 
 Usamos as mesmas configurações de OMB usadas nos testes de nuvem para o driver de throughput e a configuração do tópico.
@@ -115,6 +119,7 @@ sudo bin/benchmark --drivers driver-kafka/kafka-throughput.yaml workloads/1-topi
 
 
 
+[[steady-state-performance]]
 === Desempenho em estado estacionário
 
 Avaliamos o AFF A900 usando o OpenMessaging Benchmark para fornecer uma comparação semelhante à do Cloud Volumes ONTAP na AWS e do DAS na AWS.  Todos os valores de desempenho representam a taxa de transferência do cluster Kafka no nível do produtor e do consumidor.
@@ -129,6 +134,7 @@ image:kafka-nfs-034.png["Este gráfico mostra a taxa de transferência da rede d
 
 
 
+[[extreme-performance-and-exploring-storage-limits]]
 == Desempenho extremo e exploração de limites de armazenamento
 
 Para o AFF, também testamos com o OMB usando o recurso de backlog.  O recurso de backlog pausa as assinaturas do consumidor enquanto um backlog de eventos é criado no cluster do Kafka.  Durante esta fase, ocorre apenas o tráfego do produtor, o que gera eventos que são confirmados em logs.  Isso emula mais de perto o processamento em lote ou os fluxos de trabalho de análise offline; nesses fluxos de trabalho, as assinaturas do consumidor são iniciadas e devem ler dados históricos que já foram removidos do cache do corretor.
@@ -155,6 +161,7 @@ Depois que o OMB concluiu o preenchimento do eventbacklog, o tráfego do consumi
 
 
 
+[[sizing-guidance]]
 == Orientação de dimensionamento
 
 A Amazon Web Services oferece uma https://aws.amazon.com/blogs/big-data/best-practices-for-right-sizing-your-apache-kafka-clusters-to-optimize-performance-and-cost/["guia de tamanhos"^] para dimensionamento e escalonamento de clusters do Kafka.

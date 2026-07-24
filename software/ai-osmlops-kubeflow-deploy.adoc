@@ -18,6 +18,7 @@ Esta seção descreve as tarefas que você deve concluir para implantar o Kubefl
 
 
 
+[[prerequisites]]
 == Pré-requisitos
 
 Antes de executar o exercício de implantação descrito nesta seção, presumimos que você já tenha executado as seguintes tarefas:
@@ -28,6 +29,7 @@ Antes de executar o exercício de implantação descrito nesta seção, presumim
 
 
 
+[[set-default-kubernetes-storageclass]]
 == Definir classe de armazenamento padrão do Kubernetes
 
 Antes de implantar o Kubeflow, recomendamos designar um StorageClass padrão no seu cluster Kubernetes.  O processo de implantação do Kubeflow pode tentar provisionar novos volumes persistentes usando o StorageClass padrão.  Se nenhuma StorageClass for designada como StorageClass padrão, a implantação poderá falhar.  Para designar um StorageClass padrão dentro do seu cluster, execute a seguinte tarefa no host de salto de implantação.  Se você já designou uma StorageClass padrão dentro do seu cluster, pode pular esta etapa.
@@ -56,6 +58,7 @@ ontap-ai-flexvols-retain (default)   csi.trident.netapp.io   54s
 ....
 
 
+[[kubeflow-deployment-options]]
 == Opções de implantação do Kubeflow
 
 Há muitas opções diferentes para implantar o Kubeflow.  Consulte olink:https://www.kubeflow.org/docs/started/installing-kubeflow/["documentação oficial do Kubeflow"] para obter uma lista de opções de implantação e escolher a opção mais adequada às suas necessidades.

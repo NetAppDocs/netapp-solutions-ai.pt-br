@@ -18,12 +18,14 @@ Um cluster Kafka com a camada de armazenamento montada no NetApp NFS foi avaliad
 
 
 
+[[kafka-in-aws-cloud-with-netapp-cloud-volumes-ontap-high-availability-pair-and-single-node]]
 == Kafka na nuvem AWS com NetApp Cloud Volumes ONTAP (par de alta disponibilidade e nó único)
 
 Um cluster Kafka com NetApp Cloud Volumes ONTAP (par HA) foi avaliado quanto ao desempenho na nuvem AWS.  Esse benchmarking é descrito nas seções a seguir.
 
 
 
+[[architectural-setup]]
 === Configuração arquitetônica
 
 A tabela a seguir mostra a configuração ambiental para um cluster Kafka usando NAS.
@@ -48,6 +50,7 @@ A tabela a seguir mostra a configuração ambiental para um cluster Kafka usando
 |===
 
 
+[[netapp-cluster-volume-ontap-setup]]
 === Configuração do volume do cluster NetApp ONTAP
 
 . Para o par Cloud Volumes ONTAP HA, criamos dois agregados com três volumes em cada agregado em cada controlador de armazenamento.  Para o nó único do Cloud Volumes ONTAP , criamos seis volumes em um agregado.
@@ -103,6 +106,7 @@ image:kafka-nfs-029.png["Esta figura descreve a arquitetura de um cluster Kafka 
 
 
 
+[[openmessage-benchmarking-configurations]]
 === Configurações de benchmarking do OpenMessage
 
 . Para melhor desempenho do NFS, precisamos de mais conexões de rede entre o servidor NFS e o cliente NFS, que podem ser criadas usando nconnect.  Monte os volumes NFS nos nós do broker com a opção nconnect executando o seguinte comando:
@@ -325,6 +329,7 @@ consumerConfig: |
 
 
 
+[[methodology-of-testing]]
 == Metodologia de testes
 
 . Um cluster Kafka foi provisionado conforme a especificação descrita acima usando Terraform e Ansible.  O Terraform é usado para construir a infraestrutura usando instâncias da AWS para o cluster Kafka e o Ansible constrói o cluster Kafka nelas.
@@ -342,6 +347,7 @@ sudo bin/benchmark –drivers driver-kafka/kafka-throughput.yaml workloads/1-top
 
 
 
+[[observation]]
 == Observação
 
 Dois tipos diferentes de drivers foram usados para gerar cargas de trabalho para comparar o desempenho de uma instância do Kafka em execução no NFS.  A diferença entre os drivers é a propriedade log flush.

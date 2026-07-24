@@ -35,6 +35,7 @@ Para esta solução, usamos o Face Detection Data Set and Benchmark (FDDB), um c
 
 
 
+[[target-audience]]
 == Público-alvo
 
 Este relatório técnico destina-se aos seguintes públicos:
@@ -48,6 +49,7 @@ Este relatório técnico destina-se aos seguintes públicos:
 
 
 
+[[solution-architecture]]
 == Arquitetura da solução
 
 Esta solução foi projetada para lidar com cargas de trabalho de IA de inferência em lote e em tempo real em grandes conjuntos de dados usando o poder de processamento de GPUs junto com CPUs tradicionais.  Esta validação demonstra a inferência de preservação de privacidade para ML e o gerenciamento ideal de dados necessários para organizações que buscam implantações de IA responsáveis.  Esta solução fornece uma arquitetura adequada para uma plataforma Kubernetes de nó único ou múltiplo para computação de ponta e em nuvem interconectada com o NetApp ONTAP AI no núcleo local, o NetApp DataOps Toolkit e o software de ofuscação Protopia usando interfaces Jupyter Lab e CLI.  A figura a seguir mostra a visão geral da arquitetura lógica da malha de dados fornecida pela NetApp com o DataOps Toolkit e o Protopia.

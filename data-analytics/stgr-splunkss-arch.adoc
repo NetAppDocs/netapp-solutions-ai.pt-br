@@ -18,6 +18,7 @@ Esta seção descreve a arquitetura do Splunk, incluindo definições principais
 
 
 
+[[key-definitions]]
 == Definições principais
 
 As próximas duas tabelas listam os componentes Splunk e NetApp usados na implantação distribuída do Splunk.
@@ -76,6 +77,7 @@ Esta tabela lista os componentes na arquitetura de armazenamento do Splunk.
 |===
 
 
+[[splunk-distributed-deployments]]
 == Implantações distribuídas do Splunk
 
 Para dar suporte a ambientes maiores nos quais os dados se originam em muitas máquinas, você precisa processar grandes volumes de dados.  Se muitos usuários precisarem pesquisar os dados, você poderá dimensionar a implantação distribuindo instâncias do Splunk Enterprise em várias máquinas.  Isso é conhecido como implantação distribuída.
@@ -125,6 +127,7 @@ Veja os seguintes benefícios das implantações distribuídas do Splunk Enterpr
 
 
 
+[[splunk-smartstore]]
 == Loja Inteligente Splunk
 
 O SmartStore é um recurso de indexador que permite que armazenamentos de objetos remotos, como o Amazon S3, armazenem dados indexados.  À medida que o volume de dados de uma implantação aumenta, a demanda por armazenamento geralmente supera a demanda por recursos de computação.  O SmartStore permite que você gerencie o armazenamento do indexador e os recursos de computação de forma econômica, dimensionando esses recursos separadamente.
@@ -135,6 +138,7 @@ Com o SmartStore, você pode reduzir o espaço de armazenamento do indexador ao 
 
 
 
+[[splunk-smartstore-data-flow]]
 == Fluxo de dados do Splunk SmartStore
 
 Quando dados provenientes de várias fontes chegam aos indexadores, eles são indexados e salvos localmente em um hot bucket.  O indexador também replica os dados do hot bucket para indexadores de destino.  Até agora, o fluxo de dados é idêntico ao fluxo de dados para índices não SmartStore.
@@ -151,6 +155,7 @@ O trabalho do gerenciador de cache é otimizar o uso do cache disponível e, ao 
 
 
 
+[[software-requirements]]
 == Requisitos de software
 
 A tabela abaixo lista os componentes de software necessários para implementar a solução.  Os componentes de software usados em qualquer implementação da solução podem variar de acordo com os requisitos do cliente.
@@ -169,6 +174,7 @@ A tabela abaixo lista os componentes de software necessários para implementar a
 |===
 
 
+[[single-and-multisite-requirements]]
 == Requisitos de local único e múltiplo
 
 Em um ambiente Enterprise Splunk (implantações médias e grandes) onde os dados se originam em muitas máquinas e onde muitos usuários precisam pesquisar os dados, você pode dimensionar sua implantação distribuindo instâncias do Splunk Enterprise em sites únicos e múltiplos.
@@ -210,6 +216,7 @@ image:stgr-splunkss-007.png["Figura mostrando diálogo de entrada/saída ou repr
 
 
 
+[[hardware-requirements]]
 == Requisitos de hardware
 
 As tabelas a seguir listam o número mínimo de componentes de hardware necessários para implementar a solução.  Os componentes de hardware usados em implementações específicas da solução podem variar de acordo com os requisitos do cliente.
@@ -241,6 +248,7 @@ Esta tabela lista o hardware usado para uma configuração multisite (por site).
 |===
 
 
+[[netapp-storagegrid-load-balancer-sg1000]]
 === Balanceador de carga NetApp StorageGRID : SG1000
 
 O armazenamento de objetos requer o uso de um balanceador de carga para apresentar o namespace de armazenamento em nuvem.  O StorageGRID oferece suporte a balanceadores de carga de terceiros de fornecedores líderes como F5 e Citrix, mas muitos clientes escolhem o balanceador StorageGRID de nível empresarial pela simplicidade, resiliência e alto desempenho.  O balanceador de carga StorageGRID está disponível como uma VM, contêiner ou dispositivo desenvolvido especificamente.
@@ -262,6 +270,7 @@ image:stgr-splunkss-008.png["Figura mostrando diálogo de entrada/saída ou repr
 
 
 
+[[sg6060]]
 === SG6060
 
 O dispositivo StorageGRID SG6060 inclui um controlador de computação (SG6060) e uma prateleira de controlador de armazenamento (E-Series E2860) que contém dois controladores de armazenamento e 60 unidades.  Este aparelho oferece os seguintes recursos:
@@ -280,6 +289,7 @@ image:stgr-splunkss-009.png["Figura mostrando diálogo de entrada/saída ou repr
 
 
 
+[[splunk-design]]
 == Design Splunk
 
 A tabela a seguir lista a configuração do Splunk para um único site.

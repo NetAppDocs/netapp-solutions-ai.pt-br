@@ -18,6 +18,7 @@ Esta seção apresenta os principais componentes desta solução com mais detalh
 
 
 
+[[netapp-aff-systems]]
 == Sistemas NetApp AFF
 
 Os sistemas de armazenamento NetApp AFF permitem que as empresas atendam aos requisitos de armazenamento empresarial com desempenho líder do setor, flexibilidade superior, integração com a nuvem e o melhor gerenciamento de dados da categoria.  Projetados especificamente para flash, os sistemas AFF ajudam a acelerar, gerenciar e proteger dados essenciais aos negócios.
@@ -56,12 +57,14 @@ A NetApp também oferece outros sistemas de armazenamento, como o AFF A800 e o A
 
 
 
+[[netapp-ontap]]
 == NetApp ONTAP
 
 ONTAP 9, a última geração de software de gerenciamento de armazenamento da NetApp, permite que as empresas modernizem a infraestrutura e façam a transição para um data center pronto para a nuvem.  Aproveitando os recursos de gerenciamento de dados líderes do setor, o ONTAP permite o gerenciamento e a proteção de dados com um único conjunto de ferramentas, independentemente de onde os dados residam.  Os dados também podem ser movidos livremente para onde forem necessários: na borda, no núcleo ou na nuvem.  O ONTAP 9 inclui vários recursos que simplificam o gerenciamento de dados, aceleram e protegem dados críticos e uma infraestrutura preparada para o futuro em arquiteturas de nuvem híbrida.
 
 
 
+[[simplify-data-management]]
 === Simplifique o gerenciamento de dados
 
 O gerenciamento de dados é crucial para as operações de TI da empresa, para que recursos apropriados sejam usados para aplicativos e conjuntos de dados.  O ONTAP inclui os seguintes recursos para agilizar e simplificar as operações e reduzir o custo total da operação:
@@ -73,6 +76,7 @@ O gerenciamento de dados é crucial para as operações de TI da empresa, para q
 
 
 
+[[accelerate-and-protect-data]]
 === Acelere e proteja os dados
 
 O ONTAP oferece níveis superiores de desempenho e proteção de dados e estende esses recursos das seguintes maneiras:
@@ -84,6 +88,7 @@ O ONTAP oferece níveis superiores de desempenho e proteção de dados e estende
 
 
 
+[[future-proof-infrastructure]]
 === Infraestrutura à prova do futuro
 
 ONTAP 9 ajuda a atender às necessidades empresariais exigentes e em constante mudança:
@@ -95,6 +100,7 @@ ONTAP 9 ajuda a atender às necessidades empresariais exigentes e em constante m
 
 
 
+[[netapp-flexgroup-volumes]]
 == Volumes do NetApp FlexGroup
 
 Os conjuntos de dados de treinamento geralmente são uma coleção de potencialmente bilhões de arquivos.  Os arquivos podem incluir texto, áudio, vídeo e outras formas de dados não estruturados que devem ser armazenados e processados para serem lidos em paralelo.  O sistema de armazenamento deve armazenar muitos arquivos pequenos e deve lê-los em paralelo para E/S sequencial e aleatória.
@@ -110,6 +116,7 @@ image:a400-thinksystem-005.png["Esta imagem descreve um par HA de controladores 
 
 
 
+[[lenovo-thinksystem-portfolio]]
 == Portfólio Lenovo ThinkSystem
 
 Os servidores Lenovo ThinkSystem apresentam hardware, software e serviços inovadores que resolvem os desafios atuais dos clientes e oferecem uma abordagem de design modular, evolutiva e adequada para enfrentar os desafios de amanhã.  Esses servidores capitalizam as melhores tecnologias padrão do setor, aliadas às inovações diferenciadas da Lenovo para fornecer a maior flexibilidade possível em servidores x86.
@@ -125,6 +132,7 @@ Na área de IA, a Lenovo está adotando uma abordagem prática para ajudar as em
 
 
 
+[[lenovo-sr670-v2]]
 === Lenovo SR670 V2
 
 O servidor rack Lenovo ThinkSystem SR670 V2 oferece desempenho ideal para IA acelerada e computação de alto desempenho (HPC).  Com suporte para até oito GPUs, o SR670 V2 é adequado para requisitos de carga de trabalho computacionalmente intensiva de ML, DL e inferência.
@@ -145,6 +153,7 @@ Outros recursos incluem:
 
 
 
+[[mlperf]]
 == MLPerf
 
 O MLPerf é o conjunto de benchmark líder do setor para avaliar o desempenho da IA.  Nesta validação, usamos seu benchmark de classificação de imagens com MXNet, uma das estruturas de IA mais populares.  O script de treinamento MXNet_benchmarks foi usado para conduzir o treinamento de IA.  O script contém implementações de vários modelos convencionais populares e foi projetado para ser o mais rápido possível.  Ele pode ser executado em uma única máquina ou em modo distribuído em vários hosts.

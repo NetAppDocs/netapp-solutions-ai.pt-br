@@ -18,6 +18,7 @@ Esta seção inclui código YAML de exemplo para a solução de banco de dados v
 
 
 
+[[appendix-d-docker-compose-yml]]
 == Apêndice D: docker-compose.yml
 
 [source, yml]

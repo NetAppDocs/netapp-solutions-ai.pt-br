@@ -18,6 +18,7 @@ A solução Hybrid Iceberg Lakehouse oferece benefícios exclusivos para abordar
 
 
 
+[[netapp-overview]]
 == Visão geral da NetApp
 
 * As ofertas da NetApp, como ONTAP e StorageGRID, permitem a separação de armazenamento e computação, possibilitando a utilização ideal de recursos com base em requisitos específicos.  Essa flexibilidade permite que os clientes dimensionem seu armazenamento de forma independente usando soluções de armazenamento da NetApp
@@ -27,6 +28,7 @@ A solução Hybrid Iceberg Lakehouse oferece benefícios exclusivos para abordar
 
 
 
+[[storagegrid]]
 === StorageGRID
 
 Nosso armazenamento de objetos líder do setor, o storageGRID, oferece um poderoso mecanismo de política para posicionamento automatizado de dados, opções flexíveis de implantação e durabilidade incomparável com codificação de eliminação em camadas.  Ele tem uma arquitetura escalável que suporta bilhões de objetos e petabytes de dados em um único namespace.  A solução permite a integração de nuvem híbrida, permitindo a hierarquização de dados nas principais plataformas de nuvem.  Ela foi reconhecida como líder na Avaliação de Fornecedores Baseada em Objetos do IDC Marketscape Worldwide de 2019.
@@ -37,6 +39,7 @@ Em resumo, o NetApp storageGRID oferece recursos poderosos, escalabilidade, inte
 
 
 
+[[netapp-ontap]]
 === NetApp ONTAP
 
 O NetApp ONTAP é uma solução de armazenamento robusta que oferece uma ampla gama de recursos empresariais.  Inclui o Snapshot, que fornece backups instantâneos consistentes com o aplicativo e à prova de violação.  O SnapRestore permite restauração quase instantânea de backups sob demanda, enquanto o SnapMirror oferece recursos integrados de backup remoto e recuperação de desastres.  A solução também incorpora a Proteção Autônoma contra Ransomware (ARP), garantindo a segurança dos dados com recursos como verificação de vários administradores, criptografia de dados em repouso com certificação FIPS, criptografia de dados em trânsito, autenticação multifator (MFA) e controle de acesso baseado em função (RBAC).  Registro abrangente, auditoria, gerenciamento de chaves internas e externas, limpeza segura e gerenciamento seguro de múltiplos locatários aprimoram ainda mais a segurança e a conformidade dos dados.
@@ -49,6 +52,7 @@ O NetApp ONTAP oferece suporte a vários protocolos, incluindo NVMe/FC, FC, NVMe
 
 
 
+[[dremio-overview]]
 == Visão geral do Dremio
 
 Dremio é a plataforma Lakehouse unificada para análises de autoatendimento e IA.  A plataforma Dremio Unified Analytics aproxima os usuários dos dados com flexibilidade, escalabilidade e desempenho do lakehouse por uma fração do custo das soluções de data warehouse legadas.  O Dremio permite análises "shift-left" para eliminar a integração de dados complexa e dispendiosa e ETL, proporcionando análises contínuas em escala empresarial sem movimentação de dados.  O Dremio também apresenta:
@@ -60,6 +64,7 @@ Dremio é a plataforma Lakehouse unificada para análises de autoatendimento e I
 
 
 
+[[what-value-does-the-dremio-and-netapp-hybrid-iceberg-lakehouse-solution-deliver-to-customers]]
 == Que valor a solução Dremio e NetApp Hybrid Iceberg Lakehouse oferece aos clientes?
 
 * *Gerenciamento de dados e acessibilidade aprimorados*: A Dremio é conhecida por sua plataforma de data lakehouse que permite que organizações consultem dados diretamente de seus data lakes em alta velocidade.  A NetApp, por outro lado, é uma provedora líder de serviços de dados em nuvem e soluções de armazenamento de dados.  A oferta conjunta fornece aos clientes uma solução abrangente para armazenar, gerenciar, acessar e analisar os dados de sua empresa de forma eficiente e eficiente.

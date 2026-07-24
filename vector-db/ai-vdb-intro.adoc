@@ -18,6 +18,7 @@ Esta seção fornece uma introdução à solução de banco de dados vetorial pa
 
 
 
+[[introduction]]
 == Introdução
 
 Os bancos de dados vetoriais abordam efetivamente os desafios projetados para lidar com as complexidades da pesquisa semântica em Grandes Modelos de Linguagem (LLMs) e Inteligência Artificial generativa (IA).  Diferentemente dos sistemas tradicionais de gerenciamento de dados, os bancos de dados vetoriais são capazes de processar e pesquisar vários tipos de dados, incluindo imagens, vídeos, texto, áudio e outras formas de dados não estruturados, usando o conteúdo dos dados em si, em vez de rótulos ou tags.

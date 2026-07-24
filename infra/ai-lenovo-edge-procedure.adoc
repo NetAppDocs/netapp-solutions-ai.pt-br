@@ -18,6 +18,7 @@ Esta seção descreve os procedimentos de teste usados para validar esta soluç�
 
 
 
+[[operating-system-and-ai-inference-setup]]
 == Configuração do sistema operacional e inferência de IA
 
 Para o AFF C190, usamos o Ubuntu 18.04 com drivers NVIDIA e docker com suporte para GPUs NVIDIA e usamos o MLPerf https://github.com/mlperf/inference_results_v0.7/tree/master/closed/Lenovo["código"^] disponível como parte do envio da Lenovo para o MLPerf Inference v0.7.
@@ -52,6 +53,7 @@ make run_harness RUN_ARGS="--benchmarks=<BENCHMARKS> --scenarios=<SCENARIOS>"
 ....
 
 
+[[ai-inference-runs]]
 == Execuções de inferência de IA
 
 Três tipos de execuções foram executadas:

@@ -26,6 +26,7 @@ Os sistemas de armazenamento NetApp oferecem o mesmo desempenho ou melhor que o 
 
 
 
+[[acknowledgments]]
 == Agradecimentos
 
 * JJ  Falkanger, gerente sênior, soluções de HPC e IA, Lenovo
@@ -36,6 +37,7 @@ Os sistemas de armazenamento NetApp oferecem o mesmo desempenho ou melhor que o 
 
 
 
+[[where-to-find-additional-information]]
 == Onde encontrar informações adicionais
 
 Para saber mais sobre as informações descritas neste documento, consulte os seguintes documentos e/ou sites:

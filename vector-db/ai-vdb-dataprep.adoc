@@ -18,6 +18,7 @@ Esta seção fornece um exemplo de script Python usado para preparar dados para 
 
 
 
+[[appendix-b-preparedatanetappnew-py]]
 == Apêndice B: prepare_data_netapp_new.py
 
 [source, python]

@@ -18,6 +18,7 @@ Esta solução não depende de hardware específico.  A solução é compatível
 
 
 
+[[apache-airflow-validation-environment]]
 == Ambiente de validação do Apache Airflow
 
 |===
@@ -34,6 +35,7 @@ Esta solução não depende de hardware específico.  A solução é compatível
 |===
 
 
+[[jupyterhub-validation-environment]]
 == Ambiente de validação JupyterHub
 
 |===
@@ -50,6 +52,7 @@ Esta solução não depende de hardware específico.  A solução é compatível
 |===
 
 
+[[mlflow-validation-environment]]
 == Ambiente de Validação MLflow
 
 |===
@@ -66,6 +69,7 @@ Esta solução não depende de hardware específico.  A solução é compatível
 |===
 
 
+[[kubeflow-validation-environment]]
 == Ambiente de Validação Kubeflow
 
 |===
@@ -82,6 +86,7 @@ Esta solução não depende de hardware específico.  A solução é compatível
 |===
 
 
+[[support]]
 == Apoiar
 
 A NetApp não oferece suporte empresarial para Apache Airflow, JupyterHub, MLflow, Kubeflow ou Kubernetes.  Se você estiver interessado em uma plataforma MLOps totalmente suportada,link:https://www.netapp.com/us/contact-us/index.aspx?for_cr=us["entre em contato com a NetApp"^] sobre soluções MLOps totalmente suportadas que a NetApp oferece em conjunto com parceiros.

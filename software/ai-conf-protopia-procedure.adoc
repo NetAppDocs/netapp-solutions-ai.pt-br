@@ -18,6 +18,7 @@ Esta seção descreve as tarefas necessárias para concluir a validação.
 
 
 
+[[prerequisites]]
 == Pré-requisitos
 
 Para executar as tarefas descritas nesta seção, você deve ter acesso a um host Linux ou macOS com as seguintes ferramentas instaladas e configuradas:
@@ -36,6 +37,7 @@ Para executar as tarefas descritas nesta seção, você deve ter acesso a um hos
 
 
 
+[[scenario-1-on-demand-inferencing-in-jupyterlab]]
 == Cenário 1 – Inferência sob demanda no JupyterLab
 
 . Crie um namespace do Kubernetes para cargas de trabalho de inferência de IA/ML.
@@ -105,6 +107,7 @@ image:ai-protopia-009.png["Figura mostrando diálogo de entrada/saída ou repres
 
 
 
+[[scenario-2-batch-inferencing-on-kubernetes]]
 == Cenário 2 – Inferência em lote no Kubernetes
 
 . Crie um namespace do Kubernetes para cargas de trabalho de inferência de IA/ML.
@@ -253,6 +256,7 @@ mAP: 0.8841195749171925
 
 
 
+[[scenario-3-nvidia-triton-inference-server]]
 == Cenário 3 – Servidor de Inferência NVIDIA Triton
 
 . Crie um namespace do Kubernetes para cargas de trabalho de inferência de IA/ML.

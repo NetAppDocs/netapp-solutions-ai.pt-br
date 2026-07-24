@@ -18,6 +18,7 @@ Esta seção descreve os resultados detalhados do procedimento de teste.
 
 
 
+[[image-recognition-training-using-resnet-in-ontap]]
 == Treinamento de reconhecimento de imagem usando ResNet em ONTAP
 
 Executamos o benchmark ResNet50 com um e dois servidores SR670 V2.  Este teste usou o contêiner MXNet 22.04-py3 NGC para executar o treinamento.
@@ -41,6 +42,7 @@ python train_imagenet.py --gpus 0,1,2,3,4,5,6,7 --batch-size 408 --kv-store horo
 
 
 
+[[data-read-speed-local-versus-network-storage]]
 == Velocidade de leitura de dados: armazenamento local versus armazenamento em rede
 
 A velocidade de leitura foi testada usando o `dd` comando em um dos arquivos do conjunto de dados ImageNet.  Especificamente, executamos os seguintes comandos para dados locais e de rede:
@@ -53,6 +55,7 @@ Ambos os valores são semelhantes, demonstrando que o armazenamento em rede pode
 
 
 
+[[shared-use-case-multiple-independent-simultaneous-jobs]]
 == Caso de uso compartilhado: vários trabalhos independentes e simultâneos
 
 Este teste simulou o caso de uso esperado para esta solução: treinamento de IA multitarefa e multiusuário.  Cada nó executou seu próprio treinamento enquanto usava o armazenamento de rede compartilhado.  Os resultados são exibidos na figura a seguir, que mostra que o caso da solução forneceu excelente desempenho, com todos os trabalhos sendo executados essencialmente na mesma velocidade dos trabalhos individuais.  A taxa de transferência total foi dimensionada linearmente com o número de nós.

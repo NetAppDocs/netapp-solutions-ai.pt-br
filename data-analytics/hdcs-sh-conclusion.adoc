@@ -25,6 +25,7 @@ Esta seção fornece um resumo dos casos de uso e soluções fornecidas pela Net
 
 
 
+[[where-to-find-additional-information]]
 == Onde encontrar informações adicionais
 
 Para saber mais sobre as informações descritas neste documento, consulte os seguintes documentos e/ou sites:
@@ -49,6 +50,7 @@ https://www.netapp.com/media/16877-tr-4529.pdf["https://www.netapp.com/media/168
 
 
 
+[[acknowledgements]]
 == Agradecimentos
 
 * Paul Burland, Representante de Vendas, Vendas Distritais de Victoria da ANZ, NetApp
@@ -59,6 +61,7 @@ https://www.netapp.com/media/16877-tr-4529.pdf["https://www.netapp.com/media/168
 
 
 
+[[version-history]]
 == Histórico de versões
 
 |===

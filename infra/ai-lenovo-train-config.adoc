@@ -18,6 +18,7 @@ Esta seção descreve as configurações testadas, a infraestrutura de rede, o s
 
 
 
+[[solution-architecture]]
 == Arquitetura da solução
 
 Usamos os componentes da solução listados na tabela a seguir para esta validação.
@@ -54,6 +55,7 @@ image:a400-thinksystem-007.png["Este gráfico descreve a camada de computação,
 
 
 
+[[storage-controller]]
 == Controlador de armazenamento
 
 A tabela a seguir lista a configuração de armazenamento.

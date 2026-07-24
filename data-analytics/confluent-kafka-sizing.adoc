@@ -18,6 +18,7 @@ O dimensionamento do Kafka pode ser executado com quatro modos de configuração
 
 
 
+[[simple]]
 == Simples
 
 O modo simples é apropriado para usuários iniciantes do Apache Kafka ou casos de uso em estágio inicial.  Para este modo, você fornece requisitos como taxa de transferência em MBps, distribuição de leitura, retenção e porcentagem de utilização de recursos (60% é o padrão).  Você também entra no ambiente, como no local (bare-metal, VMware, Kubernetes ou OpenStack) ou na nuvem.  Com base nessas informações, o dimensionamento de um cluster Kafka fornece o número de servidores necessários para o broker, o zookeeper, os trabalhadores de conexão do Apache Kafka, o registro de esquema, um proxy REST, o ksqlDB e o centro de controle do Confluent.
@@ -26,6 +27,7 @@ Para armazenamento em camadas, considere o modo de configuração granular para 
 
 
 
+[[producers]]
 === Produtores
 
 Para descrever os produtores do Apache Kafka (por exemplo, um cliente nativo, proxy REST ou conector Kafka), forneça as seguintes informações:
@@ -81,6 +83,7 @@ Os processadores de fluxo devem descrever seus aplicativos ou serviços que cons
 
 
 
+[[consumers]]
 === Consumidores
 
 Descreva seus aplicativos ou serviços que consomem dados do Apache Kafka e não os produzem de volta no Apache Kafka; por exemplo, um cliente nativo ou um conector Kafka.
@@ -117,6 +120,7 @@ Além dos requisitos para produtores, processadores de fluxo e consumidores, voc
 
 
 
+[[describe-your-environment]]
 === Descreva seu ambiente
 
 * *Em qual ambiente seu cluster será executado?*  Amazon Web Services, Microsoft Azure, plataforma de nuvem do Google, bare-metal local, VMware local, OpenStack local ou Kubernates local?

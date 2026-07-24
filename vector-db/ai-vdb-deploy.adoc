@@ -18,6 +18,7 @@ Esta seção discute o procedimento de implantação da solução de banco de da
 
 
 
+[[deployment-procedure]]
 == Procedimento de implantação
 
 Nesta seção de implantação, usamos o banco de dados vetorial milvus com o Kubernetes para a configuração do laboratório, conforme abaixo.
@@ -28,6 +29,7 @@ O armazenamento netapp fornece armazenamento para o cluster para manter os dados
 
 
 
+[[netapp-storage-setup-ontap]]
 === Configuração de armazenamento NetApp – ONTAP
 
 * Inicialização do sistema de armazenamento
@@ -54,6 +56,7 @@ Siga as etapas abaixo para NAS S3 (Network Attached Storage Simple Storage Servi
 
 
 
+[[netapp-storage-setup-storagegrid]]
 === Configuração de armazenamento NetApp – StorageGRID
 
 . Instale o software storageGRID.

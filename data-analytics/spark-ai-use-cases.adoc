@@ -18,6 +18,7 @@ Os principais casos de uso e metodologia de IA, ML e DL podem ser divididos nas 
 
 
 
+[[spark-nlp-pipelines-and-tensorflow-distributed-inferencing]]
 == Pipelines Spark NLP e inferência distribuída TensorFlow
 
 A lista a seguir contém as bibliotecas de PNL de código aberto mais populares que foram adotadas pela comunidade de ciência de dados em diferentes níveis de desenvolvimento:
@@ -40,6 +41,7 @@ O mecanismo de aprendizado profundo subjacente ao Spark NLP é o TensorFlow, uma
 
 
 
+[[horovod-distributed-training]]
 == Treinamento distribuído Horovod
 
 A validação principal do Hadoop para desempenho relacionado ao MapReduce é realizada com TeraGen, TeraSort, TeraValidate e DFSIO (leitura e gravação).  Os resultados da validação do TeraGen e do TeraSort são apresentados em https://www.netapp.com/pdf.html?item=/media/16420-tr-3969pdf.pdf["Solução NetApp E-Series para Hadoop"] e na seção "Storage Tiering" para AFF.
@@ -61,6 +63,7 @@ Veja a seçãolink:apache-spark-use-cases-summary.html#machine-learning["Aprendi
 
 
 
+[[multi-worker-deep-learning-using-keras-for-ctr-prediction]]
 == Aprendizado profundo multi-trabalhador usando Keras para previsão de CTR
 
 Com os avanços recentes em plataformas e aplicativos de ML, muita atenção agora está voltada para o aprendizado em escala.  A taxa de cliques (CTR) é definida como o número médio de cliques por cem impressões de anúncios on-line (expresso como uma porcentagem).  Ela é amplamente adotada como uma métrica-chave em vários setores e casos de uso, incluindo marketing digital, varejo, comércio eletrônico e provedores de serviços.  Para obter mais detalhes sobre as aplicações do CTR e os resultados do desempenho do treinamento distribuído, consulte olink:apache-spark-testing-results.html#deep-learning-models-for-ctr-prediction-performance["Modelos de aprendizado profundo para desempenho de previsão de CTR"] seção.
@@ -89,6 +92,7 @@ Além do DCN, também testamos outros modelos populares de aprendizado profundo 
 
 
 
+[[architectures-used-for-validation]]
 == Arquiteturas usadas para validação
 
 Para esta validação, usamos quatro nós de trabalho e um nó mestre com um par AFF-A800 HA.  Todos os membros do cluster estavam conectados por meio de switches de rede de 10 GbE.

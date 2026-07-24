@@ -18,6 +18,7 @@ Nesta seção, executamos consultas de teste SQL de várias fontes para verifica
 
 
 
+[[sql-query-on-object-storage]]
 === Consulta SQL no armazenamento de objetos
 
 . Defina a memória para 250 GB por servidor em dremio.env

@@ -18,12 +18,14 @@ Esta seção descreve as tarefas de configuração inicial que precisam ser exec
 
 
 
+[[prerequisites]]
 == Pré-requisitos
 
 Antes de executar as etapas descritas nesta seção, presumimos que você já tenha implantado o VMware vSphere e o NetApp ONTAP.  Consulte olink:https://docs.nvidia.com/ai-enterprise/latest/product-support-matrix/index.html["Matriz de suporte a produtos empresariais NVIDIA AI"^] para obter detalhes sobre as versões suportadas do vSphere.  Consulte olink:https://docs.netapp.com/us-en/netapp-solutions/vmware/index.html["Documentação da solução NetApp e VMware"^] para obter detalhes sobre a implantação do VMware vSphere com o NetApp ONTAP.
 
 
 
+[[install-nvidia-ai-enterprise-host-software]]
 == Instalar o software host empresarial NVIDIA AI
 
 Para instalar o software host NVIDIA AI Enterprise, siga as instruções descritas nas seções 1 a 4 dolink:https://docs.nvidia.com/ai-enterprise/latest/quick-start-guide/index.html["Guia de início rápido do NVIDIA AI Enterprise"] .

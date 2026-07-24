@@ -26,6 +26,7 @@ O armazenamento NetApp oferece o mesmo desempenho ou melhor que o armazenamento 
 
 
 
+[[acknowledgments]]
 == Agradecimentos
 
 * Karthikeyan Nagalingam, engenheiro técnico de marketing, NetApp
@@ -34,6 +35,7 @@ O armazenamento NetApp oferece o mesmo desempenho ou melhor que o armazenamento 
 
 
 
+[[where-to-find-additional-information]]
 == Onde encontrar informações adicionais
 
 Para saber mais sobre as informações descritas neste documento, consulte os seguintes documentos e/ou sites:

@@ -18,6 +18,7 @@ Esta seção descreve as etapas envolvidas no treinamento e na implantação de 
 
 
 
+[[prerequisites]]
 == Pré-requisitos
 
 Crie um Dockerfile com as configurações necessárias para usar nas etapas de treinamento e teste dentro do pipeline do Kubeflow.  Aqui está um exemplo de um Dockerfile -
@@ -35,6 +36,7 @@ Dependendo de suas necessidades, instale todas as bibliotecas e pacotes necessá
 
 
 
+[[train-a-small-nn-on-mnist-data-using-pytorch-and-kubeflow-pipelines]]
 == Treine uma pequena NN em dados MNIST usando PyTorch e pipelines Kubeflow
 
 Usamos o exemplo de uma pequena Rede Neural treinada em dados MNIST.  O conjunto de dados MNIST consiste em imagens manuscritas de dígitos de 0 a 9.  As imagens têm 28x28 pixels de tamanho.  O conjunto de dados é dividido em 60.000 imagens de trens e 10.000 imagens de validação.  A rede neural usada neste experimento é uma rede feedforward de duas camadas.  O treinamento é executado usando o Kubeflow Pipelines. Consulte a documentação https://www.kubeflow.org/docs/components/pipelines/v1/introduction/["aqui"^] para maiores informações.  Nosso pipeline do Kubeflow incorpora a imagem do Docker da seção Pré-requisitos.
@@ -43,6 +45,7 @@ image:kubeflow-pipeline.png["Visualização de execução do pipeline do Kubeflo
 
 
 
+[[visualize-results-using-tensorboard]]
 == Visualize resultados usando o Tensorboard
 
 Depois que o modelo estiver treinado, podemos visualizar os resultados usando o Tensorboard. https://www.tensorflow.org/tensorboard["Tensorboard"^] está disponível como um recurso no Painel do Kubeflow.  Você pode criar um tensorboard personalizado para seu trabalho.  O exemplo abaixo mostra o gráfico da precisão do treinamento versus número de épocas e perda de treinamento versus número de épocas.
@@ -51,6 +54,7 @@ image:tensorboard-graph.png["Gráfico Tensorboard para perda e precisão de trei
 
 
 
+[[experiment-with-hyperparameters-using-katib]]
 == Experimento com hiperparâmetros usando Katib
 
 https://www.kubeflow.org/docs/components/katib/hyperparameter/["Katib"^]é uma ferramenta dentro do Kubeflow que pode ser usada para experimentar os hiperparâmetros do modelo.  Para criar um experimento, defina primeiro uma métrica/meta desejada.  Geralmente essa é a precisão do teste.  Depois que a métrica for definida, escolha os hiperparâmetros com os quais você gostaria de brincar (otimizador/taxa de aprendizado/número de camadas).  Katib faz uma varredura de hiperparâmetros com os valores definidos pelo usuário para encontrar a melhor combinação de parâmetros que satisfaçam a métrica desejada.  Você pode definir esses parâmetros em cada seção da interface do usuário.  Como alternativa, você pode definir um arquivo *YAML* com as especificações necessárias.  Abaixo está uma ilustração de um experimento Katib -
@@ -61,6 +65,7 @@ image:katib-experiment-002.png["Verificação de teste bem-sucedida"]
 
 
 
+[[use-netapp-snapshots-to-save-data-for-traceability]]
 == Use instantâneos do NetApp para salvar dados para rastreabilidade
 
 Durante o treinamento do modelo, podemos querer salvar um instantâneo do conjunto de dados de treinamento para rastreabilidade.  Para fazer isso, podemos adicionar uma etapa de instantâneo ao pipeline, conforme mostrado abaixo.  Para criar o snapshot, podemos usar o https://github.com/NetApp/netapp-dataops-toolkit/tree/main/netapp_dataops_k8s["Kit de ferramentas NetApp DataOps para Kubernetes"^] .

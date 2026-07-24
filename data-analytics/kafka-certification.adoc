@@ -18,6 +18,7 @@ Realizamos a verificação com o Confluent Platform 6.2 Tiered Storage no NetApp
 
 
 
+[[confluent-platform-setup]]
 == Configuração da plataforma Confluent
 
 Usamos a seguinte configuração para verificação.
@@ -32,6 +33,7 @@ Os servidores de ferramentas atuam como clientes de aplicativos que enviam solic
 
 
 
+[[confluent-tiered-storage-configuration]]
 == Configuração de armazenamento em camadas confluente
 
 A configuração de armazenamento em camadas requer os seguintes parâmetros no Kafka:
@@ -52,6 +54,7 @@ Para verificação, usamos StorageGRID com o protocolo HTTP, mas HTTPS também f
 
 
 
+[[netapp-object-storage-storagegrid]]
 == Armazenamento de objetos NetApp - StorageGRID
 
 Configuramos a configuração de site único no StorageGRID para verificação.
@@ -60,36 +63,42 @@ image:confluent-kafka-008.png["Figura mostrando diálogo de entrada/saída ou re
 
 
 
+[[verification-tests]]
 == Testes de verificação
 
 Concluímos os cinco casos de teste a seguir para verificação.  Esses testes são executados no framework Trogdor.  Os dois primeiros foram testes de funcionalidade e os três restantes foram testes de desempenho.
 
 
 
+[[object-store-correctness-test]]
 === Teste de correção de armazenamento de objetos
 
 Este teste determina se todas as operações básicas (por exemplo, obter/colocar/excluir) na API de armazenamento de objetos funcionam bem de acordo com as necessidades do armazenamento em camadas.  É um teste básico que todo serviço de armazenamento de objetos deve esperar passar antes dos testes seguintes.  É um teste assertivo que pode ser aprovado ou reprovado.
 
 
 
+[[tiering-functionality-correctness-test]]
 === Teste de correção da funcionalidade de hierarquização
 
 Este teste determina se a funcionalidade de armazenamento em camadas de ponta a ponta funciona bem com um teste assertivo que passa ou falha.  O teste cria um tópico de teste que, por padrão, é configurado com camadas habilitadas e um tamanho de hotset altamente reduzido.  Ele produz um fluxo de eventos para o tópico de teste recém-criado, aguarda que os corretores arquivem os segmentos no armazenamento de objetos e, então, consome o fluxo de eventos e valida se o fluxo consumido corresponde ao fluxo produzido.  O número de mensagens produzidas no fluxo de eventos é configurável, o que permite ao usuário gerar uma carga de trabalho suficientemente grande de acordo com as necessidades de teste.  O tamanho reduzido do hotset garante que as buscas do consumidor fora do segmento ativo sejam atendidas somente pelo armazenamento de objetos; isso ajuda a testar a exatidão do armazenamento de objetos para leituras.  Realizamos este teste com e sem uma injeção de falha de armazenamento de objeto.  Simulamos uma falha de nó interrompendo o serviço do gerenciador de serviços em um dos nós no StorageGRID e validando se a funcionalidade de ponta a ponta funciona com o armazenamento de objetos.
 
 
 
+[[tier-fetch-benchmark]]
 === Benchmark de busca de nível
 
 Este teste validou o desempenho de leitura do armazenamento de objetos em camadas e verificou o intervalo de solicitações de leitura de busca sob carga pesada de segmentos gerados pelo benchmark.  Neste benchmark, a Confluent desenvolveu clientes personalizados para atender às solicitações de busca de camadas.
 
 
 
+[[produce-consume-workload-benchmark]]
 === Benchmark de carga de trabalho de produção e consumo
 
 Este teste gerou indiretamente carga de trabalho de gravação no armazenamento de objetos por meio do arquivamento de segmentos.  A carga de trabalho de leitura (segmentos lidos) foi gerada a partir do armazenamento de objetos quando grupos de consumidores buscavam os segmentos.  Esta carga de trabalho foi gerada pelo script de teste.  Este teste verificou o desempenho de leitura e gravação no armazenamento de objetos em threads paralelos.  Testamos com e sem injeção de falha de armazenamento de objetos, assim como fizemos para o teste de correção da funcionalidade de camadas.
 
 
 
+[[retention-workload-benchmark]]
 === Referência de carga de trabalho de retenção
 
 Este teste verificou o desempenho de exclusão de um armazenamento de objetos sob uma carga de trabalho pesada de retenção de tópicos.  A carga de trabalho de retenção foi gerada usando um script de teste que produz muitas mensagens em paralelo a um tópico de teste.  O tópico de teste foi a configuração com uma configuração agressiva de retenção baseada em tamanho e tempo que fazia com que o fluxo de eventos fosse continuamente eliminado do armazenamento de objetos.  Os segmentos foram então arquivados.  Isso levou a um grande número de exclusões no armazenamento de objetos pelo broker e à cobrança do desempenho das operações de exclusão do armazenamento de objetos.

@@ -20,12 +20,14 @@ image:hdcs-sh-009.png["Figura mostrando diálogo de entrada/saída ou representa
 
 
 
+[[scenario]]
 == Cenário
 
 Neste cenário, os dados do sensor de IoT são inseridos na nuvem e analisados usando um cluster Apache Spark de código aberto na AWS.  O requisito é fazer backup dos dados processados da nuvem para o local.
 
 
 
+[[requirements-and-challenges]]
 == Requisitos e desafios
 
 Os principais requisitos e desafios para este caso de uso incluem:
@@ -37,6 +39,7 @@ Os principais requisitos e desafios para este caso de uso incluem:
 
 
 
+[[solution]]
 == Solução
 
 O cliente usa o AWS Elastic Block Store (EBS) para seu armazenamento HDFS do cluster Spark para receber e ingerir dados de sensores remotos por meio do Kafka.  Consequentemente, o armazenamento HDFS atua como a fonte dos dados de backup.

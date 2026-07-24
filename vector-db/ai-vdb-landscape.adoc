@@ -18,6 +18,7 @@ Esta seção aborda a definição e o uso de um banco de dados vetorial em solu�
 
 
 
+[[vector-database]]
 == Banco de Dados Vetorial
 
 Um banco de dados vetorial é um tipo especializado de banco de dados projetado para manipular, indexar e pesquisar dados não estruturados usando incorporações de modelos de aprendizado de máquina.  Em vez de organizar dados em um formato tabular tradicional, ele organiza os dados como vetores de alta dimensão, também conhecidos como incorporações de vetores.  Essa estrutura exclusiva permite que o banco de dados manipule dados complexos e multidimensionais de forma mais eficiente e precisa.
@@ -28,6 +29,7 @@ Além disso, bancos de dados vetoriais são adequados para lidar com dados tempo
 
 
 
+[[advantages-of-vector-database-for-ml-and-ai]]
 === Vantagens do banco de dados vetorial para ML e IA:
 
 * Pesquisa de alta dimensão: bancos de dados vetoriais são excelentes no gerenciamento e na recuperação de dados de alta dimensão, que geralmente são gerados em aplicativos de IA e ML.
@@ -39,6 +41,7 @@ Além disso, bancos de dados vetoriais são adequados para lidar com dados tempo
 
 
 
+[[vector-databases-and-use-cases]]
 === Bancos de dados vetoriais e casos de uso.
 
 Esta seção fornece vários bancos de dados de vetores e detalhes de seus casos de uso.

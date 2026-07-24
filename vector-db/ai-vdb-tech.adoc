@@ -18,12 +18,14 @@ Esta seção fornece uma visão geral dos requisitos para a solução de banco d
 
 
 
+[[technology-requirement]]
 == Requisito de Tecnologia
 
 As configurações de hardware e software descritas abaixo foram utilizadas para a maioria das validações realizadas neste documento, com exceção do desempenho.  Essas configurações servem como um guia para ajudar você a configurar seu ambiente.  No entanto, observe que os componentes específicos podem variar dependendo dos requisitos individuais do cliente.
 
 
 
+[[hardware-requirements]]
 == Requisitos de hardware
 
 |===
@@ -43,6 +45,7 @@ As configurações de hardware e software descritas abaixo foram utilizadas para
 |===
 
 
+[[software-requirements]]
 == Requisitos de software
 
 |===

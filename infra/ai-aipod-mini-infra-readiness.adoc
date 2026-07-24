@@ -18,6 +18,7 @@ Este documento descreve uma lista de verificação abrangente de prontidão da i
 
 
 
+[[business-use-case-readiness]]
 == Preparação de negócios e casos de uso
 
 * A solução está alinhada aos resultados das linhas de negócio (por exemplo, produtividade, atendimento ao cliente, jurídico, saúde, manufatura, setor público)?
@@ -29,6 +30,7 @@ Este documento descreve uma lista de verificação abrangente de prontidão da i
 
 
 
+[[technical-infrastructure-requirements]]
 == Requisitos técnicos e de infraestrutura
 
 * Seu pipeline de dados está pronto (preparação de dados, ETL, ingestão segura no banco de dados vetorial)?
@@ -41,6 +43,7 @@ Este documento descreve uma lista de verificação abrangente de prontidão da i
 
 
 
+[[software-ecosystem-alignment]]
 == Alinhamento de Software & Ecossistema
 
 * Seus aplicativos em contêineres são compatíveis com os Helm charts e Kubernetes fornecidos?
@@ -52,6 +55,7 @@ Este documento descreve uma lista de verificação abrangente de prontidão da i
 
 
 
+[[data-governance-security]]
 == Governança de Dados & Segurança
 
 * Você habilitou o controle de acesso baseado em funções (RBAC) no Kubernetes?
@@ -62,6 +66,7 @@ Este documento descreve uma lista de verificação abrangente de prontidão da i
 
 
 
+[[operational-support-considerations]]
 == Considerações operacionais e de suporte
 
 * Os administradores são treinados/capacitados em Kubernetes, Trident CSI e implantação do stack OPEA?
@@ -72,6 +77,7 @@ Este documento descreve uma lista de verificação abrangente de prontidão da i
 
 
 
+[[commercial-gtm-alignment]]
 == Alinhamento Comercial e de GTM
 
 * Existe um mapa por fases (departamental → expansão da IA em toda a empresa)?

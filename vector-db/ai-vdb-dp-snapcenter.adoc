@@ -18,6 +18,7 @@ Esta seção descreve como fornecer proteção de dados para o banco de dados de
 
 
 
+[[vector-database-protection-using-netapp-snapcenter]]
 == Proteção de banco de dados vetorial usando NetApp SnapCenter.
 
 Por exemplo, na indústria de produção cinematográfica, os clientes geralmente possuem dados incorporados críticos, como arquivos de vídeo e áudio.  A perda desses dados, devido a problemas como falhas no disco rígido, pode ter um impacto significativo em suas operações, potencialmente colocando em risco empreendimentos multimilionários.  Encontramos casos em que conteúdo inestimável foi perdido, causando interrupções substanciais e perdas financeiras.  Garantir a segurança e a integridade desses dados essenciais é, portanto, de suma importância neste setor.  Nesta seção, nos aprofundamos em como o SnapCenter protege os dados do banco de dados vetorial e os dados Milvus que residem no ONTAP.  Para este exemplo, utilizamos um bucket NAS (milvusdbvol1) derivado de um volume NFS ONTAP (vol1) para dados do cliente e um volume NFS separado (vectordbpv) para dados de configuração do cluster Milvus. verifique olink:https://docs.netapp.com/us-en/snapcenter-47/protect-sco/backup-workflow.html["aqui"] para o fluxo de trabalho de backup do snapcenter

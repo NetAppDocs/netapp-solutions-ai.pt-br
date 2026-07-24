@@ -18,12 +18,14 @@ A configuração usada para esta validação pode ser ajustada para se adequar a
 
 
 
+[[cpu-adjustments]]
 == Ajustes de CPU
 
 Usamos um processador Skylake Intel Xeon Platinum 8360Y para esta validação, conforme recomendado pela Lenovo.  Esperamos que a CPU Cascade Lake equivalente, um processador Intel Xeon Gold 6330, ofereça desempenho semelhante porque essa carga de trabalho não é limitada pela CPU.
 
 
 
+[[storage-capacity-increase]]
 == Aumento da capacidade de armazenamento
 
 Com base nas suas necessidades de capacidade de armazenamento, você pode aumentar o armazenamento compartilhado (volume NFS) sob demanda, desde que tenha prateleiras de disco e modelos de controlador adicionais.  Você pode fazer isso pela CLI ou pela interface web do NetApp do controlador de armazenamento como usuário administrador.

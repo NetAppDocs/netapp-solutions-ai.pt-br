@@ -27,6 +27,7 @@ Este documento descreve as diretrizes de práticas recomendadas para usar o Conf
 
 
 
+[[why-confluent-tiered-storage]]
 == Por que usar o armazenamento em camadas da Confluent?
 
 O Confluent se tornou a plataforma de streaming em tempo real padrão para muitas aplicações, especialmente para big data, análise e cargas de trabalho de streaming.  O armazenamento em camadas permite que os usuários separem a computação do armazenamento na plataforma Confluent.  Ele torna o armazenamento de dados mais econômico, permite que você armazene quantidades virtualmente infinitas de dados e aumente (ou diminua) as cargas de trabalho sob demanda, além de facilitar tarefas administrativas como rebalanceamento de dados e locatários.  Os sistemas de armazenamento compatíveis com S3 podem aproveitar todos esses recursos para democratizar dados com todos os eventos em um só lugar, eliminando a necessidade de engenharia de dados complexa.  Para obter mais informações sobre por que você deve usar armazenamento em camadas para Kafka, verifiquelink:https://docs.confluent.io/platform/current/kafka/tiered-storage.html#netapp-object-storage["este artigo da Confluent"^] .
@@ -35,6 +36,7 @@ O NetApp instaclustr também oferece suporte ao Kafka com armazenamento em camad
 
 
 
+[[why-netapp-storagegrid-for-tiered-storage]]
 == Por que usar o NetApp StorageGRID para armazenamento em camadas?
 
 StorageGRID é uma plataforma de armazenamento de objetos líder do setor da NetApp.  O StorageGRID é uma solução de armazenamento baseada em objetos e definida por software que oferece suporte a APIs de objetos padrão do setor, incluindo a API do Amazon Simple Storage Service (S3).  O StorageGRID armazena e gerencia dados não estruturados em escala para fornecer armazenamento de objetos seguro e durável.  O conteúdo é colocado no local certo, na hora certa e no nível de armazenamento certo, otimizando fluxos de trabalho e reduzindo custos para mídia avançada distribuída globalmente.
@@ -43,6 +45,7 @@ O maior diferencial do StorageGRID é seu mecanismo de política de gerenciament
 
 
 
+[[enabling-confluent-tiered-storage]]
 == Habilitando o armazenamento em camadas do Confluent
 
 A ideia básica do armazenamento em camadas é separar as tarefas de armazenamento de dados do processamento de dados.  Com essa separação, fica muito mais fácil para a camada de armazenamento de dados e a camada de processamento de dados escalarem de forma independente.

@@ -18,6 +18,7 @@ O StorageGRID tem uma ampla variedade de recursos que os usuários podem aprovei
 
 
 
+[[simple-management-with-grid-manager]]
 == Gerenciamento simples com Grid Manager
 
 O Grid Manager é uma interface gráfica baseada em navegador que permite configurar, gerenciar e monitorar seu sistema StorageGRID em locais distribuídos globalmente em um único painel, conforme mostrado na imagem a seguir.
@@ -34,6 +35,7 @@ Execute as seguintes tarefas com a interface do Grid Manager:
 
 
 
+[[netapp-storagegrid-app-for-splunk]]
 == Aplicativo NetApp StorageGRID para Splunk
 
 O aplicativo NetApp StorageGRID para Splunk é um aplicativo específico para o Splunk Enterprise.  Este aplicativo funciona em conjunto com o complemento NetApp StorageGRID para Splunk.  Ele fornece visibilidade sobre a integridade do StorageGRID , informações de uso da conta, detalhes de auditoria de segurança, uso e monitoramento de recursos e assim por diante.
@@ -44,18 +46,21 @@ image:stgr-splunkss-004.png["Figura mostrando diálogo de entrada/saída ou repr
 
 
 
+[[ilm-policies]]
 == Políticas de ILM
 
 O StorageGRID tem políticas flexíveis de gerenciamento de dados que incluem manter várias cópias de seus objetos e usar esquemas de EC (codificação de eliminação) como 2+1 e 4+2 (e muitos outros) para armazenar seus objetos, dependendo de requisitos específicos de desempenho e proteção de dados.  Como as cargas de trabalho e os requisitos mudam ao longo do tempo, é comum que as políticas de ILM também mudem.  Modificar políticas de ILM é um recurso essencial, permitindo que os clientes do StorageGRID se adaptem ao seu ambiente em constante mudança de forma rápida e fácil.
 
 
 
+[[performance]]
 == Desempenho
 
 O StorageGRID aumenta o desempenho adicionando mais nós, que podem ser VMs, bare metal ou dispositivos específicos, como SG5712, SG5760, SG6060 ou SGF6024.  Em nossos testes, superamos os principais requisitos de desempenho do SmartStore com uma grade de três nós de tamanho mínimo usando o dispositivo SG6060.  À medida que os clientes escalam sua infraestrutura Splunk com indexadores adicionais, eles podem adicionar mais nós de armazenamento para aumentar o desempenho e a capacidade.
 
 
 
+[[load-balancer-and-endpoint-configuration]]
 == Configuração do balanceador de carga e endpoint
 
 Os nós de administração no StorageGRID fornecem a interface de usuário (UI) do Grid Manager e o endpoint da API REST para visualizar, configurar e gerenciar seu sistema StorageGRID , bem como logs de auditoria para rastrear a atividade do sistema.  Para fornecer um ponto de extremidade S3 de alta disponibilidade para armazenamento remoto do Splunk SmartStore, implementamos o balanceador de carga StorageGRID , que é executado como um serviço em nós de administração e nós de gateway.  Além disso, o balanceador de carga também gerencia o tráfego local e se comunica com o GSLB (Global Server Load Balancing) para ajudar na recuperação de desastres.

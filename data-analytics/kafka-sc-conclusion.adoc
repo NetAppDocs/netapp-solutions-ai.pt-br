@@ -18,6 +18,7 @@ Este teste de verificação atingiu 31,74 GBps de taxa de transferência em cama
 
 
 
+[[where-to-find-additional-information]]
 == Onde encontrar informações adicionais
 
 Para saber mais sobre as informações descritas neste documento, revise os seguintes documentos e/ou sites:

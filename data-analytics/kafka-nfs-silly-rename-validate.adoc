@@ -18,6 +18,7 @@ Para a validação funcional, mostramos que um cluster Kafka com uma montagem NF
 
 
 
+[[validation-setup]]
 == Configuração de validação
 
 A configuração é executada na AWS.  A tabela a seguir mostra os diferentes componentes da plataforma e a configuração ambiental usados para a validação.
@@ -47,6 +48,7 @@ image:kafka-nfs-001.png["Estas imagens mostram a topologia da AWS contendo uma V
 
 
 
+[[architectural-flow]]
 == Fluxo arquitetônico
 
 * *Calcular.*  Usamos um cluster Kafka de quatro nós com um conjunto de zookeepers de três nós em execução em servidores dedicados.
@@ -59,6 +61,7 @@ As propriedades padrões do Kafka foram escolhidas para todos os servidores.  O 
 
 
 
+[[methodology-of-testing]]
 == Metodologia de testes
 
 . Atualizar `-is-preserve-unlink-enabled true` ao volume de Kafka, como segue:
