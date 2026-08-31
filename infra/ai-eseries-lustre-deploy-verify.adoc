@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: infra/ai-eseries-lustre-deploy-verify.html 
+keywords: Lustre, NetApp E-Series, deployment verification, Pacemaker, scaling 
+summary: Verifique a integridade, os pontos de montagem e a capacidade do cluster Lustre e expanda o sistema de arquivos com blocos de construção adicionais. 
+---
+= Verifique e expanda a implementação do Lustre
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Confirme a integridade do cluster, as montagens do Lustre e a capacidade do sistema de arquivos antes de usar em produção. Em seguida, use o mesmo inventário para adicionar componentes conforme necessário.
+
+
+
+[[verify-the-deployment]]
+== Verifique a implantação
+
+.Passos
+. A partir de um servidor Lustre, confirme se todos os recursos do Pacemaker estão iniciados nos nós esperados:
++
+[source, cli]
+----
+pcs status
+----
+. A partir de um cliente Lustre, confirme se o sistema de arquivos Lustre está montado:
++
+[source, cli]
+----
+mount -t lustre
+----
+. A partir de um cliente Lustre, confirme a capacidade do sistema de arquivos e se os destinos MDT e OST estão visíveis:
++
+[source, cli]
+----
+lfs df -h
+----
+
+
+Para validação de desempenho com IOR, mdtest e fio, consulte link:ai-eseries-lustre-sizing.html["Orientação de dimensionamento"].
+
+Para migração controlada de destino ou teste de failover de HA, siga os procedimentos em link:https://github.com/NetApp/ansible-lustre/blob/release/1.0.0/roles/lustre/docs/ha_user_guide.md["Guia do usuário de administração de HA"^].
+
+
+
+[[expand-the-file-system]]
+== Expandir o sistema de arquivos
+
+Para adicionar capacidade ou desempenho de metadados, expanda seu inventário existente com um bloco de construção adicional. Não crie um inventário separado para o novo bloco de construção. O playbook atribui automaticamente índices MDT e OST exclusivos e registra os novos destinos no MGS existente.
+
+.Passos
+. Adicione os novos hosts, arrays e grupos de recursos (MDT+OST ou somente OST) ao mesmo inventário e  `host_vars` e  `group_vars` arquivos que você usou para a implantação original.
+. Execute novamente o playbook de implantação principal no inventário atualizado.
+
+
+Consulte link:ai-eseries-lustre-architecture.html["Arquitetura da solução"] as regras de dimensionamento e link:ai-eseries-lustre-sizing.html["Orientação de dimensionamento"] as orientações sobre quando adicionar cada tipo de bloco de construção.

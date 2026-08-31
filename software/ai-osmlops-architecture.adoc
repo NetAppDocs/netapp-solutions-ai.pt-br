@@ -89,4 +89,4 @@ Esta solução não depende de hardware específico.  A solução é compatível
 [[support]]
 == Apoiar
 
-A NetApp não oferece suporte empresarial para Apache Airflow, JupyterHub, MLflow, Kubeflow ou Kubernetes.  Se você estiver interessado em uma plataforma MLOps totalmente suportada,link:https://www.netapp.com/us/contact-us/index.aspx?for_cr=us["entre em contato com a NetApp"^] sobre soluções MLOps totalmente suportadas que a NetApp oferece em conjunto com parceiros.
+NetApp não oferece suporte empresarial para Apache Airflow, JupyterHub, MLflow, Kubeflow ou Kubernetes. Se você estiver interessado em uma plataforma MLOps com suporte completo, link:https://www.netapp.com/company/contact-us/["entre em contato com a NetApp"^] sobre as soluções MLOps com suporte completo que a NetApp oferece em conjunto com parceiros.

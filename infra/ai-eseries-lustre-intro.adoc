@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: infra/ai-eseries-lustre-intro.html 
+keywords: Lustre, NetApp E-Series, EF80, HPC, AI, parallel file system, NVMe-oF, high-performance storage 
+summary: O Lustre com o NetApp E-Series Storage oferece um sistema de arquivos paralelo validado e escalável para cargas de trabalho de IA e HPC, utilizando uma arquitetura de blocos de construção repetíveis com o NetApp E-Series all-flash arrays. 
+---
+= Lustre com o NetApp E-Series Storage - Introdução
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+O Lustre com NetApp E-Series Storage é uma solução validada de sistema de arquivos paralelo para cargas de trabalho de IA e HPC, construída a partir de blocos repetíveis de pares de servidores HA e arrays all-flash E-Series.
+
+
+
+[[solution-overview]]
+== Visão geral da solução
+
+O Lustre com NetApp E-Series Storage combina o sistema de arquivos paralelo open-source Lustre com o NetApp E-Series block storage para fornecer uma base escalável e de alto desempenho para cargas de trabalho com uso intensivo de dados. Cada bloco de construção emparelha dois nós de servidor OSS/MDS configurados para alta disponibilidade (HA) com dois arrays all-flash E-Series. A conectividade NVMe-oF de backend transporta E/S de bloco para os arrays e uma malha LNet separada conecta clientes e nós de servidor OSS/MDS para acesso paralelo ao sistema de arquivos.
+
+Um bloco de construção básico hospeda o servidor de gerenciamento (MGS) e os destinos de metadados (MDTs) e storage de objetos (OSTs) iniciais. Blocos de construção adicionais se registram no MGS básico para dimensionar a capacidade de metadados, a capacidade de dados e a taxa de transferência agregada conforme as demandas de carga de trabalho aumentam.
+
+A figura a seguir mostra um exemplo de implantação com vários building blocks e clientes Lustre conectados por meio da LNet.
+
+.Visão geral da solução de armazenamento Lustre com NetApp E-Series
+image:eseries-lustre-overview-diagram.png["Visão geral da solução Lustre com NetApp E-Series Storage, incluindo blocos de construção e clientes"]

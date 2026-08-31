@@ -34,6 +34,8 @@ indexpage:
       url: "../infra/ai-eseries-superpod.html"
     - title: Sistema de arquivos paralelos BeeGFS com E-Series
       url: "../infra/ai-eseries-beegfs.html"
+    - title: Sistema de arquivos paralelo Lustre com E-Series
+      url: "../infra/ai-eseries-lustre-intro.html"
     - title: IBM Spectrum Scale com armazenamento da série E
       url: "../infra/ai-eseries-spectrumscale.html"
     - title: NetApp ONTAP com Lenovo ThinkSystem

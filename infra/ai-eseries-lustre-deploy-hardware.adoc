@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: infra/ai-eseries-lustre-deploy-hardware.html 
+keywords: Lustre, NetApp E-Series, EF80, hardware deployment, NVMe-oF, LNet 
+summary: Instale e conecte os servidores, os arrays EF80, a malha de rede NVMe-oF de backend e a malha LNet de frontend para um bloco de construção Lustre. 
+---
+= Hardware de rack e cabeamento Lustre
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Coloque os servidores Lustre e os arrays NetApp EF80 no rack e, em seguida, conecte as malhas NVMe-oF de backend e LNet de frontend para cada bloco de construção.
+
+
+
+[[before-you-begin]]
+== Antes de começar
+
+Consulte as contagens HCA, os requisitos de slot PCIe, os requisitos de caminho e as orientações de MTU em link:ai-eseries-lustre-hw.html["Componentes de hardware"].
+
+.Passos
+. Instale e conecte todos os servidores Lustre e storage E-Series de acordo com a topologia do bloco de construção.
++
+image:eseries-lustre-building-block-labeled.png["Bloco de construção Lustre etiquetado empilhado com dois servidores OSS/MDS e dois arrays EF80"]
+
+. Para cada array EF80, conecte o controlador A à porta 4a do controlador B e o controlador A à porta 4b do controlador B. Essas conexões dedicadas fornecem espelhamento entre controladores e não são usadas para tráfego do host. Consulte link:https://docs.netapp.com/us-en/e-series/install-hw-ef50-ef80/install-cable.html#step-1-cable-the-inter-controller-mirroring-connections["Conecte os cabos de espelhamento entre os controladores EF50 e EF80"^].
+. Conecte a rede NVMe-oF de backend entre servidores e arrays de acordo com a topologia de seis HCAs do EF80.
++
+.Cabeamento de backend EF80 de seis HCA (RoCE ou InfiniBand)
+image:eseries-lustre-ef80-6hca-cabling.png["Cabeamento NVMe-oF de seis HCAs no backend EF80 entre dois nós de servidor OSS/MDS e dois arrays EF80"]
+
+. Conecte as quatro interfaces front-end LNet (os HCAs i1 e i4) em cada servidor Lustre e os clientes Lustre à malha de switches dedicada InfiniBand ou RoCE.
+. Ao usar RoCE, configure a malha para operação sem perdas com controle de fluxo prioritário (PFC). Os playbooks do Ansible configuram o RoCE sem perdas em todas as interfaces do bloco de construção.
+
+
+
+
+[[after-you-finish]]
+== Depois que você terminar
+
+link:ai-eseries-lustre-deploy-prepare.html["Prepare os servidores, arrays e o nó de controle Ansible"].

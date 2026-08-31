@@ -4,8 +4,6 @@
   <block id="7a206e7f1f7bd7df4f649256e750768b" category="doc">Leia blogs sobre soluções de IA de especialistas da NetApp</block>
   <block id="683be49e9105a56d06431bcdc1630cb6" category="paragraph">Leia os blogs de IA/ML que destacam tendências do setor, inovações e impacto no mundo real, além de recursos para desenvolvedores, insights da comunidade e ferramentas práticas para trabalhar com soluções de IA da NetApp .</block>
   <block id="5bbe94ba0a14c52be3cc9534b43f4713" category="paragraph-title">Tendências de IA e insights do setor</block>
-  <block id="78463a384a5aa4fad5fa73e2f506ecfc" category="inline-link-macro">Inglês</block>
-  <block id="69501f595c5bd3cdb17ea63c90291622" category="paragraph">Explore tendências do setor, inovações e impacto real da IA em vários setores. <block ref="3b277c3e8740f32e48fe9dd888ed34aa" category="inline-link-macro-rx"></block> &amp;f:@facet_soultion_mktg=[IA,Análise,inteligência-artificial]++[Leia blogs sobre IA no NetApp.com^]</block>
   <block id="d5769d364696d52f17c7b56bd51573f8" category="paragraph-title">Recursos e comunidade para desenvolvedores</block>
   <block id="bb765a119d53333b43f301b6a00a388a" category="inline-link-macro">Leia blogs de IA no Pub</block>
   <block id="43c273574ee7233878bcc9fc0bd893c9" category="paragraph">Insights técnicos, ferramentas práticas e conteúdo voltado para a comunidade para profissionais de IA/ML.<block ref="f89e2ffa35ae5933259a8ae6e49a69ad" category="inline-link-macro-rx"></block></block>
@@ -198,8 +196,6 @@
   <block id="7a431daf3a478d96ed5ffc10a4056228" category="paragraph">FSx ONTAP (Amazon FSx ONTAP) é um serviço de armazenamento da AWS.  Ele inclui um sistema de arquivos em execução no sistema NetApp ONTAP e uma máquina virtual do sistema gerenciada pela AWS (SVM) que se conecta a ele.  No diagrama fornecido, o servidor NetApp ONTAP gerenciado pela AWS está localizado fora da VPC.  O SVM atua como intermediário entre o SageMaker e o sistema NetApp ONTAP , recebendo solicitações de operação do SageMaker e encaminhando-as para o armazenamento subjacente.  Para acessar o FSx ONTAP, o SageMaker deve ser colocado na mesma VPC que a implantação do FSx ONTAP .  Esta configuração garante a comunicação e o acesso aos dados entre o SageMaker e o FSx ONTAP.</block>
   <block id="f8aacfa5c683858912c498f517c9b457" category="section-title">Acesso a dados</block>
   <block id="70385d02db6379c01d4b7b17101f2004" category="paragraph">Em cenários do mundo real, os cientistas de dados normalmente utilizam os dados existentes armazenados no FSx ONTAP para construir seus modelos de aprendizado de máquina.  No entanto, para fins de demonstração, como o sistema de arquivos FSx ONTAP fica inicialmente vazio após a criação, é necessário carregar manualmente os dados de treinamento.  Isso pode ser feito montando o FSx ONTAP como um volume no SageMaker.  Depois que o sistema de arquivos for montado com sucesso, você poderá carregar seu conjunto de dados no local montado, tornando-o acessível para treinar seus modelos no ambiente SageMaker.  Essa abordagem permite que você aproveite a capacidade de armazenamento e os recursos do FSx ONTAP enquanto trabalha com o SageMaker para desenvolvimento e treinamento de modelos.</block>
-  <block id="23ea498668d1fa717fb7cfb600bf3238" category="inline-link-macro">Parte 1 - Integrando o Amazon FSx for NetApp ONTAP (FSx ONTAP) como um bucket S3 privado no AWS SageMaker</block>
-  <block id="95d89db7f4a106e280e1c30cde658610" category="paragraph">O processo de leitura de dados envolve a configuração do FSx ONTAP como um bucket S3 privado.  Para aprender as instruções detalhadas de configuração, consulte<block ref="8e7379c67a0724b1a49308a7ae6ac3d5" category="inline-link-macro-rx"></block></block>
   <block id="30eaeebc8f9611f55e018d1dd51789ba" category="section-title">Visão geral da integração</block>
   <block id="7ffc912d31a398685c5667622bb5ed7f" category="inline-image-macro">Fluxo de trabalho de treinamento</block>
   <block id="29e5f040e75c8e4e628e90efc594e3ef" category="paragraph"><block ref="29e5f040e75c8e4e628e90efc594e3ef" category="inline-image-macro-rx" type="image"></block></block>
@@ -315,7 +311,6 @@
   <block id="090e55ccd8633a454f9d471ca3ed004d" category="list-text">Administradores e arquitetos de nuvem devem ser capazes de configurar e gerenciar recursos de nuvem híbrida.</block>
   <block id="3cb782c6019ddcbb4e7f6bf8ae154d40" category="list-text">Usuários empresariais querem ter acesso a aplicativos de análise, IA, ML e DL.</block>
   <block id="3dfd24951a51ec1661b0294f59bea86e" category="paragraph">Neste relatório técnico, descrevemos como NetApp AFF, E-Series, StorageGRID, NFS direct access, Apache Spark, Horovod e Keras ajudam cada uma dessas funções a agregar valor aos negócios.</block>
-  <block id="49c9a66d1f76b5f264fea5d54130b82a" category="summary">Usamos os scripts TeraSort e TeraValidate na ferramenta de benchmarking TeraGen para medir a validação de desempenho do Spark com as configurações E5760, E5724 e AFF-A800.  Além disso, três casos de uso principais foram testados: pipelines Spark NLP e treinamento distribuído TensorFlow, treinamento distribuído Horovod e aprendizado profundo multi-trabalhador usando Keras para previsão de CTR com DeepFM.</block>
   <block id="41be8de44faa8ba43210d7494ee095d2" category="doc">Resultados dos testes</block>
   <block id="60637296d8b6dcd84aaff3afc778241d" category="paragraph">Usamos os scripts TeraSort e TeraValidate na ferramenta de benchmarking TeraGen para medir a validação de desempenho do Spark com as configurações E5760, E5724 e AFF-A800.  Além disso, três casos de uso principais foram testados: pipelines Spark NLP e treinamento distribuído TensorFlow, treinamento distribuído Horovod e aprendizado profundo de vários trabalhadores usando Keras para previsão de CTR com DeepFM.</block>
   <block id="653a9ba51c0af0c11aab6af3ecfdc8c6" category="paragraph">Para validação do E-Series e do StorageGRID , usamos o fator de replicação 2 do Hadoop.  Para validação do AFF , usamos apenas uma fonte de dados.</block>
@@ -2177,7 +2172,6 @@
   <block id="cfb5f1c014066f18d7979fa1d35a934d" category="paragraph">Os três scripts Python a seguir correspondem aos três principais casos de uso testados.  O primeiro é<block ref="b01d528ada3b5a6e0e9094642b727562" prefix=" " category="inline-code"></block> .</block>
   <block id="d3abf6f12cafa2cc1b795b31cd547c75" category="paragraph">O segundo script é<block ref="b502aa50c7ae6d7ea7adaf15de40ffe5" prefix=" " category="inline-code"></block> .</block>
   <block id="6e9120b39f924b2eed528e3bcdd009ac" category="paragraph">O terceiro script é<block ref="5e1386bf4aaea9725a3cc5bc8e2bc9f4" prefix=" " category="inline-code"></block> .</block>
-  <block id="90f0f970ed32524c528ba2778079d485" category="summary">A NetApp tem três portfólios de armazenamento: FAS/ AFF, E-Series e Cloud Volumes ONTAP.  Validamos o AFF e o E-Series com sistema de armazenamento ONTAP para soluções Hadoop com Apache Spark.  A estrutura de dados alimentada pela NetApp integra serviços e aplicativos de gerenciamento de dados (blocos de construção) para acesso, controle, proteção e segurança de dados.</block>
   <block id="12a9f57585cd6b3b985dd451bf552845" category="doc">Visão geral das soluções NetApp Spark</block>
   <block id="c7516072fbed3396e6f4c39a5f2356a6" category="paragraph">A NetApp tem três portfólios de armazenamento: FAS/ AFF, E-Series e Cloud Volumes ONTAP.  Validamos o AFF e o E-Series com sistema de armazenamento ONTAP para soluções Hadoop com Apache Spark.</block>
   <block id="710b54a5dd637d8e21574c4fb3eea545" category="inline-image-macro">A estrutura de dados fornece serviços e aplicativos de gerenciamento de dados.</block>
@@ -3246,7 +3240,6 @@
   <block id="3a4a320ee019614122e99baebf056b86" category="list-text">Inferência de IA de servidor único usando armazenamento local</block>
   <block id="adf25fe660bba733a104887732393fdd" category="list-text">Inferência de IA de servidor único usando armazenamento de rede</block>
   <block id="34e4c32e4097a70208139be85d5dc892" category="list-text">Inferência de IA multiservidor usando armazenamento de rede</block>
-  <block id="8708911de20cfce9bafb315fd0cde0a2" category="summary">Uma infinidade de testes foram executados para avaliar o desempenho da arquitetura proposta.  Há seis cargas de trabalho diferentes (classificação de imagens, detecção de objetos [pequenos], detecção de objetos [grandes], imagens médicas, conversão de fala em texto e processamento de linguagem natural [PLN]), que você pode executar em três cenários diferentes: offline, fluxo único e multifluxo.</block>
   <block id="3274a50ba9f0d3c0adefdfa11c5094be" category="doc">Resultados dos testes</block>
   <block id="a274daca2deace9b89099b24f248715c" category="paragraph">Uma infinidade de testes foram executados para avaliar o desempenho da arquitetura proposta.</block>
   <block id="37bf74d7f686cd395d40af1cc2ed7c55" category="paragraph">Há seis cargas de trabalho diferentes (classificação de imagens, detecção de objetos [pequenos], detecção de objetos [grandes], imagens médicas, conversão de fala em texto e processamento de linguagem natural [PLN]), que você pode executar em três cenários diferentes: offline, fluxo único e multifluxo.</block>
@@ -3394,14 +3387,8 @@
   <block id="2ea563f362255807faae7242f06c9881" category="list-text">Karthikeyan Nagalingam, engenheiro técnico de marketing, NetApp</block>
   <block id="cccf21ceeae034a9e54b62eb00d9b6b3" category="list-text">Jarrett Upton, Administrador, Sistemas de Laboratório de IA, Lenovo</block>
   <block id="fdc944d7a0de8d8e3dfff03c6a0e03c6" category="list-text">Página do produto NetApp All Flash Arrays</block>
-  <block id="d875955d78b62e4aff0847425410f79a" category="inline-link"><block ref="d875955d78b62e4aff0847425410f79a" category="inline-link-rx"></block></block>
-  <block id="45f6f9585c85146b389a4f896653a5f9" category="paragraph"><block ref="45f6f9585c85146b389a4f896653a5f9" category="inline-link-rx"></block></block>
   <block id="ec5282877903d9d2aceb3db45b21da54" category="list-text">Página NetApp AFF A400</block>
-  <block id="1f84bc4168c48270f2cc931b900d9eb4" category="inline-link"><block ref="1f84bc4168c48270f2cc931b900d9eb4" category="inline-link-rx"></block></block>
-  <block id="04438df627d0343d17b2f6f307b489ed" category="paragraph"><block ref="04438df627d0343d17b2f6f307b489ed" category="inline-link-rx"></block></block>
   <block id="9d92155996555576a58d20e697fc2bd6" category="list-text">Página do produto do software de gerenciamento de dados NetApp ONTAP</block>
-  <block id="dae4be95628a9cc8cb5ecb4b90cd738e" category="inline-link"><block ref="dae4be95628a9cc8cb5ecb4b90cd738e" category="inline-link-rx"></block></block>
-  <block id="2f08744b4a39af375744e1fc4a15b53a" category="paragraph"><block ref="2f08744b4a39af375744e1fc4a15b53a" category="inline-link-rx"></block></block>
   <block id="45913847e0b47b72b60766711f7a8c21" category="inline-link"><block ref="45913847e0b47b72b60766711f7a8c21" category="inline-link-rx"></block></block>
   <block id="229469a202dbd3052c7b165bd55eda87" category="paragraph"><block ref="229469a202dbd3052c7b165bd55eda87" category="inline-link-rx"></block></block>
   <block id="dedba6b3261804ab1e5c2b75051c62ac" category="list-text">NVIDIA SMI (nvidia-smi)</block>
@@ -4178,7 +4165,6 @@
   <block id="217af7d1776d22530d98be04d104fd49" category="cell">23,07</block>
   <block id="db5eb84117d06047c97c9a0191b5fffe" category="section-title">Apoiar</block>
   <block id="b2e75bbfb9933bc21b7f875e8676641d" category="inline-link-macro">entre em contato com a NetApp</block>
-  <block id="952c6ea6549ebf347f6aae3d6b029756" category="paragraph">A NetApp não oferece suporte empresarial para Apache Airflow, JupyterHub, MLflow, Kubeflow ou Kubernetes.  Se você estiver interessado em uma plataforma MLOps totalmente suportada,<block ref="15a32e54137b30751a17b6bf2b412f99" category="inline-link-macro-rx"></block> sobre soluções MLOps totalmente suportadas que a NetApp oferece em conjunto com parceiros.</block>
   <block id="6999319a5a39a9ca41436977f2cb8b8d" category="summary">MLOps de código aberto com NetApp - Visão geral da tecnologia</block>
   <block id="4c9ffff73cd2c66ec9f6be3cb2b21333" category="paragraph">Esta seção se concentra na visão geral da tecnologia para OpenSource MLOps com NetApp.</block>
   <block id="5cd2adc9e2a5254e4c1da803519f298b" category="section-title">Inteligência artificial</block>
@@ -5401,7 +5387,6 @@
   <block id="6eac7b0a5cfc938d19f189c4a925ae85" category="section-title">_Etapa 2: Configurar o Trident_</block>
   <block id="56c52a0dabd55220d0a00db845f7eb1f" category="paragraph">Instale o Trident em ambos os clusters:</block>
   <block id="45d2098b426afc9ab859375c1adbe887" category="inline-link">+++ Guia de Instalação do Trident +++</block>
-  <block id="d250649bce56841bd7a8ae7e4a825154" category="paragraph">🔗 <block ref="d4fe2bbcee5aa3fc712cc2604ddb189d" category="inline-link-rx"></block></block>
   <block id="ce18e85a5244ef1099f883c207b32d36" category="paragraph">Criar Backend Trident</block>
   <block id="1d505b9bfd6afef0b98758bef1cef23c" category="paragraph">Se você receber um erro 401 Não autorizado, verifique se o usuário do ONTAP possui permissões de API suficientes e se o nome de usuário (vsadmin) e a senha corretos estão sendo usados.</block>
   <block id="e5250cf37b377ddb3586661f3e7bdc3e" category="paragraph">Defina a classe de armazenamento.</block>
@@ -5551,7 +5536,6 @@
   <block id="b360c8c43818ee701c2c04aea42cd62a" category="section-title">7. Implante o cluster K8s (com Trident)</block>
   <block id="0e2e4419e3eb7aa754e49ee968cd9405" category="paragraph">Execute ansible-playbook playbooks/infrastructure.yaml com as tags configure e install para implantar o cluster e Trident CSI.</block>
   <block id="41ea2d03e0d611507cffcee378f6559a" category="inline-link">NetApp Trident CSI Integração para RAG Empresarial</block>
-  <block id="6a1fa30ffb46efef37952483ac8b77d0" category="paragraph">Nota: - Se você não tiver o sudo sem senha configurado em seus nós, será necessário adicionar <block ref="13d87b4892426ec19bdc58a4643d3104" prefix=" " category="inline-code"></block> a este comando. Ao usar <block ref="13d87b4892426ec19bdc58a4643d3104" prefix=" " category="inline-code"></block>, é fundamental que o usuário ssh tenha a MESMA senha em cada nó. - Consulte o <block ref="df44a473c05d78f41c72a7649c842643" category="inline-link-rx"></block> para obter detalhes. Consulte o <block ref="0fa543c14587a20e022922b0d6d40500" category="inline-link-rx"></block> para mais detalhes.</block>
   <block id="6ea33c0cef6e57544b8e10c644b762af" category="section-title">8. Alterar o número de descritores abertos do iwatch</block>
   <block id="8b594829fa102007d7fb98eb374b87bd" category="inline-link">Descritores abertos do iwatch</block>
   <block id="0b90ae516b9c9e0b43fab8d0faccdace" category="paragraph">Consulte o <block ref="7175b82763deb794c2905a8612fbe6de" category="inline-link-rx"></block> para obter mais detalhes.</block>
@@ -5779,4 +5763,626 @@
   <block id="ad9a3bc80573e30d355ceade1a1a0df0" category="paragraph">A implementação de uma arquitetura de cache KV em camadas move o cache KV da memória da GPU para a memória da CPU e para o storage compartilhado da NetApp, permitindo que a inferência seja escalável de acordo com o número de usuários e o tamanho do contexto, sem desperdiçar ciclos da GPU com preenchimentos repetidos. O storage compartilhado transforma o cache em infraestrutura reutilizável entre as instâncias de serviço e ajuda você a obter mais valor do seu investimento em GPU.</block>
   <block id="f333cd9299f433a3c4b700d33c3c8aa9" category="paragraph">NetApp storage é uma excelente opção para este nível, pois oferece o que a inferência de produção precisa além da capacidade bruta: acesso padrão via S3 e NFS/pNFS, acerto do cache compartilhado que várias instâncias do mecanismo de serviço podem usar ao mesmo tempo e serviços de dados corporativos nos quais você já confia para durabilidade, proteção e governança. Você não precisa de um cliente proprietário; as estruturas de descarregamento de cache KV se conectam ao StorageGRID S3 ou a um ponto de montagem NAS ONTAP usando protocolos familiares.</block>
   <block id="76c31e105f288ff172a4369d68076253" category="paragraph">NetApp oferece a você uma base de storage familiar para o descarregamento do cache KV sem alterar como você executa a inferência ou como suas equipes gerenciam os dados.</block>
+  <block id="7f81d4beec39a48a9c89bdc01911cb68" category="inline-link-macro">Leia blogs sobre IA em NetApp.com</block>
+  <block id="0bf9d2d7a2690fbfa406fbab84718f0a" category="paragraph">Explore as tendências do setor, inovações e o impacto real da IA em diversos setores. <block ref="664aa1dcd8c100045b2cda193137e6b7" category="inline-link-macro-rx"></block></block>
+  <block id="5b7c2e1131022c94db3527c404bf4075" category="paragraph">O processo de leitura de dados envolve configurar o FSx ONTAP como um bucket S3 privado. Para saber as instruções detalhadas de configuração, consulte <block ref="a4f6db8ee799d71c8436c5d66421c857" category="inline-link-macro-rx"></block></block>
+  <block id="f6f063eccd373c25744d28ef8af6a6db" category="summary">Utilizamos os scripts TeraSort e TeraValidate na ferramenta de benchmarking TeraGen para medir a validação do desempenho do Spark com as configurações E5760, E5724 e AFF-A800.</block>
+  <block id="7effc798d6695bcdf299c9d6f49fb7e5" category="summary">NetApp tem três portfólios de storage. FAS e AFF, E-Series e Cloud Volumes ONTAP. Validamos o AFF e o E-Series com o sistema de storage ONTAP para soluções Hadoop com Apache Spark. O data fabric alimentado por NetApp integra serviços e aplicativos de gerenciamento de dados (blocos de construção) para acesso, controle, proteção e segurança de dados.</block>
+  <block id="8f162c0dfd9f119fb9683160247618d5" category="paragraph">Nota: - Se você não tiver o sudo sem senha configurado em seus nós, será necessário adicionar <block ref="13d87b4892426ec19bdc58a4643d3104" prefix=" " category="inline-code"></block> a este comando. Ao usar <block ref="13d87b4892426ec19bdc58a4643d3104" prefix=" " category="inline-code"></block>, é fundamental que o usuário ssh tenha a MESMA senha em cada nó. - Consulte a <block ref="df44a473c05d78f41c72a7649c842643" category="inline-link-rx"></block> para obter detalhes. Consulte o <block ref="ee42a3ab3b8bbd38a7c5f36f55d2fb5d" category="inline-link-rx"></block> para mais detalhes.</block>
+  <block id="dc9609005748fb37ba46e98cc99030e1" category="summary">Entenda o design de bloco de construção do Lustre com NetApp storage E-Series, as regras de escalabilidade, o modelo de alta disponibilidade (HA), a topologia de rede e a integração do cliente.</block>
+  <block id="83ffc53d15196aeb1a817460dbb486aa" category="doc">Lustre com NetApp storage E-Series - Arquitetura da solução</block>
+  <block id="8ae9700922a0bb4891f51a48ed4ef464" category="paragraph">Aprenda como o Lustre com NetApp E-Series storage usa blocos de construção, alta disponibilidade, topologia de rede e clientes para que você possa planejar capacidade, desempenho e failover.</block>
+  <block id="2168104e73d11c05aa64fc655516a82f" category="section-title">Projeto de building block</block>
+  <block id="26534a28e7b4d9bd2dfa3eadc9cf999d" category="paragraph">Um bloco de construção é a unidade fundamental e escalável da solução Lustre NetApp E-Series. Cada bloco de construção consiste em dois nós de servidor configurados como um par de alta disponibilidade (HA) que fornecem as funções de servidor de armazenamento de objetos (OSS) e servidor de metadados (MDS) do Lustre, dois arrays all-flash NetApp E-Series, conectividade dedicada de backend NVMe over Fabrics (NVMe-oF) entre servidores e arrays, e conectividade dedicada de rede Lustre (LNet) para clientes e comunicação entre nós. Um cluster HA Pacemaker e Corosync pode conter o par de servidores de um ou mais blocos de construção. A coleção NetApp<block ref="a0483fb858f70ef7270ed27766b1a748" prefix=" " category="inline-code"></block> utiliza automação Ansible para implantar e configurar os serviços Lustre.</block>
+  <block id="17a6f4a0cccca248a9e2b75f4387a067" category="paragraph-title">Bloco de construção Lustre</block>
+  <block id="b1c9036bef997910c340a575472f7e91" category="inline-image-macro">Bloco de construção Lustre HA com dois nós de servidor OSS/MDS e dois arrays E-Series EF80.</block>
+  <block id="d669f6c4bb64d85cbd5ff5963a5c6e12" category="paragraph"><block ref="d669f6c4bb64d85cbd5ff5963a5c6e12" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3cfddb8045406573ceedbf76423d82fb" category="paragraph">Os blocos de construção são dimensionados para atender aos requisitos de crescimento do sistema de arquivos. Cada sistema de arquivos requer um bloco de construção básico. O bloco de construção básico hospeda o servidor de gerenciamento (MGS) em um destino de gerenciamento (MGT) e fornece capacidade inicial de destino de metadados (MDT) e de destino de storage de objetos (OST). Blocos de construção adicionais estendem o sistema de arquivos e registram seus destinos MDT e OST no MGS do bloco de construção básico. A abordagem modular permite que a capacidade e o desempenho sejam dimensionados independentemente com base nas necessidades da carga de trabalho.</block>
+  <block id="b9ffd0f5d2fbeca8a21d0e7f6c3fd99d" category="paragraph">NetApp recomenda os seguintes perfis de configuração de blocos de construção para a maioria das implementações. As contagens de MGS, MDT e OST listadas são valores padrão recomendados, otimizados para maximizar o desempenho e a capacidade dos storage E-Series. Ajuste as contagens de destino, os tamanhos de volume e a alocação de drives E-Series no inventário do Ansible para atender às necessidades da carga de trabalho. Por exemplo, implementações que exigem maior capacidade de storage de metadados podem provisionar mais MDTs e menos OSTs no mesmo hardware de bloco de construção.</block>
+  <block id="88e8c06052f9e72ef6c6e4069fd7b276" category="paragraph">A tabela a seguir resume os tipos de blocos de construção e as quantidades-alvo recomendadas.</block>
+  <block id="26e2cdaaf8f34633fee6f31dbb424c86" category="cell">MGS</block>
+  <block id="e0f67ead95c63aee6a8fe009bacf6c50" category="cell">MDTs</block>
+  <block id="5e67f7a1d587efcc376c11c9806cf456" category="cell">OSTs</block>
+  <block id="ad8783089f828b927473fb61d51940ec" category="cell">Usar</block>
+  <block id="095a1b43effec73955e31e790438de49" category="cell">Base</block>
+  <block id="5e19de7ff972cdc4394b10f96a9fb0fa" category="cell">Primeiro componente fundamental de um sistema de arquivos. Hospeda o MGS e a capacidade inicial de MDT e OST.</block>
+  <block id="4b160bd7bc9d2d97b1132396a4548529" category="cell">MDT+OST</block>
+  <block id="9ee291176e6650ee7aca2375921cfd81" category="cell">Adiciona metadados e capacidade de dados. Registre-se no bloco de construção base MGS.</block>
+  <block id="5d93aaa6378dba134d0b51c6efb34fba" category="cell">Somente OST</block>
+  <block id="edbad65223505b7cb3e8a1910da9a48a" category="cell">Adiciona apenas capacidade de dados. Registre-se no bloco de construção base MGS.</block>
+  <block id="f93aa434cbe5bab4ec93ef90f5d87697" category="list-text">*Tipo de unidade e layout do pool:* O E-Series suporta grupos de volumes RAID tradicionais e Dynamic Disk Pools (DDP). Para unidades NVMe TLC, use grupos de volumes RAID 6 para armazenamento OST e grupos de volumes RAID 1 para armazenamento MGS e MDT. Para unidades NVMe QLC, use DDP para o pool de unidades compartilhadas.</block>
+  <block id="afa16f87b0793f1f055d7f4c8fc94a8c" category="inline-link-macro">Distribuição de target e conectividade NVMe-oF</block>
+  <block id="e47f832e68af8d68b0991a362aa4db96" category="list-text">*Distribuição de alvos:* Os alvos Lustre em cada bloco de construção são balanceados entre os dois nós de servidor OSS/MDS e os dois arrays E-Series. O layout distribui a E/S entre as CPUs do servidor e os controladores de array para melhorar o desempenho do caminho NVMe-oF e manter a redundância. Consulte <block ref="3cc6169fe479d4e15a96418fa2b92a35" category="inline-link-macro-rx"></block> em <block ref="b951df04c708233bd0e6aa30024a444e" category="inline-link-macro-rx"></block>.</block>
+  <block id="697ea025ecb303d4f40d1bf3a8b4bde0" category="inline-link-macro">NetApp Ferramenta de Matriz de Interoperabilidade (IMT)</block>
+  <block id="5368a693aa74a0eba7b84abbd9be3a75" category="paragraph">Os sistemas operacionais suportados, as versões do Lustre, o firmware da array e os componentes básicos relacionados estão listados em <block ref="dea5a7fef452493e48f46a815b88571f" category="inline-link-macro-rx"></block> em *E-Series Lustre*. Para obter informações detalhadas sobre a contagem de volumes, layouts de unidades e diretrizes de dimensionamento, consulte <block ref="b951df04c708233bd0e6aa30024a444e" category="inline-link-macro-rx"></block>. Para os componentes de software, consulte <block ref="50dec6b1119ecf8040454f42ce24288c" category="inline-link-macro-rx"></block>.</block>
+  <block id="b6bf6b7b72e2440dd65804236671aaf2" category="section-title">Recomendações de dimensionamento</block>
+  <block id="219f5cf2d51ca12a90e8e6f6dead489f" category="paragraph">O sistema de arquivos Lustre escala ao adicionar blocos de construção quando a capacidade de metadados, a capacidade de dados ou ambas se tornam limitantes. Escale os MDTs com base na contagem de arquivos e em IOPS de metadados; escale os OSTs com base na capacidade e nos requisitos agregados de taxa de transferência.</block>
+  <block id="be46f21ebcdd3e8dbc3407f201e7671f" category="list-text">*Um bloco de construção base por sistema de arquivos:* Implante exatamente um bloco de construção base; ele hospeda o MGS e os destinos iniciais do MDT e do OST.</block>
+  <block id="a51646c3ef687993c117154c9bd9c2e9" category="list-text">*Perfil de bloco de construção adicional:* Adicione um bloco de construção somente OST quando a capacidade MDT existente for suficiente e a capacidade de dados ou a taxa de transferência precisar ser aumentada. Adicione um bloco de construção MDT+OST quando o desempenho dos metadados ou a capacidade do namespace se tornar o gargalo.</block>
+  <block id="bc8b43c37df464527d4967a75891ed34" category="list-text">*Limite de cluster HA:* limite cada cluster HA do Pacemaker e do Corosync a cinco blocos de construção (dez nós de servidor Lustre). Divida implantações maiores uniformemente em vários clusters HA para evitar restrições de recursos em configurações grandes.</block>
+  <block id="49a6e0259d41be0a04ea6873c59a3935" category="paragraph">A figura a seguir mostra até cinco blocos de construção empilhados em um rack (um cluster Pacemaker HA por rack). Vários racks podem participar de um único sistema de arquivos Lustre; somente o bloco de construção base hospeda o MGS.</block>
+  <block id="adb3b1a9740a4792db095434b57d730d" category="paragraph-title">Dimensionamento de rack do sistema de arquivos paralelo Lustre</block>
+  <block id="3124af7a7890d90dc620feeb1baf29f4" category="inline-image-macro">Escalonamento do sistema de arquivos paralelo Lustre em vários racks de 42U, cada um com até cinco blocos de construção em um cluster Pacemaker HA</block>
+  <block id="31f2e44e6941fd0758165db8d6a4b611" category="paragraph"><block ref="31f2e44e6941fd0758165db8d6a4b611" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1be138531fe213ae00cd83288ff59040" category="paragraph">Para exemplos de dimensionamento, veja <block ref="fd37d50a703eb90bca5592e7cf7939cb" category="inline-link-macro-rx"></block>.</block>
+  <block id="cf03dce6d27c37ae2bf803a5ad8ddb93" category="section-title">Arquitetura HA</block>
+  <block id="8a13f8617619d3e648e8c45a19f4c599" category="paragraph">O Lustre com NetApp E-Series storage utiliza uma arquitetura de alta disponibilidade (HA) de disco compartilhado integrada ao NetApp E-Series storage. O Pacemaker gerencia os recursos de HA e o Corosync fornece associação ao cluster e mensagens. Juntos, eles gerenciam o failover do alvo Lustre entre os dois nós de servidor OSS/MDS em cada bloco de construção. O multipath NVMe-oF conecta ambos os nós de servidor OSS/MDS aos mesmos volumes E-Series, para que qualquer nó possa assumir os serviços de destino quando necessário.</block>
+  <block id="384280ea651954973b3d9bce2e1c4fea" category="paragraph">Cada MGS, MDT e OST é configurado como um recurso de alta disponibilidade (HA) com suas dependências em um grupo de recursos Pacemaker. O Pacemaker garante que os recursos iniciem e parem na ordem correta, permaneçam colocalizados no mesmo nó e sejam executados em apenas um nó por vez. O acesso simultâneo ao mesmo destino a partir de ambos os nós pode corromper o sistema de arquivos subjacente.</block>
+  <block id="229f171ab4ff38290d5b4ca86d00f328" category="list-text">*Failover de destino:* Ambos os nós do servidor OSS/MDS são pares no cluster, mas cada destino Lustre está ativo em apenas um nó por vez. Um recurso de monitoramento Pacemaker acompanha a integridade de cada destino e suas dependências e aciona um failover quando um destino fica indisponível em seu nó atual. Em caso de falha, o Pacemaker reinicia o grupo de recursos afetado no nó parceiro na ordem correta, e os clientes se reconectam de forma transparente ao destino em sua nova localização assim que os serviços são retomados. Como cada destino é ativado em um único nó, o sistema de arquivos nunca é exposto a gravações simultâneas de ambos os nós.</block>
+  <block id="29a2de841205976f47a4fa0209832a9c" category="list-text">*Acesso ao storage compartilhado:* Os caminhos NVMe-oF multipath conectam cada nó do servidor OSS/MDS a todos os controladores E-Series no bloco de construção, assim, cada volume de destino é acessível a partir de qualquer um dos nós. Se um nó do servidor falhar, o nó parceiro já possui caminhos ativos para os mesmos volumes e pode assumir a propriedade dos destinos sem reconfigurar a conectividade de storage. Se um controlador de array ou um caminho falhar, o multipath redireciona a E/S para um controlador em funcionamento. Essa redundância dupla permite que os destinos Lustre façam failover entre nós de servidor OSS/MDS ou controladores de array sem perder o acesso aos volumes de suporte.</block>
+  <block id="a482c53de2fc843e0bb2f865a9f6a655" category="list-text">*Isolamento STONITH:* Quando ocorre uma falha, o Pacemaker às vezes não consegue se comunicar com o nó defeituoso para confirmar se seus alvos foram interrompidos. Antes de reiniciar esses alvos em outro local, o Pacemaker isola o nó defeituoso, idealmente cortando a energia, para garantir que ele esteja desligado. O isolamento impede um cenário de "split-brain" no qual ambos os nós acessam o mesmo alvo simultaneamente e corrompem o sistema de arquivos subjacente, preservando a integridade de dados durante o failover. NetApp recomenda <block ref="ed7a45bcbbe63a63733ab17ec2246fcc" prefix=" " category="inline-code"></block> para servidores com controladores de gerenciamento de placa-mãe (BMCs) compatíveis com Redfish. Outros agentes de isolamento, como <block ref="138fd23846f5d48fe0a28591814e283f" prefix=" " category="inline-code"></block>, também são suportados.</block>
+  <block id="1fdcbe69d913b747190662ff186848c2" category="inline-link-macro">Guia do usuário do HA</block>
+  <block id="89f3bec5eaf56f644be8beb09688b8e8" category="inline-link-macro">coleção ansible-lustre</block>
+  <block id="1635607a80c549691f35dccafcee86d0" category="paragraph">Para administração de cluster e configuração de fencing, consulte o <block ref="b3db81bf0fae1fdfc6b6cee591291abc" category="inline-link-macro-rx"></block> no <block ref="6e79803b16c52a648633d8620cb9f221" category="inline-link-macro-rx"></block>.</block>
+  <block id="82c161268dfe0b9b1287ad4fe5c236b0" category="section-title">Arquitetura de rede</block>
+  <block id="d2893affb3627b50d8c0adf917d16ba5" category="paragraph">A solução utiliza caminhos de rede separados para o tráfego de backend de storage e para o tráfego de frontend da LNet.</block>
+  <block id="602b1c8167e99c819b0279b3ea2a890e" category="inline-link-macro">Rack e cabeamento do hardware Lustre</block>
+  <block id="7ed3467ebc44638b347f49a62ba1e2fb" category="inline-link-macro">distribuição alvo</block>
+  <block id="31bcce12b5160e4886c47b8a0d991888" category="list-text">*Backend (NVMe-oF):* Os nós do servidor OSS/MDS se conectam aos arrays E-Series por meio de NVMe-oF usando NVMe/InfiniBand ou NVMe/RoCE. O caminho NVMe-oF transporta E/S de bloco entre os serviços de destino Lustre e os volumes E-Series. Para cabeamento de backend EF80 six-HCA, consulte <block ref="18bea05bda8ed8f518d518ea28b4f1ab" category="inline-link-macro-rx"></block>. Para posicionamento preferencial de destino entre nós e arrays, consulte <block ref="ff23c4948ae50c95f779a1609ba4e520" category="inline-link-macro-rx"></block> em <block ref="b951df04c708233bd0e6aa30024a444e" category="inline-link-macro-rx"></block>.</block>
+  <block id="f7dd9a813b10b7d4884b4643def972f5" category="list-text">*Frontend (LNet):* Os clientes Lustre e os nós do servidor OSS/MDS comunicam-se pela LNet usando o tipo de rede <block ref="c49f0c3c2926c11287cf9b9355c7aa1f" prefix=" " category="inline-code"></block> com a pilha NVIDIA OFED. InfiniBand e RoCE são ambos transportes de frontend validados. A coleção ansible-lustre configura todas as interfaces de frontend para LNet multi-rail, que agrega múltiplas portas para aumentar a largura de banda e fornecer redundância de caminho para o tráfego de clientes e entre nós.</block>
+  <block id="a43c363f559b33460c8075b618d0eaf8" category="list-text">*Gerenciamento e cluster:* Uma rede de gerenciamento fora da banda fornece gerenciamento de servidores, acesso ao BMC e gerenciamento de arrays. Agentes de fencing STONITH, como <block ref="ed7a45bcbbe63a63733ab17ec2246fcc" prefix=" " category="inline-code"></block>, usam essa rede para alcançar os BMCs dos servidores e cortar a energia de um nó com falha. O Corosync também pode executar a comunicação do cluster por meio dessa rede como um anel adicional junto à malha de frontend. Configurar o Corosync com vários anéis adiciona redundância para mensagens do cluster e reduz o risco de que uma única falha de rede interrompa o quorum.</block>
+  <block id="145312809fb4d503a6e0ac92674276ac" category="section-title">Clientes Lustre</block>
+  <block id="5ab70d1058c71efddd71a0b5b4a39d61" category="inline-link-macro">Matriz de suporte Lustre</block>
+  <block id="ecd1920a56f570c6a4fe79526a61389b" category="paragraph">Um cliente Lustre carrega o módulo do kernel do cliente, estabelece conectividade LNet com os nós do servidor OSS/MDS e monta o sistema de arquivos para apresentar um namespace único, coerente e compatível com POSIX para os aplicativos. A E/S é distribuída em paralelo entre os OSTs ativos. Os nós do cliente são externos a um bloco de construção e usam o sistema de arquivos por meio do fabric LNet de frontend. Os sistemas operacionais do cliente não estão listados no IMT para esta solução; use a <block ref="612e690bea76796aad3a16779b18be6e" category="inline-link-macro-rx"></block> para distribuições de cliente testadas e versões do kernel compatíveis com a versão Lustre implantada (por exemplo, Red Hat Enterprise Linux 9, SUSE Linux Enterprise Server 15 e Ubuntu 24.04).</block>
+  <block id="9998d218109c40ea696c5c329fc14bc7" category="paragraph">Os nós clientes precisam de conectividade com a mesma fabric LNet e tipo de rede que os nós do servidor OSS/MDS. Se necessário, um roteador LNet pode interligar sub-redes ou fabrics LNet separadas.</block>
+  <block id="b6df2ef001d9ba7e28f5c5f925e6400d" category="inline-link-macro">repositório netapp-lustre</block>
+  <block id="5f326ef4b597e980cb188da5a716d991" category="paragraph">NetApp fornece pacotes RPM de servidor Lustre pré-compilados para Rocky Linux 9.8 e Red Hat Enterprise Linux 9.8. NetApp não fornece pacotes de cliente pré-compilados. Compile os pacotes de cliente para o sistema operacional e kernel do cliente a partir do código-fonte do Lustre no <block ref="a26fe5a6450900f32fdc60abe5f6c5e6" category="inline-link-macro-rx"></block>.</block>
+  <block id="f6fe383d782ca3cc78e7f5626027ddd3" category="inline-link-macro">Implante a solução</block>
+  <block id="6d68186fae21c34bab6837e5625f472c" category="inline-link-macro">Documentação da função lustre_client</block>
+  <block id="c524fafdc97e3e8be7ee3233f1f35afc" category="paragraph">Após a instalação dos pacotes do cliente, a função opcional <block ref="99fc42f6ce60cac70cab6ee0f8f2330f" prefix=" " category="inline-code"></block> no <block ref="6e79803b16c52a648633d8620cb9f221" category="inline-link-macro-rx"></block> configura as interfaces de rede do cliente e o LNet, habilita o LNet multi-rail quando selecionado, valida a conectividade e gerencia uma unidade de montagem systemd persistente. A função não compila o Lustre. Ela instala os pacotes do cliente somente quando <block ref="d5f50bdd80db018bfa3d362452fb861d" prefix=" " category="inline-code"></block> está preenchido. Se desejado, você pode configurar os clientes manualmente. Para procedimentos passo a passo, consulte <block ref="8f49e9bdbd514d6a8081d8c90c9f306a" category="inline-link-macro-rx"></block> e o <block ref="a0f4d068c029bf8f009ee83ddd7b9328" category="inline-link-macro-rx"></block>.</block>
+  <block id="4f5054c7d30512a9939ddf2201d86d54" category="summary">Implante o cluster Lustre HA e os clientes usando os playbooks do Ansible da NetApp.</block>
+  <block id="33083b65cfe94a2f3ae9f4197d0c53ce" category="doc">Implante o cluster Lustre HA e os clientes</block>
+  <block id="07148f1dd881fdc7dfe8f1e0688d01c8" category="paragraph">Prepare o sistema operacional, instale NVIDIA DOCA-OFED, implemente o cluster Lustre HA e configure os clientes Lustre usando os playbooks do Ansible da NetApp.</block>
+  <block id="b49b203ba6d22ffb53b89f8af41db490" category="inline-link-macro">Personalize o inventário do Lustre Ansible</block>
+  <block id="840f333f0bb0cf08631b9e65cdfd9339" category="paragraph">Antes de começar, complete e assegure o inventário descrito em <block ref="48fa4fcc6ef309525d67cfc2e71da78c" category="inline-link-macro-rx"></block>.</block>
+  <block id="92329ab03465cefd3513d3cc78541047" category="section-title">Implante o cluster Lustre HA</block>
+  <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">Passos</block>
+  <block id="ae500f96b6ddfd600df7c0bc6b5fa41e" category="list-text">A partir do <block ref="8e25afc00dfc76dcf543a4bd8b70f7d8" prefix=" " category="inline-code"></block>diretório na sua cópia de trabalho, prepare o sistema operacional nos servidores Lustre. Substitua <block ref="64c25f7bf7bc31acd4f5cc4d7ecb73f5" prefix=" " category="inline-code"></block> pelo caminho para o seu diretório de inventário personalizado:</block>
+  <block id="3673a4003851958483ff8498a769ecf3" category="inline-link-macro">Instalação e atualização do NVIDIA DOCA-Host</block>
+  <block id="dc5a71188a3275cc63a24b0b74655792" category="list-text">Instale o NVIDIA DOCA-OFED em cada servidor Lustre. Compile os módulos do kernel usando o kernel que foi instalado na etapa anterior. Siga o procedimento para o seu kernel em <block ref="7d78b1760b4ebb4ab1ad267c85870752" category="inline-link-macro-rx"></block>. O exemplo a seguir mostra uma instalação do DOCA-OFED no RHEL ou Rocky Linux.</block>
+  <block id="7dbcaaae23c6528910c2b21076a59632" category="list-text">Instale o pacote do repositório do host DOCA e atualize o cache de pacotes. Substitua <block ref="f0c55660120f8848748167a8b3832af1" prefix=" " category="inline-code"></block> pelo pacote do host DOCA correspondente ao seu sistema operacional e arquitetura:</block>
+  <block id="e8bc4be36e4cdb37c3d25fdce0841b8d" category="list-text">Compile os módulos do kernel DOCA para o kernel em execução. O script imprime o caminho do pacote que cria:</block>
+  <block id="83e3008e4cb223028ba0b7b6966de575" category="list-text">Instale o pacote do repositório de módulos do kernel criado pelo script e, em seguida, atualize o cache de pacotes. Substitua <block ref="aa654633a9857018c94f9b36506e1548" prefix=" " category="inline-code"></block> pelo caminho obtido na etapa anterior:</block>
+  <block id="4871ece702c640438eee131f662524d5" category="list-text">Instale os pacotes DOCA-OFED para espaço de usuário, kernel e NVMe. Substitua <block ref="da5c2b896a2957f1ee87942e2da7ff73" prefix=" " category="inline-code"></block> pela versão do kernel em execução:</block>
+  <block id="f9fa68ae7af314229bcdc48211c162c3" category="list-text">Execute o playbook de implantação principal:</block>
+  <block id="8477b59b4dbd5b47a10b2b9c38042a89" category="admonition">Ajuste <block ref="51ded8ed2d854ee1bcb6557aaf84688f" prefix=" " category="inline-code"></block> de acordo com o tamanho da implantação para controlar quantos hosts o Ansible configura em paralelo. Por exemplo, adicione <block ref="2a86fba4a938ce618ea8eefc39d65050" prefix=" " category="inline-code"></block> para um cluster maior.</block>
+  <block id="01a16f7eaa19f99ed1cfdef329e584f2" category="paragraph">O playbook provisiona grupos de volumes E-Series ou pools e volumes DDP, configura a conectividade de host NVMe-oF, formata e monta os targets Lustre, configura o LNet, aplica ajuste de desempenho e configura os recursos HA do Pacemaker.</block>
+  <block id="ff3ff2497027b0fe1b310b10a084a716" category="inline-link-macro">Guia do usuário de administração de HA</block>
+  <block id="fe06485e37868a7559e7f21c10b5fb16" category="admonition">Uma implantação com um único bloco de construção forma um cluster Pacemaker de dois nós. O nó A recebe um voto extra em caso de failover. Para garantir quorum em um cluster de dois nós, considere configurar um qdevice. Quando uma implantação contém vários blocos de construção, cada bloco contribui com um par de servidores de dois nós para o cluster Pacemaker maior, até o limite documentado do cluster. Revise a configuração de fencing e quorum no <block ref="366b62f6dcea4b62f9ab1e6c11adfdc9" category="inline-link-macro-rx"></block> para que o cluster possa recuperar os alvos com segurança durante uma falha de nó.</block>
+  <block id="65d39f81777200093c526fc1556aad51" category="section-title">Implantar clientes Lustre</block>
+  <block id="ba5289041c7fafcab23ace4ff8fd6d9b" category="paragraph">Implante clientes Lustre em qualquer sistema que exija acesso ao sistema de arquivos, personalizando o modelo de implantação do cliente e executando o playbook do cliente.</block>
+  <block id="5170ac37884b96453d1e6b82a815c4d6" category="inline-link-macro">netapp-lustre</block>
+  <block id="14e4a498fd2bac1e92f8e542185e0cda" category="list-text">Selecione um sistema operacional de cliente e kernel compatíveis no <block ref="612e690bea76796aad3a16779b18be6e" category="inline-link-macro-rx"></block>. Compile e instale os pacotes de cliente Lustre para esse kernel a partir de <block ref="be60e290dc17959a4905f75b82e3dad6" category="inline-link-macro-rx"></block> caso ainda não estejam instalados.</block>
+  <block id="3ecb3b700b08dd014a63fca3af74da77" category="list-text">Crie uma cópia de trabalho do <block ref="fac04ca68a48af91f0290001604a2463" prefix=" " category="inline-code"></block>diretório de template, incluindo seu <block ref="97a67fc90fe6d13cef22fa951de48f8d" prefix=" " category="inline-code"></block>arquivo compartilhado, e selecione o template que corresponde à sua fabric:</block>
+  <block id="80f21b5d5686ebf74112f9e0f36c7569" category="inline-link-macro">IB_lustre_cluster_clients</block>
+  <block id="677221edf3da01fe7ab07685265d8062" category="list-text">*InfiniBand:* <block ref="35e4b458ad871ca1f95b4932bb7cda13" category="inline-link-macro-rx"></block></block>
+  <block id="4111ad1003028b71065d3de237a53787" category="inline-link-macro">Clientes do cluster ROCE_lustre</block>
+  <block id="a20b9b6f9eda64ea2918cc6cd869bd9a" category="list-text">*RoCE:* <block ref="2a9c8d5e1726d46d316bd69280f6ba0d" category="inline-link-macro-rx"></block></block>
+  <block id="64a5c7a596b010742dcc41993dc90e60" category="list-text">Personalize <block ref="ca5b470e14f1597be2a41f1c443527b5" prefix=" " category="inline-code"></block>, <block ref="3342582e194d63e4c91b56623752c9c6" prefix=" " category="inline-code"></block> e <block ref="96fa973cda8809ad84f646e3d8fbbc1c" prefix=" " category="inline-code"></block> para seus clientes. As referências de linha na tabela apontam para os arquivos de modelo de cliente RoCE na tag <block ref="a0483fb858f70ef7270ed27766b1a748" prefix=" " category="inline-code"></block><block ref="e4dcd80dd2930580c435398aa52a9b6d" prefix=" " category="inline-code"></block>; o modelo de cliente InfiniBand usa as mesmas variáveis, exceto quando indicado.</block>
+  <block id="6f16a5f8ff5d75ab84c018adacdfcbb7" category="cell">Campo</block>
+  <block id="97497e4f12b766346e472319e9f36261" category="cell">Variável Ansible</block>
+  <block id="697fa0809c141a51ad35505df3cc002c" category="cell">Arquivo de modelo <block ref="e4dcd80dd2930580c435398aa52a9b6d" prefix="(" category="inline-code"></block>)</block>
+  <block id="5d113f2038d289f391614c39043629e8" category="cell">Escopo</block>
+  <block id="f4c6f851b00d5518bf888815de279aba" category="cell">Notas</block>
+  <block id="8be1a9d1b639b001a740bd70f202f545" category="cell">Hosts do cliente</block>
+  <block id="f8f0230eb9a10081a6983c55a009596c" category="cell"><block ref="7c311b499aee4363d8dfccb8e00eb65c" prefix="" category="inline-code"></block></block>
+  <block id="4319c164a7c3bc200ff559ee1f9f9012" category="inline-link-macro">lustre_client_inventory.yml#L4</block>
+  <block id="90ce4d39a17095097495da298e0d723f" category="cell"><block ref="90ce4d39a17095097495da298e0d723f" category="inline-link-macro-rx"></block></block>
+  <block id="3db64796d547827f6e1ce991769830d1" category="cell">Por cliente</block>
+  <block id="3131d8b15b19d5601f1e7f150bfcec03" category="cell">Liste o nome do host de cada cliente.</block>
+  <block id="3b0cd6ef1ad5815f5876514623cdc732" category="cell">Usuário SSH do cliente e senha become</block>
+  <block id="75183c22c6ed23f273cd33ff93cf5bfa" category="cell"><block ref="2059341c4409e15a9f13830208b77e56" prefix="" category="inline-code"></block>/<block ref="846082d5f2a5a221d387dc3719e8d096" prefix=" " category="inline-code"></block></block>
+  <block id="e672e0b08f2ae1f26424c9210007f2e7" category="inline-link-macro">passwords.yml#L2</block>
+  <block id="939b8d59ca6d09cea63e285c50fed916" category="cell"><block ref="939b8d59ca6d09cea63e285c50fed916" category="inline-link-macro-rx"></block></block>
+  <block id="a8a92c2afc6585e5fa081901419d1b6e" category="cell">Em todo o cluster</block>
+  <block id="eb5dc2a531453217cdd76674000cead8" category="cell">Defina a senha "become" somente se o usuário SSH não for <block ref="63a9f0ea7bb98050796b649e85481845" prefix=" " category="inline-code"></block>.</block>
+  <block id="b51137da99daab4e87a07179ef60b7bb" category="cell">Interfaces LNet</block>
+  <block id="6abd80c04895fc2904236adea666f5bb" category="cell"><block ref="ef28b8b060b698f7614ae0f0773879d7" prefix="" category="inline-code"></block></block>
+  <block id="db105a090f4b3178b97050461d585230" category="inline-link-macro">group_vars/all.yml#L7</block>
+  <block id="32d2980dce4814173fdeae36bf8fb9f4" category="cell"><block ref="32d2980dce4814173fdeae36bf8fb9f4" category="inline-link-macro-rx"></block></block>
+  <block id="cb297a8d150b85cde575250ed180c09b" category="cell">Nomes de interface LNet do lado do cliente (valores na L13).</block>
+  <block id="7c9c93c85fa5555fb2d20e1f30ecf193" category="cell">Montar NIDs do MGS</block>
+  <block id="8035c29187a1f6b393d457b37b6e59f3" category="cell"><block ref="297aebd8865be3c5176be647ec05d8b6" prefix="" category="inline-code"></block></block>
+  <block id="87098da60fa086fd5bd5018a8dadad76" category="inline-link-macro">group_vars/all.yml#L17</block>
+  <block id="87d9b1f2ef4d1ed85fac9c490ac9e8fd" category="cell"><block ref="87d9b1f2ef4d1ed85fac9c490ac9e8fd" category="inline-link-macro-rx"></block></block>
+  <block id="3b20230a140792bd3a080f55546cc77b" category="cell">NIDs do MGS usados para montar o sistema de arquivos (valores em L20).</block>
+  <block id="443bd317da0c7f5d88ff99b0c047c7f5" category="cell">Nome do sistema de arquivos</block>
+  <block id="88f98cb728bdeec611e192b39efea1b4" category="cell"><block ref="9a37a14aef09a5e40c4b65d4ffe4f84d" prefix="" category="inline-code"></block></block>
+  <block id="5c7c2d7eb4ca78e38ece35e0cb311532" category="inline-link-macro">group_vars/all.yml#L21</block>
+  <block id="539c3a3bc51e3e53e36cd00cf3aa35d9" category="cell"><block ref="539c3a3bc51e3e53e36cd00cf3aa35d9" category="inline-link-macro-rx"></block></block>
+  <block id="84801f7e79e1f99301c9575758d60fcb" category="cell">Deve corresponder ao cluster<block ref="9948b2d72c189368aba79ff6a6f29e9f" prefix=" " category="inline-code"></block>.</block>
+  <block id="0bc0058b2b986d2f1a1c89a94d6bfda6" category="cell">Ponto de montagem</block>
+  <block id="3cd86aacaf7923faca6ea2da7707ee4e" category="cell"><block ref="03b4cb723e91f1cecf0324aa97555270" prefix="" category="inline-code"></block></block>
+  <block id="031d0aa4c67fd872bd944298af012b5e" category="inline-link-macro">group_vars/all.yml#L22</block>
+  <block id="eff88b9bf540236200c5a3407412db56" category="cell"><block ref="eff88b9bf540236200c5a3407412db56" category="inline-link-macro-rx"></block></block>
+  <block id="680370327c4f3d77d7ff35c210978000" category="cell">Diretório de montagem do cliente.</block>
+  <block id="21c9bef152653e3fcf9d610ee543235c" category="cell">IP de gerenciamento do cliente</block>
+  <block id="26b672f4cd021fb18ef56983414f134c" category="cell"><block ref="e15cba2a55d1c830968665125de5abf6" prefix="" category="inline-code"></block></block>
+  <block id="67f48ec24a12d065b454bbeac7878968" category="inline-link-macro">host_vars/client_01.yml#L4</block>
+  <block id="605bd5ebce3e987c1975bd3d0aeed280" category="cell"><block ref="605bd5ebce3e987c1975bd3d0aeed280" category="inline-link-macro-rx"></block></block>
+  <block id="7a0f487b094afb8328bef454792eb431" category="cell">Repita para cada cliente</block>
+  <block id="19988a9a8dd0ce44cf0228707868bb1a" category="cell">Um <block ref="b6b61f33b6f898807880665e9e5f94de" prefix=" " category="inline-code"></block>arquivo por cliente.</block>
+  <block id="ecd174b586df36adb7803f4f17f8f8e1" category="cell">Interfaces de malha de armazenamento</block>
+  <block id="ab462ebb7ad10b4077acdc4a2ee7e661" category="cell"><block ref="4b785157a5e72b7262c130d2302f2206" prefix="" category="inline-code"></block></block>
+  <block id="58a404858b4958b16eab97fa7c74fdf8" category="inline-link-macro">host_vars/client_01.yml#L10</block>
+  <block id="c443d457524e158ff1f4d18df7b496d3" category="cell"><block ref="c443d457524e158ff1f4d18df7b496d3" category="inline-link-macro-rx"></block></block>
+  <block id="55908942c22db1aa7358ed0c0070f047" category="cell">Endereços da interface de front-end (valores na linha 15). O InfiniBand template usa <block ref="e3f0f10215cb725eaa278fec38bd76e6" prefix=" " category="inline-code"></block> aqui.</block>
+  <block id="b2731fdd0dec92240838b47554534f06" category="paragraph">Repita as configurações para cada cliente. Crie um arquivo <block ref="b6b61f33b6f898807880665e9e5f94de" prefix=" " category="inline-code"></block> para cada cliente e adicione o host correspondente a <block ref="ca5b470e14f1597be2a41f1c443527b5" prefix=" " category="inline-code"></block>. Preencha o arquivo compartilhado <block ref="81fc088f3a9391600c7af8878cb365e6" prefix=" " category="inline-code"></block> e criptografe-o com o Ansible Vault antes de executar o playbook do cliente.</block>
+  <block id="36523ec6a2cfaa5f35f4a133d166ef0b" category="list-text">Execute o playbook do cliente a partir do diretório de modelos do cliente:</block>
+  <block id="6e53643c8b5ab7ab3a87799e37ce5743" category="paragraph">O playbook do cliente configura as interfaces de rede do cliente e o LNet, e pode criar uma unidade de montagem systemd persistente para o sistema de arquivos Lustre.</block>
+  <block id="bd965e38a0c9cf27aa1bde099308e23f" category="section-title">Depois que você terminar</block>
+  <block id="d4be0cd50f8113c9539912151e7021a8" category="inline-link-macro">Verifique a implantação</block>
+  <block id="dc3b94d1e90e58c76ff8007e6eceb45b" category="paragraph"><block ref="0bb6b88af486d04bc1cb72af611125a0" category="inline-link-macro-rx"></block>.</block>
+  <block id="09cee721f0b4e3f153330cf11723d57f" category="summary">Instale e conecte os servidores, os arrays EF80, a malha de rede NVMe-oF de backend e a malha LNet de frontend para um bloco de construção Lustre.</block>
+  <block id="57265f475d0b1c925f29247bf9ffd849" category="doc">Hardware de rack e cabeamento Lustre</block>
+  <block id="3b2606d1286290a450fa0fbac710df97" category="paragraph">Coloque os servidores Lustre e os arrays NetApp EF80 no rack e, em seguida, conecte as malhas NVMe-oF de backend e LNet de frontend para cada bloco de construção.</block>
+  <block id="135b308ed83c53f1516b7c754566d1c4" category="section-title">Antes de começar</block>
+  <block id="62f5efbb78bbf058114f0fe9d5e86cca" category="paragraph">Consulte as contagens HCA, os requisitos de slot PCIe, os requisitos de caminho e as orientações de MTU em <block ref="b951df04c708233bd0e6aa30024a444e" category="inline-link-macro-rx"></block>.</block>
+  <block id="a0b0137ed670e8af15faa3b11abb8d48" category="list-text">Instale e conecte todos os servidores Lustre e storage E-Series de acordo com a topologia do bloco de construção.</block>
+  <block id="786669c9f212d6c20ffc339eb2367a8e" category="inline-image-macro">Bloco de construção Lustre etiquetado empilhado com dois servidores OSS/MDS e dois arrays EF80</block>
+  <block id="736fbba86d0a03b59b6eeee9c3d86c83" category="paragraph"><block ref="736fbba86d0a03b59b6eeee9c3d86c83" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f9b4774d94693f6b2e8c99ab5a85b0f1" category="inline-link-macro">Conecte os cabos de espelhamento entre os controladores EF50 e EF80</block>
+  <block id="f016230d9333347a56544d34190817e2" category="list-text">Para cada array EF80, conecte o controlador A à porta 4a do controlador B e o controlador A à porta 4b do controlador B. Essas conexões dedicadas fornecem espelhamento entre controladores e não são usadas para tráfego do host. Consulte <block ref="2167f991eb9981359d79aa07afa06edc" category="inline-link-macro-rx"></block>.</block>
+  <block id="0efa2e875fbcce2ca098bc7d3beffa59" category="list-text">Conecte a rede NVMe-oF de backend entre servidores e arrays de acordo com a topologia de seis HCAs do EF80.</block>
+  <block id="cc0250785d0c2de26d745fcf0f2d1741" category="paragraph-title">Cabeamento de backend EF80 de seis HCA (RoCE ou InfiniBand)</block>
+  <block id="5dc0d089dbc7f323c2b2db3adda4aceb" category="inline-image-macro">Cabeamento NVMe-oF de seis HCAs no backend EF80 entre dois nós de servidor OSS/MDS e dois arrays EF80</block>
+  <block id="fa0c84ec25d5521949201d115aea8f0d" category="paragraph"><block ref="fa0c84ec25d5521949201d115aea8f0d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4a70c61365d613b05bf336ff2d3b6331" category="list-text">Conecte as quatro interfaces front-end LNet (os HCAs i1 e i4) em cada servidor Lustre e os clientes Lustre à malha de switches dedicada InfiniBand ou RoCE.</block>
+  <block id="549e900f52bc5aae5d24e560cda8f002" category="list-text">Ao usar RoCE, configure a malha para operação sem perdas com controle de fluxo prioritário (PFC). Os playbooks do Ansible configuram o RoCE sem perdas em todas as interfaces do bloco de construção.</block>
+  <block id="8ff63dda38394cf7e27b69e493fc02d8" category="inline-link-macro">Prepare os servidores, arrays e o nó de controle Ansible</block>
+  <block id="ac9c449909db3bbc27c2d5c6630efdea" category="paragraph"><block ref="b82e71660dcff2c4b12ae3bc9d103566" category="inline-link-macro-rx"></block>.</block>
+  <block id="7fb6b1e6bab59eccacbd98c19cc1c38c" category="summary">Personalize o NetApp inventário de implantação do Ansible para servidores Lustre, arrays EF80, redes e recursos de HA.</block>
+  <block id="07d5e0c6744dedd5f7049570b1ac34ae" category="doc">Personalize o inventário Ansible do Lustre</block>
+  <block id="849fa199688169bda702b938798074ee" category="paragraph">Crie uma cópia funcional de um modelo de implantação do EF80 e personalize seu inventário para seus servidores, arrays, redes e blocos de construção do Lustre.</block>
+  <block id="ba5fc3a997ddadbbd02c4f2135ea89b4" category="paragraph">Mantenha o inventário selecionado em seu diretório de malha e plataforma. Mantenha o diretório <block ref="f48601f3d578d4005c478a296758f8af" prefix=" " category="inline-code"></block>compartilhado e o arquivo <block ref="97a67fc90fe6d13cef22fa951de48f8d" prefix=" " category="inline-code"></block>compartilhado na raiz de <block ref="4c9ed35a5bd895e82f72511e6cec8913" prefix=" " category="inline-code"></block>.</block>
+  <block id="b092a0a76f85e0b51b2b5d3e06255ea3" category="section-title">Selecione um modelo de implantação</block>
+  <block id="5cde57a20fc900ae9b57f3113bffb1dc" category="paragraph">Comece com o modelo que corresponde à malha de rede:</block>
+  <block id="fc4237a05da8825b9eb433a52ba633f0" category="inline-link-macro">IB_H2_IB_DAC_A2_EF80/lustre_building_block_cluster_1</block>
+  <block id="52b81e131e1d226662d234ac01012953" category="list-text">*InfiniBand:* <block ref="65b60e6b9c22162bb0aed549ad85be37" category="inline-link-macro-rx"></block></block>
+  <block id="698abb1eaba651b930d805eee8497d5c" category="inline-link-macro">ROCE_H2_ROCE_DAC_A2_EF80/lustre_building_block_cluster_1</block>
+  <block id="abeb9ae212983c6ef1b3bb03e1cdf92b" category="list-text">*RoCE:* <block ref="ca7061a33e7f5cdc5aa0d0093ae53375" category="inline-link-macro-rx"></block></block>
+  <block id="c8ff17e78c3fe1abe573cba77387562f" category="section-title">Configurar as configurações específicas do site</block>
+  <block id="161dddc8fd4745906dbb0976b71174eb" category="paragraph">Defina os valores específicos do site no inventário, juntamente com o repositório local e as configurações de regras udev. As referências de linha na tabela apontam para os arquivos de modelo RoCE EF80 na tag <block ref="a0483fb858f70ef7270ed27766b1a748" prefix=" " category="inline-code"></block><block ref="e4dcd80dd2930580c435398aa52a9b6d" prefix=" " category="inline-code"></block>. O modelo InfiniBand usa os mesmos nomes de variáveis e estrutura, exceto pela variável de interface LNet, que é indicada na tabela.</block>
+  <block id="dc092a27b4da7dbaa0f4aada8403dee8" category="cell"><block ref="a294d87e0bba9781edfdb76560bc0bc5" prefix="" category="inline-code"></block>,<block ref="69a0ccdb4868ac688435eca28e0c1ae8" prefix=" " category="inline-code"></block>,<block ref="70f1214c90795f0b99f3c804157a5725" prefix=" " category="inline-code"></block></block>
+  <block id="28ebdf2227e37c2cbe7b419e6f9762f3" category="inline-link-macro">ha_cluster.yml#L76</block>
+  <block id="64162db154d0237e209e51fe9ee5c480" category="inline-link-macro">#L90</block>
+  <block id="0e2366426af40b340c435457fb3eeb30" category="inline-link-macro">#L110</block>
+  <block id="e4f36cb2204e11b20cf8dc587fe2675e" category="cell"><block ref="2cc120a696591d58d931f8e1826ddd7a" category="inline-link-macro-rx"></block>, <block ref="6fe80d99302a728476e69eaf6d4a06ee" category="inline-link-macro-rx"></block>, <block ref="812c7c8e5ff1488f0fb83528a7ad1697" category="inline-link-macro-rx"></block></block>
+  <block id="c6923e59d08c52028fe18b89ea901d1e" category="cell">Aninhado em<block ref="2fcb79070f0e58d8d56aeb420f6af256" prefix=" " category="inline-code"></block> para os mapas MGT, MDT e OST. Máximo 8 caracteres. Use o mesmo valor em todos os três locais. Uma chave <block ref="9948b2d72c189368aba79ff6a6f29e9f" prefix=" " category="inline-code"></block> de nível superior não tem efeito.</block>
+  <block id="2825e20c61c0fedd16ff6898b977df56" category="cell">MGS NIDs para registro de alvos</block>
+  <block id="d8c7784427dbc9854cc5b9c63a4f334f" category="cell"><block ref="a16670ebe2fc1221d321770495fd3993" prefix="" category="inline-code"></block>,<block ref="b3f34377f449167c79bd9cf61c043ff1" prefix=" " category="inline-code"></block></block>
+  <block id="dd11a332ef88fa73b21cfd1bd77575a2" category="inline-link-macro">ha_cluster.yml#L98</block>
+  <block id="ec381a353275bfd44e020062b3fd99fa" category="inline-link-macro">#L118</block>
+  <block id="729ec7d67659e14164dce49fbf4731ae" category="cell"><block ref="9584ff8ab41e94b311d547c836f1d8b7" category="inline-link-macro-rx"></block>, <block ref="66717e95762f304aba48b059b79beab0" category="inline-link-macro-rx"></block></block>
+  <block id="bceefbcfbe8a5e76a1e25b28875382f9" category="cell">Aninhado em MDT e OST<block ref="2fcb79070f0e58d8d56aeb420f6af256" prefix=" " category="inline-code"></block>. Inclua os NIDs da rede LNet de ambos os nós no par de HA. Liste primeiro os NIDs do nó configurado como proprietário preferencial do MGS, seguidos pelos NIDs do nó parceiro.</block>
+  <block id="db0e9bbe14f69452cb025c4585a1984c" category="cell">Nome do cluster Pacemaker</block>
+  <block id="d4dadd76ce4715776cfcda468992e55b" category="cell"><block ref="22ef28d91e6a54cd1e917c5030de68ef" prefix="" category="inline-code"></block></block>
+  <block id="b0cfee9d061f8586a1bcd4bfdff03026" category="inline-link-macro">ha_cluster.yml#L228</block>
+  <block id="3b6ae527a7c2a4ab73d38f52aee32d31" category="cell"><block ref="3b6ae527a7c2a4ab73d38f52aee32d31" category="inline-link-macro-rx"></block></block>
+  <block id="4fcc3aba99cf6eddd67ef2dc0b3ea449" category="cell">Aninhado em substituições de propriedade CIB do Pacemaker. Nome exclusivo para o cluster de HA.</block>
+  <block id="0819953d792a0e5537c5d335b34e7e50" category="cell">Endereços de fencing do BMC</block>
+  <block id="2a35365d9c941c0421715291f38de458" category="cell"><block ref="0721ac52e00ff9d39bfc7ac6ea226c19" prefix="" category="inline-code"></block></block>
+  <block id="9deffbe868d493a1cb7eeb5499782ee0" category="inline-link-macro">ha_cluster.yml#L211</block>
+  <block id="f2627bacca2db635ecfb76f8fc3ab09f" category="inline-link-macro">#L214</block>
+  <block id="7685a2c6de328ab53aa694dd72b4c7ed" category="inline-link-macro">#L217</block>
+  <block id="376cab8c66e9e46e0a6e2308b81313b3" category="inline-link-macro">#L220</block>
+  <block id="90aa2dad0631ae7e6b5e7fa249b8acf8" category="cell"><block ref="57f1866b7c6c96aede22bff74850a7a1" category="inline-link-macro-rx"></block>, <block ref="5f56188f908f185423a80af398e2647d" category="inline-link-macro-rx"></block>, <block ref="218da9a6c1fbcdb4655478b7c9d688ba" category="inline-link-macro-rx"></block>, <block ref="efe7443fe5778cfa1021ecaffa0c368b" category="inline-link-macro-rx"></block></block>
+  <block id="8fad9b2f1bb07b7137b792ab9dda3abf" category="cell">Repita para cada servidor Lustre</block>
+  <block id="6f8108e5d862d3575d73f220aa5c9187" category="cell">Endereço IP do BMC para cada nó do servidor.</block>
+  <block id="48432554382ecd7b3a9e4a0820481377" category="cell">Destinatários do e-mail de alerta</block>
+  <block id="85e3c19dd4a66bc102a0e81eb6e20c6c" category="cell"><block ref="0c41e283fc637b718002e2855c06798c" prefix="" category="inline-code"></block></block>
+  <block id="8d1fe2e28a39fa6135959b4a9183d295" category="inline-link-macro">ha_cluster.yml#L233</block>
+  <block id="5672bf78ba92c2a6e869d7580ae4ce4b" category="cell"><block ref="5672bf78ba92c2a6e869d7580ae4ce4b" category="inline-link-macro-rx"></block></block>
+  <block id="faf7f93a5bb1a4334bcc080e520a00bb" category="cell">Destinatários para notificações de recursos de HA e falhas.</block>
+  <block id="705e2aa73a8fa6d0668c74c80e9ccef2" category="cell">Domínio de e-mail</block>
+  <block id="4eb84af5d4ab198d4c0e9fb0f1571628" category="cell"><block ref="cf0c208b30eac9839752881b2bef28d5" prefix="" category="inline-code"></block></block>
+  <block id="cd7966b537c9a656c3dffb64cd0ac869" category="inline-link-macro">ha_cluster.yml#L240</block>
+  <block id="e0dfd7110a4d5e9de24736a906ea205f" category="cell"><block ref="e0dfd7110a4d5e9de24736a906ea205f" category="inline-link-macro-rx"></block></block>
+  <block id="a7e3d851dc5c0eb2956c1f1ff000e8a8" category="cell">Domínio Postfix usado para enviar alertas por e-mail.</block>
+  <block id="c3a147e1ee28f6349c57421b4d5cb524" category="cell">Fontes de tempo NTP</block>
+  <block id="a5826cb41f6e95f2ff5f79e012f44360" category="cell"><block ref="99ad683ffc6dbf7d99fb2050c2cc0c1c" prefix="" category="inline-code"></block></block>
+  <block id="cf2c30f90edf99467126c607a878acfc" category="inline-link-macro">ha_cluster.yml#L250</block>
+  <block id="625528c84d430ec70773e4f1101cc139" category="cell"><block ref="625528c84d430ec70773e4f1101cc139" category="inline-link-macro-rx"></block></block>
+  <block id="467d09a3bfe35b45f5c3e650ece8bdf5" category="cell">Fontes de tempo para os nós do cluster. Especifique um pool NTP ou um ou mais servidores NTP individuais. Inclua a diretiva obrigatória <block ref="b10a8c0bede9eb4ea771b04db3149f28" prefix=" " category="inline-code"></block> ou <block ref="cf1e8c14e54505f60aa10ceb8d5d8ab3" prefix=" " category="inline-code"></block> e opções como <block ref="4e78b2062a724468763b086556c73046" prefix=" " category="inline-code"></block>.</block>
+  <block id="907b60c8cfd6057cb141020e21390ffd" category="cell">Mapeamento udev de interface PCI para nome</block>
+  <block id="d3ba215665e71ef616a9d66adc2fba1c" category="cell"><block ref="24106e17a501ccfc6e41dec4a61aab0c" prefix="" category="inline-code"></block></block>
+  <block id="32a69362da83b6aa610263b2d6738923" category="inline-link-macro">ha_cluster.yml#L172</block>
+  <block id="1369c547b38f0e5caae682fa78d337bc" category="cell"><block ref="1369c547b38f0e5caae682fa78d337bc" category="inline-link-macro-rx"></block></block>
+  <block id="4b4404ddf34ee3ed378224e664fbeb1c" category="cell">Repita por layout de slot HCA</block>
+  <block id="84dab3f787eddd5f32097b8d666403cc" category="cell">Mapeie cada slot PCI para um nome de interface persistente (valores em L182). Colete com <block ref="6da975c28b569d5b3195b69314ff8cd3" prefix=" " category="inline-code"></block>.</block>
+  <block id="b566633973f2388105706e2db3286ef0" category="cell">Repositório de pacotes local (opcional)</block>
+  <block id="234cefeab428deb613b757e069321dbf" category="cell"><block ref="4b2bda69c5f1ab28684c4c68820bee9a" prefix="" category="inline-code"></block></block>
+  <block id="01b4efd53143b7423d9e98362a51afb5" category="inline-link-macro">ha_cluster.yml#L256</block>
+  <block id="ff92ddbbc1558dd25d95a862d8b0ab07" category="inline-link-macro">#L261</block>
+  <block id="e6a84f4548df3d6a4995d2f0141fde9b" category="cell"><block ref="8147b353047ac75b2aaa643fb1051f6c" category="inline-link-macro-rx"></block>, <block ref="90c9532fa4f9c4b777a0daf5d0fd3c56" category="inline-link-macro-rx"></block></block>
+  <block id="a2e1abbebb66ae0c88c85bf74515e8da" category="cell">Para instalações isoladas da internet, remova o comentário do bloco e defina o repositório<block ref="572d4e421e5e6b9bc11d815e8a027112" prefix=" " category="inline-code"></block> (L264).</block>
+  <block id="54a9a3e8b66d38394d513bb788a737af" category="cell">IP de gerenciamento de servidor</block>
+  <block id="636203dc4440306a14dd696c4de5931a" category="inline-link-macro">host_vars/lustre_01.yml#L10</block>
+  <block id="65802799f33fb909f185b3f75d5dde47" category="cell"><block ref="65802799f33fb909f185b3f75d5dde47" category="inline-link-macro-rx"></block></block>
+  <block id="4289d0b4a0eb9de69ee5a0eb8dac75ea" category="cell">Um <block ref="d15ffd2d191c94654e8e50c55cf273b9" prefix=" " category="inline-code"></block>arquivo por servidor.</block>
+  <block id="91ca84480d7b5ee6738d3687875165de" category="cell">Interfaces de backend NVMe-oF</block>
+  <block id="ef2f483559dc6ae3841f7a2413191328" category="cell"><block ref="acd335a4d756a503bbe90f51587e6cd6" prefix="" category="inline-code"></block> (RoCE) /<block ref="f70b96976b303b11c8901e62834ddcbf" prefix=" " category="inline-code"></block> (InfiniBand)</block>
+  <block id="44670a832e8c669d616a8e5bb73ea90d" category="inline-link-macro">RoCE host_vars/lustre_01.yml#L21</block>
+  <block id="e4fe71da7ee64ff1432c605328af6949" category="inline-link-macro">InfiniBand host_vars/lustre_01.yml#L17</block>
+  <block id="043caf30caa6df90601c496a87eba920" category="cell"><block ref="d5dd1f2ccfb900d7775232d615bbd59d" category="inline-link-macro-rx"></block>, <block ref="f8506d7da0c02cce792e8f991f3efdb6" category="inline-link-macro-rx"></block></block>
+  <block id="de3294bf0a8c13aec72739c96ab358df" category="cell">Endereços da interface de backend usados para o tráfego de armazenamento NVMe-oF para os E-Series arrays.</block>
+  <block id="d1eca90db1b5937ecf631c86492e542a" category="cell">Interfaces de cluster LNet</block>
+  <block id="f4cfcf44d6d2bd79213a39876836b2a7" category="cell"><block ref="4b785157a5e72b7262c130d2302f2206" prefix="" category="inline-code"></block> (RoCE) /<block ref="e3f0f10215cb725eaa278fec38bd76e6" prefix=" " category="inline-code"></block> (InfiniBand)</block>
+  <block id="c88c4966964eb7fd171c670b02bea1be" category="inline-link-macro">RoCE host_vars/lustre_01.yml#L47</block>
+  <block id="3be01edee3acf1567e136111efc731a9" category="inline-link-macro">InfiniBand host_vars/lustre_01.yml#L38</block>
+  <block id="3a312ec8c30a90b41b8e95b33186f9f9" category="cell"><block ref="0bf6a33116c634b0311082d3b8b27524" category="inline-link-macro-rx"></block>, <block ref="209a601e7842c823a6d9437e13f7ac6f" category="inline-link-macro-rx"></block></block>
+  <block id="daa858dd88f813bf2abe72e05ac79104" category="cell">Endereços da interface LNet de front-end (valores RoCE na linha 56; InfiniBand valores na linha 47).</block>
+  <block id="8f275be344e18a73f50c90c98862730c" category="cell">Endereços IP dos nós Corosync</block>
+  <block id="3bcebedf92386c6d782a4fb1d9245fbe" category="cell"><block ref="b3da4c961227c7f785b5051a5f3d1ca2" prefix="" category="inline-code"></block></block>
+  <block id="d26865aecb9841f5fa8e4a2ad002653f" category="inline-link-macro">host_vars/lustre_01.yml#L58</block>
+  <block id="7674410161b2469ec2f0588d7cb0133c" category="cell"><block ref="7674410161b2469ec2f0588d7cb0133c" category="inline-link-macro-rx"></block></block>
+  <block id="499bfea2697a63f16233ea2f3b77b2c5" category="cell">Liste todos os endereços IP dos nós no cluster de HA (valores na linha 62).</block>
+  <block id="dd603111f7aedcb686a7d943e7470a9a" category="cell">NIDs do serviço de destino Lustre</block>
+  <block id="84d5fb1f5c4c2a3b20e920eab695f987" category="cell"><block ref="1f853ce28851014f6eadd5c849ba3ce1" prefix="" category="inline-code"></block></block>
+  <block id="3642d5fc1bd5e1d5a2d0a0aea7f8fec5" category="inline-link-macro">host_vars/lustre_01.yml#L64</block>
+  <block id="f1680e035658b9a3e449dbce28e26600" category="cell"><block ref="f1680e035658b9a3e449dbce28e26600" category="inline-link-macro-rx"></block></block>
+  <block id="ad71d199400e65302247951bced69da2" category="cell">Inclua os NIDs de LNet de front-end <block ref="c49f0c3c2926c11287cf9b9355c7aa1f" prefix="(" category="inline-code"></block> de ambos os nós no par de HA para que os serviços de destino permaneçam acessíveis após o failover (valores na linha 67).</block>
+  <block id="ce1cdc9c6fba0be5fab535b8c6c76141" category="cell">Endereço IP de gerenciamento do array</block>
+  <block id="e9ad5d914deda2bd4c808eeb12731073" category="inline-link-macro">host_vars/netapp_01.yml#L13</block>
+  <block id="79f1e43a9431bc629779c58d7b668a19" category="cell"><block ref="79f1e43a9431bc629779c58d7b668a19" category="inline-link-macro-rx"></block></block>
+  <block id="1ed3694d7fef8516584c13d7e425a15f" category="cell">Repita para cada matriz E-Series</block>
+  <block id="c1e52517a2b31863df6c2d898abcc01d" category="cell">IP de gerenciamento de um controlador; a URL da API deriva dele.</block>
+  <block id="f4ef5ebc27d3b5a17305f41fb5c5db15" category="cell">Associação ao grupo de blocos de construção</block>
+  <block id="8652be8ec7c0b4c93fed54d63fc4199a" category="cell"><block ref="8f0c7cb61ff113f553b01d302349363d" prefix="" category="inline-code"></block> /<block ref="4647aa62acfd3b810edc652fa314c7cb" prefix=" " category="inline-code"></block> /<block ref="bf32ff9511689bd14861dff657e44726" prefix=" " category="inline-code"></block></block>
+  <block id="d786551e185211b4a5d09185f23fb538" category="inline-link-macro">lustre_inventory.yml</block>
+  <block id="6effedf6fbec7408857e1bfb2b346819" category="cell"><block ref="6effedf6fbec7408857e1bfb2b346819" category="inline-link-macro-rx"></block></block>
+  <block id="b700b11efc5bf105f3d1d016a1898ccb" category="cell">Por bloco de construção</block>
+  <block id="edbb7fde506d06d0a74f410ae74ae9bd" category="cell">Cada nome de host de inventário deve corresponder ao nome base do seu arquivo <block ref="3342582e194d63e4c91b56623752c9c6" prefix=" " category="inline-code"></block> correspondente. Por exemplo, o host <block ref="fd9c79d5ba03f66eeda1a5779a2f6306" prefix=" " category="inline-code"></block> usa <block ref="9fce5ea0bbc826006c4eca4c77528b7f" prefix=" " category="inline-code"></block>, e <block ref="3d1a3866e5aadfdac8b0e07e6740b0fe" prefix=" " category="inline-code"></block> usa <block ref="2b15be3da156715623b1ee1a391ea9a3" prefix=" " category="inline-code"></block>. Inclua o grupo MGS apenas no primeiro bloco de construção. Inclua os grupos MDS no bloco de construção base e em cada bloco de construção de expansão MDT+OST; omita os grupos MDS apenas dos blocos de construção de expansão somente OST. Registre os alvos de expansão no MGS existente com <block ref="66a6093c519e2b125743a6852a2ec6e3" prefix=" " category="inline-code"></block>.</block>
+  <block id="2d19cf156c50d25894c04c35fb419694" category="paragraph">Repita as configurações para cada host e bloco de construção. Crie um <block ref="d15ffd2d191c94654e8e50c55cf273b9" prefix=" " category="inline-code"></block>arquivo por servidor Lustre e um <block ref="dc2f43c391dc7b72c12fc5ae6d01e2e1" prefix=" " category="inline-code"></block>arquivo por array, e repita os grupos de inventário para cada bloco de construção adicional.</block>
+  <block id="4ddffb6f5d60e20069aba18bc5a26927" category="paragraph">Os playbooks de implantação carregam as credenciais do array, Pacemaker e BMC a partir do arquivo <block ref="effd9a6216a1b8004049a82746c94314" prefix=" " category="inline-code"></block> compartilhado. Preencha este arquivo e criptografe-o com o Ansible Vault antes da implantação ou substitua os valores com segurança em tempo de execução com <block ref="eba52ae7bfe34d5eddd33dafc00e5e80" prefix=" " category="inline-code"></block>. Não inclua credenciais em texto simples no controle de versão.</block>
+  <block id="4728df228c58b637c323edba3c3e2651" category="admonition">Os endereços IP, nomes de host, nomes de interface e o dimensionamento de volumes nos modelos de implantação são exemplos. Modifique todos os arquivos de inventário do ambiente antes de executar qualquer playbook.</block>
+  <block id="b4c9bb8273733c93d9b34e9b8fe4bfad" category="inline-link-macro">Implante o cluster Lustre HA e os clientes</block>
+  <block id="e444981416b2b56e2e032006135ac278" category="paragraph"><block ref="d63814e8d0dc8874c6eba881ba68dc47" category="inline-link-macro-rx"></block>.</block>
+  <block id="5466c0d4ffb6f769d1c408d88d1083c2" category="summary">Prepare os arrays EF80, os servidores Lustre e o nó de controle Ansible para implantação.</block>
+  <block id="b68d1a7653b43062b1d13b68e387e5b8" category="doc">Prepare o ambiente de implantação do Lustre</block>
+  <block id="c243ac8f423a29c70eb01c1a8c1ae957" category="paragraph">Configure o acesso de gerenciamento e as configurações básicas em cada array EF80 e servidor Lustre, depois prepare um nó de controle Ansible para implantar a solução.</block>
+  <block id="f264ece3aaeed3db20a2b300f28e9fbe" category="section-title">Preparar as matrizes E-Series</block>
+  <block id="015845bc306336e251ba0d56cc71e4f8" category="list-text">Configure a interface de gerenciamento em cada controlador e verifique se o SANtricity System Manager está acessível.</block>
+  <block id="e8cd3a67fd7e717452047c8319f2779d" category="list-text">Defina o nome do array e as credenciais administrativas que o inventário do Ansible utilizará.</block>
+  <block id="8f105d1078a3f1fc3858fca41ae18caa" category="list-text">Confirme se o array está em estado ideal e se todas as unidades estão presentes e reportando corretamente.</block>
+  <block id="5f93f381aa8df330451fa5b834f54def" category="inline-link-macro">Documentação do E-Series</block>
+  <block id="cf9c8969a8f36b71a631549cd210c8af" category="paragraph">Para obter instruções sobre como configurar a conexão de gerenciamento, consulte o <block ref="2cc0659a11dd150e4355ca76ab859281" category="inline-link-macro-rx"></block>.</block>
+  <block id="202d68e6f10e849c503adec016a54186" category="section-title">Prepare os servidores Lustre</block>
+  <block id="1d9ade1a525ab17b4d5a1b8d2b09a87c" category="list-text">Configure o controlador de gerenciamento da placa-mãe (BMC) em cada servidor para acesso fora de banda e defina as configurações do sistema UEFI para máximo desempenho.</block>
+  <block id="8547ee8ccbab16fc1313ea67f7c1cbc5" category="list-text">Instale um sistema operacional compatível (RHEL ou Rocky Linux), depois configure o nome do host e a porta de rede de gerenciamento.</block>
+  <block id="e6b3b756a9c5d91c12715f63dabbe816" category="list-text">Prepare todos os pacotes de firmware e software para atender aos requisitos da solução *E-Series Lustre*, conforme descrito em <block ref="50dec6b1119ecf8040454f42ce24288c" category="inline-link-macro-rx"></block>.</block>
+  <block id="c905fe3dcc47b0021bfb73ee3d615d27" category="section-title">Prepare o nó de controle do Ansible</block>
+  <block id="5452fd954c3588ac163c8a0e4d94d46f" category="paragraph">Designe um sistema Linux virtual ou físico com acesso à rede de gerenciamento a todos os servidores Lustre e arrays NetApp E-Series para ser o nó de controle do Ansible.</block>
+  <block id="3db8211c26067646b30239b42a6650cf" category="inline-link-macro">Documentação de instalação do Ansible</block>
+  <block id="6624f68bd1c684f6278be9cf8e5c73ab" category="paragraph">Os passos a seguir utilizam o Ubuntu 24.04. Para instruções para outra distribuição Linux, consulte o <block ref="75aed5bdfff6643a132a6cb6627cfa57" category="inline-link-macro-rx"></block>.</block>
+  <block id="45d8e08cbdfb0c80051d2252faf66e2e" category="list-text">Instale o Python, o pip e o pacote de ambiente virtual do Python:</block>
+  <block id="85c7fc2b5251a2a1047b7bd19243340f" category="list-text">Crie e ative um ambiente virtual Python:</block>
+  <block id="8d61a1feedbb860ef24ffeeb121b3a8f" category="list-text">Instale o Ansible e os pacotes Python necessários no ambiente virtual ativado:</block>
+  <block id="4b252920722abdb27a58fce5f6847b75" category="list-text">Instale a coleção Ansible Lustre da NetApp E-Series. A instalação da coleção também instala as coleções dependentes, incluindo as coleções SANtricity e Host:</block>
+  <block id="58d742766289ad9f8a66eae3f38d58c1" category="list-text">Verifique as versões instaladas do Ansible, Python e da coleção:</block>
+  <block id="c361abe3eb19c6b2c20c934ad698ed99" category="list-text">Configure o SSH sem senha do nó de controle para cada servidor Lustre. Substitua <block ref="1b0e31c855bd7a5dc464ccf21906bea7" prefix=" " category="inline-code"></block> pelo endereço IP de gerenciamento ou nome do host de um servidor:</block>
+  <block id="c52ff3210c41c4071bbf9378ddfef945" category="paragraph">Repita <block ref="d1fd123ca1c739243e073c2b1cd2ea8a" prefix=" " category="inline-code"></block> para cada servidor Lustre.</block>
+  <block id="cc9b0c78a14caf25a8424a58645f2ba1" category="admonition">Não configure SSH sem senha para os arrays E-Series. O Ansible gerencia os arrays por meio da SANtricity Web Services API, utilizando as credenciais definidas no inventário.</block>
+  <block id="8f8e00f4ddf518b4c8df4259e2c96208" category="inline-link-macro">Personalize o inventário do Ansible</block>
+  <block id="0661c0c85897475266fb322dc1e1c329" category="paragraph"><block ref="5c3c79c91f4421395a6e039ca5ce5cf6" category="inline-link-macro-rx"></block>.</block>
+  <block id="f512fd62623fb95c7da02e83def540a0" category="summary">Verifique a integridade, os pontos de montagem e a capacidade do cluster Lustre e expanda o sistema de arquivos com blocos de construção adicionais.</block>
+  <block id="9b1a211e28c27e7be6ab33ec7f15870e" category="doc">Verifique e expanda a implementação do Lustre</block>
+  <block id="bdc457d598b68edd5d84a1f89228d39f" category="paragraph">Confirme a integridade do cluster, as montagens do Lustre e a capacidade do sistema de arquivos antes de usar em produção. Em seguida, use o mesmo inventário para adicionar componentes conforme necessário.</block>
+  <block id="7b36e2b8da7242fb8b3aeff6be03faee" category="list-text">A partir de um servidor Lustre, confirme se todos os recursos do Pacemaker estão iniciados nos nós esperados:</block>
+  <block id="56591ae2fa4dc3003f3bfbad61e9823b" category="list-text">A partir de um cliente Lustre, confirme se o sistema de arquivos Lustre está montado:</block>
+  <block id="72ead98bd79a33a5c23a9e1b1fd24877" category="list-text">A partir de um cliente Lustre, confirme a capacidade do sistema de arquivos e se os destinos MDT e OST estão visíveis:</block>
+  <block id="7cb7830e5b9c67652611ea466146a806" category="paragraph">Para validação de desempenho com IOR, mdtest e fio, consulte <block ref="fd37d50a703eb90bca5592e7cf7939cb" category="inline-link-macro-rx"></block>.</block>
+  <block id="6c94763c7d8df828ecbe010cceec9cfb" category="paragraph">Para migração controlada de destino ou teste de failover de HA, siga os procedimentos em <block ref="366b62f6dcea4b62f9ab1e6c11adfdc9" category="inline-link-macro-rx"></block>.</block>
+  <block id="a0bbb5f8f21362b9d8f4cddff6521b69" category="section-title">Expandir o sistema de arquivos</block>
+  <block id="a71551e38a5b0644628ff55a32469baf" category="paragraph">Para adicionar capacidade ou desempenho de metadados, expanda seu inventário existente com um bloco de construção adicional. Não crie um inventário separado para o novo bloco de construção. O playbook atribui automaticamente índices MDT e OST exclusivos e registra os novos destinos no MGS existente.</block>
+  <block id="fac470f4d13ddc18a7024f7bd30076b8" category="list-text">Adicione os novos hosts, arrays e grupos de recursos (MDT+OST ou somente OST) ao mesmo inventário e <block ref="3342582e194d63e4c91b56623752c9c6" prefix=" " category="inline-code"></block> e <block ref="96fa973cda8809ad84f646e3d8fbbc1c" prefix=" " category="inline-code"></block> arquivos que você usou para a implantação original.</block>
+  <block id="7d471dc171c1928c93a04c7faff513b5" category="list-text">Execute novamente o playbook de implantação principal no inventário atualizado.</block>
+  <block id="1b0203b9d370708b33f381a1b31a295f" category="paragraph">Consulte <block ref="f6c91e3cd1480b3865622c5a1b7e2c1a" category="inline-link-macro-rx"></block> as regras de dimensionamento e <block ref="fd37d50a703eb90bca5592e7cf7939cb" category="inline-link-macro-rx"></block> as orientações sobre quando adicionar cada tipo de bloco de construção.</block>
+  <block id="2e548b4b0ee367c75017120d19fdefad" category="summary">Siga o fluxo de trabalho para implantar o Lustre com o NetApp E-Series Storage usando a automação Ansible do NetApp.</block>
+  <block id="c4fa415b14936859bd30c244373b8719" category="doc">Implemente o Lustre com o NetApp E-Series Storage</block>
+  <block id="e7c5f4d355b794ab148c3e19c9065406" category="paragraph">Implemente o Lustre com o NetApp E-Series Storage concluindo as tarefas de hardware, preparação do ambiente, inventário, implantação do Ansible e verificação na ordem indicada.</block>
+  <block id="634c8a03e1c23b6e01567d5c131eda80" category="paragraph">Antes de iniciar a implantação, certifique-se do seguinte:</block>
+  <block id="96db7f03b12a89b0ca45058db1871021" category="list-text">Você seguiu as orientações de dimensionamento e componentes básicos em <block ref="fd37d50a703eb90bca5592e7cf7939cb" category="inline-link-macro-rx"></block> e selecionou o hardware que corresponde a <block ref="b951df04c708233bd0e6aa30024a444e" category="inline-link-macro-rx"></block>.</block>
+  <block id="9ed4a475dd3705157a9fed8811f63ce2" category="inline-link-macro">NetApp Ferramenta de Matriz de Interoperabilidade</block>
+  <block id="bdf6a8b01b09cea74e4188812c710058" category="list-text">Você confirmou que a combinação de servidor, HCA, E-Series, sistema operacional, Lustre, SANtricity OS e DOCA-OFED está listada para *E-Series Lustre* no <block ref="27dc27dbb2e442190a59a9d515bed42e" category="inline-link-macro-rx"></block>.</block>
+  <block id="fb184c2f31e921caeb46e135904d297e" category="list-text">Todos os nós de servidor OSS/MDS e os E-Series arrays para os blocos de construção planejados estão no local e prontos para instalar no rack.</block>
+  <block id="19e4234fd56bba4caeddc4973c4bb493" category="list-text">Você possui credenciais e acesso à rede para os BMCs do servidor, portas de gerenciamento do array e o host que servirá como nó de controle do Ansible.</block>
+  <block id="41991ae5fa9af370516bc6e8e7699edf" category="inline-link-macro">Coleção Ansible Lustre do NetApp E-Series</block>
+  <block id="51e937517ed052afa113ee31f25e669e" category="admonition">NetApp oferece suporte à implementação do cluster Lustre HA e dos clientes Lustre com o <block ref="8e2a23bd15e3969732c3c3c02b7e888d" category="inline-link-macro-rx"></block>. Não configure os destinos Lustre, a LNet, a conectividade de host NVMe-oF ou os recursos do Pacemaker manualmente.</block>
+  <block id="ab3ccb0be518e752d20f706d36d252c9" category="section-title">Fluxo de trabalho de implantação</block>
+  <block id="6446de4e3a4c91eb5ceee947cddbf2cd" category="paragraph">Conclua as seguintes tarefas na ordem indicada:</block>
+  <block id="f8d0621bfc76e98c8da3e8ec2c60a9de" category="list-text"><block ref="18bea05bda8ed8f518d518ea28b4f1ab" category="inline-link-macro-rx"></block>.</block>
+  <block id="384ec04c02303d55f04afb8625c2cd78" category="paragraph">Instale os servidores Lustre e os arrays EF80 no rack e, em seguida, conecte os cabos das redes NVMe-oF de backend e LNet de frontend.</block>
+  <block id="05b3aade2a55147217f8d5b60d082545" category="inline-link-macro">Prepare o ambiente de implantação do Lustre</block>
+  <block id="5ecfb2411abb9ae2f27e3c2bc8e2a772" category="list-text"><block ref="4188895c156711220c815e9a4b2ea443" category="inline-link-macro-rx"></block>.</block>
+  <block id="7081aacf6f5e2318d2326d72a27d2a97" category="paragraph">Configure os arrays e servidores e, em seguida, instale o Ansible e suas dependências no nó de controle.</block>
+  <block id="0d6f2ba2a2f5a52bdfd841cd1db512eb" category="list-text"><block ref="48fa4fcc6ef309525d67cfc2e71da78c" category="inline-link-macro-rx"></block>.</block>
+  <block id="f3b74c1b0b29400dbfc46e03b50c19fb" category="paragraph">Selecione o modelo para o fabric do site e preencha os servidores, arrays, redes, componentes básicos e credenciais.</block>
+  <block id="a2a52db1796cdf539ddfd27ef5732c90" category="paragraph">Prepare o sistema operacional do servidor, instale NVIDIA DOCA-OFED, execute o playbook de implantação principal e configure os clientes Lustre.</block>
+  <block id="2b054a0aa93c332a143e0cec3ff9e061" category="inline-link-macro">Verifique e expanda a implementação do Lustre</block>
+  <block id="0b1521677ac3664d94ae25b3d6d4c5c2" category="list-text"><block ref="6c60201ff84ef475bbfc690252f1172f" category="inline-link-macro-rx"></block>.</block>
+  <block id="a50a203162e3224c31f5fe2ef16a4ef6" category="paragraph">Confirme a integridade do cluster, os pontos de montagem e a capacidade antes de utilizá-lo em produção. Expanda o inventário existente quando o sistema de arquivos precisar de outro bloco de construção.</block>
+  <block id="30f60d67f457bb040dffde52197a54da" category="section-title">Informações relacionadas</block>
+  <block id="8e2a23bd15e3969732c3c3c02b7e888d" category="list-text"><block ref="8e2a23bd15e3969732c3c3c02b7e888d" category="inline-link-macro-rx"></block></block>
+  <block id="b9de6db7191a1a0d0e04fa49d4199e02" category="inline-link-macro">NetApp Lustre repositório de origem</block>
+  <block id="e7ef2acb3680391a121a9687c0ebe804" category="list-text"><block ref="e7ef2acb3680391a121a9687c0ebe804" category="inline-link-macro-rx"></block></block>
+  <block id="366b62f6dcea4b62f9ab1e6c11adfdc9" category="list-text"><block ref="366b62f6dcea4b62f9ab1e6c11adfdc9" category="inline-link-macro-rx"></block></block>
+  <block id="1062a9f69fedd03cf5c196062584b354" category="inline-link-macro">Guia de ajuste de desempenho</block>
+  <block id="9f4631b80a285f37169fdf4b4c652838" category="list-text"><block ref="9f4631b80a285f37169fdf4b4c652838" category="inline-link-macro-rx"></block></block>
+  <block id="e4af092b71f831178fefaea6eb1922ef" category="inline-link-macro">Modelos de implantação do cliente Lustre</block>
+  <block id="59da7ad32ac5797f6501497f3975d0e0" category="list-text"><block ref="59da7ad32ac5797f6501497f3975d0e0" category="inline-link-macro-rx"></block></block>
+  <block id="caa95fe7ebded3747d511825fc6fcc8f" category="summary">Revise os requisitos de servidor, E-Series array, layout de storage e rede para o Lustre com NetApp E-Series Storage.</block>
+  <block id="b7ea201d504ea6f080678b3c979de443" category="doc">Lustre com o NetApp E-Series Storage - Componentes de hardware</block>
+  <block id="81991feaf6923c4fd9b81edeb70dd9a3" category="paragraph">Use estes requisitos de hardware para servidores, NetApp E-Series arrays, layout de storage e rede ao dimensionar e solicitar o Lustre com NetApp E-Series Storage. Para componentes de software, consulte <block ref="50dec6b1119ecf8040454f42ce24288c" category="inline-link-macro-rx"></block>.</block>
+  <block id="a54c13ad42512dbfec4e8a44d793a52e" category="section-title">Requisitos do servidor</block>
+  <block id="78ed065cb3df976744e0d46f7e1f97ca" category="paragraph">A solução utiliza um modelo "traga seu próprio servidor" (BYOS). Cada componente requer dois nós de servidor OSS/MDS que atendam ou excedam as seguintes especificações.</block>
+  <block id="e452931b6e576f590cdc2132f39b130b" category="section-title">Especificações do nó</block>
+  <block id="e139714fc2ea5bd9ac8bcdd636991cf7" category="paragraph">A tabela a seguir lista os requisitos mínimos de servidor por nó OSS/MDS.</block>
+  <block id="9b97b7bd5e0a87be7bf218224ada83cf" category="cell">Requisito</block>
+  <block id="b93c1e71d0cc69036373fec0dcd00014" category="cell">2 nós por bloco de construção</block>
+  <block id="2b55387dd066c5bac646ac61543d152d" category="cell">CPU</block>
+  <block id="a049576965d96442d114a03d817a5b2d" category="cell">AMD EPYC ou Intel Xeon, 32 núcleos ou mais</block>
+  <block id="9fada4ad196fc991729d77da6a8f7048" category="cell">256 GB DDR5 (mínimo)</block>
+  <block id="3174063e7fab5fd01a8dc7e162d83800" category="cell">HCAs de rede</block>
+  <block id="91115ee144fbc5c7db04ab01cfaae42f" category="inline-xref">Conectividade HCA</block>
+  <block id="94f5d4bd00c39175401b53e3083fa6e7" category="cell">6 HCAs de 200 Gb com duas portas (veja <block ref="91d5ecc9eeeedc6f912504c692ce76ae" category="inline-xref-macro-rx"></block>)</block>
+  <block id="ed3de05402aeebdbbd72a1163c6ef0c3" category="cell">Slots PCIe</block>
+  <block id="136f2ccfc4df7464cd2d8d3d3151a5a2" category="inline-xref">Requisitos do slot PCIe</block>
+  <block id="a73df56899af925e823f65941bf78d66" category="cell">2× PCIe Gen5 x16 e 4× PCIe Gen5 x8 (veja <block ref="9fdc123f380db06577db86c231cb801c" category="inline-xref-macro-rx"></block>)</block>
+  <block id="73bd40fbfbb43e05a7d49999490cd8b5" category="cell">Unidades de inicialização</block>
+  <block id="a07db6ed1ccb81d8757e348f8e12761f" category="cell">2× discos rígidos em RAID 1 (RAID por software ou hardware recomendado)</block>
+  <block id="34a0cba450633565dd8edc33b276814e" category="paragraph">NetApp validou a solução usando servidores Lenovo ThinkSystem SR665 V3. Servidores equivalentes de outros fornecedores são suportados quando atendem a esses requisitos.</block>
+  <block id="b42ad946fa28ef06221a22e36921c258" category="paragraph">A tabela a seguir lista os requisitos de HCA, porta front-end LNet e caminho NVMe-oF por nó de servidor OSS/MDS.</block>
+  <block id="04f79ca300c4ecd33c5fc70e94db8b78" category="cell">HCAs por nó</block>
+  <block id="6fe54bd087eedf5557a8a15a2b3c5581" category="cell">Portas LNet por nó Lustre</block>
+  <block id="bebcb9fa822ce49b099df7de2dc692df" category="cell">Caminhos NVMe-oF por nó Lustre</block>
+  <block id="36a2b5ba460d59f9fe9b9c905e14fadb" category="cell">Exemplo de HCA</block>
+  <block id="e50ec4a698a66b4fa259974f9cf281c9" category="cell">6 (12 portas)</block>
+  <block id="361cc1d48f74d44920aa8753cff62bbf" category="cell">8 no total (4 em cada array)</block>
+  <block id="6a518eec4f4f044ae9b8e1d68f7d75a5" category="cell">MCX755106AS-HEAT (Placa PCIe gen5 de 200 Gb com duas portas)</block>
+  <block id="2e5bc4227e7487d5c5f3e4c7198a7aa6" category="paragraph">NetApp recomenda seis HCAs por nó para maximizar a largura de banda dos arrays de armazenamento EF80.</block>
+  <block id="b816d84857aedb981d87478ded2591fe" category="paragraph">Cada nó de servidor OSS/MDS em um bloco de construção EF80 comporta seis HCAs de porta dupla: dois para LNet e quatro para NVMe-oF. A largura do slot determina a largura de banda disponível para cada HCA, então confirme a largura elétrica de cada slot e riser, em vez de apenas a largura da placa. Uma placa Gen5 x16 instalada em um slot Gen5 x8 opera em x8.</block>
+  <block id="017880590506bf9828d8a6d8ed843069" category="list-text">*LNet HCAs:* Instale em slots PCIe Gen5 x16 para atingir a taxa de transferência máxima do frontend.</block>
+  <block id="d9b61efd07bfce373a3d6debb3e68ca1" category="list-text">*NVMe-oF HCAs:* Instale em slots PCIe Gen5 x8 ou PCIe Gen5 x16.</block>
+  <block id="4b924cd64cab85a53d7c8707226caff4" category="list-text">*Balanceamento NUMA:* Divida os HCAs igualmente entre as duas zonas NUMA, de forma que cada zona hospede duas interfaces LNet e quatro interfaces NVMe-oF.</block>
+  <block id="e81dc46e61b8efa1caeebc8fa2cf1de2" category="paragraph">A tabela a seguir lista o número mínimo de slots para cada nó de servidor OSS/MDS em um bloco de construção EF80.</block>
+  <block id="89652e228f31afd994aaf865c5a3cf43" category="cell">Tipo de tráfego</block>
+  <block id="59065c8586207fb91f7f3a7d2f6585ff" category="cell">Largura mínima da ranhura</block>
+  <block id="9c57a7a0125988664fa9e571e956761c" category="cell">Slots por zona NUMA</block>
+  <block id="7adc9aaf7a709c04465b8be2b625ac55" category="cell">LNet</block>
+  <block id="4879ce833a0d9c6f3525586e5c17574f" category="cell">PCIe Gen5 x16</block>
+  <block id="6151632541dcd80356c6c76b34d69d0c" category="cell">NVMe-oF</block>
+  <block id="c8e9eae5723730c0a28c5c18050509bd" category="cell">PCIe Gen5 x8</block>
+  <block id="93e46d5be1dfcebf5a0312e47dd1a08b" category="paragraph">Opcionalmente, você pode dividir as portas em um HCA de porta dupla para que uma porta transporte o tráfego LNet e a outra o tráfego NVMe-oF. Instale todos os quatro HCAs em slots PCIe Gen5 x16 para que cada porta LNet atinja a taxa de transferência máxima, depois adicione mais dois HCAs em slots Gen5 x8 ou Gen5 x16 para as portas NVMe-oF restantes.</block>
+  <block id="e57447ad8a8d0ad93aa00fa69630452e" category="example-title">Exemplos de configurações de riser para Lenovo ThinkSystem SR665 V3</block>
+  <block id="bbd4d047c88735bc852c18bf4819702e" category="paragraph">Ambas as combinações de riser a seguir atendem aos requisitos de slot para um bloco de construção EF80.</block>
+  <block id="25bc9491897a5c4b24406688428aacdd" category="paragraph">*Larguras mínimas de slot*</block>
+  <block id="42fae264b9f290a4ad9a2fa547be6583" category="paragraph">Instale um riser BPQU nas posições 1 e 2. Cada riser BPQU fornece um slot PCIe Gen5 x16 e dois slots PCIe Gen5 x8. Juntos, os risers fornecem dois slots Gen5 x16 para LNet e quatro slots Gen5 x8 para NVMe-oF, distribuídos igualmente entre as zonas NUMA.</block>
+  <block id="f16e60a24a1ac25de0216c5166cf683e" category="inline-image-macro">Vista traseira do Lenovo ThinkSystem SR665 V3 com risers BPQU nas posições 1 e 2, mostrando um slot PCIe Gen5 x16 e dois slots PCIe Gen5 x8 por zona NUMA.</block>
+  <block id="6358b3e11dc1f96b2a895c64c974eff1" category="paragraph"><block ref="6358b3e11dc1f96b2a895c64c974eff1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="24f23035dc6e8677da9c4b9c43b6025b" category="paragraph">*Todos os slots Gen5 x16*</block>
+  <block id="068285d2f7495639d808b09bf2243a36" category="paragraph">Instale um riser BPQV nas posições 1 e 2 e um riser BLL9 na posição 3. Cada riser BPQV fornece dois slots PCIe Gen5 x16. O riser BLL9 fornece o slot 7 na zona NUMA 0 e o slot 8 na zona NUMA 1, ambos PCIe Gen5 x16. Essa combinação fornece seis slots Gen5 x16, três por zona NUMA, e suporta a divisão do tráfego LNet e NVMe-oF entre as portas do mesmo HCA.</block>
+  <block id="fff0668328c6d36b56cf8e5ed7f4e84d" category="inline-image-macro">Vista traseira do Lenovo ThinkSystem SR665 V3 com placas riser BPQV nas posições 1 e 2 e uma placa riser BLL9 na posição 3, mostrando seis slots PCIe Gen5 x16 balanceados em duas zonas NUMA</block>
+  <block id="e441b41777f230105bc86ea39e8563ca" category="paragraph"><block ref="e441b41777f230105bc86ea39e8563ca" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1765c02ab7d15d86df8ef8035ababf81" category="section-title">Bloco de construção padrão EF80</block>
+  <block id="099068557034096e5947c45a5a4f8ac4" category="paragraph">O EF80 é a plataforma padrão validada para esta versão da solução.</block>
+  <block id="ed8b6a4496f4b1a82c54ccc9cab580f6" category="section-title">Especificações do array</block>
+  <block id="fc020f5d89405a936b2cf9f0537596ce" category="paragraph">A tabela a seguir lista as especificações do array EF80 para um bloco de construção (dois arrays).</block>
+  <block id="875b0e30e76428bc0706b781b36b31aa" category="cell">Especificação</block>
+  <block id="68ecd453fb43d227d49c318213fb28a9" category="cell">NetApp EF80</block>
+  <block id="9efd743b10abbfb56a447d476d84417e" category="cell">Fator de forma</block>
+  <block id="55d943f8f4869a46a33edc808c11baee" category="cell">chassi base 2U, 24 slots internos para SSD NVMe</block>
+  <block id="cbfb14f470701bf93424d757c624369a" category="cell">Controladores</block>
+  <block id="9f115c37b3c44c920f538bc7bae444e4" category="cell">Controladores duplos (A e B)</block>
+  <block id="63a6b9b3b5de50d32228700cfe042610" category="cell">Unidades</block>
+  <block id="3316683fedafa7e596384f15ab9f7aa4" category="cell">24 SSDs NVMe por array</block>
+  <block id="115d5fe153ac0eb60c5da1768094f759" category="cell">Conectividade de E/S</block>
+  <block id="8e219b200e3c81e016857500975f1dda" category="cell">8 portas de host NVMe/IB ou NVMe/RoCE de 200 Gb por array no design Lustre validado</block>
+  <block id="6c5426ec4b27eee4669fb4c94b380c1b" category="paragraph">A plataforma EF80 suporta até doze portas de host por array quando três módulos de E/S de host de duas portas são instalados em cada controlador. O projeto Lustre validado utiliza módulos de E/S de host nos slots 1 e 2 para oito portas de host por array.</block>
+  <block id="731ebee23e331d859e88ac080271361b" category="paragraph">Cada array EF80 também utiliza o módulo de E/S dedicado do slot 4 para espelhamento entre controladoras. Conecte a porta 4a do controlador A à porta 4a do controlador B e a porta 4b do controlador A à porta 4b do controlador B. Essas conexões fornecem espelhamento de cache e transmissão de E/S e não são usadas para tráfego NVMe-oF do host. Consulte <block ref="2167f991eb9981359d79aa07afa06edc" category="inline-link-macro-rx"></block>.</block>
+  <block id="75accf3dcef2d9c3e9dbe705113b051c" category="inline-link-macro">NetApp EF-Series datasheet do array all-flash</block>
+  <block id="45a1a3c9bbfbafab9bafe87965faab9d" category="paragraph">Para obter as especificações completas da EF-Series em todos os modelos, consulte o <block ref="3763b875a199c9f3b55717ee21ea1a75" category="inline-link-macro-rx"></block>.</block>
+  <block id="99630099f424a9c7b805230d850190ba" category="section-title">Layout de drives (24 drives por array)</block>
+  <block id="d54adc2cb5e2aaad6185dd7d1713c006" category="paragraph">Cada array EF80 em um bloco de construção básico utiliza todos os vinte e quatro slots de unidade NVMe:</block>
+  <block id="48ad878bc96958eff82106474f087415" category="list-text">4 discos em RAID 1 para armazenamento MGS/MDT (grupo de volume compartilhado ou alocação DDP)</block>
+  <block id="7210016fbf7fd878170c76c8afaf4eb5" category="list-text">10 discos em RAID 6 para armazenamento de OST (primeiro pool de OST)</block>
+  <block id="728458f10c65d1d220b2cb8a581bbbd2" category="list-text">10 discos em RAID 6 para armazenamento de OST (segundo pool de OST)</block>
+  <block id="c1691d3196804b2efabd5f48c29c6d4c" category="paragraph">Esse layout se aplica quando você usa discos de 3,84 TB, 7,68 TB ou 15,3 TB com grupos de volume tradicionais. Ao usar discos Capacity Flash (QLC) de 30,7 TB ou 61,4 TB, faça o provisionamento de um único Dynamic Disk Pool em todos os vinte e quatro discos e crie volumes RAID 1 dentro do pool para os volumes MGS e MDT, enquanto utiliza volumes RAID 6 padrão para os OSTs.</block>
+  <block id="edb5641665bc486497fd9e7920923bc2" category="admonition">Discos rígidos de 1,92 TB não são recomendados atualmente para esta solução. Use uma das capacidades de disco validadas listadas acima.</block>
+  <block id="b419fbdf2d118176e0f6adcbb1d99bc7" category="inline-image-macro">Layout de unidades Lustre com 24 unidades NVMe por array EF80</block>
+  <block id="55c3520d74000136762b9bb0923e6628" category="paragraph"><block ref="55c3520d74000136762b9bb0923e6628" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="17dc4581092a0978deb62717a11f5a3e" category="section-title">Volume e contagens de alvos (bloco de construção básico)</block>
+  <block id="3cbc775f08ccfdf141850e7218d0f13a" category="paragraph">A tabela a seguir lista as contagens de MGS, MDT e OST para um bloco de construção básico.</block>
+  <block id="4b5c3b58ede7a0d491ab1747a82d7023" category="cell">Tipo de destino</block>
+  <block id="eb2c08111c5fdf7a89eae6bfd370ee67" category="cell">Contagem por BB</block>
+  <block id="18554b17590a7acfecccce391f155585" category="cell">RAID / pool</block>
+  <block id="b570b356e451561b543910c162ea4887" category="cell">RAID 1</block>
+  <block id="57d92c72fa5a1925944e22ec1e8b3152" category="cell">Bloco de construção básico apenas; array 1</block>
+  <block id="c9b9ae1b4267024d489995d8371bbb3b" category="cell">MDT</block>
+  <block id="214543128bd54d1f5b887d33e6ed5822" category="cell">4 por array</block>
+  <block id="d4f3255a163ffc89a90dcfc1275787b4" category="cell">OST</block>
+  <block id="2b116cf8287ed646770b256104ded46d" category="cell">RAID 6 (TLC) ou DDP (QLC)</block>
+  <block id="d8fb23be0a5d01a77e3a1526fa67fd05" category="cell">16 por array</block>
+  <block id="88169d5f5a6db17cadad8063250cac84" category="paragraph">Utilize as seguintes diretrizes de dimensionamento de volumes como ponto de partida no inventário do Ansible.</block>
+  <block id="7ab06248edcf5ef00ed9c5a20078e126" category="cell">Tamanho recomendado</block>
+  <block id="774b7401cbec0cc0c0bf37d0ed482e68" category="cell">5–10 GiB</block>
+  <block id="2f4ef260f2a93a460aad488814320f77" category="cell">Somente dados de configuração</block>
+  <block id="16ff1695f2688f1eb59ab2b823782d38" category="cell">Capacidade RAID 1 ÷ contagem MDT</block>
+  <block id="513a2f16127f2b1cd1d4ead9d0a1d6fe" category="cell">Aproximadamente 1–2 TiB cada (típico)</block>
+  <block id="1c1a315b0fb2350dba8a0994704e9f25" category="cell">Capacidade RAID 6 ou DDP ÷ número de OSTs por pool</block>
+  <block id="1a73114d8c2cae924ffbb4e56b0be00c" category="cell">Escala com capacidade de unidade; veja <block ref="fd37d50a703eb90bca5592e7cf7939cb" category="inline-link-macro-rx"></block></block>
+  <block id="c9e4f284ea4bc6ee4ffef88655c3ec75" category="section-title">Distribuição do volume do bloco de construção primário</block>
+  <block id="abfa81f45567e6183dbe69416b85863f" category="paragraph">A figura a seguir mostra o posicionamento preferencial do alvo Lustre e a conectividade NVMe-oF entre os nós do servidor OSS/MDS e os arrays E-Series em um bloco de construção EF80 básico. O diagrama identifica o alvo de gerenciamento como *MGT* (alvo de gerenciamento); um MGT hospeda o serviço MGS (servidor de gerenciamento) mencionado em outra parte deste documento.</block>
+  <block id="9dcfed954e3861ba5d3ad8eec8977a30" category="paragraph-title">Distribuição de destino do bloco de construção base (EF80)</block>
+  <block id="6b63b075c2fe3eec9fadad4d1dff1934" category="inline-image-macro">Distribuição de alvos Lustre e caminhos NVMe-oF entre nós de servidor OSS/MDS e arrays E-Series em um bloco de construção EF80 básico</block>
+  <block id="ba71f32a6a7ae638d1f32be405bdc274" category="paragraph"><block ref="ba71f32a6a7ae638d1f32be405bdc274" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4f9d21caea706bcb18efb4c63bd62aca" category="paragraph">A tabela a seguir lista como os volumes são distribuídos entre os dois arrays e qual servidor cada destino prefere.</block>
+  <block id="e7900a0eb431a2b052bcd3085cce0913" category="cell">Matriz 1</block>
+  <block id="f908fa5126d6544f1ab00e51870f0d03" category="cell">Array 2</block>
+  <block id="d6215740bda3784681fb145c37570b01" category="cell">Servidor 1</block>
+  <block id="4c9e921e05ec66314d5aca64cd2089b0" category="cell">Servidor 2</block>
+  <block id="f7462993267777388adc7b523aa91283" category="cell">Bloco de construção básico apenas</block>
+  <block id="3c5a7a9a6658ef9ca0bc3285cedd12fd" category="cell">Cada servidor prefere 2 MDTs de cada array</block>
+  <block id="7720a0a093547746fb9c28fa647bdc4a" category="cell">8 por pool RAID 6 × 2 pools por array, ou alocação DDP equivalente</block>
+  <block id="a4737e750a3cc072e2de0cbfed013a9f" category="cell">*Volumes totais*</block>
+  <block id="5361a4a31f16c2727eea74663d43cfef" category="cell">*21*</block>
+  <block id="cc9c3e7ef1ccd7735f183b0f85fabbc5" category="cell">*20*</block>
+  <block id="87115ea827e568992ff6254262182fad" category="section-title">Seleção do pool de armazenamento: TLC vs QLC</block>
+  <block id="8a1a8395aadef29e919648e2370bc2e5" category="paragraph">Escolha o tipo de pool do E-Series com base na capacidade da unidade NVMe nos arrays:</block>
+  <block id="312b3904d397e8acaf0dc33e9634b0f2" category="list-text">*Unidades de 3,84 TB, 7,68 TB e 15,3 TB:* Use *grupos de volumes RAID 6* para volumes OST e *grupos de volumes RAID 1* para volumes MGS e MDT, ou use DDP para o pool de unidades compartilhadas.</block>
+  <block id="fbdc62c247ebc132cdd9a5e831996143" category="list-text">*Unidades Flash (QLC) com capacidade de 30,7 TB e 61,4 TB:* Use somente *Dynamic Disk Pools (DDP)*. Crie volumes RAID 1 dentro do DDP para armazenamento de MGS e MDT. Crie volumes RAID 6 para armazenamento de OST a partir do DDP.</block>
+  <block id="ccfefb464f5df4d6ebb06b1724291f0b" category="paragraph">Para estimativas de capacidade utilizável por bloco de construção, tamanho de unidade e layout, consulte <block ref="fd37d50a703eb90bca5592e7cf7939cb" category="inline-link-macro-rx"></block>.</block>
+  <block id="bdd8837c5f5666c1f37ec05326aa385f" category="section-title">Requisitos de rede</block>
+  <block id="b374c02c23c43b6770829fceebc42fac" category="section-title">Backend (NVMe-oF)</block>
+  <block id="b3d563e4241c1f8fa7c8d5c9fec4bdc2" category="list-text">NVMe/InfiniBand ou NVMe/RoCE entre cada nó OSS/MDS e cada E-Series array</block>
+  <block id="94a30a8068a5aa4b74271a8f9bc93215" category="list-text">MTU 9000 em interfaces de backend NVMe/RoCE (típico)</block>
+  <block id="011be5d8aea7d6a0794481da8e0c780e" category="list-text">Oito caminhos de cada nó Lustre até os arrays de armazenamento (quatro para cada array)</block>
+  <block id="0f01398befdf8b3a5f7516261c268a54" category="inline-link-macro">Cabeamento traseiro do EF80 de seis HCA</block>
+  <block id="82fee62126751ddf3305ff61f08a0be1" category="list-text">O EF80 usa seis HCAs por nó (i2, i3, i5 e i6 para NVMe-oF; i1 e i4 para LNet). Conecte o Nó A às portas do controlador cujos rótulos terminam em <block ref="0cc175b9c0f1b6a831c399e269772661" prefix=" " category="inline-code"></block>, como <block ref="efaa153b0f682ae5170a3184fa0df28c" prefix=" " category="inline-code"></block> e <block ref="e36314e624d2b2ca257e1f1ecb381f93" prefix=" " category="inline-code"></block>. Conecte o Nó B às portas do controlador cujos rótulos terminam em <block ref="92eb5ffee6ae2fec3ad71c777531578f" prefix=" " category="inline-code"></block>, como <block ref="a35aea60fe097c885568babb48ee7d1e" prefix=" " category="inline-code"></block> e <block ref="f8bc2fbe2c937ea5b5e8839cbea69491" prefix=" " category="inline-code"></block>. Consulte <block ref="edb65af51b5b76af78c51b3678ad8402" category="inline-link-macro-rx"></block>.</block>
+  <block id="8a4b8798ab4caa9e54e6dcd1741f20ef" category="section-title">Frontend (LNet)</block>
+  <block id="86adc200b8e8c47e240f8017eb6b489d" category="list-text">IPoIB ou RoCE para LNet <block ref="c49f0c3c2926c11287cf9b9355c7aa1f" prefix="(" category="inline-code"></block> tipo de rede)</block>
+  <block id="2abb61ccfc9e540001c985b539006316" category="list-text">MTU 9000 em interfaces front-end RoCE (típico)</block>
+  <block id="2f7a335df40dbc598eb3769a68a65bbe" category="list-text">Recomenda-se o uso de LNet multirail quando quatro portas frontend estiverem disponíveis (EF80: i1 e i4 HCAs, ambas as portas)</block>
+  <block id="61c21286db2f11dbaf60ba2e64e10212" category="list-text">Matriz de comutação dedicada InfiniBand ou RoCE conectando os nós do servidor OSS/MDS e os clientes Lustre</block>
+  <block id="5ee35a82d01497dffb5640490e92fcea" category="list-text">RoCE sem perdas (PFC) recomendado em fabrics RoCE</block>
+  <block id="fe4dbcab9b910577e5035e97ac068dae" category="section-title">Gerenciamento</block>
+  <block id="31e5d6897cccc36b8c5b264d6d06d17e" category="list-text">Rede de gerenciamento fora de banda para BMCs de servidor e portas de gerenciamento de arrays</block>
+  <block id="f3b30a75854b3cd35b00f6633c1cb4e1" category="list-text">Rede Corosync dedicada ou fabric de frontend compartilhado (dependendo do site)</block>
+  <block id="a971692564529effd1b1270a2a6d1be7" category="summary">O Lustre com o NetApp E-Series Storage oferece um sistema de arquivos paralelo validado e escalável para cargas de trabalho de IA e HPC, utilizando uma arquitetura de blocos de construção repetíveis com o NetApp E-Series all-flash arrays.</block>
+  <block id="888fbbb67b463874639198729553a2c5" category="doc">Lustre com o NetApp E-Series Storage - Introdução</block>
+  <block id="551e8f9c00e2572dd220f4af7e5590a5" category="paragraph">O Lustre com NetApp E-Series Storage é uma solução validada de sistema de arquivos paralelo para cargas de trabalho de IA e HPC, construída a partir de blocos repetíveis de pares de servidores HA e arrays all-flash E-Series.</block>
+  <block id="721d467e631ca0b407762c8ded76ad2b" category="paragraph">O Lustre com NetApp E-Series Storage combina o sistema de arquivos paralelo open-source Lustre com o NetApp E-Series block storage para fornecer uma base escalável e de alto desempenho para cargas de trabalho com uso intensivo de dados. Cada bloco de construção emparelha dois nós de servidor OSS/MDS configurados para alta disponibilidade (HA) com dois arrays all-flash E-Series. A conectividade NVMe-oF de backend transporta E/S de bloco para os arrays e uma malha LNet separada conecta clientes e nós de servidor OSS/MDS para acesso paralelo ao sistema de arquivos.</block>
+  <block id="90dcc7ba481f73de6e19244d8cb3faa1" category="paragraph">Um bloco de construção básico hospeda o servidor de gerenciamento (MGS) e os destinos de metadados (MDTs) e storage de objetos (OSTs) iniciais. Blocos de construção adicionais se registram no MGS básico para dimensionar a capacidade de metadados, a capacidade de dados e a taxa de transferência agregada conforme as demandas de carga de trabalho aumentam.</block>
+  <block id="fc867d1b66dc4bfa1fcc5398878562a3" category="paragraph">A figura a seguir mostra um exemplo de implantação com vários building blocks e clientes Lustre conectados por meio da LNet.</block>
+  <block id="bbaa0bd4e33c53fb27a995509baf9809" category="paragraph-title">Visão geral da solução de armazenamento Lustre com NetApp E-Series</block>
+  <block id="3de9beda22b5738ed507f4320ebd16d2" category="inline-image-macro">Visão geral da solução Lustre com NetApp E-Series Storage, incluindo blocos de construção e clientes</block>
+  <block id="d18cd12ca955a0d4461a8bd26b4a62b6" category="paragraph"><block ref="d18cd12ca955a0d4461a8bd26b4a62b6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e5a4a25c986e70bef8837211beda74c5" category="summary">Encontre documentação, ferramentas e software relacionados para o Lustre com o NetApp E-Series Storage.</block>
+  <block id="80456a973884931f76f18e20f1b88d92" category="doc">Lustre com o NetApp E-Series Storage - Recursos relacionados</block>
+  <block id="4102f0b5b086858fa22e676362d1b795" category="paragraph">Use esses links para acessar documentação, ferramentas e softwares relacionados ao planejar ou expandir uma implantação do Lustre com o NetApp E-Series Storage. Para informações sobre dimensionamento e etapas de implantação, consulte <block ref="fd37d50a703eb90bca5592e7cf7939cb" category="inline-link-macro-rx"></block> e <block ref="8f49e9bdbd514d6a8081d8c90c9f306a" category="inline-link-macro-rx"></block>.</block>
+  <block id="ed08ca4078374e76c6df3f1999af7274" category="section-title">NetApp recursos</block>
+  <block id="e016dafca1cca24ab39f1acf3f59ca72" category="list-text"><block ref="27dc27dbb2e442190a59a9d515bed42e" category="inline-link-macro-rx"></block>. Pesquise por *E-Series Lustre*.</block>
+  <block id="3763b875a199c9f3b55717ee21ea1a75" category="list-text"><block ref="3763b875a199c9f3b55717ee21ea1a75" category="inline-link-macro-rx"></block></block>
+  <block id="b84be9aeeb7d442b640d3bd848f311a8" category="inline-link-macro">NetApp SANtricity System Manager documentação</block>
+  <block id="c342c84ee7efec3704a54620e4065b6d" category="list-text"><block ref="c342c84ee7efec3704a54620e4065b6d" category="inline-link-macro-rx"></block></block>
+  <block id="801fb9c6d060327b67b48b4b980fba6c" category="inline-link-macro">Coleção NetApp ansible-lustre</block>
+  <block id="dc7f6a9434c69a7d96a27eaf8f6a5810" category="list-text"><block ref="de7ef047282cd8f5c2a6e192940a1ba6" category="inline-link-macro-rx"></block>. Para orientações sobre o campo de inventário, consulte <block ref="48fa4fcc6ef309525d67cfc2e71da78c" category="inline-link-macro-rx"></block>.</block>
+  <block id="91a4557f9eb7d50540382e1f00258306" category="list-text"><block ref="e7ef2acb3680391a121a9687c0ebe804" category="inline-link-macro-rx"></block>. NetApp fornece pacotes RPM pré-compilados do servidor Lustre para Rocky Linux 9.8 e Red Hat Enterprise Linux 9.8. Compile os pacotes de cliente Lustre para o sistema operacional e kernel do cliente a partir do código-fonte da NetApp.</block>
+  <block id="272e2791266a1c05b53f467fd4e215fc" category="section-title">Comunidade Lustre</block>
+  <block id="20d075262dba6c66c6b234942f75e15c" category="inline-link-macro">Sistema de arquivos Lustre</block>
+  <block id="213e36085425d4e1da968c8691faa4ed" category="list-text"><block ref="213e36085425d4e1da968c8691faa4ed" category="inline-link-macro-rx"></block></block>
+  <block id="4c0ee2e702465cabf84aca52c40af703" category="list-text"><block ref="612e690bea76796aad3a16779b18be6e" category="inline-link-macro-rx"></block> para sistemas operacionais de cliente e kernels</block>
+  <block id="572d7d4c247e39abc81276ad61bda94d" category="inline-link-macro">Wiki do Lustre: ajuste do Lustre</block>
+  <block id="f20d6276bdb17320fda3a696111a0d9c" category="list-text"><block ref="f20d6276bdb17320fda3a696111a0d9c" category="inline-link-macro-rx"></block></block>
+  <block id="49ba65b58125bde5c701c1152dbdb41d" category="section-title">Soluções de infraestrutura de IA relacionadas da NetApp</block>
+  <block id="345d569e2c898b48aaaa804d305550c7" category="list-text"><block ref="345d569e2c898b48aaaa804d305550c7" category="inline-link-macro-rx"></block></block>
+  <block id="1db760587a86f5c1b9ab39aa8cf8cf3d" category="inline-link-macro">Implementando o IBM Spectrum Scale com NetApp E-Series Storage</block>
+  <block id="f11bce155d611798d1912aa61e8901b3" category="list-text"><block ref="f11bce155d611798d1912aa61e8901b3" category="inline-link-macro-rx"></block></block>
+  <block id="9b31c43608a903b3b7af19106b8ccc40" category="list-text"><block ref="9b31c43608a903b3b7af19106b8ccc40" category="inline-link-macro-rx"></block></block>
+  <block id="7e756b7eef65f36227a7b85af8135456" category="summary">Dimensione o Lustre com os blocos de construção de armazenamento NetApp E-Series pela capacidade e pelas necessidades de metadados, decida quando escalar e analise os fatores que afetam o desempenho.</block>
+  <block id="59c3f54c9a0cecdea180a6456551f46d" category="doc">Lustre com o NetApp E-Series Storage - Guia de dimensionamento</block>
+  <block id="d0251bd1f80532046cdfdcea7bc1ab03" category="paragraph">Dimensione o Lustre com os blocos de construção de armazenamento NetApp E-Series pela capacidade e necessidades de metadados, decida quando adicionar capacidade e analise os fatores que afetam o desempenho.</block>
+  <block id="12e479a1ce559951ecb94cea66c585f3" category="section-title">Dimensionamento de capacidade</block>
+  <block id="74d91d3e01704d33bc05d0aee3fb1378" category="paragraph">Um bloco de construção básico com dois arrays EF80 fornece o seguinte layout de destino Lustre. Para posicionamento de destino preferencial e caminhos NVMe-oF, consulte <block ref="8bc00f55bad76f62eced17332034b2aa" category="inline-link-macro-rx"></block> em <block ref="b951df04c708233bd0e6aa30024a444e" category="inline-link-macro-rx"></block>.</block>
+  <block id="e93f994f01c537c4e2f7d8528c3eb5e9" category="cell">Contagem</block>
+  <block id="a1973c341c7bad553b2bd00820b204be" category="cell">Tamanho típico do volume (por alvo)</block>
+  <block id="1a47456e43cf15df911f2376bbaee476" category="cell">5-10 GiB</block>
+  <block id="37da030cbd42d7475398218adf8b3f1d" category="cell">O tamanho varia de acordo com a capacidade do disco e o layout RAID</block>
+  <block id="a79871208c930b8bcf98799a0c2e1b03" category="paragraph">Cada array EF80 utiliza vinte e quatro unidades NVMe. As capacidades suportadas são 3,84 TB, 7,68 TB e 15,3 TB com grupos de volumes tradicionais (RAID 1 para MGS/MDT e RAID 6 para OST) ou DDP, e unidades Capacity Flash (QLC) de 30,7 TB ou 61,4 TB somente com DDP. Unidades de 1,92 TB não são recomendadas para esta solução no momento. Para obter informações sobre o layout dos slots de unidade e a seleção do pool, consulte <block ref="b951df04c708233bd0e6aa30024a444e" category="inline-link-macro-rx"></block>.</block>
+  <block id="9de6a58c633ced695e7f35182e4f9c63" category="paragraph">A tabela a seguir lista a capacidade utilizável aproximada para um bloco de construção EF80 (dois arrays, 48 discos). A capacidade utilizável do array não é a mesma que a capacidade utilizável final do sistema de arquivos Lustre. A alocação de inode, os journals, o sobreprovisionamento e as porcentagens de volume de inventário reduzem a capacidade disponível para os aplicativos.</block>
+  <block id="bf4f4c18d7c050df8976c2158378f211" category="cell">Capacidade de unidade</block>
+  <block id="b014e19abb88d7a6895fa9a4978359c2" category="cell">Layout (por array)</block>
+  <block id="24de389e1b80346cfc5655dde589d264" category="cell">Capacidade utilizável aproximada (bloco de construção)</block>
+  <block id="841ea7afe795b1f98fa361e5a937261b" category="cell">3,84 TB</block>
+  <block id="504badece79df74e1ca6a1943d9ea638" category="cell">RAID 1 (2+2) + RAID 6 (10) + RAID 6 (10)</block>
+  <block id="a4a7870bd0f30a501a3bc37f298069e2" category="cell">138,08 TB</block>
+  <block id="f9ee319553daeb50ac9c1bd728f141cc" category="cell">DDP (24 unidades, 2 reservadas)</block>
+  <block id="6bb2f6c5e4d96bf8ece28ee94d769d61" category="cell">133,63 TB</block>
+  <block id="905eb11b1164dde7de88ccc095db332a" category="cell">7,68 TB</block>
+  <block id="e3c57404bad7f03d0fad7d2667cc4d18" category="cell">276,35 TB</block>
+  <block id="8db55378b1ad856c51cbced3a802cf51" category="cell">DDP (24)</block>
+  <block id="c5ec564364fe6f3a8f4127941faf6a13" category="cell">267,47 TB</block>
+  <block id="a9773e9c4005724e36e58faf83312b93" category="cell">15,3 TB</block>
+  <block id="fff2b38f6568264c123f485d4712b2ec" category="cell">552,88 TB</block>
+  <block id="7e75112ad5c27d9638d9c377e68c1cef" category="cell">535,15 TB</block>
+  <block id="655523e8b6dc97cc5f09578f26864c6b" category="cell">30,7 TB</block>
+  <block id="f5feb804f8feca4de703cdcdb2289ade" category="cell">Somente DDP</block>
+  <block id="08de6cc45bdd714c2a30c46236813c5b" category="cell">1.070,35 TB</block>
+  <block id="c9bba9d9690235f20292e75cb68c184f" category="cell">61,4 TB</block>
+  <block id="ea54dfd3b77728997ed3f50f00001833" category="cell">2.162,70 TB</block>
+  <block id="19e92cc95f52bcadee0ac5af136e0e4d" category="paragraph">Dimensione os metadados e os dados separadamente e, em seguida, defina os tamanhos dos volumes no inventário do Ansible. Os modelos de implantação formatam os targets com ldiskfs; o MDT usa a proporção de inodes padrão do Lustre e os modelos OST definem <block ref="3c645790e3726dcf6be13baa9c1e56c2" prefix=" " category="inline-code"></block>.</block>
+  <block id="a06df10f2c87a60cbc7cb20ae5ce2661" category="list-text">*Metadados (MDT):* Dimensione os MDTs de acordo com a quantidade esperada de arquivos. Planeje aproximadamente o dobro da quantidade esperada de arquivos para o crescimento. Um MDT subdimensionado pode impedir a criação de novos arquivos mesmo quando ainda houver capacidade disponível no OST.</block>
+  <block id="935cb846bf7018be2b36205354a885cb" category="list-text">*Dados (OST):* Dimensione OSTs com base na capacidade utilizável e nas necessidades de taxa de transferência.</block>
+  <block id="0a280617c3c5d75f5cad72b4d235544a" category="list-text">*MGS:* Utilize um alvo de gerenciamento pequeno (5-10 GiB) apenas para configuração do sistema de arquivos.</block>
+  <block id="d78f2c10b39a4de8134e05cbbeef88cf" category="paragraph">Ajuste os tamanhos de volume MDT e OST no inventário para a capacidade de unidade selecionada. Altere <block ref="cacffef7307ad1ca469fde6b5578422a" prefix=" " category="inline-code"></block> em <block ref="11493f05b06ee0c05f68413399f7a704" prefix=" " category="inline-code"></block> ou <block ref="c5d13f36ab0941dd19bdbf0e007c972b" prefix=" " category="inline-code"></block> somente quando um site precisar de uma proporção de inodes diferente. Para informações sobre proporções de inodes, consulte a <block ref="f20d6276bdb17320fda3a696111a0d9c" category="inline-link-macro-rx"></block>. Para saber quando adicionar blocos de construção, consulte <block ref="bf0eac056881e080673af3338260e54f" category="inline-xref-macro-rx"></block>.</block>
+  <block id="bc967dc2d57e6eff184a821bf7577a80" category="section-title">Dimensionamento</block>
+  <block id="b5165c065ecd6f7df456195a5837649f" category="paragraph">Adicione blocos de construção quando a capacidade ou a carga de metadados assim exigir:</block>
+  <block id="c6016c4989752ac4ba0c1bc2d37771ea" category="list-text">*Somente OST:* A contagem de arquivos e a carga de metadados estão dentro da capacidade atual do MDT, e você precisa de mais capacidade de dados ou taxa de transferência agregada. Adiciona 32 OSTs e dois nós de servidor OSS/MDS.</block>
+  <block id="0542b35a0c887339c1b730319191a84e" category="list-text">*MDT+OST:* A contagem de arquivos ou a taxa de metadados está se aproximando da capacidade do MDT, ou você precisa de mais throughput de metadados e de capacidade de dados. Adiciona 8 MDTs e 32 OSTs.</block>
+  <block id="188e8b041d8de5566b88189f59e809fc" category="paragraph">Utilize <block ref="b1a5bd8baac9f30b53cd68f65243f1b5" prefix=" " category="inline-code"></block> em MDTs existentes para confirmar se os metadados estão saturados. Limite cada cluster Pacemaker/Corosync a cinco blocos de construção (dez nós de servidor OSS/MDS). Para implantações maiores, divida os blocos de construção uniformemente entre vários clusters de alta disponibilidade. Consulte <block ref="f6c91e3cd1480b3865622c5a1b7e2c1a" category="inline-link-macro-rx"></block> para as regras de escalonamento.</block>
+  <block id="ed50a739e29323312b31bff9a6ed12c7" category="paragraph">O exemplo a seguir mostra um sistema de arquivos com um bloco de construção básico e um bloco de construção somente para OST em um cluster de alta disponibilidade.</block>
+  <block id="fdd0fa6524b4c92bc95af5176461013e" category="cell">Bloco de construção</block>
+  <block id="ac659513b2353187192e88c5d1988228" category="cell">Servidores</block>
+  <block id="ff43b8de4f41d5103405ddb62eb8d34e" category="cell">Matrizes</block>
+  <block id="a3781aed953e0188563e879828c56061" category="cell">BB1</block>
+  <block id="32fbcabed73ba199a63dd1a684d58a39" category="cell">BB2</block>
+  <block id="96b0141273eabab320119c467cdcaf17" category="cell">Total</block>
+  <block id="48af2a85fb5e9a78b7eb6d081635f7cc" category="paragraph">O BB2 registra seus alvos OST no MGS do BB1 usando <block ref="19f18f5b36600af4ea17354c94083b4d" prefix=" " category="inline-code"></block>. Os índices OST para o BB2 são atribuídos globalmente (por exemplo, OST0032 a OST0063) para que nenhum índice entre em conflito com o BB1.</block>
+  <block id="26a885a8b3e010fc6e8077dfd984fec6" category="paragraph">A validação formal utiliza IOR, mdtest e fio de clientes Lustre para caracterizar a taxa de transferência relativa, IOPS e o comportamento de metadados, além de validar o failover de alta disponibilidade. Esses testes não divulgam números de desempenho garantido. Os benchmarks sintéticos medem o comportamento no melhor cenário e podem não refletir o desempenho real da aplicação.</block>
+  <block id="a25fc9d39767010278f116fa1cdd1f0a" category="paragraph">O desempenho escala aproximadamente com o número de blocos de construção. Os resultados obtidos dependem do tipo de unidade e do layout do pool, da quantidade de caminhos NVMe-oF, da malha LNet e da quantidade de clientes, bem como da combinação de dados versus metadados em E/S.</block>
+  <block id="7f7e308769861daef896f945c6a341be" category="paragraph">Entre em contato com sua equipe de contas da NetApp para obter recomendações de dimensionamento e desempenho específicas para sua carga de trabalho.</block>
+  <block id="c5c2ea62983e1e188786ad8bfa88f7fb" category="paragraph">Para obter informações sobre o layout das unidades e a contagem de volumes, consulte <block ref="b951df04c708233bd0e6aa30024a444e" category="inline-link-macro-rx"></block>. Para obter instruções sobre as etapas de implantação, consulte <block ref="8f49e9bdbd514d6a8081d8c90c9f306a" category="inline-link-macro-rx"></block>. Para obter orientações sobre o inventário em campo, consulte <block ref="48fa4fcc6ef309525d67cfc2e71da78c" category="inline-link-macro-rx"></block>.</block>
+  <block id="dae2d3f855359018480bd9e9ef676792" category="summary">Analise os componentes de software e a automação Ansible usados para implementar o Lustre com o NetApp E-Series Storage.</block>
+  <block id="2fed2b0537192296a3697912cd2d3b32" category="doc">Lustre com o NetApp E-Series storage - Componentes de software</block>
+  <block id="8d0e3a3ae8f0b6693431338ff101e9f3" category="paragraph">Revise a pilha de software e a automação do Ansible que implantam o Lustre com NetApp E-Series Storage. Para servidores, storage e redes, consulte <block ref="b951df04c708233bd0e6aa30024a444e" category="inline-link-macro-rx"></block>.</block>
+  <block id="3ddeb7b39d4e1ebdeff20c88b90f8118" category="section-title">Software de blocos de construção</block>
+  <block id="444ad67e0ba1ebc75540bd3505333dbb" category="paragraph">A tabela a seguir lista os componentes de software usados pelos arrays E-Series e pelos nós de servidor OSS/MDS. Use o <block ref="dea5a7fef452493e48f46a815b88571f" category="inline-link-macro-rx"></block> como fonte oficial para versões compatíveis e combinações de componentes. Pesquise por *E-Series Lustre* e confirme as versões do sistema operacional, Lustre, SANtricity OS, DOCA-OFED, firmware HCA e pacote HA antes da implantação.</block>
+  <block id="86408593c34af77fdd90df932f8b5261" category="cell">Função</block>
+  <block id="e791d47d690cbc6aa7c7f9434ebd2fa1" category="cell">OS REST SANtricity</block>
+  <block id="5ca4fd1919e76260b3d43547bad111d4" category="cell">Executado em cada storage E-Series e fornece o SANtricity System Manager, alta disponibilidade com controladores dual-active, failover automático do caminho de I/O, balanceamento de carga automático e monitoramento de caminhos, Dynamic Disk Pools e RAID tradicional, reconstrução automática de unidades, proteção de cache espelhado, Data Assurance, monitoramento proativo da integridade das unidades e alterações online de software, firmware e configuração.</block>
+  <block id="af33584349c4303df5160e032fea6eb8" category="cell">Lustre</block>
+  <block id="7dcb13804687bff071f09fb210b81adf" category="cell">Apresenta aos clientes um único namespace compatível com POSIX, enquanto distribui metadados e dados de arquivos em vários destinos para acesso paralelo. O servidor de gerenciamento (MGS) armazena a configuração do sistema de arquivos, os destinos de metadados (MDTs) gerenciam o namespace e os destinos de storage de objetos (OSTs) armazenam os dados dos arquivos nos volumes E-Series. Essa separação permite que o desempenho e a capacidade sejam ampliados com a adição de blocos de construção.</block>
+  <block id="943819b5da243944c1ae08b5be94436e" category="cell">Red Hat Enterprise Linux (RHEL) ou Rocky Linux</block>
+  <block id="0690c5e2cfb58ff86b8cbecd26a64a9e" category="cell">Fornece o kernel, os serviços do sistema e a estrutura de pacotes para os serviços de destino do Lustre, clustering HA e conectividade de storage e rede. Os repositórios de sistema operacional suportados também fornecem os pacotes Pacemaker, Corosync, agentes de fence, NVMe-oF e multipath, que são testados juntos como uma pilha de soluções.</block>
+  <block id="56c886c423386e51f9242611a3ddd86b" category="cell">Serviços de cluster de alta disponibilidade (Pacemaker, Corosync e fence agents)</block>
+  <block id="e4661564e283a6f5a615b5c108f2ee9f" category="cell">Em conjunto, esses serviços proporcionam alta disponibilidade coordenada para destinos Lustre em todos os nós do servidor OSS/MDS. Eles mantêm a associação ao cluster e o quorum, monitoram recursos, orquestram o failover ordenado e isolam nós não responsivos antes de ativar destinos compartilhados em outros locais. Essa coordenação impede o acesso split-brain aos volumes E-Series e protege a integridade do sistema de arquivos durante falhas.</block>
+  <block id="cd88c8c03aeba4f72c5636c4e1345954" category="cell">NVIDIA DOCA-OFED</block>
+  <block id="ed24c241434368c2bbaf242ddd3ab0b2" category="cell">Fornece drivers HCA, bibliotecas RDMA e utilitários de gerenciamento para InfiniBand e fabrics RoCE. A mesma pilha de software oferece suporte ao acesso backend NVMe-oF de baixa latência aos arrays E-Series e à comunicação frontend LNet de alta taxa de transferência com clientes Lustre.</block>
+  <block id="419b231880de9252ac834d52a075d58e" category="paragraph">NetApp fornece pacotes RPM pré-compilados do servidor Lustre para Rocky Linux 9.8 e Red Hat Enterprise Linux 9.8.</block>
+  <block id="f309660aa7ddccfcd74a91e5e1eba500" category="section-title">Automação Ansible</block>
+  <block id="89a844364f22dcf7fdcf1bce0e4507d5" category="paragraph">O Lustre com NetApp E-Series storage é entregue e implementado usando automação Ansible a partir de um nó de controle com acesso de gerenciamento aos arrays E-Series e aos nós de servidor OSS/MDS. Um inventário Ansible modela a solução desejada, incluindo arrays, servidores, atribuições de storage, interfaces de rede e recursos de cluster de alta disponibilidade.</block>
+  <block id="2a8fd198917f5b8e5bf2c5e099545a35" category="paragraph">A coleção Ansible Lustre NetApp E-Series orquestra a implantação completamente usando as coleções SANtricity e Host. Juntas, essas coleções provisionam e mapeiam o storage E-Series, preparam o sistema operacional do servidor, configuram a conectividade NVMe-oF e LNet, implementam os targets Lustre e criam recursos Pacemaker. Essa automação torna a configuração repetível e simplifica a adição de blocos de construção a um sistema de arquivos existente.</block>
+  <block id="ca90e19253cf2e48ef5424e516ec986b" category="paragraph">A tabela a seguir resume os principais pacotes de software usados no nó de controle do Ansible. Consulte a <block ref="d1a1b24c47947abfae4f7a836682839e" category="inline-link-macro-rx"></block> para ver as dependências de pacote atuais.</block>
+  <block id="209802fb858e2c83205027dbbb5d9e6c" category="cell">Pacote</block>
+  <block id="bf45656cff8cabbcedd92fb1ca66bdd4" category="cell">Dependência ou propósito</block>
+  <block id="e697f15cbb321abdd59018a4ea71f66a" category="cell">Fornece o runtime para o Ansible e os módulos Python necessários.</block>
+  <block id="38ffe3e951cbcb69b273ce33552fd9d1" category="cell">o ansible-core</block>
+  <block id="a702c09b535302cbc6561c203cb0f4a8" category="cell">Requer Python e executa as coleções Ansible do NetApp E-Series.</block>
+  <block id="d35d779fe31977939a0a72c5c962d2af" category="cell">Pacotes adicionais do Python</block>
+  <block id="f22c7fea934a6eb824b3f4b041e9f534" category="cell"><block ref="e0d00b9f337d357c6faa2f8ceae4a60d" prefix="" category="inline-code"></block>,<block ref="6d14525117cc12ced056e2289c5669ab" prefix=" " category="inline-code"></block>,<block ref="6ed1630535e149ee97279a775dccb954" prefix=" " category="inline-code"></block>,<block ref="1aa69b45474a1c5cc94422f60a915609" prefix=" " category="inline-code"></block>,<block ref="bc54684915644d97a72624e17a72eef6" prefix=" " category="inline-code"></block>,<block ref="45e959010cbec742b865b68a40fdb3d7" prefix=" " category="inline-code"></block>, e<block ref="a29a14b370fd47fe2a7d1c665bcba045" prefix=" " category="inline-code"></block></block>
+  <block id="97246c2acb58fd6b8e955f919adb0923" category="cell">Configura Lustre, LNet, conectividade de host NVMe-oF e recursos Pacemaker.</block>
+  <block id="0db654f6b4a67eb4049f1fd501c9f7be" category="cell">Coleção Ansible do NetApp E-Series SANtricity</block>
+  <block id="0ec973c334798e2f0a5118cb9157c765" category="cell">Configura os arrays E-Series, pools de armazenamento, volumes e mapeamentos de hosts por meio da SANtricity Web Services API.</block>
+  <block id="23c28d851624a5f8fa634080658c4707" category="cell">NetApp E-Series coleção Ansible de host E-Series</block>
+  <block id="42098180c27d0c4f6030713a975ebe6b" category="cell">Prepara os nós do servidor OSS/MDS para conectividade LNet e NVMe-oF com os arrays E-Series.</block>
+  <block id="16a82006af64f2b5bee8ebe98b80a248" category="section-title">Software cliente Lustre</block>
+  <block id="b849bf31bf12a9824d75fbf4f2c31f7e" category="paragraph">O software cliente Lustre permite que um sistema acesse o sistema de arquivos paralelo através da interface LNet. Cada cliente precisa de módulos de kernel Lustre e utilitários de cliente Lustre que sejam compatíveis tanto com o kernel em execução quanto com a versão do Lustre implantada nos servidores.</block>
+  <block id="793bd0e5fbfc31c0292029e837a76450" category="paragraph">Use o <block ref="612e690bea76796aad3a16779b18be6e" category="inline-link-macro-rx"></block> para encontrar um sistema operacional cliente e kernel compatíveis com sua versão do Lustre. NetApp não fornece pacotes cliente Lustre pré-compilados. Compile os pacotes cliente para o sistema operacional cliente e kernel a partir do código-fonte Lustre fornecido pela NetApp no <block ref="a26fe5a6450900f32fdc60abe5f6c5e6" category="inline-link-macro-rx"></block>. Após a instalação dos pacotes cliente Lustre, a função <block ref="99fc42f6ce60cac70cab6ee0f8f2330f" prefix=" " category="inline-code"></block> pode configurar interfaces de rede, LNet e criar uma unidade de montagem systemd persistente para o sistema de arquivos Lustre.</block>
+  <block id="5bdf49c5dd95c601fd517185f5df6e15" category="paragraph">Para obter as etapas de implantação do cliente, consulte <block ref="8f49e9bdbd514d6a8081d8c90c9f306a" category="inline-link-macro-rx"></block>.</block>
+  <block id="a805c2d846a91199e3cb54800e713f68" category="summary">Uma infinidade de testes foi realizada para avaliar o desempenho da arquitetura proposta. Existem seis cargas de trabalho diferentes, como classificação de imagens, detecção de objetos pequenos, detecção de objetos grandes, imagens médicas, conversão de fala em texto e processamento de linguagem natural (NLP), que você pode executar em três cenários diferentes: offline, fluxo único e fluxo múltiplo.</block>
+  <block id="beca071ad49a9c68928cfdd7e5db33c2" category="inline-link"><block ref="beca071ad49a9c68928cfdd7e5db33c2" category="inline-link-rx"></block></block>
+  <block id="939097de2d6ac448a6a39221d1b90a3f" category="paragraph"><block ref="939097de2d6ac448a6a39221d1b90a3f" category="inline-link-rx"></block></block>
+  <block id="cfcb27d55de1a05460222aaae2ce5968" category="inline-link"><block ref="cfcb27d55de1a05460222aaae2ce5968" category="inline-link-rx"></block></block>
+  <block id="c87a795ad50945fa0e730c7c01ccac47" category="paragraph"><block ref="c87a795ad50945fa0e730c7c01ccac47" category="inline-link-rx"></block></block>
+  <block id="a92e88134d3accfc1d9920721715f966" category="inline-link"><block ref="a92e88134d3accfc1d9920721715f966" category="inline-link-rx"></block></block>
+  <block id="ef854b81531246a9b4dcf221a58cc76e" category="paragraph"><block ref="ef854b81531246a9b4dcf221a58cc76e" category="inline-link-rx"></block></block>
+  <block id="d0a5c98873d3d051dc52621664b65724" category="paragraph">🔗 <block ref="14d1afb05a5bd011ea59181d58fb4ae4" category="inline-link-rx"></block></block>
+  <block id="4c589e0b8589cef9be14170911c5f09b" category="paragraph">NetApp não oferece suporte empresarial para Apache Airflow, JupyterHub, MLflow, Kubeflow ou Kubernetes. Se você estiver interessado em uma plataforma MLOps com suporte completo, <block ref="0dd3a80d3a14a1d362eb2892c01dba52" category="inline-link-macro-rx"></block> sobre as soluções MLOps com suporte completo que a NetApp oferece em conjunto com parceiros.</block>
+  <block id="8580f71d04f7cf5070bef20ec7f9399d" category="sidebar">Sistema de arquivos paralelo Lustre com E-Series</block>
+  <block id="7968dca1c563e638b3f7b4f92c64484f" category="sidebar">Lustre com o NetApp storage E-Series</block>
+  <block id="f0b169ab419064a5528cbd15cf20888e" category="sidebar">Hardware para racks e cabos</block>
+  <block id="f816bb441bc6fff2071c78484140ef17" category="sidebar">Prepare o ambiente de implantação</block>
+  <block id="8e9935960e71710f3253321e54a9e37c" category="sidebar">Implante o cluster HA e os clientes</block>
+  <block id="a6d0a294c308f6406404b87b69662279" category="sidebar">Verifique e expanda a implementação</block>
+  <block id="ef6a7f3bd6d67f44f7bd0323fa734758" category="sidebar">Recursos relacionados</block>
 </blocks>

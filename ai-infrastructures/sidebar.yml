@@ -33,6 +33,35 @@ entries:
 - title: BeeGFS no NetApp com armazenamento da série E
   pdf-filename: BeeGFS no NetApp com armazenamento da série E
   url: "/infra/ai-eseries-beegfs.html"
+- title: Lustre com o NetApp storage E-Series
+  pdf-filename: Lustre com o NetApp storage E-Series
+  entries:
+  - title: Introdução
+    url: "/infra/ai-eseries-lustre-intro.html"
+  - title: Arquitetura da solução
+    url: "/infra/ai-eseries-lustre-architecture.html"
+  - title: Componentes de hardware
+    url: "/infra/ai-eseries-lustre-hw.html"
+  - title: Componentes de software
+    url: "/infra/ai-eseries-lustre-sw.html"
+  - title: Orientação de dimensionamento
+    url: "/infra/ai-eseries-lustre-sizing.html"
+  - title: Implante a solução
+    entries:
+    - title: Fluxo de trabalho de implantação
+      url: "/infra/ai-eseries-lustre-deploy.html"
+    - title: Hardware para racks e cabos
+      url: "/infra/ai-eseries-lustre-deploy-hardware.html"
+    - title: Prepare o ambiente de implantação
+      url: "/infra/ai-eseries-lustre-deploy-prepare.html"
+    - title: Personalize o inventário do Ansible
+      url: "/infra/ai-eseries-lustre-deploy-inventory.html"
+    - title: Implante o cluster HA e os clientes
+      url: "/infra/ai-eseries-lustre-deploy-cluster.html"
+    - title: Verifique e expanda a implementação
+      url: "/infra/ai-eseries-lustre-deploy-verify.html"
+  - title: Recursos relacionados
+    url: "/infra/ai-eseries-lustre-resources.html"
 - title: Implementar o IBM Spectrum Scale com armazenamento E-Series
   pdf-filename: Implementar o IBM Spectrum Scale com armazenamento E-Series
   url: "/infra/ai-eseries-spectrumscale.html"
