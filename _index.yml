@@ -48,6 +48,8 @@ indexpage:
       url: "/infra/ai-storagegrid-datalake-adas.html"
     - title: Quantum StorNext com Série E
       url: "/infra/ai-eseries-nva1150-design.html"
+    - title: Otimizando o pipeline de IA em todas as plataformas de storage da NetApp
+      url: "/infra/ai-pipeline-overview.html"
   - title: MLOps e gerenciamento de dados
     links:
     - title: MLOps de código aberto com NetApp

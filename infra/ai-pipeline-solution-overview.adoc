@@ -1,0 +1,106 @@
+---
+sidebar: sidebar 
+permalink: infra/ai-pipeline-solution-overview.html 
+keywords:  
+summary:  
+---
+= 2. Visão geral da solução, valor comercial e benefícios para o cliente
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+Karthikeyan Nagalingam, NetApp
+
+
+
+[[2-1-solution-description]]
+== 2.1 Descrição da solução
+
+O pipeline é implementado como o DAG do Airflow `example++_++ai++_++pipeline++_++sklearn`, composto pelas tarefas `ingestion`, `data++_++prep`, `xcp++_++preflight++_++source`, `xcp++_++copy++_++prep++_++to++_++training`, `model++_++training`, `fine++_++tuning`, `inferencing`, `checkpoint++_++model++_++training`, `route++_++manual++_++archive++_++stage` e `manual++_++archive`.
+
+
+
+[[2-2-use-case-and-problem-statement]]
+== 2.2 Caso de uso e declaração do problema
+
+Os clientes devem treinar e atualizar periodicamente os modelos de regressão tabular e classificação de texto usando dados brutos provenientes do StorageGRID. O pipeline prepara esses dados em um bucket NAS do ONTAP e, em seguida, usa o NetApp XCP para entregá-los ao ONTAP S3 ou ao LustreFS para treinamento, com base na seleção de destino por execução.
+
+
+
+[[2-3-target-customer-profile-and-industry-applicability]]
+== 2.3 Perfil do cliente-alvo e aplicabilidade no setor
+
+Serviços financeiros (modelos de risco/fraude), manufatura (manutenção preditiva), saúde (classificação/triagem), varejo (previsão de demanda) — qualquer empresa que exija treinamento de ML governado e repetível na infraestrutura NetApp.
+
+
+
+[[2-4-solution-scope-and-boundaries]]
+== 2.4 Escopo e limites da solução
+
+*Dentro do escopo:* controle de ingestão, preparação de dados (Python/Spark), mobilidade de dados XCP (S3/LustreFS), treinamento e ajuste fino incremental com scikit-learn, inferência, criação de checkpoints, arquivamento manual. *Fora do escopo:* APIs de serviço de modelos em tempo real, ingestão de streaming, frameworks de aprendizado profundo baseados em GPU.
+
+
+
+[[2-5-assumptions-and-prerequisites]]
+== 2.5 Pressupostos e pré-requisitos
+
+* Endpoint do StorageGRID compatível com S3, acessível a partir do Airflow para acesso a dados brutos e arquivamento.
+* O bucket NAS do ONTAP é acessível pelo Airflow para gravações de dados preparados e exposto via NFS para o host XCP.
+* NetApp ONTAP endpoint compatível com S3 acessível a partir do Airflow e do XCP quando o ONTAP S3 é selecionado como destino de treinamento.
+* NetApp XCP instalado e acessível via SSH (conexão Airflow `ssh++_++default`).
+* O cliente LustreFS é montado no host XCP quando o LustreFS é selecionado.
+* Airflow 2.x com `boto3`, `scikit-learn`; pacotes opcionais PySpark &#43; Delta/Iceberg.
+
+
+
+
+[[2-6-business-drivers]]
+== 2.6 Fatores de negócios
+
+Reduza o tempo de criação de modelos, diminua o custo da infraestrutura por meio de treinamento incremental e elimine o risco de scripts pontuais.
+
+
+
+[[2-7-value-proposition-summary]]
+== 2.7 Resumo da Proposta de Valor
+
+O StorageGRID, o ONTAP NAS, o ONTAP S3, o LustreFS e o XCP, combinados com a orquestração Airflow, oferecem um pipeline de IA resiliente, observável e com reconhecimento de camadas de storage.
+
+
+
+[[2-8-stakeholder-benefits]]
+== 2.8 Benefícios para as partes interessadas
+
+[cols="50%,50%"]
+|===
+| Parte interessada | Benefício 
+
+
+| Engenharia de Dados | Preparação declarativa e orientada por parâmetros; descoberta automática de arquivos; suporte a Spark/Delta/Iceberg 
+
+
+| Ciência de Dados/Aprendizado de Máquina | Ajuste fino incremental; fonte de artefatos consistente em todas as etapas; divisões reproduzíveis 
+
+
+| Operações de TI | Seleção de storage em tempo de execução; logs de guard/effective-config; recuperação baseada em checkpoint 
+
+
+| Conformidade/Governança | Os manifestos e registros de arquivamento fornecem linhagem auditável; estágio de retenção configurável 
+|===
+
+
+[[2-9-tco-considerations]]
+== 2.9 Considerações sobre o TCO
+
+O ajuste fino incremental e a retomada a partir de pontos de verificação reduzem os custos recorrentes de computação; a flexibilidade das camadas de storage evita o provisionamento excessivo de storage de alto desempenho para todas as cargas de trabalho.
+
+
+
+[[2-10-roi-considerations]]
+== 2.10 Considerações sobre o ROI
+
+Ciclos de atualização de modelos mais rápidos, manutenção manual reduzida, tempo de recuperação por evento de falha reduzido.

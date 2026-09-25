@@ -1,0 +1,105 @@
+---
+sidebar: sidebar 
+permalink: infra/ai-pipeline-differentiation-appendices.html 
+keywords:  
+summary:  
+---
+= 11. Diferenciação e posicionamento competitivo da NetApp, apêndices
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+Karthikeyan Nagalingam, NetApp
+
+Esta seção combinada posiciona a arquitetura em relação às alternativas comuns e fornece o material de referência compartilhado usado por operadores e revisores. O diferencial não é um único endpoint de storage; é a combinação controlada por políticas do StorageGRID, ONTAP NAS, ONTAP S3, LustreFS, XCP e Airflow que permite que cada fase do ciclo de vida da IA use um nível apropriado sem reconstruir o fluxo de trabalho.
+
+
+
+[[11-1-netapp-differentiation-and-competitive-positioning]]
+== 11.1 NetApp Diferenciação e Posicionamento Competitivo
+
+Esta comparação posiciona a arquitetura em relação a alternativas comuns. Seu diferencial não é um único endpoint de storage; é a combinação controlada por políticas do StorageGRID, ONTAP NAS, ONTAP S3, LustreFS, XCP e Airflow que permite que cada fase do ciclo de vida da IA use uma camada apropriada sem reconstruir o fluxo de trabalho.
+
+[cols="34%,33%,33%"]
+|===
+| Abordagem alternativa | Limitação | Vantagem da solução NetApp 
+
+
+| Pipelines somente nativos da nuvem | Preso a um único paradigma de armazenamento | S3/LustreFS intercambiáveis via configuração 
+
+
+| Pipelines baseados em script do tipo faça você mesmo | Sem nova tentativa, ponto de verificação ou linhagem | Orquestração do Airflow {plus} ponto de verificação/retomada nativamente 
+
+
+| Arquiteturas de storage de camada única | Um único perfil de desempenho/custo para todas as cargas de trabalho | Seleção de nível por execução via `xcp++_++copy++_++destination` 
+
+
+| Retreinamento completo a cada atualização | Alto custo recorrente de computação | Ajuste fino incremental via `partial++_++fit` 
+|===
+
+
+[[11-2-appendices]]
+== 11.2 Apêndices
+
+Os apêndices fornecem terminologia compartilhada e contexto de controle de documentos para leitores que operam, revisam ou adaptam esta NVA. Mantenha o histórico de revisões atualizado ao alterar o comportamento documentado, os parâmetros, os layouts de armazenamento ou as evidências de validação.
+
+
+
+[[11-2-1-glossary]]
+=== 11.2.1 Glossário
+
+Essas definições estabelecem significados consistentes para os termos de armazenamento, orquestração e linhagem da arquitetura.
+
+[cols="50%,50%"]
+|===
+| Termo | Definição 
+
+
+| XCP | Ferramenta de cópia de dados/migração paralela de alta velocidade da NetApp 
+
+
+| ONTAP S3 | O serviço de storage de objetos compatível com S3 do NetApp no ONTAP 
+
+
+| LustreFS | Sistema de arquivos distribuído paralelo de alto desempenho 
+
+
+| DAG | Grafo Acíclico Direcionado — definição do fluxo de trabalho do Airflow 
+
+
+| XCom | Mecanismo do Airflow para passar dados entre tarefas 
+
+
+| executar++_++carimbo | Identificador exclusivo de carimbo de data/hora por execução usado para linhagem 
+
+
+| Manifesto | Registro JSON que descreve as entradas, saídas e a configuração de um estágio 
+|===
+
+
+[[11-2-2-revision-history]]
+=== 11.2.2 Histórico de revisões
+
+Registre cada alteração publicada para preservar o histórico de revisão e aprovação do documento.
+
+[cols="25%,25%,25%,25%"]
+|===
+| Versão | Data | Autor | Mudar 
+
+
+| 1,0 | 2026-09-25 | Equipe de Arquitetura de Soluções | Versão inicial do NVA pronta para publicação, com tabelas de parâmetros e diagramas completos 
+|===
+
+
+[[11-2-3-contact-us-and-software-requests]]
+=== 11.2.3 Fale conosco e solicitações de software
+
+Para solicitar o pacote de software, os DAGs de automação, os scripts de implantação ou os artefatos de validação para implantar e validar essa arquitetura, ou para fornecer feedback e dúvidas técnicas, entre em contato com a equipe de IA e mobilidade de dados da NetApp:
+
+* *E-mail:* ng-data-mobility-in-ai-pipeline@netapp.com
+* *Finalidade:* solicitações de pacotes de software, orientações de implantação, suporte à validação de arquitetura e feedback técnico.
+
