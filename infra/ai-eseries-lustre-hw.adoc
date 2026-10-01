@@ -149,7 +149,7 @@ A plataforma EF80 suporta até doze portas de host por array quando três módul
 
 Cada array EF80 também utiliza o módulo de E/S dedicado do slot 4 para espelhamento entre controladoras. Conecte a porta 4a do controlador A à porta 4a do controlador B e a porta 4b do controlador A à porta 4b do controlador B. Essas conexões fornecem espelhamento de cache e transmissão de E/S e não são usadas para tráfego NVMe-oF do host. Consulte link:https://docs.netapp.com/us-en/e-series/install-hw-ef50-ef80/install-cable.html#step-1-cable-the-inter-controller-mirroring-connections["Conecte os cabos de espelhamento entre os controladores EF50 e EF80"^].
 
-Para obter as especificações completas da EF-Series em todos os modelos, consulte o link:https://www.netapp.com/pdf.html?item=/media/14036-ds-4082.pdf["NetApp EF-Series datasheet do array all-flash"^].
+Para obter as especificações completas da EF-Series em todos os modelos, consulte o link:https://www.netapp.com/pdf.html?item=/media/19339-ds-4082.pdf["NetApp EF-Series datasheet do array all-flash"^].
 
 
 

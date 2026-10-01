@@ -108,7 +108,7 @@ image:ai-edge-007.png["Figura mostrando diálogo de entrada/saída ou representa
 
 
 
-NOTE: Para mais informações, consulte o https://www.netapp.com/pdf.html?item=/media/19339-DS-4082.pdf["Folha de dados dos arrays all-flash EF600, F300, EF570 e EF280 da NetApp NetApp -Series"^] .
+NOTE: Para obter mais informações, consulte o https://www.netapp.com/pdf.html?item=/media/19339-ds-4082.pdf["Folha de dados dos arrays all-flash EF600, F300, EF570 e EF280 da NetApp NetApp -Series"^].
 
 
 

@@ -22,7 +22,7 @@ Use esses links para acessar documentação, ferramentas e softwares relacionado
 == NetApp recursos
 
 * link:https://imt.netapp.com/imt/#welcome["NetApp Ferramenta de Matriz de Interoperabilidade"^]. Pesquise por *E-Series Lustre*.
-* link:https://www.netapp.com/pdf.html?item=/media/14036-ds-4082.pdf["NetApp EF-Series datasheet do array all-flash"^]
+* link:https://www.netapp.com/pdf.html?item=/media/19339-ds-4082.pdf["NetApp EF-Series datasheet do array all-flash"^]
 * link:https://docs.netapp.com/us-en/e-series-santricity/["NetApp SANtricity System Manager documentação"^]
 * link:https://github.com/NetApp/ansible-lustre/tree/release/1.0.0["Coleção NetApp ansible-lustre"^]. Para orientações sobre o campo de inventário, consulte link:ai-eseries-lustre-deploy-inventory.html["Personalize o inventário do Lustre Ansible"].
 * link:https://github.com/NetApp/netapp-lustre/tree/master["NetApp Lustre repositório de origem"^]. NetApp fornece pacotes RPM pré-compilados do servidor Lustre para Rocky Linux 9.8 e Red Hat Enterprise Linux 9.8. Compile os pacotes de cliente Lustre para o sistema operacional e kernel do cliente a partir do código-fonte da NetApp.
