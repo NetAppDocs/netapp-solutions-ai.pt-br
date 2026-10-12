@@ -15,6 +15,7 @@ summary:
 
 Karthikeyan Nagalingam, NetApp
 
+[role="lead"]
 Esta seção combinada posiciona a arquitetura em relação às alternativas comuns e fornece o material de referência compartilhado usado por operadores e revisores. O diferencial não é um único endpoint de storage; é a combinação controlada por políticas do StorageGRID, ONTAP NAS, ONTAP S3, LustreFS, XCP e Airflow que permite que cada fase do ciclo de vida da IA use um nível apropriado sem reconstruir o fluxo de trabalho.
 
 

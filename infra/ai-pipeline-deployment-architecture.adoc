@@ -15,6 +15,7 @@ summary:
 
 Karthikeyan Nagalingam, NetApp
 
+[role="lead"]
 Esta seção define o posicionamento da infraestrutura, as dependências de software e a conectividade de rede necessárias para operar o pipeline. A implantação separa a orquestração do Airflow do host de movimentação de dados XCP, conectando ambos os componentes ao StorageGRID, ao ONTAP NAS e ao destino de treinamento ONTAP S3 ou LustreFS selecionado.
 
 

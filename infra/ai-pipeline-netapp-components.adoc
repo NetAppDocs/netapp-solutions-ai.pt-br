@@ -15,6 +15,9 @@ summary:
 
 Karthikeyan Nagalingam, NetApp
 
+[role="lead"]
+A solução de pipeline de dados de IA utiliza componentes da NetApp, de terceiros e de código aberto.
+
 [cols="50%,50%"]
 |===
 | Componente | Papel na solução 

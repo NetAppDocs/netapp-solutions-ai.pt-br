@@ -15,6 +15,7 @@ summary:
 
 Karthikeyan Nagalingam, NetApp
 
+[role="lead"]
 Esta seção conjunta aborda os controles necessários para operar o pipeline de IA com segurança e as atividades de validação usadas para comprovar que o projeto se comporta conforme o esperado em ambientes representativos. A mesma separação de camadas de armazenamento, o modelo de acesso com privilégio mínimo, a lógica de checkpoint e a linhagem com escopo de execução usados no pipeline também orientam o plano de validação e as diretrizes operacionais.
 
 

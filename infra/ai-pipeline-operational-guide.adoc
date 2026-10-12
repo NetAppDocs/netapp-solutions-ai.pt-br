@@ -15,6 +15,7 @@ summary:
 
 Karthikeyan Nagalingam, NetApp
 
+[role="lead"]
 Este guia abrange execução de rotina, monitoramento, triagem de incidentes, recuperação de treinamento, verificação de arquivo, ajuste de capacidade e proteção de dados. Use-o com os cenários de configuração na Seção 8 para operar o mesmo pipeline de forma consistente nos modos de treinamento local, ONTAP S3 e LustreFS.
 
 
