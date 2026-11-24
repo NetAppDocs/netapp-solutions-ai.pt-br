@@ -1,0 +1,116 @@
+---
+sidebar: sidebar 
+permalink: data-analytics/mongodb-ontap-appendix.html 
+keywords: mongodb, quiesce, balancer, sharding, commands, appendix 
+summary: Este apêndice lista os comandos quiesce e balancer, bem como os comandos do cluster MongoDB usados na validação. 
+---
+= Apêndice
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Este apêndice lista os comandos quiesce e balancer, bem como os comandos do MongoDB usados na validação.
+
+
+
+[[quiesce-and-balancer-commands]]
+== Comandos Quiesce e balancer
+
+A validação usou scripts Python 2.7 nos servidores de aplicativos MongoDB como comandos quiesce, unquiesce e pre-exit; esses scripts não estão incluídos. Para evitar essa dependência, configure os hooks com os `mongosh`comandos em xref:mongodb-ontap-solution-validation.html#snapcenter-backup[Faça backup com SnapCenter]. Instale `mongosh` no host que executa os comandos e adapte as opções de host, porta e autenticação para a sua implantação. Os scripts de validação usaram uma versão inicial do PyMongo que fornece a classe `Connection`; o Python 2 e `Connection` não são mais compatíveis.
+
+[cols="35%,65%"]
+|===
+| Script usado na validação | Operação 
+
+
+| `wait-for-cleared-locks.py` | Aguarde até que o bloqueio do balanceador seja liberado e, em seguida, pare o balanceador. Em  `mongosh`, execute  `sh.stopBalancer()`, que também aguarda a conclusão de qualquer rodada de balanceamento em andamento. 
+
+
+| `start-balancer.py` | Reinicie o balanceador. Em `mongosh`, execute `sh.startBalancer()`. 
+
+
+| `fsync-lock.py` | Descarregue as gravações no disco e bloqueie novas gravações quando o backup exigir quiescência, incluindo os dados e o journal do WiredTiger em volumes separados sem um Snapshot de grupo de consistência. Em `mongosh`, execute `db.fsyncLock()` em cada membro do qual será feito backup. 
+
+
+| `fsync-unlock.py` | Libere cada bloqueio de gravação adquirido para o backup, inclusive após uma falha. Em  `mongosh`, execute  `db.fsyncUnlock()`. 
+|===
+
+
+[[mongodb-operations]]
+== Operações do MongoDB
+
+As operações a seguir configuram o cluster fragmentado e adicionam dois fragmentos a ele. Os comandos e a saída foram capturados com o MongoDB 3.0.7 e o shell legado `mongo`. Nas versões atuais do MongoDB, use `mongosh`, implante os servidores de configuração como um conjunto de réplicas (inicie-os com `--configsvr` e `--replSet`, e passe o nome do conjunto de réplicas para `mongos` com `--configdb`), e omita a opção `--rest` removida.
+
+. Verifique as partições montadas para o banco de dados MongoDB em cada membro do shard (`mdb-srv-1`, `mdb-srv-10`, `mdb-srv-11`, `mdb-srv-2`, `mdb-srv-20` e `mdb-srv-21`). Cada membro monta um sistema de arquivos XFS em `/data`:
++
+[listing]
+----
+[mongodb@mdb-srv-1 db_wt]$ df -h /data
+[mongodb@mdb-srv-1 db_wt]$ cat /etc/fstab | grep sdb
+/dev/sdb1 /data xfs defaults 0 0
+----
+. Em cada membro do shard, crie as pastas necessárias, defina a propriedade e as permissões e inicie `mongod`. Para o primeiro shard, os membros são `mdb-srv-1`, `mdb-srv-10` e `mdb-srv-11`. Por exemplo, em `mdb-srv-1`:
++
+[listing]
+----
+[root@mdb-srv-1 ~]# mkdir -p /mongodb/data
+[root@mdb-srv-1 ~]# mkdir -p /data/db_wt
+[root@mdb-srv-1 ~]# chown -R mongodb:mongodb /mongodb
+[root@mdb-srv-1 ~]# chown -R mongodb:mongodb /data
+[root@mdb-srv-1 ~]# chmod -R 700 /mongodb
+[mongodb@mdb-srv-1 ~]$ mongod --replSet shard1/mdb-srv-10,mdb-srv-11 --journal --rest --shardsvr --fork --storageEngine wiredTiger --dbpath /data/db_wt --logpath /mongodb/data/mongod.log --directoryperdb
+----
+. Inicie os servidores de configuração (`mdb-cfg-1`, `mdb-cfg-2` e `mdb-cfg-3`) na porta 27019. Crie `/mongodb/data/configdb` com propriedade `mongodb` e permissões 700 primeiro:
++
+[listing]
+----
+[mongodb@mdb-cfg-3 ~]$ mongod --configsvr --dbpath /mongodb/data/configdb --port 27019 --fork --logpath /mongodb/data/arbiter.log
+----
+. Inicie o `mongos` processo em cada servidor de aplicativos (`mdb-ms-1` e `mdb-ms-2`), e verifique se ele está escutando na porta 27017:
++
+[listing]
+----
+[mongodb@mdb-ms-1 ~]$ mongos --configdb mdb-cfg-1:27019,mdb-cfg-2:27019,mdb-cfg-3:27019 --logpath /mongodb/data/mongos.log --fork --port 27017
+----
+. Conecte-se ao shard primário (`mdb-srv-1`) a partir do servidor de aplicativos e inicie o conjunto de réplicas com `rs.initiate(cfg)`:
++
+[listing]
+----
+[mongodb@mdb-ms-1 ~]$ mongo mdb-srv-1:27018/admin
+> var cfg = { _id: "shard1", members: [ { _id: 0, host: "mdb-srv-1:27018" }, { _id: 1, host: "mdb-srv-10:27018" }, { _id: 2, host: "mdb-srv-11:27018" } ] };
+> rs.initiate(cfg);
+----
+. Verifique o status do conjunto de réplicas a partir do membro do shard:
++
+[listing]
+----
+[mongodb@mdb-srv-1 ~]$ mongo --host mdb-srv-1 --port 27018
+shard1:PRIMARY> rs.printReplicationInfo()
+PRIMARY> rs.status()
+----
+. Adicione o primeiro shard do servidor de aplicativos. Se você adicionar o mesmo shard novamente de outro servidor de aplicativos, o MongoDB informará que o shard já existe:
++
+[listing]
+----
+[mongodb@mdb-ms-1 ~]$ mongo mdb-ms-1:27017/admin
+mongos> db.adminCommand( { addShard : "shard1/mdb-srv-1:27018,mdb-srv-10:27018,mdb-srv-11:27018" } )
+----
+. Verifique o status do particionamento:
++
+[listing]
+----
+mongos> sh.status();
+----
+. Adicione o segundo fragmento. Prepare `mdb-srv-2`, `mdb-srv-20`, e `mdb-srv-21` da mesma forma que o primeiro fragmento, inicialize seu conjunto de réplicas e adicione-o:
++
+[listing]
+----
+mongos> db.adminCommand( { addShard : "shard2/mdb-srv-2:27018,mdb-srv-20:27018,mdb-srv-21:27018" } )
+----
+. Execute `sh.status()` novamente para confirmar se ambos os shards (`shard1` e `shard2`) estão listados. Adicionar shards não distribui automaticamente os dados da coleção. Para a configuração do MongoDB 3.0.7 mostrada aqui, habilite o sharding no banco de dados com `sh.enableSharding()`, selecione uma chave de shard apropriada e crie qualquer índice necessário, e aplique sharding a cada coleção pretendida com `sh.shardCollection()`.
+

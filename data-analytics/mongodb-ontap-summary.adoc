@@ -1,0 +1,35 @@
+---
+sidebar: sidebar 
+permalink: data-analytics/mongodb-ontap-summary.html 
+keywords: mongodb, ontap, summary, conclusion 
+summary: Esta página resume os benefícios comprovados do MongoDB no NetApp ONTAP. 
+---
+= Resumo
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Esta arquitetura de referência fornece uma solução completa para implantar com eficiência um banco de dados MongoDB NoSQL virtualizado com escalabilidade horizontal na infraestrutura de dados inteligente da NetApp. Na arquitetura testada, que combinou a tecnologia de storage da NetApp com o VMware vSphere, as VMs e os bancos de dados MongoDB foram hospedados em um array AFF da NetApp com escalabilidade horizontal. O NetApp SnapCenter gerencia os backups, e o SnapMirror os replica para o Amazon FSx for NetApp ONTAP na AWS para recuperação de desastres.
+
+Essa solução validou os seguintes principais benefícios:
+
+* Desempenho previsível e elevado com latência consistentemente baixa, o que proporciona tempos de resposta muito rápidos para até mesmo as aplicações analíticas baseadas em MongoDB mais exigentes.
+* A deduplicação e a compressão em linha tornam o MongoDB no storage flash econômico.
+* Clonagem instantânea de banco de dados com uso eficiente de espaço, que agiliza a configuração de ambientes de desenvolvimento/teste e controle de qualidade sem exigir novo armazenamento.
+* Backup e recuperação baseados em cópias Snapshot da NetApp com uso eficiente de espaço e em replicação remota para a nuvem.
+
+
+Além dos resultados da validação, o NetApp AFF complementa o MongoDB com os seguintes recursos principais:
+
+* Um array all-flash com escalabilidade vertical e com escalabilidade horizontal que permite que o storage seja escalado modularmente com o MongoDB.
+* Operações não disruptivas que proporcionam tempo de atividade máximo e alta disponibilidade.
+
+
+Nos testes de desempenho do YCSB, o NetApp AFF apresentou excelentes resultados, demonstrando um array all-flash econômico e de alto desempenho para expandir horizontalmente as implantações do MongoDB.
+
+Este relatório também descreve dois casos de uso de clientes: fornecer o Digital Advisor a partir do MongoDB Atlas e backup e recuperação empresarial com o MongoDB Ops Manager. Para o Ops Manager, ele fornece orientações de design, ainda a serem avaliadas, sobre a adição do NetApp SnapCenter para cópias Snapshot em nível de storage, recuperação rápida e recuperação de desastres.
